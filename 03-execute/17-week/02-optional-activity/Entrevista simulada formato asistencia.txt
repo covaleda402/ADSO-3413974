@@ -1,0 +1,70 @@
+Entrevista simulada
+
+Nota: Debido a que esta actividad corresponde a un ejercicio académico, se realizó una simulación del proceso de levantamiento de requisitos, representando un diálogo entre el analista y el cliente, con el fin de identificar las necesidades del sistema de toma de asistencia.
+
+Analista: ¿Cómo realiza actualmente la toma de asistencia?
+
+Cliente (Instructor): Ingreso al sistema institucional y debo registrar la asistencia de cada aprendiz de manera individual.
+
+Analista: ¿Qué inconvenientes presenta el proceso?
+
+Cliente: La toma de asistencia consume demasiado tiempo, especialmente cuando el grupo tiene muchos aprendices.
+
+Analista: ¿Qué le gustaría mejorar?
+
+Cliente: Poder visualizar todos los aprendices de una ficha en una sola pantalla y registrar la asistencia rápidamente.
+
+Analista: ¿Qué información necesita almacenar?
+
+Cliente: Fecha, hora, ficha, aprendiz, estado de asistencia y el instructor que realizó el registro.
+
+Analista: ¿Puede modificar una asistencia?
+
+Cliente: Sí, en caso de errores o justificaciones posteriores.
+
+Analista: ¿Quiénes utilizarán el sistema?
+
+Cliente: Principalmente los instructores.
+
+Analista: ¿Qué tipo de reportes necesita?
+
+Cliente: Consultar asistencias por ficha, por fecha y por aprendiz.
+
+Conclusiones obtenidas
+
+A partir de la entrevista simulada se identificó que el principal problema es el tiempo que requiere registrar la asistencia de manera individual. El cliente manifestó la necesidad de agilizar este proceso mediante una interfaz que permita visualizar todos los aprendices de una ficha y registrar la asistencia de forma más rápida, además de consultar y modificar registros cuando sea necesario.
+
+
+RF(Requisitos Funcionales)
+
+RF01. El sistema permitirá al instructor iniciar sesión.
+RF02. El sistema permitirá seleccionar una ficha.
+RF03. El sistema mostrará el listado de aprendices de la ficha seleccionada.
+RF04. El sistema permitirá registrar la asistencia de varios aprendices desde una sola pantalla.
+RF05. El sistema permitirá modificar un registro de asistencia.
+RF06. El sistema almacenará la fecha y hora del registro.
+RF07. El sistema permitirá consultar el historial de asistencias.
+RF08. El sistema generará reportes de asistencia.
+
+Con los RF se pueden crear los siguientes caso de uso
+
+Iniciar sesión.
+Seleccionar ficha.
+Consultar aprendices.
+Registrar asistencia.
+Modificar asistencia.
+Consultar historial.
+Generar reporte.
+
+Diagrama de clases
+
+Las clases principales que se desprenden del análisis serían:
+
+Instructor
+Ficha
+Aprendiz
+Asistencia
+
+
+
+
