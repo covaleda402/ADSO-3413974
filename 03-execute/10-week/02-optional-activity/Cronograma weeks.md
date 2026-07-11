@@ -1,5 +1,7 @@
 ## Cronograma
 
+## Cronograma
+
 - **Week 2:** Video de desarrollar la estructura de datos y la interfaz de usuario del software
 - **VIdeo subido a youtube
 - **Week 3:** Manual GitHub
@@ -15,4 +17,17 @@
 - **Week 8:** Instrumentos de recolección con nuestro proyecto
   **asimilar  a nuestro proyeto 
 - **Week 9:** Actividad supermercado
-- la q mando el profe
+- **Week 10:** Cronograma
+- encargados; Kevin Eduardo y brenda galeano
+- **Week 11:** Actividad SRS Supermercado
+- **Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
+- **Week 12:** Que son las TIC
+- **Vimos temas y diapositivas de compañeros
+- **WeeK 13:** Gestion Horario Instructores
+- **powerpoint 5, documento word y mockup
+- **WeeK 14:** Implementar documentos de gestion de horarios, adaptarlos a nuestro proyecto
+-  **WeeK 15:** Trabajo Diagramas UML, .drawie y word
+- **Week 16:** Trabajo UML, USE CASE, Dagrama USE CASE y Diagrama de Clases
+-  **Subir Archivo o Donde hallan echo la actividad de Asistencia a clase SENA
+- **Week 17:** Mockup de Asistencia Sena, plazo entrega 11/07/2026 que se dejo el 04/07/2026,se debe entregar, idea replanteada y mejorada de llamado de asistencia, mockup de la pagina replanteada de asistencia y x ultimo presentacion del link que envio
+- **Week 18:** 
