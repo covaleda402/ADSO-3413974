@@ -45,7 +45,7 @@ Desarrollar un Sistema de Gestión de Inventario que permita:
 ---
 ## Objetivo
 
-Desarrollar un sistema de gestión de inventario que permita controlar el stock de productos, aplicar el método FIFO para la rotación de inventario y reducir las pérdidas ocasionadas por el vencimiento de las gaseosas.
+Desarrollar un sistema de gestión de inventario que permita controlar el stock de productos, aplicar los métodos FIFO y FEFO para optimizar la rotación del inventario y reducir las pérdidas ocasionadas por el vencimiento de las gaseosas.
 ---
 ## Alcance
 
