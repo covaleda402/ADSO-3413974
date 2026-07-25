@@ -38,11 +38,26 @@ Desarrollar un Sistema de Gestión de Inventario que permita:
 - Registrar productos.
 - Controlar entradas y salidas.
 - Aplicar automáticamente el método FIFO.
+- Aplicar metodo FEFO
 - Monitorear fechas de vencimiento.
 - Generar alertas y reportes del inventario.
 
 ---
+## Objetivo
 
+Desarrollar un sistema de gestión de inventario que permita controlar el stock de productos, aplicar el método FIFO para la rotación de inventario y reducir las pérdidas ocasionadas por el vencimiento de las gaseosas.
+---
+## Alcance
+
+El sistema permitirá:
+
+- Registrar productos.
+- Registrar entradas y salidas de inventario.
+- Consultar el stock disponible.
+- Aplicar el método FIFO automáticamente.
+- Generar alertas de productos próximos a vencer.
+- Generar reportes básicos del inventario.
+---
 ## Beneficios
 
 - Disminución de pérdidas por vencimiento.
@@ -51,9 +66,15 @@ Desarrollar un Sistema de Gestión de Inventario que permita:
 - Mejor planificación de compras.
 - Incremento de la rentabilidad.
 - Mayor eficiencia operativa.
-
 ---
+## Impacto esperado
+
+- Reducir el desperdicio de productos.
+- Disminuir las pérdidas económicas.
+- Mejorar la organización del inventario.
+- Optimizar la toma de decisiones.
+- Incrementar la eficiencia operativa.
 
 # Conclusión
 
-Con un sistema de gestión de inventario basado en FIFO, la empresa podrá optimizar el manejo de sus productos, reducir pérdidas económicas y mejorar la eficiencia de sus operaciones.
+Con un sistema de gestión de inventario basado en FIFO y FEFO, la empresa podrá optimizar el manejo de sus productos, reducir pérdidas económicas y mejorar la eficiencia de sus operaciones.
