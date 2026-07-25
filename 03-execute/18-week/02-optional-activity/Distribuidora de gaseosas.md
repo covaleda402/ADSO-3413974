@@ -78,3 +78,36 @@ El sistema permitirá:
 # Conclusión
 
 Con un sistema de gestión de inventario basado en FIFO y FEFO, la empresa podrá optimizar el manejo de sus productos, reducir pérdidas económicas y mejorar la eficiencia de sus operaciones.
+
+
+## Glosario
+
+**Inventario:**  
+Conjunto de productos que posee una empresa para su almacenamiento, control y posterior venta.
+
+**Stock:**  
+Cantidad de productos disponibles en el inventario en un momento determinado.
+
+**FIFO (First In, First Out):**  
+Método de gestión de inventario que consiste en vender o utilizar primero los productos que ingresaron antes al almacén, reduciendo el riesgo de vencimiento.
+
+**FEFO (First Expired, First Out):**  
+Método de gestión de inventario que prioriza la salida de los productos con la fecha de vencimiento más cercana, independientemente de cuándo ingresaron al almacén. Es ampliamente utilizado en la industria alimentaria y farmacéutica.
+
+**Rotación de inventario:**  
+Proceso mediante el cual los productos entran y salen del almacén. Una buena rotación evita acumulaciones y reduce pérdidas por vencimiento.
+
+**Sistema de Gestión de Inventario:**  
+Software diseñado para registrar, controlar y supervisar las entradas, salidas y disponibilidad de productos, facilitando la administración del inventario.
+
+**Entrada de inventario:**  
+Registro del ingreso de nuevos productos al almacén.
+
+**Salida de inventario:**  
+Registro de los productos que son vendidos, distribuidos o retirados del almacén.
+
+**Fecha de vencimiento:**  
+Fecha límite hasta la cual un producto puede comercializarse o consumirse de forma segura.
+
+**Cuello de botella:**  
+Punto del proceso que limita el rendimiento general del sistema. En este proyecto corresponde a la gestión inadecuada del inventario, la cual provoca retrasos, desorganización y pérdidas económicas.
