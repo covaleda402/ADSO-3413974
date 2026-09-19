@@ -3,3 +3,9 @@ Url de mis repositorios para revisar actividad asignada
 https://github.com/covaleda402/Asistencia_Sena
 
 https://github.com/covaleda402/Proyecto_Mejorado_Automotriz
+
+URL DE PROYECTOS DEZPLEGADOS
+
+https://proyecto-automotriz-psi.vercel.app/login
+
+https://asistencia-sena-beta.vercel.app/login
