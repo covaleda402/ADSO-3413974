@@ -1,41 +1,53 @@
-## Cronograma
+# Cronograma de Actividades por Semanas (Weeks)
 
-## Cronograma
-
-**Week 2:** Video de desarrollar la estructura de datos y la interfaz de usuario del software
-**VIdeo subido a youtube
-**Week 3:** Manual GitHub
-** como utilizar github y sus comandos
-**Week 4:** Lista de chequeo
-**actividad en la cual analisis de requisitos del sistema y cuestionario supermercado (Lo que se trabajo en equipos)
-**Week 5:** Mapa de procesos
-** infogradfia, que son etc.
-**Week 6:** Instrumentos de recolección
-**infografia y asimilarlo a nuestro proyecto
-**Week 7:** ¿Qué es SRS?
-** tarea y mas informacion sobre eso
-**Week 8:** Instrumentos de recolección con nuestro proyecto **asimilar a nuestro proyeto
-**Week 9:** Actividad supermercado
-**Week 10:** Cronograma
-encargados; Kevin Eduardo y brenda galeano
-**Week 11:** Actividad SRS Supermercado
-**Hacer una sintaxis y infografia de apoyo para rxponer en 3 minutos
-**Week 12:** Que son las TIC
-**Vimos temas y diapositivas de compañeros
-**WeeK 13:** Gestion Horario Instructores
-**powerpoint 5, documento word y mockup
-**WeeK 14:** Implementar documentos de gestion de horarios, adaptarlos a nuestro proyecto
-**WeeK 15:** Trabajo Diagramas UML, .drawie y word
-**Week 16:** Trabajo UML, USE CASE, Dagrama USE CASE y Diagrama de Clases
-**Subir Archivo o Donde hallan echo la actividad de Asistencia a clase SENA
-**Week 17:** Mockup de Asistencia Sena, plazo entrega 11/07/2026 que se dejo el 04/07/2026,se debe entregar, idea replanteada y mejorada de llamado de asistencia, mockup de la pagina replanteada de asistencia y x ultimo presentacion del link que envio
-**Week 18:** Se debe subir el .zip de el proyecto de Asistencia de ambiente el que era de tarea para presentar y el de identificar ya el software y ver que se puede anexar funciones nuevas en pocas palabras, Desing inversa.
-**Week 19:** Se realizo socializacion de los MVP los cuales quedaron pendientes algunos, mas no fue necesaria ningun tipo documentacion que se realizo de acuerdo a cada proyecto de asistencia
-**Week 20:** se dividio el grupo en 2; los de el ejercicio 1 el cuar se vasa en un aeropuerto y el ejercicio 2 el cual se vasa en una clinica venterinatria, las evidencias desarrolladas en clase porfavor subir a week 20.
-**Week 21:** Relaizar MER que dejo jesus ariel, en la tarde se dejo como trabajo realizar una ingenieria inver a; https://code-sena.github.io/design-software-mockup/app/index.html#/ y hacer un .md de aquello.
-**Week 22:** Subir todos los BPMN y archivos asociados a la tarea dejada.
-**Week 23:** se realizo estrategia de pensamiento de conocimientos, ingieneria inversa, plan de contingencia y de gestion de horarios.
-**Week 24:** Se debe subir trabajo de governanza y realizacion de proyecto de Taller de mecanica que dejo jesus ariel el 12 de septiembre.
-**Week 25:** 17-10-2026 se debe realizar la devida subida de documentacion generada el dia de hoy de acuerdo al trabajo entregado del instructor, todo archivo o evidencia generada que cuente como evidencia para esta semana 
-**Week 26:** 7-11-2026, se sube la respectiva escaneo de los apuntes/resumen tomado de los proyectos evaluados y clase en general.
-**Week 27:** 21-11-2026 Se debe cargar los archivos/diapositivas o trabajo que se halla realizado de acuerdo a lo E2E End-two-End. **** Anexar a sus cronogramas porfavor
+- **Week 2:** Video de desarrollar la estructura de datos y la interfaz de usuario del software.
+  - Video subido a YouTube.
+- **Week 3:** Manual GitHub.
+  - Cómo utilizar GitHub y sus comandos.
+- **Week 4:** Lista de chequeo.
+  - Actividad de análisis de requisitos del sistema y cuestionario supermercado (trabajo en equipos).
+- **Week 5:** Mapa de procesos.
+  - Infografía, qué son, etc.
+- **Week 6:** Instrumentos de recolección.
+  - Infografía y asimilarlo a nuestro proyecto.
+- **Week 7:** ¿Qué es SRS?
+  - Tarea y más información sobre eso.
+- **Week 8:** Instrumentos de recolección con nuestro proyecto.
+  - Asimilar a nuestro proyecto.
+- **Week 9:** Actividad supermercado.
+- **Week 10:** Cronograma.
+  - Encargados: Kevin Eduardo y Brenda Galeano.
+- **Week 11:** Actividad SRS Supermercado.
+  - Hacer una síntesis e infografía de apoyo para exponer en 3 minutos.
+- **Week 12:** ¿Qué son las TIC?
+  - Vimos temas y diapositivas de compañeros.
+- **Week 13:** Gestión Horario Instructores.
+  - PowerPoint 5, documento Word y mockup.
+- **Week 14:** Implementar documentos de gestión de horarios.
+  - Adaptarlos a nuestro proyecto.
+- **Week 15:** Trabajo Diagramas UML.
+  - Archivos `.drawio` y Word.
+- **Week 16:** Trabajo UML, Caso de Uso (Use Case), Diagrama Use Case y Diagrama de Clases.
+  - Subir archivo o donde hayan hecho la actividad de Asistencia a clase SENA.
+- **Week 17:** Mockup de Asistencia SENA (plazo entrega 11/07/2026, asignado el 04/07/2026).
+  - Entregables: idea replanteada y mejorada de llamado de asistencia, mockup de la página replanteada de asistencia y presentación del link enviado.
+- **Week 18:** Asistencia de ambiente y diseño inverso.
+  - Subir el `.zip` del proyecto de Asistencia de ambiente (tarea para presentar, identificar software y anexar funciones nuevas - diseño inverso).
+- **Week 19:** Socialización de los MVP.
+  - Socialización de los MVP (algunos quedaron pendientes; no fue necesaria documentación formal de acuerdo a cada proyecto de asistencia).
+- **Week 20:** Ejercicios prácticos divididos (Aeropuerto y Clínica Veterinaria).
+  - Grupo dividido en 2: Ejercicio 1 (Aeropuerto) y Ejercicio 2 (Clínica Veterinaria). Subir evidencias desarrolladas en clase a Week 20.
+- **Week 21:** MER e Ingeniería Inversa.
+  - Realizar MER dejado por Jesús Ariel. En la tarde: realizar ingeniería inversa a `https://code-sena.github.io/design-software-mockup/app/index.html#/` y elaborar archivo `.md`.
+- **Week 22:** BPMN.
+  - Subir todos los BPMN y archivos asociados a la tarea asignada.
+- **Week 23:** Estrategia de pensamiento e ingeniería inversa.
+  - Estrategia de pensamiento de conocimientos, ingeniería inversa, plan de contingencia y gestión de horarios.
+- **Week 24:** Gobernanza y Taller de Mecánica.
+  - Subir trabajo de gobernanza y realización de proyecto de Taller de Mecánica dejado por Jesús Ariel (12 de septiembre).
+- **Week 25:** Documentación generada (17/10/2026).
+  - Subida de la debida documentación generada el día de hoy de acuerdo al trabajo entregado del instructor (archivos o evidencias generadas de la semana).
+- **Week 26:** Escaneo de apuntes y resúmenes (07/11/2026).
+  - Escaneo de los apuntes / resumen tomado de los proyectos evaluados y la clase en general.
+- **Week 27:** Pruebas E2E (End-to-End) (21/11/2026).
+  - Cargar archivos, diapositivas o trabajo realizado de acuerdo a pruebas E2E (End-to-End). Anexar al cronograma.
