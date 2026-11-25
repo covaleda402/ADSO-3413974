@@ -12,7 +12,7 @@ Los actores se modelan en el exterior de la frontera del sistema para garantizar
 1. **Visitante / Consumidor (Actor Primario):** Usuario que recorre el centro comercial San Pedro Plaza; consulta la oferta gastronómica, aplica el filtro de presupuesto y solicita cupones de descuento.
 2. **Locatario / Administrador de Tienda (Actor Primario):** Comerciante que administra el perfil de su establecimiento, sus combos y define promociones u ofertas relámpago.
 3. **Cajero / Validador en Punto de Venta (Actor Primario):** Operador en el mostrador del restaurante que escanea o valida cupones para aplicar el descuento antes del cobro físico.
-4. **Servidor Transaccional / Base de Datos (Actor Secundario):** Componente tecnológico que ejecuta la transacción atómica (`SELECT FOR UPDATE`), valida la hora del servidor y sella la auditoría.
+4. **Administrador del Centro Comercial (San Pedro Plaza - Actor Primario de Gestión):** Gestor del centro comercial encargado de dar de alta los locales de la plazoleta, supervisar las categorías comerciales y auditar las métricas globales de conversión y seguridad en el centro comercial.
 
 ---
 
@@ -83,9 +83,18 @@ Se traza el **100% de los 20 Requerimientos Funcionales (RF)** especificados en 
 
 Para satisfacer la distinción explícita exigida en el Criterio C3 (RAP 592373):
 
-* **Requisitos Funcionales (RF01 - RF20):** Describen las capacidades, comportamientos específicos, cálculos y servicios que el sistema Nuvora debe ejecutar en respuesta a las acciones de los actores (ej. generar un código QR, aplicar una franja horaria, verificar unicidad de redención).
-* **Requisitos No Funcionales (RNF01 - RNF10):** Definen las restricciones de calidad, rendimiento y marco regulatorio bajo las cuales deben operar las funciones:
-  - **RNF01 (Rendimiento):** Tiempo de respuesta en caja $\le$ 1.5 segundos.
-  - **RNF02 y RNF03 (Seguridad):** Hashing con sal para claves y tokens pseudoaleatorios impredecibles para los cupones.
-  - **RNF04 (Integridad):** Transacciones ACID en PostgreSQL con `SELECT FOR UPDATE` para evitar doble canje concurrente.
-  - **RNF09 (Legal):** Cumplimiento de la Ley 1581 de 2012 de Habeas Data en Colombia para la recolección de correos.
+* **Requisitos Funcionales (RF01 - RF20):** Describen las capacidades, comportamientos específicos, cálculos y servicios que el sistema Nuvora debe ejecutar en respuesta a las acciones de los actores (detallados en la matriz anterior).
+* **Requisitos No Funcionales (RNF01 - RNF10):** Definen los atributos de calidad, rendimiento, seguridad y restricciones normativas bajo el estándar internacional **ISO/IEC 25010** que condicionan la operación del software:
+
+| ID | Categoría ISO 25010 | Descripción Técnica del Requisito No Funcional | Métrica / Criterio de Aceptación |
+| :---: | :--- | :--- | :--- |
+| **RNF01** | **Eficiencia de Desempeño (Rendimiento)** | Tiempo de respuesta en la validación transaccional del código QR en el punto de venta de caja. | $\le 1.5$ segundos bajo condiciones de red estándar (4G/Wi-Fi). |
+| **RNF02** | **Seguridad (Confidencialidad)** | Almacenamiento seguro de credenciales de acceso de usuarios y locatarios. | Contraseñas protegidas mediante algoritmo de dispersión irreversible bcrypt con factor de costo $\ge 10$ y sal (*salt*). |
+| **RNF03** | **Seguridad (Autenticidad)** | Generación criptográfica de identificadores de cupones digitales y tokens de sesión. | Tokens de sesión mediante JWT (JSON Web Tokens) firmados con algoritmo HMAC-SHA256 y cupones alfanuméricos con entropía criptográfica pseudoaleatoria. |
+| **RNF04** | **Fiabilidad (Integridad Transaccional)** | Prevención de condiciones de carrera (*race conditions*) y doble canje concurrente de promociones con cupo limitado. | Transacciones ACID implementadas a nivel de motor relacional (PostgreSQL) con bloqueo a nivel de fila (`SELECT ... FOR UPDATE`). |
+| **RNF05** | **Fiabilidad (Disponibilidad)** | Disponibilidad continua del servicio durante las franjas horarias de operación comercial del centro comercial. | $\ge 99.5\%$ de disponibilidad en el horario de 10:00 a. m. a 9:00 p. m. de lunes a domingo. |
+| **RNF06** | **Usabilidad (Operabilidad)** | Interfaz adaptable (*Mobile-First*) optimizada para consumo ágil en pantallas móviles y facilidad de escaneo. | Diseño responsivo testeado en viewports de 360px a 430px y contraste visual WCAG 2.1 nivel AA para visualización del QR en pantalla. |
+| **RNF07** | **Capacidad (Concurrencia)** | Capacidad de soporte de carga en horas pico de almuerzo y cena en la plazoleta de comidas de San Pedro Plaza. | Soporte de hasta 50 peticiones simultáneas por segundo sin degradación de rendimiento. |
+| **RNF08** | **Mantenibilidad (Modularidad)** | Desacoplamiento entre la capa de presentación frontend y los servicios de backend/datos. | Arquitectura basada en API RESTful con contratos de interfaz claros y serialización en formato JSON. |
+| **RNF09** | **Cumplimiento Legal (Privacidad)** | Adherencia a la legislación colombiana vigente en materia de tratamiento de datos personales. | Cumplimiento estricto de la Ley Estatutaria 1581 de 2012 (Habeas Data) en el registro y captura de correos electrónicos. |
+| **RNF10** | **Resiliencia (Recuperabilidad)** | Continuidad operativa del punto de venta en caso de falla en el hardware de captura óptica (cámara/escáner). | Disponibilidad del flujo alterno de digitación manual de código alfanumérico en caja con validación inmediata. |

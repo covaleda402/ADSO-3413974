@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="Antigravity UML Engine">
+  <diagram id="NuvoraCasosUso" name="Diagrama de Casos de Uso - Nuvora">
+    <mxGraphModel dx="1373" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="shape=rect;rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#f8f9fa;strokeColor=#495057;strokeWidth=2;spacingTop=10;dashed=1;" value="Sistema Nuvora — Centro Comercial San Pedro Plaza" vertex="1">
+          <mxGeometry height="730" width="740" x="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=12;" value="Administrador&#xa;(San Pedro Plaza)" vertex="1">
+          <mxGeometry height="90" width="50" x="60" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_locatario" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="Locatario&#xa;(Comercio)" vertex="1">
+          <mxGeometry height="90" width="50" x="1010" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_visitante" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" value="Visitante / Consumidor" vertex="1">
+          <mxGeometry height="90" width="50" x="60" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_cajero" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" value="Cajero / Validador&#xa;(Punto de Venta)" vertex="1">
+          <mxGeometry height="90" width="50" x="1010" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="cu10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2b78e4;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU10: Consultar métricas de&#xa;conversión y auditoría" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cu01" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0066cc;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU01: Consultar catálogo de&#xa;locales y menús" vertex="1">
+          <mxGeometry height="60" width="180" x="260" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cu02" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0066cc;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU02: Filtrar productos por&#xa;presupuesto ($COP)" vertex="1">
+          <mxGeometry height="60" width="180" x="260" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cu03" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0066cc;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU03: Generar cupón digital&#xa;de descuento" vertex="1">
+          <mxGeometry height="60" width="180" x="260" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="cu04" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=1;fontSize=11;" value="CU04: Autenticar usuario&#xa;en la plataforma (JWT)" vertex="1">
+          <mxGeometry height="60" width="180" x="500" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="cu05" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2b78e4;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU05: Gestionar promociones&#xa;del local" vertex="1">
+          <mxGeometry height="60" width="180" x="720" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="cu06" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU06: Parametrizar franjas&#xa;horarias relámpago" vertex="1">
+          <mxGeometry height="60" width="180" x="720" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="cu07" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;strokeWidth=1.5;fontStyle=1;fontSize=11;" value="CU07: Canjear cupón de&#xa;descuento en caja" vertex="1">
+          <mxGeometry height="60" width="180" x="720" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="cu08" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1.5;fontStyle=1;fontSize=11;" value="CU08: Verificar código QR&#xa;criptográfico (ACID)" vertex="1">
+          <mxGeometry height="60" width="180" x="440" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="cu09" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontStyle=0;fontSize=11;" value="CU09: Digitar código de&#xa;cupón manualmente" vertex="1">
+          <mxGeometry height="60" width="180" x="720" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_admin_cu10" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#9673a6;" target="cu10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_l_cu10" edge="1" parent="1" source="actor_locatario" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#82b366;" target="cu10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_l_cu05" edge="1" parent="1" source="actor_locatario" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#82b366;" target="cu05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_v_cu01" edge="1" parent="1" source="actor_visitante" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" target="cu01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_v_cu02" edge="1" parent="1" source="actor_visitante" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" target="cu02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_v_cu03" edge="1" parent="1" source="actor_visitante" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" target="cu03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c_cu07" edge="1" parent="1" source="actor_cajero" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#d79b00;" target="cu07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_inc_03_04" edge="1" parent="1" source="cu03" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#b85450;" target="cu04" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_inc_07_08" edge="1" parent="1" source="cu07" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#b85450;" target="cu08" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ext_06_05" edge="1" parent="1" source="cu06" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#82b366;" target="cu05" value="«extend»&#xa;[Oferta relámpago]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ext_09_07" edge="1" parent="1" source="cu09" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#82b366;" target="cu07" value="«extend»&#xa;[Falla lectura cámara]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

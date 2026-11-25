@@ -2,7 +2,7 @@
 ## Plan de Análisis y Casos de Uso · Proyecto Nuvora
 
 Ruta oficial en el repositorio:  
-`02-training-project/01-phase/01-analysis/03-conceptual-model/04-evidence-learning/G1-P1-nuvora/`
+`02-training-project/01-phase/01-analysis/03-conceptual-model/04-evidence-learning/G1-P1-covaleda/`
 
 ---
 
@@ -29,9 +29,9 @@ Ruta oficial en el repositorio:
 
 | # | Artefacto | Qué cambié y por qué | Criterio de Rúbrica que Mejora | Enlace al commit |
 | :---: | :--- | :--- | :--- | :--- |
-| **1** | **Delimitación de Alcance y Definición de Nuvora** | Se acotó la visión del proyecto: de un marketplace comercial disperso hacia un ecosistema cerrado para la plazoleta de comidas de San Pedro Plaza, eliminando pasarelas de pago online y domicilios externos para centrar la ingeniería en cupones QR y validación transaccional inmediata en punto de venta. | Criterio C1 (RAP 592375): Caracterización precisa y estabilidad de requisitos. | Commit de entrega G1-P1 (`covaleda402`) |
-| **2** | **Diagrama de Casos de Uso UML** | Se estructuraron 10 casos de uso bajo estándar formal (*Verbo + Objeto*), delimitando la frontera del sistema con 3 actores primarios en el exterior y modelando relaciones `«include»` y `«extend»` con justificación técnica y dirección de flechas normada. | Criterio C4 (RAP 592373): Notación UML estandarizada y justificación de relaciones. | Commit de entrega G1-P1 (`covaleda402`) |
-| **3** | **Selección Metodológica y Plan de Análisis** | Se formuló una comparativa formal entre RUP, XP y Scrum bajo los 4 parámetros del caso de estudio, seleccionando Scrum bajo iteraciones continuas de 2 semanas y estructurando un cronograma de 8 actividades de análisis priorizadas. | Criterios C1 y C2 (RAP 592375): Metodología justificada y plan de análisis coherente. | Commit de entrega G1-P1 (`covaleda402`) |
+| **1** | **Delimitación de Alcance y Definición de Nuvora** | Se acotó la visión del proyecto: de un marketplace comercial disperso hacia un ecosistema cerrado para la plazoleta de comidas de San Pedro Plaza, eliminando pasarelas de pago online y domicilios externos para centrar la ingeniería en cupones QR y validación transaccional inmediata en punto de venta. | Criterio C1 (RAP 592375): Caracterización precisa y estabilidad de requisitos. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
+| **2** | **Diagrama de Casos de Uso UML** | Se estructuraron 10 casos de uso bajo estándar formal (*Verbo + Objeto*), delimitando la frontera del sistema con 4 actores de negocio en el exterior y modelando relaciones `«include»` y `«extend»` con justificación técnica y dirección de flechas normada. | Criterio C4 (RAP 592373): Notación UML estandarizada y justificación de relaciones. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
+| **3** | **Selección Metodológica y Plan de Análisis** | Se formuló una comparativa formal entre RUP, XP y Scrum bajo los 4 parámetros del caso de estudio, seleccionando Scrum bajo iteraciones continuas de 2 semanas y estructurando un cronograma de 8 actividades de análisis priorizadas dentro del marco oficial. | Criterios C1 y C2 (RAP 592375): Metodología justificada y plan de análisis coherente. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
 
 ---
 
@@ -46,12 +46,12 @@ Ruta oficial en el repositorio:
 
 ## 5. Artefactos Entregados (Enlaces Relativos)
 
-- [x] **Caracterización de la solución:** [01-caracterizacion-y-metodologia.md](./01-caracterizacion-y-metodologia.md#1-caracterización-de-la-solución-de-software)
-- [x] **Comparación de metodologías y selección justificada:** [01-caracterizacion-y-metodologia.md](./01-caracterizacion-y-metodologia.md#2-comparación-de-metodologías-de-desarrollo-de-software)
+- [x] **Caracterización de la solución:** [01-caracterizacion-y-metodologia.md](./01-caracterizacion-y-metodologia.md)
+- [x] **Comparación de metodologías y selección justificada:** [01-caracterizacion-y-metodologia.md](./01-caracterizacion-y-metodologia.md)
 - [x] **Plan de actividades, cronograma y entregables:** [02-plan-actividades-analisis.md](./02-plan-actividades-analisis.md)
 - [x] **Diagrama de casos de uso (fuente editable):** [03-diagrama-casos-de-uso.drawio](./03-diagrama-casos-de-uso.drawio)
 - [x] **Diagrama de casos de uso (imagen vectorial):** [03-diagrama-casos-de-uso.svg](./03-diagrama-casos-de-uso.svg)
-- [x] **Matriz requisito → caso de uso (100% de cobertura):** [04-matriz-requisito-caso-uso.md](./04-matriz-requisito-caso-uso.md#4-matriz-de-trazabilidad-requisito--caso-de-uso)
+- [x] **Matriz requisito → caso de uso (100% de cobertura):** [04-matriz-requisito-caso-uso.md](./04-matriz-requisito-caso-uso.md)
 
 ---
 
@@ -62,7 +62,7 @@ Ruta oficial en el repositorio:
 - [x] Entiendo que el sábado 28 de noviembre de 2026 el instructor me hará **3 preguntas orales** sobre mis productos (una del producto 1, una del producto 2 y una tercera a su elección) y que, si respondo bien menos de 2, el producto sobre el que fallé queda con tope de 50.
 
 **Firma (usuario de GitHub y fecha):**  
-`covaleda402` · 23 de noviembre de 2026
+`covaleda402` · 25 de noviembre de 2026
 
 ---
 
