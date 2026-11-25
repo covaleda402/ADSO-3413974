@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 980" width="1280" height="980" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Marcadores Pata de Gallo (Crow's Foot) -->
+    <!-- Uno obligatorio (||) -->
+    <marker id="cf-one" viewBox="0 0 20 20" refX="15" refY="10" markerWidth="14" markerHeight="14" orient="auto">
+      <line x1="8" y1="2" x2="8" y2="18" stroke="#334155" stroke-width="2"/>
+      <line x1="14" y1="2" x2="14" y2="18" stroke="#334155" stroke-width="2"/>
+    </marker>
+
+    <!-- Muchos opcional (o<) -->
+    <marker id="cf-zero-many" viewBox="0 0 24 20" refX="22" refY="10" markerWidth="16" markerHeight="14" orient="auto">
+      <circle cx="6" cy="10" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+      <path d="M 12 2 L 22 10 L 12 18" fill="none" stroke="#334155" stroke-width="2"/>
+      <line x1="12" y1="10" x2="22" y2="10" stroke="#334155" stroke-width="1.5"/>
+    </marker>
+
+    <!-- Muchos obligatorio (|<) -->
+    <marker id="cf-one-many" viewBox="0 0 24 20" refX="22" refY="10" markerWidth="16" markerHeight="14" orient="auto">
+      <line x1="6" y1="2" x2="6" y2="18" stroke="#334155" stroke-width="2"/>
+      <path d="M 12 2 L 22 10 L 12 18" fill="none" stroke="#334155" stroke-width="2"/>
+      <line x1="12" y1="10" x2="22" y2="10" stroke="#334155" stroke-width="1.5"/>
+    </marker>
+
+    <!-- Uno opcional (o|) -->
+    <marker id="cf-zero-one" viewBox="0 0 20 20" refX="16" refY="10" markerWidth="14" markerHeight="14" orient="auto">
+      <circle cx="6" cy="10" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+      <line x1="14" y1="2" x2="14" y2="18" stroke="#334155" stroke-width="2"/>
+    </marker>
+
+    <filter id="erd-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- ENCABEZADO -->
+  <rect x="20" y="20" width="1240" height="65" rx="8" fill="#1e293b"/>
+  <text x="45" y="48" fill="#ffffff" font-size="18" font-weight="bold">NUVORA · MODELO ENTIDAD-RELACIÓN EXTENDIDO (NOTACIÓN PATA DE GALLO / CROW'S FOOT)</text>
+  <text x="45" y="70" fill="#94a3b8" font-size="12">Centro Comercial San Pedro Plaza · Entidad Débil (FRANJA_HORARIA), Entidad Asociativa N:M (CUPON) · Rúbrica G1 C4 · Autor: covaleda402</text>
+
+  <!-- ENTIDAD 1: USUARIO -->
+  <g id="ent_usuario" transform="translate(50, 110)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="280" height="28" rx="6" fill="#0f172a"/>
+    <rect x="0" y="28" width="280" height="180" rx="0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="140" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">USUARIO</text>
+    <rect x="0" y="28" width="280" height="26" fill="#f1f5f9"/>
+    <text x="12" y="45" fill="#0f172a" font-size="11" font-weight="bold">PK  id_usuario : BIGSERIAL</text>
+    <line x1="0" y1="54" x2="280" y2="54" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="72" fill="#334155" font-size="11">    nombre_completo : VARCHAR(150)</text>
+    <text x="12" y="90" fill="#334155" font-size="11">    correo : VARCHAR(150) [UNIQUE]</text>
+    <text x="12" y="108" fill="#334155" font-size="11">    telefono : VARCHAR(20)</text>
+    <text x="12" y="126" fill="#334155" font-size="11">    tipo_rol : ENUM('VISITANTE','LOCATARIO')</text>
+    <text x="12" y="144" fill="#334155" font-size="11">    hash_password : VARCHAR(255)</text>
+    <text x="12" y="162" fill="#334155" font-size="11">    fecha_registro : TIMESTAMPTZ</text>
+    <text x="12" y="180" fill="#334155" font-size="11">    estado_cuenta : VARCHAR(20)</text>
+  </g>
+
+  <!-- ENTIDAD 2: LOCAL_COMERCIAL -->
+  <g id="ent_local" transform="translate(490, 110)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#0284c7"/>
+    <rect x="0" y="28" width="290" height="180" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="145" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">LOCAL_COMERCIAL</text>
+    <rect x="0" y="28" width="290" height="26" fill="#f0f9ff"/>
+    <text x="12" y="45" fill="#0284c7" font-size="11" font-weight="bold">PK  id_local : SERIAL</text>
+    <line x1="0" y1="54" x2="290" y2="54" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="72" fill="#0284c7" font-size="11" font-style="italic">FK  id_usuario_responsable : BIGINT</text>
+    <text x="12" y="90" fill="#334155" font-size="11">    numero_local : VARCHAR(10) [UNIQUE]</text>
+    <text x="12" y="108" fill="#334155" font-size="11">    razon_social : VARCHAR(150)</text>
+    <text x="12" y="126" fill="#334155" font-size="11">    categoria : VARCHAR(50)</text>
+    <text x="12" y="144" fill="#334155" font-size="11">    descripcion : TEXT</text>
+    <text x="12" y="162" fill="#334155" font-size="11">    telefono_contacto : VARCHAR(20)</text>
+    <text x="12" y="180" fill="#334155" font-size="11">    estado_operativo : VARCHAR(20)</text>
+  </g>
+
+  <!-- RELACIÓN: USUARIO (1,1) --- (0,N) LOCAL_COMERCIAL -->
+  <line x1="330" y1="180" x2="490" y2="180" stroke="#334155" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-many)"/>
+  <text x="410" y="172" text-anchor="middle" fill="#475569" font-size="10" font-weight="bold">administra</text>
+
+  <!-- ENTIDAD 3: PRODUCTO -->
+  <g id="ent_producto" transform="translate(930, 110)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="280" height="28" rx="6" fill="#0284c7"/>
+    <rect x="0" y="28" width="280" height="160" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="140" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">PRODUCTO</text>
+    <rect x="0" y="28" width="280" height="26" fill="#f0f9ff"/>
+    <text x="12" y="45" fill="#0284c7" font-size="11" font-weight="bold">PK  id_producto : BIGSERIAL</text>
+    <line x1="0" y1="54" x2="280" y2="54" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="72" fill="#0284c7" font-size="11" font-style="italic">FK  id_local : INT</text>
+    <text x="12" y="90" fill="#334155" font-size="11">    nombre : VARCHAR(120)</text>
+    <text x="12" y="108" fill="#334155" font-size="11">    descripcion : TEXT</text>
+    <text x="12" y="126" fill="#334155" font-size="11">    precio_base : NUMERIC(12,2)</text>
+    <text x="12" y="144" fill="#334155" font-size="11">    categoria_menu : VARCHAR(50)</text>
+    <text x="12" y="162" fill="#334155" font-size="11">    disponible : BOOLEAN</text>
+  </g>
+
+  <!-- RELACIÓN: LOCAL_COMERCIAL (1,1) --- (1,N) PRODUCTO -->
+  <line x1="780" y1="180" x2="930" y2="180" stroke="#334155" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-one-many)"/>
+  <text x="855" y="172" text-anchor="middle" fill="#475569" font-size="10" font-weight="bold">ofrece</text>
+
+  <!-- ENTIDAD 4: PROMOCION -->
+  <g id="ent_promocion" transform="translate(490, 420)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#16a34a"/>
+    <rect x="0" y="28" width="290" height="200" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="145" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">PROMOCION</text>
+    <rect x="0" y="28" width="290" height="26" fill="#f0fdf4"/>
+    <text x="12" y="45" fill="#16a34a" font-size="11" font-weight="bold">PK  id_promocion : BIGSERIAL</text>
+    <line x1="0" y1="54" x2="290" y2="54" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="12" y="72" fill="#16a34a" font-size="11" font-style="italic">FK  id_local : INT</text>
+    <text x="12" y="90" fill="#334155" font-size="11">    titulo_oferta : VARCHAR(150)</text>
+    <text x="12" y="108" fill="#334155" font-size="11">    porcentaje_descuento : NUMERIC(5,2)</text>
+    <text x="12" y="126" fill="#334155" font-size="11">    stock_total : INT</text>
+    <text x="12" y="144" fill="#334155" font-size="11">    stock_disponible : INT</text>
+    <text x="12" y="162" fill="#334155" font-size="11">    fecha_inicio : TIMESTAMPTZ</text>
+    <text x="12" y="180" fill="#334155" font-size="11">    fecha_fin : TIMESTAMPTZ</text>
+    <text x="12" y="198" fill="#334155" font-size="11">    estado_campana : VARCHAR(20)</text>
+  </g>
+
+  <!-- RELACIÓN: LOCAL_COMERCIAL (1,1) --- (0,N) PROMOCION -->
+  <line x1="635" y1="318" x2="635" y2="420" stroke="#334155" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-many)"/>
+  <text x="645" y="375" fill="#475569" font-size="10" font-weight="bold">publica</text>
+
+  <!-- ENTIDAD 5: FRANJA_HORARIA (ENTIDAD DÉBIL) -->
+  <g id="ent_franja" transform="translate(930, 430)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#d97706"/>
+    <rect x="0" y="28" width="290" height="175" rx="0" fill="#fffbeb" stroke="#d97706" stroke-width="2" stroke-dasharray="5 3"/>
+    <text x="145" y="18" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">&lt;&lt;weak&gt;&gt; FRANJA_HORARIA</text>
+    <rect x="0" y="28" width="290" height="60" fill="#fef3c7"/>
+    <text x="12" y="45" fill="#b45309" font-size="11" font-weight="bold">PK, FK  id_promocion : BIGINT</text>
+    <text x="12" y="62" fill="#b45309" font-size="11" font-weight="bold">PK      dia_semana : SMALLINT [1..7]</text>
+    <text x="12" y="79" fill="#b45309" font-size="11" font-weight="bold">PK      hora_inicio : TIME</text>
+    <line x1="0" y1="88" x2="290" y2="88" stroke="#fcd34d" stroke-width="1"/>
+    <text x="12" y="108" fill="#78350f" font-size="11">        hora_fin : TIME</text>
+    <text x="12" y="126" fill="#78350f" font-size="11">        aplica_festivos : BOOLEAN</text>
+    <text x="12" y="144" fill="#78350f" font-size="11">        cupo_maximo_franja : INT</text>
+    <text x="12" y="170" fill="#92400e" font-size="10" font-style="italic">Dependencia de Existencia e ID</text>
+  </g>
+
+  <!-- RELACIÓN IDENTIFICADORA: PROMOCION (1,1) === (1,N) FRANJA_HORARIA -->
+  <line x1="780" y1="510" x2="930" y2="510" stroke="#d97706" stroke-width="2" marker-start="url(#cf-one)" marker-end="url(#cf-one-many)"/>
+  <text x="855" y="500" text-anchor="middle" fill="#b45309" font-size="10" font-weight="bold">restringida por</text>
+
+  <!-- ENTIDAD 6: CUPON (ENTIDAD ASOCIATIVA N:M) -->
+  <g id="ent_cupon" transform="translate(50, 420)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#16a34a"/>
+    <rect x="0" y="28" width="290" height="210" rx="0" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="145" y="18" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">&lt;&lt;associative&gt;&gt; CUPON</text>
+    <rect x="0" y="28" width="290" height="26" fill="#dcfce7"/>
+    <text x="12" y="45" fill="#15803d" font-size="11" font-weight="bold">PK  id_cupon : BIGSERIAL</text>
+    <line x1="0" y1="54" x2="290" y2="54" stroke="#86efac" stroke-width="1"/>
+    <text x="12" y="72" fill="#15803d" font-size="11" font-style="italic">FK  id_usuario_visitante : BIGINT</text>
+    <text x="12" y="90" fill="#15803d" font-size="11" font-style="italic">FK  id_promocion : BIGINT</text>
+    <text x="12" y="108" fill="#14532d" font-size="11">    codigo_alfanumerico : VARCHAR(8) [UQ]</text>
+    <text x="12" y="126" fill="#14532d" font-size="11">    token_dinamico_hash : VARCHAR(255)</text>
+    <text x="12" y="144" fill="#14532d" font-size="11">    estado_canje : ENUM('ACTIVO',...)</text>
+    <text x="12" y="162" fill="#14532d" font-size="11">    fecha_generacion : TIMESTAMPTZ</text>
+    <text x="12" y="180" fill="#14532d" font-size="11">    fecha_expiracion : TIMESTAMPTZ</text>
+    <text x="12" y="202" fill="#15803d" font-size="10" font-weight="bold">Resuelve N:M Usuario-Promoción</text>
+  </g>
+
+  <!-- RELACIÓN: USUARIO (1,1) --- (0,N) CUPON -->
+  <line x1="190" y1="318" x2="190" y2="420" stroke="#16a34a" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-many)"/>
+  <text x="200" y="375" fill="#15803d" font-size="10" font-weight="bold">adquiere</text>
+
+  <!-- RELACIÓN: PROMOCION (1,1) --- (0,N) CUPON -->
+  <line x1="490" y1="520" x2="340" y2="520" stroke="#16a34a" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-many)"/>
+  <text x="415" y="512" text-anchor="middle" fill="#15803d" font-size="10" font-weight="bold">emite</text>
+
+  <!-- ENTIDAD 7: BITACORA_CANJE (AUDITORÍA TRANSACCIONAL) -->
+  <g id="ent_bitacora" transform="translate(300, 710)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="320" height="28" rx="6" fill="#dc2626"/>
+    <rect x="0" y="28" width="320" height="200" rx="0" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="160" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">BITACORA_CANJE</text>
+    <rect x="0" y="28" width="320" height="26" fill="#fee2e2"/>
+    <text x="12" y="45" fill="#b91c1c" font-size="11" font-weight="bold">PK  id_canje : BIGSERIAL</text>
+    <line x1="0" y1="54" x2="320" y2="54" stroke="#fca5a5" stroke-width="1"/>
+    <text x="12" y="72" fill="#b91c1c" font-size="11" font-style="italic">FK  id_cupon : BIGINT [UNIQUE / 1 a 1]</text>
+    <text x="12" y="90" fill="#b91c1c" font-size="11" font-style="italic">FK  id_usuario_cajero : BIGINT</text>
+    <text x="12" y="108" fill="#b91c1c" font-size="11" font-style="italic">FK  id_local : INT</text>
+    <text x="12" y="126" fill="#334155" font-size="11">    fecha_hora_canje : TIMESTAMPTZ</text>
+    <text x="12" y="144" fill="#334155" font-size="11">    monto_descuento_aplicado : NUMERIC(10,2)</text>
+    <text x="12" y="162" fill="#334155" font-size="11">    numero_factura_pos : VARCHAR(50)</text>
+    <text x="12" y="180" fill="#334155" font-size="11">    ip_origen : VARCHAR(45)</text>
+    <text x="12" y="198" fill="#334155" font-size="11">    firma_hash_transaccion : VARCHAR(255)</text>
+  </g>
+
+  <!-- RELACIÓN: CUPON (1,1) --- (0,1) BITACORA_CANJE -->
+  <path d="M 195 658 L 195 780 L 300 780" fill="none" stroke="#dc2626" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-one)"/>
+  <text x="210" y="740" fill="#b91c1c" font-size="10" font-weight="bold">se registra en</text>
+
+  <!-- RELACIÓN: USUARIO (CAJERO) (1,1) --- (0,N) BITACORA_CANJE -->
+  <path d="M 50 200 L 25 200 L 25 840 L 300 840" fill="none" stroke="#334155" stroke-width="1.5" marker-start="url(#cf-one)" marker-end="url(#cf-zero-many)"/>
+  <text x="35" y="830" fill="#475569" font-size="10" font-weight="bold">valida y firma</text>
+
+  <!-- RECUADRO DE CONVENCIONES Y NOTACIÓN CROW'S FOOT -->
+  <g transform="translate(670, 710)" filter="url(#erd-shadow)">
+    <rect x="0" y="0" width="550" height="200" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="15" y="24" fill="#0f172a" font-size="12" font-weight="bold">Convenciones Técnicas del Modelo Relacional (Rúbrica G1 · C4):</text>
+    <text x="15" y="48" fill="#334155" font-size="11">▪ Notación Declarada: Pata de Gallo (Crow's Foot) extendida con tipos de datos ANSI SQL.</text>
+    <text x="15" y="68" fill="#334155" font-size="11">▪ Resolución N:M: Entidad asociativa CUPON con atributos propios (código, fechas, estado).</text>
+    <text x="15" y="88" fill="#334155" font-size="11">▪ Entidad Débil: FRANJA_HORARIA depende en ID y existencia de PROMOCION (PK compuesta).</text>
+    <text x="15" y="108" fill="#334155" font-size="11">▪ Integridad Transaccional: BITACORA_CANJE garantiza auditoría estricta e irrepudiabilidad.</text>
+    <text x="15" y="130" fill="#475569" font-size="10" font-weight="bold">Símbolos de Cardinalidad:</text>
+    <text x="15" y="150" fill="#64748b" font-size="10">||  Uno y solo uno (Obligatorio)</text>
+    <text x="200" y="150" fill="#64748b" font-size="10">o|  Cero o uno (Opcional)</text>
+    <text x="15" y="170" fill="#64748b" font-size="10">|&lt;  Uno o muchos (Obligatorio)</text>
+    <text x="200" y="170" fill="#64748b" font-size="10">o&lt;  Cero o muchos (Opcional)</text>
+  </g>
+</svg>

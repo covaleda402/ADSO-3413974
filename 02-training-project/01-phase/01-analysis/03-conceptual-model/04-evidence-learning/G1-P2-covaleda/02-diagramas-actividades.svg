@@ -1,0 +1,368 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 2250" width="1400" height="2250" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Marcadores de flecha -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626" />
+    </marker>
+
+    <!-- Sombras -->
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- ========================================================================= -->
+  <!-- ENCABEZADO GENERAL DEL DOCUMENTO DE DIAGRAMAS                             -->
+  <!-- ========================================================================= -->
+  <rect x="20" y="20" width="1360" height="70" rx="8" fill="#1e293b" />
+  <text x="50" y="52" fill="#ffffff" font-size="20" font-weight="bold">NUVORA · DIAGRAMAS DE ACTIVIDADES UML (CASOS DE USO CRÍTICOS)</text>
+  <text x="50" y="75" fill="#94a3b8" font-size="13">Centro Comercial San Pedro Plaza · Ficha ADSO 3413974 · Autor: covaleda402 · Rúbrica G1 C1</text>
+
+  <!-- ========================================================================= -->
+  <!-- DIAGRAMA 1: CU07 - CANJEAR CUPÓN DE DESCUENTO EN CAJA (PUNTO DE VENTA)    -->
+  <!-- ========================================================================= -->
+  <g id="diagrama_cu07" transform="translate(0, 110)">
+    <!-- Título Diagrama 1 -->
+    <rect x="20" y="0" width="1360" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="40" y="25" fill="#0f172a" font-size="15" font-weight="bold">DIAGRAMA 1 · CU07: CANJEAR CUPÓN DE DESCUENTO EN CAJA (POS)</text>
+    <text x="750" y="25" fill="#64748b" font-size="12">Patrón: Transacción Concurrente Puntos de Venta (ACID) · Calles: Cliente, Cajero, Nuvora Core</text>
+
+    <!-- Marco general de las calles (Pool) -->
+    <rect x="20" y="50" width="1360" height="980" fill="#f8fafc" stroke="#475569" stroke-width="1.5" rx="8"/>
+
+    <!-- Cabeceras de calles (Swimlanes) -->
+    <!-- Calle 1: Cliente / Consumidor -->
+    <rect x="20" y="50" width="400" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="140" y="75" fill="#1e293b" font-size="13" font-weight="bold">Cliente / Visitante</text>
+    <line x1="420" y1="50" x2="420" y2="1030" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Calle 2: Cajero / Validador en Caja -->
+    <rect x="420" y="50" width="420" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="550" y="75" fill="#1e293b" font-size="13" font-weight="bold">Cajero / Validador POS</text>
+    <line x1="840" y1="50" x2="840" y2="1030" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Calle 3: Sistema Nuvora Core & BD -->
+    <rect x="840" y="50" width="540" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="1010" y="75" fill="#1e293b" font-size="13" font-weight="bold">Sistema Nuvora Core &amp; Base de Datos</text>
+
+    <!-- INICIO (Cajero en caja inicia proceso al cobrar) -->
+    <circle cx="630" cy="120" r="12" fill="#0f172a" stroke="#0f172a" stroke-width="2"/>
+    <text x="655" y="125" fill="#0f172a" font-size="11" font-weight="bold">Inicio [Cajero inicia cobro]</text>
+
+    <!-- Conector Inicio -> Solicita cupón -->
+    <line x1="630" y1="132" x2="630" y2="160" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Actividad: Cajero pregunta si tiene cupón -->
+    <rect x="525" y="160" width="210" height="44" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="630" y="178" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Pregunta por cupón digital</text>
+    <text x="630" y="194" text-anchor="middle" fill="#64748b" font-size="10">y activa escáner POS</text>
+
+    <!-- Conector Cajero -> Cliente presenta QR -->
+    <path d="M 525 182 L 220 182 L 220 220" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Actividad: Cliente presenta QR -->
+    <rect x="115" y="220" width="210" height="44" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="220" y="238" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Presenta código QR dinámico</text>
+    <text x="220" y="254" text-anchor="middle" fill="#64748b" font-size="10">desde la pantalla de su móvil</text>
+
+    <!-- Conector Cliente -> Cajero escanea -->
+    <path d="M 220 264 L 220 290 L 630 290 L 630 310" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Decisión: ¿Lectura QR Exitosa? -->
+    <polygon points="630,310 670,335 630,360 590,335" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="630" y="380" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿QR Legible?</text>
+
+    <!-- Rama QR Ilegible [Flujo Alterno 1a: Entrada Manual] -->
+    <path d="M 590 335 L 450 335 L 450 400" fill="none" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="420" y="340" width="90" height="18" rx="3" fill="#fffbeb" stroke="#fcd34d" stroke-width="0.5"/>
+    <text x="465" y="353" text-anchor="middle" fill="#b45309" font-size="9" font-weight="bold">[QR Ilegible]</text>
+
+    <rect x="345" y="400" width="210" height="44" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="450" y="418" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Flujo Alt. 1a: Digita código</text>
+    <text x="450" y="434" text-anchor="middle" fill="#64748b" font-size="10">alfanumérico de 8 caracteres</text>
+
+    <!-- Rama QR Legible -->
+    <line x1="670" y1="335" x2="720" y2="335" stroke="#16a34a" stroke-width="1.5"/>
+    <rect x="670" y="315" width="85" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="712" y="328" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[QR Legible]</text>
+
+    <!-- Unión hacia validación en Nuvora Core -->
+    <path d="M 450 444 L 450 470 L 720 470 L 720 335 L 1110 335 L 1110 360" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Actividad Nuvora: Desencripta y busca en BD -->
+    <rect x="990" y="360" width="240" height="48" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1110" y="380" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Desencripta Token JWT/QR</text>
+    <text x="1110" y="396" text-anchor="middle" fill="#64748b" font-size="10">y consulta estado en BD</text>
+
+    <!-- Conector Nuvora a Decisión de Validez -->
+    <line x1="1110" y1="408" x2="1110" y2="440" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Decisión: ¿Cupón Válido y Vigente? -->
+    <polygon points="1110,440 1150,465 1110,490 1070,465" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="1110" y="510" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Vigente y Activo?</text>
+
+    <!-- Rama Inválido/Expirado [Excepción 4a] -->
+    <path d="M 1150 465 L 1260 465 L 1260 530" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <rect x="1155" y="445" width="95" height="18" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.5"/>
+    <text x="1202" y="458" text-anchor="middle" fill="#b91c1c" font-size="9" font-weight="bold">[Expirado/Inválido]</text>
+
+    <rect x="1170" y="530" width="180" height="44" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1260" y="548" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="600">Excepción 4a: Notifica</text>
+    <text x="1260" y="564" text-anchor="middle" fill="#64748b" font-size="10">Cupón Vencido / No Existe</text>
+
+    <!-- Fin Excepción 4a -->
+    <path d="M 1260 574 L 1260 600" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <circle cx="1260" cy="615" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="1260" cy="615" r="6" fill="#dc2626"/>
+
+    <!-- Rama Válido -->
+    <line x1="1110" y1="490" x2="1110" y2="530" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <rect x="1115" y="495" width="85" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="1157" y="508" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[Válido y Activo]</text>
+
+    <!-- Decisión: ¿Horario y Local Comercial Coinciden? -->
+    <polygon points="1110,530 1150,555 1110,580 1070,555" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="1110" y="600" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Local y Franja OK?</text>
+
+    <!-- Rama Fuera de Franja [Excepción 4b] -->
+    <path d="M 1070 555 L 940 555 L 940 620" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <rect x="945" y="535" width="115" height="18" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.5"/>
+    <text x="1002" y="548" text-anchor="middle" fill="#b91c1c" font-size="9" font-weight="bold">[Fuera de Franja / Local]</text>
+
+    <rect x="850" y="620" width="180" height="44" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="940" y="638" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="600">Excepción 4b: Alerta</text>
+    <text x="940" y="654" text-anchor="middle" fill="#64748b" font-size="10">Restricción de Horario/Comercio</text>
+
+    <path d="M 940 664 L 940 690" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <circle cx="940" cy="705" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="940" cy="705" r="6" fill="#dc2626"/>
+
+    <!-- Rama Horario y Local Correctos -->
+    <line x1="1110" y1="580" x2="1110" y2="620" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <rect x="1115" y="585" width="75" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="1152" y="598" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[Franja OK]</text>
+
+    <!-- Transacción Atómica ACID y Bloqueo de Fila -->
+    <rect x="990" y="620" width="240" height="48" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1110" y="638" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Inicia Tx Atómica ACID</text>
+    <text x="1110" y="654" text-anchor="middle" fill="#64748b" font-size="10">SELECT FOR UPDATE (Bloqueo Fila)</text>
+
+    <line x1="1110" y1="668" x2="1110" y2="700" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Decisión: ¿Bloqueo Exitoso y No Canjeado? -->
+    <polygon points="1110,700 1150,725 1110,750 1070,725" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="1110" y="770" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Estado = ACTIVO?</text>
+
+    <!-- Rama Ya Canjeado en Colisión [Excepción 6a] -->
+    <path d="M 1150 725 L 1260 725 L 1260 780" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <rect x="1155" y="705" width="105" height="18" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.5"/>
+    <text x="1207" y="718" text-anchor="middle" fill="#b91c1c" font-size="9" font-weight="bold">[Ya Canjeado/Race]</text>
+
+    <rect x="1170" y="780" width="180" height="44" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1260" y="798" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="600">Excepción 6a: Rollback</text>
+    <text x="1260" y="814" text-anchor="middle" fill="#64748b" font-size="10">Alerta de Fraude / Duplicado</text>
+
+    <path d="M 1260 824 L 1260 850" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <circle cx="1260" cy="865" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="1260" cy="865" r="6" fill="#dc2626"/>
+
+    <!-- Rama Canje Exitoso: Commit BD -->
+    <line x1="1110" y1="750" x2="1110" y2="780" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <rect x="1115" y="755" width="85" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="1157" y="768" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[ACTIVO y Lock OK]</text>
+
+    <rect x="990" y="780" width="240" height="48" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1110" y="798" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Actualiza Estado a CANJEADO</text>
+    <text x="1110" y="814" text-anchor="middle" fill="#64748b" font-size="10">Inserta en Bitácora y emite COMMIT</text>
+
+    <!-- Conector Nuvora a Cajero: Aplica descuento -->
+    <path d="M 990 804 L 740 804 L 740 840" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+    <rect x="525" y="840" width="220" height="48" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="635" y="858" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Visualiza aprobación en POS</text>
+    <text x="635" y="874" text-anchor="middle" fill="#64748b" font-size="10">aplica descuento y entrega recibo</text>
+
+    <!-- Conector Cajero a Cliente: Paga saldo restante -->
+    <path d="M 525 864 L 325 864" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="115" y="840" width="210" height="48" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="220" y="858" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Verifica descuento aplicado</text>
+    <text x="220" y="874" text-anchor="middle" fill="#64748b" font-size="10">y abona el valor final de la compra</text>
+
+    <!-- Fin Exitoso CU07 -->
+    <line x1="220" y1="888" x2="220" y2="920" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <circle cx="220" cy="935" r="12" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <circle cx="220" cy="935" r="7" fill="#16a34a"/>
+    <text x="220" y="965" text-anchor="middle" fill="#15803d" font-size="10" font-weight="bold">Fin [Canje Exitoso]</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- DIAGRAMA 2: CU03 - GENERAR CUPÓN DE DESCUENTO (CONCURRENCIA FORK/JOIN)    -->
+  <!-- ========================================================================= -->
+  <g id="diagrama_cu03" transform="translate(0, 1140)">
+    <!-- Título Diagrama 2 -->
+    <rect x="20" y="0" width="1360" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="40" y="25" fill="#0f172a" font-size="15" font-weight="bold">DIAGRAMA 2 · CU03: GENERAR CUPÓN PROMOCIONAL (CONCURRENCIA FORK / JOIN)</text>
+    <text x="750" y="25" fill="#64748b" font-size="12">Patrón: Generación Segura de Token &amp; Bloqueo Pesimista en Paralelo · Calles: Visitante, API Backend, Base de Datos</text>
+
+    <!-- Marco general de las calles (Pool) -->
+    <rect x="20" y="50" width="1360" height="1030" fill="#f8fafc" stroke="#475569" stroke-width="1.5" rx="8"/>
+
+    <!-- Cabeceras de calles (Swimlanes) -->
+    <!-- Calle 1: Visitante / Consumidor -->
+    <rect x="20" y="50" width="400" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="140" y="75" fill="#1e293b" font-size="13" font-weight="bold">Visitante / Consumidor</text>
+    <line x1="420" y1="50" x2="420" y2="1080" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Calle 2: Sistema Nuvora API / Backend -->
+    <rect x="420" y="50" width="460" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="590" y="75" fill="#1e293b" font-size="13" font-weight="bold">Nuvora API Gateway &amp; Backend</text>
+    <line x1="880" y1="50" x2="880" y2="1080" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Calle 3: Base de Datos Relacional -->
+    <rect x="880" y="50" width="500" height="40" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="1060" y="75" fill="#1e293b" font-size="13" font-weight="bold">Base de Datos PostgreSQL (ACID)</text>
+
+    <!-- INICIO (Visitante pulsa botón de reclamo de cupón) -->
+    <circle cx="220" cy="120" r="12" fill="#0f172a" stroke="#0f172a" stroke-width="2"/>
+    <text x="245" y="125" fill="#0f172a" font-size="11" font-weight="bold">Inicio [Clic en "Obtener Cupón"]</text>
+
+    <!-- Conector Inicio -> Reclama promoción -->
+    <line x1="220" y1="132" x2="220" y2="160" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="115" y="160" width="210" height="44" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="220" y="178" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Selecciona promoción activa</text>
+    <text x="220" y="194" text-anchor="middle" fill="#64748b" font-size="10">y pulsa botón de canje digital</text>
+
+    <!-- Conector Visitante -> API Nuvora -->
+    <path d="M 325 182 L 650 182 L 650 210" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Decisión: ¿Sesión Autenticada? -->
+    <polygon points="650,210 690,235 650,260 610,235" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="650" y="280" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Autenticado?</text>
+
+    <!-- Rama No Autenticado [Flujo Alterno 1a] -->
+    <path d="M 610 235 L 480 235 L 480 300" fill="none" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="490" y="215" width="105" height="18" rx="3" fill="#fffbeb" stroke="#fcd34d" stroke-width="0.5"/>
+    <text x="542" y="228" text-anchor="middle" fill="#b45309" font-size="9" font-weight="bold">[No Autenticado]</text>
+
+    <rect x="375" y="300" width="210" height="44" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="480" y="318" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Flujo Alt. 1a: Redirección</text>
+    <text x="480" y="334" text-anchor="middle" fill="#64748b" font-size="10">a pantalla de autenticación</text>
+
+    <!-- Conector de retorno tras Login exitoso -->
+    <path d="M 480 344 L 480 370 L 610 370" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Rama Autenticado -->
+    <line x1="690" y1="235" x2="730" y2="235" stroke="#16a34a" stroke-width="1.5"/>
+    <rect x="690" y="215" width="85" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="732" y="228" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[Autenticado]</text>
+
+    <path d="M 730 235 L 730 370 L 690 370" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Unión hacia verificación de cupones activos -->
+    <polygon points="650,370 690,395 650,420 610,395" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="650" y="440" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Cupones &lt; 3?</text>
+
+    <!-- Rama Límite Alcanzado [Excepción 3a] -->
+    <path d="M 610 395 L 480 395 L 480 460" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <rect x="495" y="375" width="105" height="18" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.5"/>
+    <text x="547" y="388" text-anchor="middle" fill="#b91c1c" font-size="9" font-weight="bold">[Límite = 3 Cupones]</text>
+
+    <rect x="375" y="460" width="210" height="44" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="480" y="478" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="600">Excepción 3a: Rechazo</text>
+    <text x="480" y="494" text-anchor="middle" fill="#64748b" font-size="10">Tope de cupones activos alcanzado</text>
+
+    <path d="M 480 504 L 480 530" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <circle cx="480" cy="545" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="480" cy="545" r="6" fill="#dc2626"/>
+
+    <!-- Rama Cupones Permitidos -->
+    <line x1="650" y1="420" x2="650" y2="470" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <rect x="655" y="430" width="85" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="697" y="443" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[Cupones &lt; 3]</text>
+
+    <!-- Conector Backend a BD: Consulta y Bloqueo de Stock -->
+    <path d="M 650 490 L 650 510 L 1130 510 L 1130 530" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="1010" y="530" width="240" height="48" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1130" y="548" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Verifica Stock Disponible</text>
+    <text x="1130" y="564" text-anchor="middle" fill="#64748b" font-size="10">SELECT stock FROM promocion FOR UPDATE</text>
+
+    <line x1="1130" y1="578" x2="1130" y2="610" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Decisión: ¿Stock > 0? -->
+    <polygon points="1130,610 1170,635 1130,660 1090,635" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <text x="1130" y="680" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">¿Stock &gt; 0?</text>
+
+    <!-- Rama Stock Agotado [Excepción 4a] -->
+    <path d="M 1170 635 L 1270 635 L 1270 700" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <rect x="1175" y="615" width="85" height="18" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.5"/>
+    <text x="1217" y="628" text-anchor="middle" fill="#b91c1c" font-size="9" font-weight="bold">[Stock = 0]</text>
+
+    <rect x="1180" y="700" width="180" height="44" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1270" y="718" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="600">Excepción 4a: Alerta</text>
+    <text x="1270" y="734" text-anchor="middle" fill="#64748b" font-size="10">Promoción Agotada</text>
+
+    <path d="M 1270 744 L 1270 770" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+    <circle cx="1270" cy="785" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="1270" cy="785" r="6" fill="#dc2626"/>
+
+    <!-- Rama Stock Disponible: ENTRADA A BIFURCACIÓN / FORK -->
+    <line x1="1130" y1="660" x2="1130" y2="700" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <rect x="1135" y="665" width="75" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.5"/>
+    <text x="1172" y="678" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">[Stock &gt; 0]</text>
+
+    <!-- ================================================================= -->
+    <!-- BARRA DE BIFURCACIÓN (FORK CONCURRENTE)                           -->
+    <!-- ================================================================= -->
+    <rect x="580" y="720" width="580" height="8" rx="4" fill="#0f172a"/>
+    <text x="870" y="712" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="bold">&lt;&lt;fork&gt;&gt; Bifurcación Concurrente: Procesamiento Paralelo Criptográfico y Persistencia</text>
+
+    <!-- Conector a Rama Paralela 1 (Criptografía y Token en Backend) -->
+    <path d="M 670 728 L 670 760" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="550" y="760" width="240" height="52" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="670" y="778" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Rama Paralela 1: Criptografía</text>
+    <text x="670" y="794" text-anchor="middle" fill="#64748b" font-size="10">Genera Token QR dinámico</text>
+    <text x="670" y="806" text-anchor="middle" fill="#0284c7" font-size="9" font-weight="bold">Firma HMAC-SHA256 y caducidad 2h</text>
+
+    <!-- Conector a Rama Paralela 2 (Persistencia y Decremento en BD) -->
+    <path d="M 1070 728 L 1070 760" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="950" y="760" width="240" height="52" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="1070" y="778" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Rama Paralela 2: Persistencia</text>
+    <text x="1070" y="794" text-anchor="middle" fill="#64748b" font-size="10">Inserta registro de CUPÓN en BD</text>
+    <text x="1070" y="806" text-anchor="middle" fill="#15803d" font-size="9" font-weight="bold">Decrementa stock (stock = stock - 1)</text>
+
+    <!-- ================================================================= -->
+    <!-- BARRA DE UNIÓN (JOIN CONCURRENTE)                                 -->
+    <!-- ================================================================= -->
+    <path d="M 670 812 L 670 850" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <path d="M 1070 812 L 1070 850" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="580" y="850" width="580" height="8" rx="4" fill="#0f172a"/>
+    <text x="870" y="872" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="bold">&lt;&lt;join&gt;&gt; Unión de Flujos: Sincronización Exitosa de Emisión</text>
+
+    <!-- Conector Unión -> Respuesta a Visitante -->
+    <path d="M 870 858 L 870 900 L 220 900 L 220 930" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+    <!-- Actividad: Renderizado en Billetera Digital del Visitante -->
+    <rect x="100" y="930" width="240" height="52" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="url(#card-shadow)"/>
+    <text x="220" y="948" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="600">Renderizado de Billetera</text>
+    <text x="220" y="964" text-anchor="middle" fill="#64748b" font-size="10">Muestra código QR dinámico y</text>
+    <text x="220" y="976" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="bold">reloj de cuenta regresiva (2 horas)</text>
+
+    <!-- Fin Exitoso CU03 -->
+    <line x1="220" y1="982" x2="220" y2="1010" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <circle cx="220" cy="1025" r="12" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <circle cx="220" cy="1025" r="7" fill="#16a34a"/>
+    <text x="220" y="1055" text-anchor="middle" fill="#15803d" font-size="10" font-weight="bold">Fin [Cupón Activo en Billetera]</text>
+  </g>
+</svg>
