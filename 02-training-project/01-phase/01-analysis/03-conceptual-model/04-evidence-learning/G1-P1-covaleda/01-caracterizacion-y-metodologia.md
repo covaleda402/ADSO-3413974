@@ -13,7 +13,7 @@ Para dar cumplimiento estricto al Criterio C1 de la Guía 1 (RAP 592375), se car
 | :--- | :--- | :--- |
 | **1. Tipo de Proyecto** | Aplicación Web Progresiva (PWA / Web Responsiva) orientada al comercio minorista y plazoleta de comidas. | Requiere arquitectura ligera, interfaces optimizadas para pantallas móviles (viewport 360px - 430px) y alta velocidad de carga en condiciones de red comercial de centro comercial (4G / Wi-Fi público). No requiere instalación pesada de tiendas de apps. |
 | **2. Tamaño del Equipo** | Equipo pequeño y multidisciplinario de **tres (3) aprendices desarrolladores**. | Demanda comunicación diaria fluida, distribución modular de responsabilidades sin burocracia documental excesiva y sin jerarquías rígidas, permitiendo autonomía técnica coordinada. |
-| **3. Estabilidad de Requisitos** | **Media - Alta (Requisitos Delimitados y Acotados).** | Tras el pivote técnico asesorado por la Instructora Karol Correa, se eliminó la complejidad inestable de los micromercados barriales (domicilios y pasarelas de pago). El alcance actual se concentra en catálogo de plazoleta, cupones QR y validación transaccional en caja, manteniendo el núcleo funcional estable durante los sprints. |
+| **3. Estabilidad de Requisitos** | **Media - Alta (Requisitos Delimitados y Acotados).** | Tras el pivote técnico asesorado en el ambiente de formación ADSO, se eliminó la complejidad inestable de los micromercados barriales (domicilios y pasarelas de pago). El alcance actual se concentra en catálogo de plazoleta, cupones QR y validación transaccional en caja, manteniendo el núcleo funcional estable durante los sprints. |
 | **4. Disponibilidad del Cliente / Stakeholders** | **Alta y Continua (Simulación de Campo y Retroalimentación Directa).** | La cercanía física con el Centro Comercial San Pedro Plaza (Neiva) y la consulta recurrente con comerciantes de comida rápida y cajeros permite validar prototipos e iteraciones de interfaz en intervalos cortos (semanales). |
 
 ---
@@ -39,8 +39,8 @@ Se analizan tres metodologías reconocidas de la industria de acuerdo con las cu
 1. **Adopción de Sprints iterativos de dos (2) semanas:** Permite organizar el desarrollo del proyecto formativo en ciclos cortos y continuos, facilitando revisiones periódicas con los locatarios y generando incrementos de software medibles sin atar al equipo a una cantidad rígida de ciclos futuros.
 2. **Eficiencia en la división de responsabilidades:**
    - Permite que cada aprendiz lidere su frente sin bloquear a los demás:
-     - **Edwin Esquivel:** Arquitectura de datos, backend relacional y transacciones atómicas.
+     - **Integrante A (Rol Arquitectura de Datos y Backend):** Modelo relacional y transacciones atómicas.
      - **covaleda402:** Panel administrativo de locatarios, configuración de promociones y módulo de validación en caja.
-     - **Paula Claros:** Diseño de experiencia de usuario en Figma, catálogo de visitante y filtro de presupuesto.
+     - **Integrante B (Rol Diseño UX/UI):** Diseño de experiencia de usuario en Figma, catálogo de visitante y filtro de presupuesto.
 3. **Control de entregables por Sprint:** Al final de cada ciclo se obtiene un incremento de producto potencialmente desplegable (MVP), permitiendo realizar pruebas tempranas del lector QR y verificar que la respuesta en caja tome menos de 1.5 segundos.
 

@@ -19,7 +19,8 @@ Ruta oficial en el repositorio:
 
 | Artefacto | Ruta original en mi fork (semana) | ¿Lo hice solo o en equipo? |
 | :--- | :--- | :--- |
-| **No se reutilizaron talleres pedagógicos previos** | N/A (Construcción desde cero para el caso de estudio) | Individual |
+| **SRS base del proyecto (`SRS_MercaGo_SanPedroPlaza.md` v2.0)** | Documento colaborativo de trabajo del equipo (fuera del repositorio) | En equipo (3 aprendices, sin datos personales) |
+| **Talleres pedagógicos de semanas previas (09, 11, 15)** | No reutilizados como entregable | Individual (`covaleda402`) |
 
 > *Nota de transparencia académica:* Los archivos presentes en semanas anteriores (como semanas 09, 11 o 15) correspondieron a talleres formativos de ejercitación conceptual guiados por los instructores. Para el proyecto Nuvora (San Pedro Plaza), todo el paquete de análisis se modeló y redactó desde cero para responder con exactitud a la realidad operativa del centro comercial.
 
@@ -32,6 +33,7 @@ Ruta oficial en el repositorio:
 | **1** | **Delimitación de Alcance y Definición de Nuvora** | Se acotó la visión del proyecto: de un marketplace comercial disperso hacia un ecosistema cerrado para la plazoleta de comidas de San Pedro Plaza, eliminando pasarelas de pago online y domicilios externos para centrar la ingeniería en cupones QR y validación transaccional inmediata en punto de venta. | Criterio C1 (RAP 592375): Caracterización precisa y estabilidad de requisitos. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
 | **2** | **Diagrama de Casos de Uso UML** | Se estructuraron 10 casos de uso bajo estándar formal (*Verbo + Objeto*), delimitando la frontera del sistema con 4 actores de negocio en el exterior y modelando relaciones `«include»` y `«extend»` con justificación técnica, corredor superior y cero cruces de líneas. | Criterio C4 (RAP 592373): Notación UML estandarizada, justificación de relaciones y topología limpia. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
 | **3** | **Selección Metodológica, Plan de Análisis y Tabla RNF** | Se formuló una comparativa formal entre RUP, XP y Scrum bajo los 4 parámetros del caso de estudio, seleccionando Scrum bajo iteraciones continuas de 2 semanas, cronograma de 8 actividades de análisis y especificación formal de 10 RNFs bajo norma ISO/IEC 25010. | Criterios C1, C2 y C3 (RAP 592375 y 592373): Metodología justificada, plan coherente y calidad de requisitos. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
+| **4** | **Ajustes de Día 2: Diagrama, Privacidad de Terceros y Trazabilidad** | Se actualizó el README con enlaces reales de commits, se ajustó la posición de la etiqueta `«extend»` en el diagrama `.drawio`/`.svg` para máxima legibilidad y se sanitizaron referencias personales de terceros por roles funcionales de equipo. | Criterios C4 y C5 + Política de privacidad del repositorio. | [`8a5c2a2`](https://github.com/covaleda402/ADSO-3413974/commit/8a5c2a2) / [`ec3be68`](https://github.com/covaleda402/ADSO-3413974/commit/ec3be68) |
 
 ---
 

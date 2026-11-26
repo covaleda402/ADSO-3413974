@@ -155,8 +155,8 @@
   
   <!-- CU03 -> CU04 <<include>> -->
   <line x1="440" y1="365" x2="500" y2="385" stroke="#b85450" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-include)" />
-  <rect x="445" y="375" width="55" height="15" fill="#ffffff" rx="2" ry="2"/>
-  <text x="472" y="386" text-anchor="middle" font-size="9" font-weight="bold" fill="#b85450">«include»</text>
+  <rect x="441" y="352" width="54" height="14" fill="#ffffff" rx="2" ry="2"/>
+  <text x="468" y="363" text-anchor="middle" font-size="9" font-weight="bold" fill="#b85450">«include»</text>
 
   <!-- CU07 -> CU08 <<include>> -->
   <line x1="720" y1="520" x2="620" y2="565" stroke="#b85450" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-include)" />
@@ -167,14 +167,14 @@
 
   <!-- CU06 -> CU05 <<extend>> -->
   <line x1="810" y1="270" x2="810" y2="220" stroke="#82b366" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-extend)" />
-  <rect x="755" y="238" width="110" height="22" fill="#ffffff" stroke="#82b366" stroke-width="0.8" rx="3" ry="3"/>
-  <text x="810" y="248" text-anchor="middle" font-size="9" font-weight="bold" fill="#274e13">«extend»</text>
-  <text x="810" y="258" text-anchor="middle" font-size="8" fill="#333333">[Oferta relámpago]</text>
+  <rect x="746" y="233" width="128" height="32" fill="#ffffff" stroke="#82b366" stroke-width="0.9" rx="3" ry="3"/>
+  <text x="810" y="244" text-anchor="middle" font-size="9" font-weight="bold" fill="#274e13">«extend»</text>
+  <text x="810" y="257" text-anchor="middle" font-size="8" fill="#333333">[Oferta relámpago]</text>
 
   <!-- CU09 -> CU07 <<extend>> -->
   <line x1="810" y1="590" x2="810" y2="530" stroke="#82b366" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-extend)" />
-  <rect x="750" y="552" width="120" height="22" fill="#ffffff" stroke="#82b366" stroke-width="0.8" rx="3" ry="3"/>
-  <text x="810" y="562" text-anchor="middle" font-size="9" font-weight="bold" fill="#274e13">«extend»</text>
-  <text x="810" y="572" text-anchor="middle" font-size="8" fill="#333333">[Falla lectura cámara]</text>
+  <rect x="740" y="544" width="140" height="32" fill="#ffffff" stroke="#82b366" stroke-width="0.9" rx="3" ry="3"/>
+  <text x="810" y="555" text-anchor="middle" font-size="9" font-weight="bold" fill="#274e13">«extend»</text>
+  <text x="810" y="568" text-anchor="middle" font-size="8" fill="#333333">[Falla lectura cámara]</text>
 
 </svg>
