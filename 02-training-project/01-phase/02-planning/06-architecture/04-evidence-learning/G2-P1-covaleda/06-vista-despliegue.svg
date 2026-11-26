@@ -1,0 +1,140 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 820" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="50" y="20" width="1250" height="46" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="675" y="42" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle">NUVORA — VISTA DE DESPLIEGUE FÍSICO Y DE RED (UML DEPLOYMENT DIAGRAM)</text>
+  <text x="675" y="58" fill="#DBEAFE" font-size="11" text-anchor="middle">Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C6) · Autor: Jose Esneider Covaleda (covaleda402) · Protocolos y Puertos</text>
+
+  <!-- Node 1: Clientes -->
+  <g transform="translate(50, 90)" filter="url(#shadow)">
+    <rect width="340" height="480" rx="8" fill="#F8FAFC" stroke="#64748B" stroke-width="2"/>
+    <rect width="340" height="34" rx="8" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+    <text x="170" y="15" fill="#334155" font-size="9" text-anchor="middle">&lt;&lt;device&gt;&gt;</text>
+    <text x="170" y="28" fill="#1E293B" font-size="11" font-weight="bold" text-anchor="middle">Nodo 1: Dispositivos Clientes (Plazoleta)</text>
+
+    <!-- Artifact 1 -->
+    <g transform="translate(20, 50)">
+      <rect width="300" height="180" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8"/>
+      <text x="15" y="22" fill="#1E40AF" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="38" fill="#1E3A8A" font-size="12" font-weight="bold">PWA Visitante (Browser Mobile)</text>
+      <line x1="0" y1="46" x2="300" y2="46" stroke="#2563EB" stroke-width="1"/>
+      <text x="15" y="65" fill="#1F2937" font-size="10">• Interfaz Mobile-First (WCAG AA)</text>
+      <text x="15" y="82" fill="#1F2937" font-size="10">• Service Worker (Cache offline básico)</text>
+      <text x="15" y="99" fill="#1F2937" font-size="10">• LocalStorage (Token JWT Bearer)</text>
+      <text x="15" y="116" fill="#1F2937" font-size="10">• Canvas Render Token QR Dinámico</text>
+      <text x="15" y="133" fill="#1F2937" font-size="10">• Reloj regresivo 2 horas (JS Timer)</text>
+      <text x="15" y="155" fill="#2563EB" font-size="9" font-weight="bold">RNF-04: Usabilidad y Operabilidad</text>
+    </g>
+
+    <!-- Artifact 2 -->
+    <g transform="translate(20, 255)">
+      <rect width="300" height="195" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8"/>
+      <text x="15" y="22" fill="#1E40AF" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="38" fill="#1E3A8A" font-size="12" font-weight="bold">Terminal POS Web en Caja</text>
+      <line x1="0" y1="46" x2="300" y2="46" stroke="#2563EB" stroke-width="1"/>
+      <text x="15" y="65" fill="#1F2937" font-size="10">• Lector Óptico QR / Escáner POS</text>
+      <text x="15" y="82" fill="#1F2937" font-size="10">• Teclado Contingencia Alfanumérica</text>
+      <text x="15" y="99" fill="#1F2937" font-size="10">• Interfaz de Validación Instantánea</text>
+      <text x="15" y="116" fill="#1F2937" font-size="10">• Conexión WebSocket para alerta push</text>
+      <text x="15" y="138" fill="#2563EB" font-size="9" font-weight="bold">RNF-01: Respuesta &lt;= 1.5 s en caja</text>
+    </g>
+  </g>
+
+  <!-- Node 2: Servidor Aplicación VPS -->
+  <g transform="translate(480, 90)" filter="url(#shadow)">
+    <rect width="390" height="480" rx="8" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+    <rect width="390" height="34" rx="8" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1"/>
+    <text x="195" y="15" fill="#1E40AF" font-size="9" text-anchor="middle">&lt;&lt;executionEnvironment&gt;&gt;</text>
+    <text x="195" y="28" fill="#1E3A8A" font-size="11" font-weight="bold" text-anchor="middle">Nodo 2: Servidor Aplicación VPS (Ubuntu 22.04 LTS)</text>
+
+    <!-- Artifact Nginx -->
+    <g transform="translate(20, 50)">
+      <rect width="350" height="100" rx="4" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="15" y="20" fill="#1E40AF" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="36" fill="#1E3A8A" font-size="12" font-weight="bold">Nginx 1.24+ Reverse Proxy</text>
+      <line x1="0" y1="44" x2="350" y2="44" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="15" y="62" fill="#1F2937" font-size="10">• SSL/TLS Termination (Puerto 443 / TLS 1.3)</text>
+      <text x="15" y="78" fill="#1F2937" font-size="10">• DoS Shield (Rate Limiting 30 req/s)</text>
+      <text x="15" y="92" fill="#1D4ED8" font-size="9" font-weight="bold">RNF-02: Cifrado en tránsito forzado</text>
+    </g>
+
+    <!-- Artifact Backend NestJS -->
+    <g transform="translate(20, 165)">
+      <rect width="350" height="175" rx="4" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="1.8"/>
+      <text x="15" y="20" fill="#1E40AF" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="36" fill="#1E3A8A" font-size="12" font-weight="bold">Docker: Backend Nuvora (NestJS Engine)</text>
+      <line x1="0" y1="44" x2="350" y2="44" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="15" y="62" fill="#1F2937" font-size="10">• Runtime Node.js 20+ LTS (Port 3000 interno)</text>
+      <text x="15" y="78" fill="#1F2937" font-size="10">• CanjeCuponFacade &amp; Strategy Promos</text>
+      <text x="15" y="94" fill="#1F2937" font-size="10">• CriptoSigner HMAC-SHA256 Token QR</text>
+      <text x="15" y="110" fill="#1F2937" font-size="10">• TypeORM Transaccional &amp; Row-Locking</text>
+      <text x="15" y="126" fill="#1F2937" font-size="10">• Worker de Expiración (Cron cada 60 s)</text>
+      <text x="15" y="148" fill="#1D4ED8" font-size="9" font-weight="bold">RNF-01: Rendimiento asíncrono no bloqueante</text>
+    </g>
+
+    <!-- Artifact Redis -->
+    <g transform="translate(20, 355)">
+      <rect width="350" height="95" rx="4" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.8"/>
+      <text x="15" y="20" fill="#B91C1C" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="36" fill="#7F1D1D" font-size="12" font-weight="bold">Docker: Redis 7.0 In-Memory Cache</text>
+      <line x1="0" y1="44" x2="350" y2="44" stroke="#DC2626" stroke-width="1"/>
+      <text x="15" y="62" fill="#1F2937" font-size="10">• Puerto TCP 6379 (Solo red virtual Docker)</text>
+      <text x="15" y="78" fill="#1F2937" font-size="10">• Caché de Catálogo Gastronómico &amp; Franjas</text>
+    </g>
+  </g>
+
+  <!-- Node 3: Servidor Persistencia VPC -->
+  <g transform="translate(960, 90)" filter="url(#shadow)">
+    <rect width="340" height="480" rx="8" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+    <rect width="340" height="34" rx="8" fill="#FEE2E2" stroke="#B91C1C" stroke-width="1"/>
+    <text x="170" y="15" fill="#991B1B" font-size="9" text-anchor="middle">&lt;&lt;executionEnvironment&gt;&gt;</text>
+    <text x="170" y="28" fill="#7F1D1D" font-size="11" font-weight="bold" text-anchor="middle">Nodo 3: Servidor Datos VPC (Red Aislada)</text>
+
+    <!-- Artifact PostgreSQL -->
+    <g transform="translate(20, 50)">
+      <rect width="300" height="230" rx="4" fill="#FFFFFF" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="15" y="22" fill="#991B1B" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="38" fill="#7F1D1D" font-size="12" font-weight="bold">PostgreSQL 15+ Enterprise RDBMS</text>
+      <line x1="0" y1="46" x2="300" y2="46" stroke="#B91C1C" stroke-width="1"/>
+      <text x="15" y="65" fill="#1F2937" font-size="10">• Puerto TCP 5432 (Sin salida pública)</text>
+      <text x="15" y="82" fill="#1F2937" font-size="10">• Bloqueo atómico SELECT ... FOR UPDATE</text>
+      <text x="15" y="99" fill="#1F2937" font-size="10">• Esquema relacional normalizado en 3FN</text>
+      <text x="15" y="116" fill="#1F2937" font-size="10">• Bitácora inmutable de auditoría transaccional</text>
+      <text x="15" y="133" fill="#1F2937" font-size="10">• Almacenamiento SSD NVMe en RAID 1</text>
+      <text x="15" y="155" fill="#B91C1C" font-size="9" font-weight="bold">RNF-03: Disponibilidad 99.5% &amp; ACID</text>
+      <text x="15" y="172" fill="#B91C1C" font-size="9" font-weight="bold">RNF-02: Aislamiento total de base de datos</text>
+    </g>
+
+    <!-- Artifact Backup -->
+    <g transform="translate(20, 300)">
+      <rect width="300" height="145" rx="4" fill="#FFFFFF" stroke="#B91C1C" stroke-width="1.8"/>
+      <text x="15" y="22" fill="#991B1B" font-size="10">&lt;&lt;artifact&gt;&gt;</text>
+      <text x="15" y="38" fill="#7F1D1D" font-size="12" font-weight="bold">Agente Cron Copias de Seguridad</text>
+      <line x1="0" y1="46" x2="300" y2="46" stroke="#B91C1C" stroke-width="1"/>
+      <text x="15" y="65" fill="#1F2937" font-size="10">• Respaldo completo diario (3:00 a. m.)</text>
+      <text x="15" y="82" fill="#1F2937" font-size="10">• Retención rotativa de 30 días</text>
+      <text x="15" y="99" fill="#1F2937" font-size="10">• Copia cifrada externa hacia Bucket S3</text>
+      <text x="15" y="120" fill="#B91C1C" font-size="9" font-weight="bold">Prueba de restauración mensual</text>
+    </g>
+  </g>
+
+  <!-- Network Connectors -->
+  <!-- Node 1 to Node 2 -->
+  <line x1="390" y1="330" x2="480" y2="330" stroke="#2563EB" stroke-width="3"/>
+  <rect x="395" y="300" width="80" height="22" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="435" y="315" fill="#1E40AF" font-size="9" font-weight="bold" text-anchor="middle">HTTPS 443</text>
+  <rect x="395" y="338" width="80" height="22" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="435" y="353" fill="#1E40AF" font-size="9" font-weight="bold" text-anchor="middle">WSS 443</text>
+
+  <!-- Node 2 to Node 3 -->
+  <line x1="870" y1="330" x2="960" y2="330" stroke="#B91C1C" stroke-width="3"/>
+  <rect x="880" y="300" width="70" height="22" rx="3" fill="#FEE2E2" stroke="#B91C1C" stroke-width="1"/>
+  <text x="915" y="315" fill="#7F1D1D" font-size="9" font-weight="bold" text-anchor="middle">TCP 5432</text>
+  <text x="915" y="348" fill="#B91C1C" font-size="8" font-weight="bold" text-anchor="middle">(VPC Privada)</text>
+
+</svg>

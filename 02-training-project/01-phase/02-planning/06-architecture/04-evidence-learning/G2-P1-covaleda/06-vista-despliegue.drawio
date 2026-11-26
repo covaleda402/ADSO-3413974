@@ -1,0 +1,63 @@
+﻿<mxfile host="app.diagrams.net" modified="2026-11-26T04:30:00.000Z" agent="Antigravity SENA Quality Auditor" version="24.7.5">
+  <diagram id="vista_despliegue_nuvora" name="Vista de Despliegue Nuvora">
+    <mxGraphModel dx="1422" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="850" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Header -->
+        <mxCell id="hdr_desp" value="NUVORA — VISTA DE DESPLIEGUE FÍSICO Y DE RED (UML DEPLOYMENT DIAGRAM)&#xa;Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C6) · Autor: Jose Esneider Covaleda (covaleda402) · Protocolos y Puertos" style="text;html=1;strokeColor=#1E3A8A;fillColor=#DBEAFE;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="1150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Nodo 1: Clientes -->
+        <mxCell id="node_cli" value="«device»&#xa;&lt;b&gt;Nodo 1: Dispositivos Clientes&lt;/b&gt;&#xa;(Plazoleta San Pedro Plaza)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#F8FAFC;strokeColor=#64748B;fontStyle=1;fontSize=11;size=15;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="340" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="art_pwa" value="«artifact»&lt;br&gt;&lt;b&gt;PWA Visitante (Browser)&lt;/b&gt;&lt;hr&gt;• UI Mobile-First Responsive&lt;br&gt;• Service Worker (Cache offline)&lt;br&gt;• LocalStorage (JWT Bearer Token)&lt;br&gt;• Canvas QR &amp; Reloj Regresivo 2h" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2563EB;fontSize=10;" vertex="1" parent="node_cli">
+          <mxGeometry x="30" y="80" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="art_pos" value="«artifact»&lt;br&gt;&lt;b&gt;Terminal POS Caja Web&lt;/b&gt;&lt;hr&gt;• Lector Óptico QR / Escáner POS&lt;br&gt;• Teclado Contingencia Alfanumérica&lt;br&gt;• Interfaz de Confirmación Atómica" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2563EB;fontSize=10;" vertex="1" parent="node_cli">
+          <mxGeometry x="30" y="260" width="280" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Nodo 2: Servidor Aplicacion -->
+        <mxCell id="node_app" value="«executionEnvironment»&#xa;&lt;b&gt;Nodo 2: Servidor de Aplicación VPS&lt;/b&gt;&#xa;(Linux Ubuntu 22.04 LTS · 4 vCPU, 8 GB)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#EFF6FF;strokeColor=#1D4ED8;fontStyle=1;fontSize=11;size=15;" vertex="1" parent="1">
+          <mxGeometry x="490" y="100" width="380" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="art_nginx" value="«artifact»&lt;br&gt;&lt;b&gt;Reverse Proxy Nginx 1.24+&lt;/b&gt;&lt;hr&gt;• SSL/TLS Termination (HTTPS 443)&lt;br&gt;• DoS Shield (Rate Limit 30 req/s)&lt;br&gt;• Compresión Gzip &amp; CORS Guard" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontSize=10;" vertex="1" parent="node_app">
+          <mxGeometry x="30" y="80" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="art_backend" value="«artifact»&lt;br&gt;&lt;b&gt;Contenedor Docker: Backend NestJS&lt;/b&gt;&lt;hr&gt;• Runtime Node.js 20+ LTS (Port 3000)&lt;br&gt;• Módulos Auth, Catalogo, Cupones, POS&lt;br&gt;• CanjeCuponFacade &amp; Token HMAC&lt;br&gt;• Servidor WebSockets WSS Notificaciones" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#1D4ED8;fontSize=10;" vertex="1" parent="node_app">
+          <mxGeometry x="30" y="200" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="art_redis" value="«artifact»&lt;br&gt;&lt;b&gt;Contenedor Docker: Redis 7.0&lt;/b&gt;&lt;hr&gt;• In-Memory Cache (TCP 6379 interno)&lt;br&gt;• Cache de Catálogo &amp; Franjas (RNF-01)" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#DC2626;fontSize=10;" vertex="1" parent="node_app">
+          <mxGeometry x="30" y="360" width="320" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Nodo 3: Servidor Datos -->
+        <mxCell id="node_db" value="«executionEnvironment»&#xa;&lt;b&gt;Nodo 3: Servidor de Persistencia VPC&lt;/b&gt;&#xa;(Red Privada Aislada · SSD NVMe)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#FEF2F2;strokeColor=#B91C1C;fontStyle=1;fontSize=11;size=15;" vertex="1" parent="1">
+          <mxGeometry x="970" y="100" width="340" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="art_postgres" value="«artifact»&lt;br&gt;&lt;b&gt;Motor PostgreSQL 15+ Enterprise&lt;/b&gt;&lt;hr&gt;• Puerto TCP 5432 (Solo red privada)&lt;br&gt;• Transacciones ACID con Row-Locking&lt;br&gt;• SELECT ... FOR UPDATE (RNF-03)&lt;br&gt;• Tablas en 3FN &amp; Bitácora Inmutable" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#B91C1C;fontSize=10;" vertex="1" parent="node_db">
+          <mxGeometry x="30" y="80" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="art_backup" value="«artifact»&lt;br&gt;&lt;b&gt;Agente Cron de Copias de Seguridad&lt;/b&gt;&lt;hr&gt;• Respaldo automático diario (3:00 am)&lt;br&gt;• Retención rotativa de 30 días&lt;br&gt;• Copia cifrada externa a Bucket S3" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#B91C1C;fontSize=10;" vertex="1" parent="node_db">
+          <mxGeometry x="30" y="270" width="280" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Conexiones Físicas y Protocolos -->
+        <!-- Nodo 1 a Nodo 2 -->
+        <mxCell id="e_cli_app" value="HTTPS 443 / TLS 1.3 (REST)&#xa;WSS 443 (WebSockets)" style="endArrow=none;html=1;strokeColor=#2563EB;strokeWidth=2;fontSize=10;fontStyle=1;" edge="1" parent="1" source="node_cli" target="node_app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Nodo 2 a Nodo 3 -->
+        <mxCell id="e_app_db" value="TCP 5432 / SSL Nativo&#xa;(Red Interna Privada VPC)" style="endArrow=none;html=1;strokeColor=#B91C1C;strokeWidth=2;fontSize=10;fontStyle=1;" edge="1" parent="1" source="node_app" target="node_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

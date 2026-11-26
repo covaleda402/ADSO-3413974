@@ -1,0 +1,198 @@
+﻿<mxfile host="app.diagrams.net" modified="2026-11-26T04:00:00.000Z" agent="Antigravity SENA Quality Auditor" version="24.7.5">
+  <diagram id="diagrama_clases_nuvora" name="Diagrama de Clases de Diseno Nuvora">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Header -->
+        <mxCell id="hdr_clases" value="NUVORA — DIAGRAMA DE CLASES DE DISEÑO ORIENTADO A OBJETOS&#xa;Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C2 y C3) · Autor: Jose Esneider Covaleda (covaleda402) · Ficha 3413974" style="text;html=1;strokeColor=#1E3A8A;fillColor=#DBEAFE;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="1400" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Clases Base y Jerarquia de Usuario -->
+        <!-- Usuario -->
+        <mxCell id="cls_usuario" value="&lt;b&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;Usuario&lt;/b&gt;&lt;hr&gt;- idUsuario: string&#xa;- nombreCompleto: string&#xa;- correoElectronico: string&#xa;- telefonoContacto: string&#xa;- hashPassword: string&#xa;- estadoCuenta: EstadoUsuario&lt;hr&gt;+ autenticar(pass: string): boolean&#xa;+ actualizarPerfil(datos: object): void&#xa;+ getRol(): TipoRol" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=36;fillColor=#EFF6FF;strokeColor=#2563EB;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="80" width="260" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Visitante -->
+        <mxCell id="cls_visitante" value="&lt;b&gt;Visitante&lt;/b&gt;&lt;hr&gt;- preferenciaGastronomica: string&#xa;- saldoPuntosFidelidad: number&#xa;- cuponesActivos: Cupon[0..3]&lt;hr&gt;+ emitirCupon(promo: Promocion): Cupon&#xa;+ consultarBilletera(): Cupon[]&#xa;+ cancelarCupon(idCupon: string): boolean" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#2563EB;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="300" width="270" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Locatario -->
+        <mxCell id="cls_locatario" value="&lt;b&gt;Locatario&lt;/b&gt;&lt;hr&gt;- cargoComercial: string&#xa;- turnoAtencion: string&#xa;- codigoAutorizacionPOS: string&lt;hr&gt;+ publicarPromocion(p: Promocion): void&#xa;+ validarCanjeEnCaja(tQR: string): Resultado&#xa;+ consultarReporteDiario(): Reporte" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#2563EB;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="300" width="270" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Comercio -->
+        <mxCell id="cls_comercio" value="&lt;b&gt;Comercio&lt;/b&gt;&lt;hr&gt;- idComercio: string&#xa;- razonSocial: string&#xa;- numeroLocal: string&#xa;- categoriaGastronomica: string&#xa;- horarioAtencionSemanal: string&#xa;- estadoOperativo: boolean&lt;hr&gt;+ agregarProducto(prod: MenuProducto): void&#xa;+ listarMenuCompleto(): MenuProducto[]&#xa;+ actualizarHorario(horario: string): void" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#0D9488;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="960" y="300" width="280" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- MenuProducto -->
+        <mxCell id="cls_producto" value="&lt;b&gt;MenuProducto&lt;/b&gt;&lt;hr&gt;- idProducto: string&#xa;- nombreItem: string&#xa;- descripcionCorta: string&#xa;- precioBaseCOP: number&#xa;- categoriaPlato: CategoriaPlato&#xa;- disponibleEnCarta: boolean&lt;hr&gt;+ actualizarPrecio(nuevo: number): void&#xa;+ cambiarDisponibilidad(disp: boolean): void" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#0D9488;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="300" width="240" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Promocion -->
+        <mxCell id="cls_promocion" value="&lt;b&gt;Promocion&lt;/b&gt;&lt;hr&gt;- idPromocion: string&#xa;- tituloOferta: string&#xa;- descripcionTerminos: string&#xa;- stockAsignado: number&#xa;- stockDisponible: number&#xa;- fechaInicio: Date&#xa;- fechaFin: Date&#xa;- estadoCampana: EstadoCampana&#xa;- estrategiaDescuento: IEstrategiaDescuento&lt;hr&gt;+ esVigente(): boolean&#xa;+ liquidarDescuento(monto: number): number&#xa;+ decrementarStock(): boolean&#xa;+ setEstrategia(e: IEstrategiaDescuento): void" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#16A34A;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="540" width="300" height="230" as="geometry" />
+        </mxCell>
+
+        <!-- FranjaHoraria -->
+        <mxCell id="cls_franja" value="&lt;b&gt;FranjaHoraria&lt;/b&gt;&lt;hr&gt;- idFranja: string&#xa;- diaSemana: number&#xa;- horaInicio: string&#xa;- horaFin: string&#xa;- aplicaFestivos: boolean&#xa;- cupoMaximoFranja: number&lt;hr&gt;+ aplicaEnFechaHora(f: Date): boolean&#xa;+ validarSolapamiento(otra: Franja): boolean" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#16A34A;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="550" width="270" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Cupon -->
+        <mxCell id="cls_cupon" value="&lt;b&gt;Cupon&lt;/b&gt;&lt;hr&gt;- idCupon: string&#xa;- codigoAlfanumerico: string&#xa;- tokenQRHash: string&#xa;- fechaHoraEmision: Date&#xa;- fechaHoraExpiracion: Date&#xa;- estadoCanje: EstadoCupon&lt;hr&gt;+ estaVencido(): boolean&#xa;+ validarPertenencia(idLoc: string): boolean&#xa;+ marcarCanjeado(idCajero: string): void&#xa;+ expirar(): void" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#2563EB;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="540" width="270" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- PATRON 1: STRATEGY INTERFAZ Y CONCRETAS -->
+        <!-- IEstrategiaDescuento -->
+        <mxCell id="cls_iestrategia" value="&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;IEstrategiaDescuento&lt;/b&gt;&lt;hr&gt;+ calcularDescuento(base: number, p: object): number&#xa;+ obtenerDetalleCalculo(): string" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=36;fillColor=#FEF3C7;strokeColor=#D97706;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="840" width="300" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- DescuentoPorcentual -->
+        <mxCell id="cls_desc_porc" value="&lt;b&gt;DescuentoPorcentual&lt;/b&gt;&lt;hr&gt;- porcentaje: number&#xa;- topeMaximoDescuento: number&lt;hr&gt;+ calcularDescuento(base: number, p: object): number&#xa;+ obtenerDetalleCalculo(): string" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#D97706;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="630" y="990" width="250" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- DescuentoMontoFijo -->
+        <mxCell id="cls_desc_fijo" value="&lt;b&gt;DescuentoMontoFijo&lt;/b&gt;&lt;hr&gt;- montoFijoCOP: number&#xa;- montoMinimoCompra: number&lt;hr&gt;+ calcularDescuento(base: number, p: object): number&#xa;+ obtenerDetalleCalculo(): string" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#D97706;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="910" y="990" width="250" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- DescuentoComboVolumen -->
+        <mxCell id="cls_desc_vol" value="&lt;b&gt;DescuentoComboVolumen&lt;/b&gt;&lt;hr&gt;- cantidadMinimaItems: number&#xa;- factorDescuentoCombo: number&lt;hr&gt;+ calcularDescuento(base: number, p: object): number&#xa;+ obtenerDetalleCalculo(): string" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#D97706;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="990" width="260" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- PATRON 2: FACADE Y AUDITORIA -->
+        <!-- CanjeCuponFacade -->
+        <mxCell id="cls_facade" value="&lt;b&gt;&amp;lt;&amp;lt;facade&amp;gt;&amp;gt;&lt;br&gt;CanjeCuponFacade&lt;/b&gt;&lt;hr&gt;- validadorCripto: ValidadorTokenService&#xa;- transaccionService: TransaccionCanjeService&#xa;- bitacoraService: BitacoraAuditoriaService&lt;hr&gt;+ procesarCanjeEnCaja(tQR: string, idLoc: string, idCaj: string): ResultadoCanje&#xa;+ procesarContingenciaManual(cod8: string, idLoc: string, idCaj: string): ResultadoCanje" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=36;fillColor=#F3E8FF;strokeColor=#9333EA;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="800" width="380" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- BitacoraCanje -->
+        <mxCell id="cls_bitacora" value="&lt;b&gt;BitacoraCanje&lt;/b&gt;&lt;hr&gt;- idBitacora: string&#xa;- fechaHoraCanje: Date&#xa;- montoDescuentoEfectivo: number&#xa;- terminalPOSUtilizada: string&#xa;- firmaHashTransaccion: string&#xa;- estadoAuditoria: EstadoAuditoria&lt;hr&gt;+ persistirRegistroInmutable(): void&#xa;+ verificarIntegridadHash(): boolean" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#FFFFFF;strokeColor=#DC2626;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="990" width="270" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- RELACIONES Y CONECTORES -->
+        <!-- Herencia: Visitante a Usuario -->
+        <mxCell id="e_her_vis" style="endArrow=block;endSize=12;endFill=0;html=1;strokeColor=#2563EB;strokeWidth=1.8;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_visitante" target="cls_usuario">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="270" />
+              <mxPoint x="530" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Herencia: Locatario a Usuario -->
+        <mxCell id="e_her_loc" style="endArrow=block;endSize=12;endFill=0;html=1;strokeColor=#2563EB;strokeWidth=1.8;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_locatario" target="cls_usuario">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="715" y="270" />
+              <mxPoint x="630" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Locatario administra Comercio (1..* a 1) -->
+        <mxCell id="e_loc_com" value="administra&#xa;1..* ──────── 1" style="endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_locatario" target="cls_comercio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Composicion: Comercio a MenuProducto (1 a 1..*) -->
+        <mxCell id="e_com_prod" value="ofrece en carta&#xa;1 ◆──────── 1..*" style="endArrow=diamond;endSize=14;endFill=1;html=1;strokeColor=#0D9488;strokeWidth=1.8;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_producto" target="cls_comercio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Comercio publica Promocion (1 a 0..*) -->
+        <mxCell id="e_com_promo" value="publica&#xa;1 ──────── 0..*" style="endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_comercio" target="cls_promocion">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="500" />
+              <mxPoint x="930" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Composicion: Promocion a FranjaHoraria (1 a 1..*) -->
+        <mxCell id="e_promo_franja" value="restringida por&#xa;1 ◆──────── 1..*" style="endArrow=diamond;endSize=14;endFill=1;html=1;strokeColor=#16A34A;strokeWidth=1.8;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_franja" target="cls_promocion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Visitante adquiere Cupon (1 a 0..*) -->
+        <mxCell id="e_vis_cupon" value="adquiere y porta&#xa;1 ──────── 0..*" style="endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_visitante" target="cls_cupon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Promocion genera Cupon (1 a 0..*) -->
+        <mxCell id="e_promo_cupon" value="emite instancias&#xa;1 ──────── 0..*" style="endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_cupon" target="cls_promocion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Promocion a IEstrategiaDescuento (Agregacion de Estrategia 1 a 1) -->
+        <mxCell id="e_promo_estrategia" value="aplica estrategia&#xa;1 ◇──────── 1" style="endArrow=diamond;endSize=14;endFill=0;html=1;strokeColor=#D97706;strokeWidth=1.8;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_iestrategia" target="cls_promocion">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Implementaciones de IEstrategiaDescuento -->
+        <mxCell id="e_imp_porc" style="endArrow=block;dashed=1;endSize=12;endFill=0;html=1;strokeColor=#D97706;strokeWidth=1.6;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_desc_porc" target="cls_iestrategia">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="960" />
+              <mxPoint x="850" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_imp_fijo" style="endArrow=block;dashed=1;endSize=12;endFill=0;html=1;strokeColor=#D97706;strokeWidth=1.6;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_desc_fijo" target="cls_iestrategia">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1035" y="960" />
+              <mxPoint x="930" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_imp_vol" style="endArrow=block;dashed=1;endSize=12;endFill=0;html=1;strokeColor=#D97706;strokeWidth=1.6;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_desc_vol" target="cls_iestrategia">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="960" />
+              <mxPoint x="1010" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Facade orquesta Cupon -->
+        <mxCell id="e_fac_cupon" value="valida y transiciona" style="endArrow=open;dashed=1;html=1;strokeColor=#9333EA;strokeWidth=1.5;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_facade" target="cls_cupon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Facade registra Bitacora (1 a 1) -->
+        <mxCell id="e_fac_bitacora" value="asienta auditoria&#xa;1 ──────── 1" style="endArrow=none;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;fontStyle=1;" edge="1" parent="1" source="cls_facade" target="cls_bitacora">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Cupon auditado en Bitacora (1 a 0..1) -->
+        <mxCell id="e_cupon_bitacora" value="auditoria inmutable&#xa;1 ──────── 0..1" style="endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="cls_cupon" target="cls_bitacora">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="635" />
+              <mxPoint x="150" y="1065" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
