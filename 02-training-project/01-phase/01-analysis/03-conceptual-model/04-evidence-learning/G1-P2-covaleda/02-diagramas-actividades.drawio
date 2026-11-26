@@ -1,182 +1,168 @@
-<mxfile host="app.diagrams.net" modified="2026-11-25T09:15:00.000Z" agent="Antigravity UML Engine" version="21.0.0" type="device">
+<mxfile host="app.diagrams.net" agent="Antigravity UML Engine">
   <diagram id="NuvoraActividades" name="Diagramas de Actividades - Nuvora">
-    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1410" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- ========================================================================= -->
-        <!-- DIAGRAMA 1: CU07 - CANJEAR CUPÓN DE DESCUENTO EN CAJA (PUNTO DE VENTA)    -->
-        <!-- ========================================================================= -->
-        <mxCell id="title_diag1" value="Diagrama de Actividades 1 · CU07: Canjear Cupón de Descuento en Caja" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1e293b;" vertex="1" parent="1">
-          <mxGeometry x="40" y="30" width="700" height="30" as="geometry" />
+        <mxCell id="title_diag1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1e293b;" value="Diagrama de Actividades 1 · CU07: Canjear Cupón de Descuento en Caja" vertex="1">
+          <mxGeometry height="30" width="700" x="40" y="30" as="geometry" />
         </mxCell>
-
-        <!-- Pool / Calles CU07 -->
-        <mxCell id="pool_cu07" value="Proceso de Validación y Redención en Punto de Venta (Nuvora)" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=0;horizontalFlip=0;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="70" width="760" height="980" as="geometry" />
+        <mxCell id="pool_cu07" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=0;horizontalFlip=0;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="Proceso de Validación y Redención en Punto de Venta (Nuvora)" vertex="1">
+          <mxGeometry height="980" width="735" x="40" y="70" as="geometry" />
         </mxCell>
-
-        <!-- Swimlane 1: Cliente -->
-        <mxCell id="lane_cliente" value="Cliente / Consumidor" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu07">
-          <mxGeometry x="25" y="0" width="220" height="980" as="geometry" />
+        <mxCell id="lane_cliente" parent="pool_cu07" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="Cliente / Consumidor" vertex="1">
+          <mxGeometry height="980" width="220" x="25" as="geometry" />
         </mxCell>
-        <mxCell id="c_presenta_qr" value="Presenta código QR en la pantalla de su celular" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cliente">
-          <mxGeometry x="25" y="110" width="170" height="45" as="geometry" />
+        <mxCell id="c_presenta_qr" parent="lane_cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Presenta código QR en la pantalla de su celular" vertex="1">
+          <mxGeometry height="45" width="170" x="25" y="110" as="geometry" />
         </mxCell>
-        <mxCell id="c_recibe_descuento" value="Recibe descuento en cuenta física y paga saldo restante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cliente">
-          <mxGeometry x="25" y="860" width="170" height="45" as="geometry" />
+        <mxCell id="c_recibe_descuento" parent="lane_cliente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Recibe descuento en cuenta física y paga saldo restante" vertex="1">
+          <mxGeometry height="45" width="170" x="25" y="860" as="geometry" />
         </mxCell>
-        <mxCell id="c_fin1" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#16a34a;strokeWidth=2;" vertex="1" parent="lane_cliente">
-          <mxGeometry x="95" y="930" width="30" height="30" as="geometry" />
+        <mxCell id="c_fin1" parent="lane_cliente" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#16a34a;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="95" y="930" as="geometry" />
         </mxCell>
-
-        <!-- Swimlane 2: Cajero -->
-        <mxCell id="lane_cajero" value="Cajero / Validador en Caja" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu07">
-          <mxGeometry x="245" y="0" width="240" height="980" as="geometry" />
+        <mxCell id="lane_cajero" parent="pool_cu07" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="Cajero / Validador en Caja" vertex="1">
+          <mxGeometry height="980" width="240" x="245" as="geometry" />
         </mxCell>
-        <mxCell id="c_inicio" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="105" y="40" width="25" height="25" as="geometry" />
+        <mxCell id="c_inicio" parent="lane_cajero" style="ellipse;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="25" width="25" x="105" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="c_activa_escaneo" value="Presiona botón 'Escanear Cupón' en terminal de caja" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="35" y="80" width="170" height="40" as="geometry" />
+        <mxCell id="c_activa_escaneo" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" value="Presiona botón &#39;Escanear Cupón&#39; en terminal de caja" vertex="1">
+          <mxGeometry height="40" width="170" x="35" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="c_decide_camara" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="95" y="150" width="50" height="40" as="geometry" />
+        <mxCell id="c_decide_camara" parent="lane_cajero" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="40" width="105" x="67.5" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="c_escanea_cam" value="Apunta cámara y enfoca código QR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="125" y="210" width="105" height="40" as="geometry" />
+        <mxCell id="c_escanea_cam" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" value="Apunta cámara y enfoca código QR" vertex="1">
+          <mxGeometry height="40" width="105" x="125" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="c_digita_manual" value="Digita código alfanumérico manualmente (CU09)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="10" y="210" width="105" height="40" as="geometry" />
+        <mxCell id="c_digita_manual" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontSize=10;" value="Digita código alfanumérico manualmente (CU09)" vertex="1">
+          <mxGeometry height="40" width="105" x="10" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="c_merge_captura" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="95" y="270" width="50" height="35" as="geometry" />
+        <mxCell id="c_merge_captura" parent="lane_cajero" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="35" width="50" x="95" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="c_envia_solicitud" value="Despacha solicitud atómica HTTPS con identificador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="35" y="325" width="170" height="40" as="geometry" />
+        <mxCell id="c_envia_solicitud" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=1.5;fontSize=10;" value="Despacha solicitud atómica HTTPS con identificador" vertex="1">
+          <mxGeometry height="40" width="170" x="35" y="325" as="geometry" />
         </mxCell>
-        <mxCell id="c_muestra_error" value="Muestra alerta en pantalla con motivo del rechazo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="35" y="650" width="170" height="40" as="geometry" />
+        <mxCell id="c_muestra_error" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.5;fontSize=10;" value="Muestra alerta en pantalla con motivo del rechazo" vertex="1">
+          <mxGeometry height="40" width="170" x="15" y="640" as="geometry" />
         </mxCell>
-        <mxCell id="c_fin_error" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#dc2626;strokeWidth=2;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="105" y="715" width="25" height="25" as="geometry" />
+        <mxCell id="c_fin_error" parent="lane_cajero" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#dc2626;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="25" width="25" x="105" y="715" as="geometry" />
         </mxCell>
-        <mxCell id="c_muestra_exito" value="Muestra tarjeta verde con valor de descuento a aplicar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_cajero">
-          <mxGeometry x="35" y="790" width="170" height="45" as="geometry" />
+        <mxCell id="c_muestra_exito" parent="lane_cajero" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Muestra tarjeta verde con valor de descuento a aplicar" vertex="1">
+          <mxGeometry height="45" width="170" x="35" y="790" as="geometry" />
         </mxCell>
-
-        <!-- Swimlane 3: Servidor / BD -->
-        <mxCell id="lane_servidor" value="Servidor Nuvora / Base de Datos" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu07">
-          <mxGeometry x="485" y="0" width="250" height="980" as="geometry" />
+        <mxCell id="lane_servidor" parent="pool_cu07" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="Servidor Nuvora / Base de Datos" vertex="1">
+          <mxGeometry height="980" width="250" x="485" as="geometry" />
         </mxCell>
-        <mxCell id="s_inicia_tx" value="Inicia transacción ACID y busca cupón en PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="35" y="380" width="180" height="40" as="geometry" />
+        <mxCell id="s_inicia_tx" parent="lane_servidor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Inicia transacción ACID y busca cupón en PostgreSQL" vertex="1">
+          <mxGeometry height="40" width="180" x="35" y="380" as="geometry" />
         </mxCell>
-        <mxCell id="s_decide_validez" value="¿Cupón existe y es de este local?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="45" y="440" width="160" height="50" as="geometry" />
+        <mxCell id="s_decide_validez" parent="lane_servidor" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="¿Cupón existe y es de este local?" vertex="1">
+          <mxGeometry height="50" width="160" x="45" y="440" as="geometry" />
         </mxCell>
-        <mxCell id="s_decide_estado" value="¿Estado = 'Emitido' y no vencido?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="45" y="520" width="160" height="50" as="geometry" />
+        <mxCell id="s_decide_estado" parent="lane_servidor" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="¿Estado = &#39;Emitido&#39; y no vencido?" vertex="1">
+          <mxGeometry height="50" width="160" x="45" y="520" as="geometry" />
         </mxCell>
-        <mxCell id="s_bloqueo_update" value="Aplica bloqueo de fila (SELECT ... FOR UPDATE) y actualiza a 'Redimido'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="35" y="600" width="180" height="45" as="geometry" />
+        <mxCell id="s_bloqueo_update" parent="lane_servidor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Aplica bloqueo de fila (SELECT ... FOR UPDATE) y actualiza a &#39;Redimido&#39;" vertex="1">
+          <mxGeometry height="45" width="180" x="35" y="600" as="geometry" />
         </mxCell>
-        <mxCell id="s_inserta_auditoria" value="Inserta registro inmutable en bitacora_canje y confirma commit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="35" y="670" width="180" height="45" as="geometry" />
+        <mxCell id="s_inserta_auditoria" parent="lane_servidor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Inserta registro inmutable en bitacora_canje y confirma commit" vertex="1">
+          <mxGeometry height="45" width="180" x="35" y="670" as="geometry" />
         </mxCell>
-        <mxCell id="s_nota_concurrencia" value="*Nota Técnica de Concurrencia: La ejecución es atómica y secuencial para evitar condiciones de carrera (cero bifurcaciones concurrentes)." style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;fillColor=#fffbeb;strokeColor=#d97706;fontSize=9;" vertex="1" parent="lane_servidor">
-          <mxGeometry x="25" y="740" width="200" height="60" as="geometry" />
+        <mxCell id="s_nota_concurrencia" parent="lane_servidor" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;fillColor=#fffbeb;strokeColor=#d97706;fontSize=9;" value="*Nota Técnica de Concurrencia: La ejecución es atómica y secuencial para evitar condiciones de carrera (cero bifurcaciones concurrentes)." vertex="1">
+          <mxGeometry height="60" width="200" x="35" y="850" as="geometry" />
         </mxCell>
-
-        <!-- Conexiones Diagrama 1 -->
-        <mxCell id="flow_c1" edge="1" parent="pool_cu07" source="c_inicio" target="c_activa_escaneo" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c1" edge="1" parent="pool_cu07" source="c_inicio" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_activa_escaneo">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c2" edge="1" parent="pool_cu07" source="c_activa_escaneo" target="c_decide_camara" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c2" edge="1" parent="pool_cu07" source="c_activa_escaneo" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_decide_camara">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c_cam" edge="1" parent="pool_cu07" source="c_decide_camara" target="c_escanea_cam" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c_cam" edge="1" parent="pool_cu07" source="c_decide_camara" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_escanea_cam">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_c_cam" value="[Lectura óptica OK]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" vertex="1" connectable="0" parent="flow_c_cam">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="lbl_c_cam" connectable="0" parent="flow_c_cam" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" value="[Lectura óptica OK]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint x="41" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_c_man" edge="1" parent="pool_cu07" source="c_decide_camara" target="c_digita_manual" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c_man" edge="1" parent="pool_cu07" source="c_decide_camara" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_digita_manual">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_c_man" value="[Falla lectura cámara]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" vertex="1" connectable="0" parent="flow_c_man">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="lbl_c_man" connectable="0" parent="flow_c_man" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" value="[Falla lectura cámara]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint x="-41" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_c_m1" edge="1" parent="pool_cu07" source="c_escanea_cam" target="c_merge_captura" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c_m1" edge="1" parent="pool_cu07" source="c_escanea_cam" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_merge_captura">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c_m2" edge="1" parent="pool_cu07" source="c_digita_manual" target="c_merge_captura" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c_m2" edge="1" parent="pool_cu07" source="c_digita_manual" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_merge_captura">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c_env" edge="1" parent="pool_cu07" source="c_merge_captura" target="c_envia_solicitud" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_c_env" edge="1" parent="pool_cu07" source="c_merge_captura" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_envia_solicitud">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c_srv" edge="1" parent="pool_cu07" source="c_envia_solicitud" target="s_inicia_tx" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_c_srv" edge="1" parent="pool_cu07" source="c_envia_solicitud" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="s_inicia_tx">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_s_dec1" edge="1" parent="pool_cu07" source="s_inicia_tx" target="s_decide_validez" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_s_dec1" edge="1" parent="pool_cu07" source="s_inicia_tx" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="s_decide_validez">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_s_err1" edge="1" parent="pool_cu07" source="s_decide_validez" target="c_muestra_error" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
+        <mxCell id="flow_s_err1" edge="1" parent="pool_cu07" source="s_decide_validez" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;" target="c_muestra_error">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="430" y="465" />
-              <mxPoint x="430" y="660" />
+              <mxPoint x="340" y="465" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_s_err1" value="[Código inexistente o local no coincide]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" vertex="1" connectable="0" parent="flow_s_err1">
-          <mxGeometry x="-0.1" relative="1" as="geometry">
+        <mxCell id="lbl_s_err1" connectable="0" parent="flow_s_err1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" value="[Código inexistente o local no coincide]" vertex="1">
+          <mxGeometry relative="1" x="-0.0193" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_s_ok1" edge="1" parent="pool_cu07" source="s_decide_validez" target="s_decide_estado" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_s_ok1" edge="1" parent="pool_cu07" source="s_decide_validez" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="s_decide_estado">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_s_ok1" value="[Datos de cupón válidos]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" vertex="1" connectable="0" parent="flow_s_ok1">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_s_ok1" connectable="0" parent="flow_s_ok1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" value="[Datos de cupón válidos]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_s_err2" edge="1" parent="pool_cu07" source="s_decide_estado" target="c_muestra_error" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="flow_s_err2" edge="1" parent="pool_cu07" source="s_decide_estado" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;" target="c_muestra_error">
+          <mxGeometry relative="1" x="-0.1966" as="geometry">
             <Array as="points">
               <mxPoint x="410" y="545" />
-              <mxPoint x="410" y="680" />
+              <mxPoint x="367.5" y="637.5" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_s_err2" value="[Redimido previo o vencido &gt; 2h]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" vertex="1" connectable="0" parent="flow_s_err2">
-          <mxGeometry x="-0.1" relative="1" as="geometry">
+        <mxCell id="lbl_s_err2" connectable="0" parent="flow_s_err2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" value="[Redimido previo o vencido &gt; 2h]" vertex="1">
+          <mxGeometry relative="1" x="0.0207" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_s_ok2" edge="1" parent="pool_cu07" source="s_decide_estado" target="s_bloqueo_update" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_s_ok2" edge="1" parent="pool_cu07" source="s_decide_estado" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="s_bloqueo_update">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_s_ok2" value="[Estado Emitido y vigente]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" vertex="1" connectable="0" parent="flow_s_ok2">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_s_ok2" connectable="0" parent="flow_s_ok2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" value="[Estado Emitido y vigente]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_s_audit" edge="1" parent="pool_cu07" source="s_bloqueo_update" target="s_inserta_auditoria" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_s_audit" edge="1" parent="pool_cu07" source="s_bloqueo_update" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="s_inserta_auditoria">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_s_resp" edge="1" parent="pool_cu07" source="s_inserta_auditoria" target="c_muestra_exito" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="flow_s_resp" edge="1" parent="pool_cu07" source="s_inserta_auditoria" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;" target="c_muestra_exito">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="615" y="760" />
@@ -184,168 +170,156 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_c_err_fin" edge="1" parent="pool_cu07" source="c_muestra_error" target="c_fin_error" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
+        <mxCell id="flow_c_err_fin" edge="1" parent="pool_cu07" source="c_muestra_error" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;" target="c_fin_error">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_c_cli" edge="1" parent="pool_cu07" source="c_muestra_exito" target="c_recibe_descuento" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="flow_c_cli" edge="1" parent="pool_cu07" source="c_muestra_exito" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="c_recibe_descuento">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="882.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_cli_fin" edge="1" parent="pool_cu07" source="c_recibe_descuento" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;" target="c_fin1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_cli_fin" edge="1" parent="pool_cu07" source="c_recibe_descuento" target="c_fin1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="title_diag2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1e293b;" value="Diagrama de Actividades 2 · CU03: Generar Cupón Digital de Descuento" vertex="1">
+          <mxGeometry height="30" width="700" x="840" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pool_cu03" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=0;horizontalFlip=0;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="Proceso de Emisión de Cupones Digitales (Nuvora)" vertex="1">
+          <mxGeometry height="980" width="735" x="840" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_visitante" parent="pool_cu03" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="Visitante / Consumidor" vertex="1">
+          <mxGeometry height="980" width="230" x="25" as="geometry" />
+        </mxCell>
+        <mxCell id="v_inicio" parent="lane_visitante" style="ellipse;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="25" width="25" x="100" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="v_selecciona_oferta" parent="lane_visitante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Selecciona promoción gastronómica en el catálogo" vertex="1">
+          <mxGeometry height="40" width="165" x="30" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="v_pulsa_obtener" parent="lane_visitante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Presiona botón &#39;Obtener Cupón de Descuento&#39;" vertex="1">
+          <mxGeometry height="40" width="165" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="v_inicia_sesion" parent="lane_visitante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontSize=10;" value="Ingresa credenciales y completa inicio de sesión JWT (CU04)" vertex="1">
+          <mxGeometry height="45" width="165" x="30" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="v_visualiza_alerta" parent="lane_visitante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.5;fontSize=10;" value="Visualiza mensaje: cupos agotados o límite diario alcanzado" vertex="1">
+          <mxGeometry height="45" width="165" x="30" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="v_fin_error" parent="lane_visitante" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#dc2626;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="25" width="25" x="100" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="v_recibe_billetera" parent="lane_visitante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Visualiza código QR, código alfanumérico y reloj de 2h en &#39;Mis Cupones&#39;" vertex="1">
+          <mxGeometry height="50" width="165" x="30" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="v_fin_exito" parent="lane_visitante" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#16a34a;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="25" width="25" x="100" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_frontend" parent="pool_cu03" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="PWA / Frontend Cliente" vertex="1">
+          <mxGeometry height="980" width="235" x="255" as="geometry" />
+        </mxCell>
+        <mxCell id="f_comprueba_auth" parent="lane_frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Verifica existencia de token JWT en LocalStorage" vertex="1">
+          <mxGeometry height="40" width="170" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="f_decide_auth" parent="lane_frontend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="¿Usuario autenticado?" vertex="1">
+          <mxGeometry height="45" width="150" x="40" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="f_merge_auth" parent="lane_frontend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="35" width="50" x="90" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="f_envia_peticion" parent="lane_frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Envía solicitud POST /api/cupones con Bearer Token" vertex="1">
+          <mxGeometry height="40" width="170" x="30" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="f_renderiza_qr" parent="lane_frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" value="Renderiza componente QR dinámico e inicia timer regresivo" vertex="1">
+          <mxGeometry height="45" width="170" x="30" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_backend" parent="pool_cu03" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" value="Servidor Backend / Base de Datos" vertex="1">
+          <mxGeometry height="980" width="245" x="490" as="geometry" />
+        </mxCell>
+        <mxCell id="b_decide_cupos" parent="lane_backend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="¿Promoción activa y cupos &gt; 0?" vertex="1">
+          <mxGeometry height="60" width="200" x="35" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="b_decide_limite" parent="lane_backend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="¿Usuario ya emitió cupón hoy (RN-01)?" vertex="1">
+          <mxGeometry height="75" width="200" x="30" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="b_genera_crypto" parent="lane_backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Genera hash pseudoaleatorio único y calcula expiración (reloj + 2h)" vertex="1">
+          <mxGeometry height="45" width="175" x="37.5" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="b_persiste_cupon" parent="lane_backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Persiste cupón &#39;Emitido&#39; y decrementa stock en tabla promocion" vertex="1">
+          <mxGeometry height="45" width="175" x="35" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="flow_v1" edge="1" parent="pool_cu03" source="v_inicio" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="v_selecciona_oferta">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-
-        <!-- ========================================================================= -->
-        <!-- DIAGRAMA 2: CU03 - GENERAR CUPÓN DIGITAL DE DESCUENTO (CONSUMIDOR)         -->
-        <!-- ========================================================================= -->
-        <mxCell id="title_diag2" value="Diagrama de Actividades 2 · CU03: Generar Cupón Digital de Descuento" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1e293b;" vertex="1" parent="1">
-          <mxGeometry x="840" y="30" width="700" height="30" as="geometry" />
-        </mxCell>
-
-        <!-- Pool / Calles CU03 -->
-        <mxCell id="pool_cu03" value="Proceso de Emisión de Cupones Digitales (Nuvora)" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=0;horizontalFlip=0;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="70" width="760" height="980" as="geometry" />
-        </mxCell>
-
-        <!-- Swimlane 1: Visitante -->
-        <mxCell id="lane_visitante" value="Visitante / Consumidor" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu03">
-          <mxGeometry x="25" y="0" width="230" height="980" as="geometry" />
-        </mxCell>
-        <mxCell id="v_inicio" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="100" y="40" width="25" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="v_selecciona_oferta" value="Selecciona promoción gastronómica en el catálogo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="30" y="90" width="165" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="v_pulsa_obtener" value="Presiona botón 'Obtener Cupón de Descuento'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="30" y="160" width="165" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="v_inicia_sesion" value="Ingresa credenciales y completa inicio de sesión JWT (CU04)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="30" y="290" width="165" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="v_visualiza_alerta" value="Visualiza mensaje: cupos agotados o límite diario alcanzado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="30" y="650" width="165" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="v_fin_error" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#dc2626;strokeWidth=2;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="100" y="730" width="25" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="v_recibe_billetera" value="Visualiza código QR, código alfanumérico y reloj de 2h en 'Mis Cupones'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="30" y="850" width="165" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="v_fin_exito" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#16a34a;strokeWidth=2;" vertex="1" parent="lane_visitante">
-          <mxGeometry x="100" y="930" width="25" height="25" as="geometry" />
-        </mxCell>
-
-        <!-- Swimlane 2: PWA / Frontend -->
-        <mxCell id="lane_frontend" value="PWA / Frontend Cliente" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu03">
-          <mxGeometry x="255" y="0" width="235" height="980" as="geometry" />
-        </mxCell>
-        <mxCell id="f_comprueba_auth" value="Verifica existencia de token JWT en LocalStorage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_frontend">
-          <mxGeometry x="30" y="160" width="170" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="f_decide_auth" value="¿Usuario autenticado?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_frontend">
-          <mxGeometry x="40" y="225" width="150" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="f_merge_auth" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;" vertex="1" parent="lane_frontend">
-          <mxGeometry x="90" y="360" width="50" height="35" as="geometry" />
-        </mxCell>
-        <mxCell id="f_envia_peticion" value="Envía solicitud POST /api/cupones con Bearer Token" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_frontend">
-          <mxGeometry x="30" y="420" width="170" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="f_renderiza_qr" value="Renderiza componente QR dinámico e inicia timer regresivo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_frontend">
-          <mxGeometry x="30" y="780" width="170" height="45" as="geometry" />
-        </mxCell>
-
-        <!-- Swimlane 3: Servidor / BD -->
-        <mxCell id="lane_backend" value="Servidor Backend / Base de Datos" style="swimlane;html=1;startSize=25;fillColor=#ffffff;strokeColor=#94a3b8;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="pool_cu03">
-          <mxGeometry x="490" y="0" width="245" height="980" as="geometry" />
-        </mxCell>
-        <mxCell id="b_decide_cupos" value="¿Promoción activa y cupos &gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_backend">
-          <mxGeometry x="35" y="475" width="175" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="b_decide_limite" value="¿Usuario ya emitió cupón hoy (RN-01)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_backend">
-          <mxGeometry x="35" y="555" width="175" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="b_genera_crypto" value="Genera hash pseudoaleatorio único y calcula expiración (reloj + 2h)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_backend">
-          <mxGeometry x="35" y="635" width="175" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="b_persiste_cupon" value="Persiste cupón 'Emitido' y decrementa stock en tabla promocion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" vertex="1" parent="lane_backend">
-          <mxGeometry x="35" y="705" width="175" height="45" as="geometry" />
-        </mxCell>
-
-        <!-- Conexiones Diagrama 2 -->
-        <mxCell id="flow_v1" edge="1" parent="pool_cu03" source="v_inicio" target="v_selecciona_oferta" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_v2" edge="1" parent="pool_cu03" source="v_selecciona_oferta" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="v_pulsa_obtener">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_v2" edge="1" parent="pool_cu03" source="v_selecciona_oferta" target="v_pulsa_obtener" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;">
+        <mxCell id="flow_v_f" edge="1" parent="pool_cu03" source="v_pulsa_obtener" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="f_comprueba_auth">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_v_f" edge="1" parent="pool_cu03" source="v_pulsa_obtener" target="f_comprueba_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_f_dec" edge="1" parent="pool_cu03" source="f_comprueba_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="f_decide_auth">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_f_dec" edge="1" parent="pool_cu03" source="f_comprueba_auth" target="f_decide_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="flow_f_noauth" edge="1" parent="pool_cu03" source="f_decide_auth" target="v_inicia_sesion" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#ea580c;">
+        <mxCell id="flow_f_noauth" edge="1" parent="pool_cu03" source="f_decide_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#ea580c;" target="v_inicia_sesion">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="140" y="248" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_f_noauth" value="[Sin sesión]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#ea580c;" vertex="1" connectable="0" parent="flow_f_noauth">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_f_noauth" connectable="0" parent="flow_f_noauth" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#ea580c;" value="[Sin sesión]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_v_auth_ok" edge="1" parent="pool_cu03" source="v_inicia_sesion" target="f_merge_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="flow_v_auth_ok" edge="1" parent="pool_cu03" source="v_inicia_sesion" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;" target="f_merge_auth">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="140" y="378" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_f_auth_ok" edge="1" parent="pool_cu03" source="f_decide_auth" target="f_merge_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_f_auth_ok" edge="1" parent="pool_cu03" source="f_decide_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="f_merge_auth">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_f_auth_ok" value="[Sesión activa]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" vertex="1" connectable="0" parent="flow_f_auth_ok">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_f_auth_ok" connectable="0" parent="flow_f_auth_ok" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" value="[Sesión activa]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_f_env" edge="1" parent="pool_cu03" source="f_merge_auth" target="f_envia_peticion" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_f_env" edge="1" parent="pool_cu03" source="f_merge_auth" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="f_envia_peticion">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_f_back" edge="1" parent="pool_cu03" source="f_envia_peticion" target="b_decide_cupos" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="flow_f_back" edge="1" parent="pool_cu03" source="f_envia_peticion" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="b_decide_cupos">
+          <mxGeometry relative="1" x="-1" as="geometry">
             <Array as="points">
-              <mxPoint x="400" y="440" />
-              <mxPoint x="400" y="500" />
+              <mxPoint x="625" y="440" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_b_err_cupos" edge="1" parent="pool_cu03" source="b_decide_cupos" target="v_visualiza_alerta" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="flow_b_err_cupos" edge="1" parent="pool_cu03" source="b_decide_cupos" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="v_visualiza_alerta">
+          <mxGeometry relative="1" x="0.2943" as="geometry">
             <Array as="points">
-              <mxPoint x="720" y="500" />
-              <mxPoint x="720" y="672" />
+              <mxPoint x="380" y="530" />
+              <mxPoint x="350" y="520" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_b_err_cupos" value="[Cupos agotados o inactiva]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" vertex="1" connectable="0" parent="flow_b_err_cupos">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_b_err_cupos" connectable="0" parent="flow_b_err_cupos" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" value="[Cupos agotados o inactiva]" vertex="1">
+          <mxGeometry relative="1" x="0.1543" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_b_ok_cupos" edge="1" parent="pool_cu03" source="b_decide_cupos" target="b_decide_limite" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_b_ok_cupos" edge="1" parent="pool_cu03" source="b_decide_cupos" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="b_decide_limite">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_b_ok_cupos" value="[Hay cupos disponibles]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" vertex="1" connectable="0" parent="flow_b_ok_cupos">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_b_ok_cupos" connectable="0" parent="flow_b_ok_cupos" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" value="[Hay cupos disponibles]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_b_err_limite" edge="1" parent="pool_cu03" source="b_decide_limite" target="v_visualiza_alerta" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
+        <mxCell id="flow_b_err_limite" edge="1" parent="pool_cu03" source="b_decide_limite" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;" target="v_visualiza_alerta">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="430" y="580" />
@@ -353,40 +327,38 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_b_err_limite" value="[Ya emitió hoy (RN-01)]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" vertex="1" connectable="0" parent="flow_b_err_limite">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_b_err_limite" connectable="0" parent="flow_b_err_limite" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#dc2626;" value="[Ya emitió hoy (RN-01)]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_b_ok_limite" edge="1" parent="pool_cu03" source="b_decide_limite" target="b_genera_crypto" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_b_ok_limite" edge="1" parent="pool_cu03" source="b_decide_limite" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="b_genera_crypto">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_b_ok_limite" value="[No ha emitido hoy]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" vertex="1" connectable="0" parent="flow_b_ok_limite">
-          <mxGeometry x="-0.2" relative="1" as="geometry">
+        <mxCell id="lbl_b_ok_limite" connectable="0" parent="flow_b_ok_limite" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#2563eb;" value="[No ha emitido hoy]" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_b_pers" edge="1" parent="pool_cu03" source="b_genera_crypto" target="b_persiste_cupon" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;">
+        <mxCell id="flow_b_pers" edge="1" parent="pool_cu03" source="b_genera_crypto" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#2563eb;" target="b_persiste_cupon">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_b_resp" edge="1" parent="pool_cu03" source="b_persiste_cupon" target="f_renderiza_qr" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="flow_b_resp" edge="1" parent="pool_cu03" source="b_persiste_cupon" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="f_renderiza_qr">
+          <mxGeometry relative="1" x="0.2429" as="geometry">
             <Array as="points">
-              <mxPoint x="612" y="760" />
               <mxPoint x="372" y="760" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="flow_v_alerta_fin" edge="1" parent="pool_cu03" source="v_visualiza_alerta" target="v_fin_error" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;">
+        <mxCell id="flow_v_alerta_fin" edge="1" parent="pool_cu03" source="v_visualiza_alerta" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#dc2626;" target="v_fin_error">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_f_billetera" edge="1" parent="pool_cu03" source="f_renderiza_qr" target="v_recibe_billetera" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="flow_f_billetera" edge="1" parent="pool_cu03" source="f_renderiza_qr" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;" target="v_recibe_billetera">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="flow_v_exito_fin" edge="1" parent="pool_cu03" source="v_recibe_billetera" target="v_fin_exito" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;">
+        <mxCell id="flow_v_exito_fin" edge="1" parent="pool_cu03" source="v_recibe_billetera" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#16a34a;" target="v_fin_exito">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>

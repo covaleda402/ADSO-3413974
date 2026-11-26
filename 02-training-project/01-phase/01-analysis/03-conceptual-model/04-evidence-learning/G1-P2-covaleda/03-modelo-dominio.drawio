@@ -1,162 +1,165 @@
-<mxfile host="app.diagrams.net" modified="2026-11-26T00:20:00.000Z" agent="Antigravity UML Engine" version="21.0.0" type="device">
+<mxfile host="app.diagrams.net" agent="Antigravity UML Engine">
   <diagram id="NuvoraDominio" name="Modelo de Dominio - Nuvora">
-    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1923" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- TITULO -->
-        <mxCell id="title_dom" value="NUVORA · MODELO DE DOMINIO CONCEPTUAL (UML CLASES PURAS)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0f172a;" vertex="1" parent="1">
-          <mxGeometry x="40" y="25" width="800" height="30" as="geometry" />
+        <mxCell id="title_dom" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0f172a;fontFamily=Segoe UI;" value="NUVORA · MODELO DE DOMINIO CONCEPTUAL (UML CLASES PURAS)" vertex="1">
+          <mxGeometry height="30" width="800" x="40" y="25" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle_dom" value="Centro Comercial San Pedro Plaza · Sin metodos ni claves tecnicas · Rubrica G1 C3 · Autor: covaleda402" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#64748b;" vertex="1" parent="1">
-          <mxGeometry x="40" y="55" width="800" height="20" as="geometry" />
+        <mxCell id="subtitle_dom" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#64748b;fontFamily=Segoe UI;" value="Centro Comercial San Pedro Plaza · Sin metodos ni claves tecnicas · Rubrica G1 C3 · Autor: covaleda402" vertex="1">
+          <mxGeometry height="20" width="800" x="40" y="55" as="geometry" />
         </mxCell>
-
-        <!-- CLASE 1: Usuario (Superclase / Generalizacion Raiz) -->
-        <mxCell id="class_usuario" value="&lt;&lt;concept&gt;&gt; Usuario&#xa;==============================&#xa;+ nombreCompleto: Texto&#xa;+ correoElectronico: Texto&#xa;+ telefonoContacto: Texto&#xa;+ fechaRegistro: FechaHora&#xa;+ estadoCuenta: EstadoUsuario" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#334155;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="90" width="240" height="130" as="geometry" />
+        <mxCell id="class_usuario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#f8fafc;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Usuario&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #334155;margin:4px 0px;&quot;/&gt;+ nombreCompleto: Texto&lt;br/&gt;+ correoElectronico: Texto&lt;br/&gt;+ telefonoContacto: Texto&lt;br/&gt;+ fechaRegistro: FechaHora&lt;br/&gt;+ estadoCuenta: EstadoUsuario" vertex="1">
+          <mxGeometry height="130" width="250" x="480" y="100" as="geometry" />
         </mxCell>
-
-        <!-- CLASE 2: Visitante (Subclase de Usuario) -->
-        <mxCell id="class_visitante" value="&lt;&lt;concept&gt;&gt; Visitante&#xa;==============================&#xa;+ preferenciaGastronomica: Categoria&#xa;+ canalNotificacion: TipoCanal&#xa;+ cuponesActivos: Entero [0..3]" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="260" width="250" height="100" as="geometry" />
+        <mxCell id="class_visitante" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Visitante&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #2563eb;margin:4px 0px;&quot;/&gt;+ preferenciaGastronomica: Categoria&lt;br/&gt;+ canalNotificacion: TipoCanal&lt;br/&gt;+ cuponesActivos: Entero [0..3]" vertex="1">
+          <mxGeometry height="110" width="250" x="140" y="280" as="geometry" />
         </mxCell>
-
-        <!-- CLASE 3: Locatario (Subclase de Usuario) -->
-        <mxCell id="class_locatario" value="&lt;&lt;concept&gt;&gt; Locatario&#xa;==============================&#xa;+ cargoPuesto: CargoComercial&#xa;+ turnoAtencion: HorarioTurno&#xa;+ codigoAutorizacionPOS: Texto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="540" y="260" width="250" height="100" as="geometry" />
+        <mxCell id="class_locatario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Locatario&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #2563eb;margin:4px 0px;&quot;/&gt;+ cargoPuesto: CargoComercial&lt;br/&gt;+ turnoAtencion: HorarioTurno&lt;br/&gt;+ codigoAutorizacionPOS: Texto" vertex="1">
+          <mxGeometry height="110" width="250" x="540" y="300" as="geometry" />
         </mxCell>
-
-        <!-- HERENCIA: Visitante a Usuario -->
-        <mxCell id="gen_visitante" value="es-un" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;strokeWidth=1.5;strokeColor=#334155;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="class_visitante" target="class_usuario">
+        <mxCell id="gen_visitante" edge="1" parent="1" source="class_visitante" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=2;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Segoe UI;fontSize=10;fontColor=#64748b;" target="class_usuario" value="es-un">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- HERENCIA: Locatario a Usuario -->
-        <mxCell id="gen_locatario" value="es-un" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;strokeWidth=1.5;strokeColor=#334155;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="class_locatario" target="class_usuario">
+        <mxCell id="gen_locatario" edge="1" parent="1" source="class_locatario" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=0;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=2;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Segoe UI;fontSize=10;fontColor=#64748b;" target="class_usuario" value="es-un">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- CLASE 4: Comercio -->
-        <mxCell id="class_comercio" value="&lt;&lt;concept&gt;&gt; Comercio&#xa;==============================&#xa;+ razonSocial: Texto&#xa;+ numeroLocal: Texto&#xa;+ categoriaGastronomica: Categoria&#xa;+ descripcionNegocio: Texto&#xa;+ horarioAtencionSemanal: Horario&#xa;+ estadoOperativo: EstadoComercio" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="250" width="250" height="140" as="geometry" />
+        <mxCell id="class_comercio" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#f8fafc;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Comercio&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #0284c7;margin:4px 0px;&quot;/&gt;+ razonSocial: Texto&lt;br/&gt;+ numeroLocal: Texto&lt;br/&gt;+ categoriaGastronomica: Categoria&lt;br/&gt;+ descripcionNegocio: Texto&lt;br/&gt;+ horarioAtencionSemanal: Horario&lt;br/&gt;+ estadoOperativo: EstadoComercio" vertex="1">
+          <mxGeometry height="150" width="260" x="930" y="190" as="geometry" />
         </mxCell>
-
-        <!-- ASOCIACION: Locatario administra Comercio -->
-        <mxCell id="rel_loc_com" value="administra" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_locatario" target="class_comercio">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_loc_com_loc" value="1..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_loc_com">
-          <mxGeometry x="-0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_loc_com_com" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_loc_com">
-          <mxGeometry x="0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- CLASE 5: MenuProducto -->
-        <mxCell id="class_menu" value="&lt;&lt;concept&gt;&gt; MenuProducto&#xa;==============================&#xa;+ nombreItem: Texto&#xa;+ descripcionCorta: Texto&#xa;+ precioBase: Moneda&#xa;+ categoriaPlato: CategoriaMenu&#xa;+ disponibleEnCarta: Booleano" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="460" width="250" height="120" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Comercio ofrece MenuProducto -->
-        <mxCell id="rel_com_menu" value="ofrece en carta" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_comercio" target="class_menu">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_com_menu_1" value="1" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_com_menu">
-          <mxGeometry x="-0.7" y="-10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_com_menu_n" value="1..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_com_menu">
-          <mxGeometry x="0.7" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- CLASE 6: Promocion -->
-        <mxCell id="class_promocion" value="&lt;&lt;concept&gt;&gt; Promocion&#xa;==============================&#xa;+ tituloOferta: Texto&#xa;+ descripcionTerminos: Texto&#xa;+ porcentajeDescuento: Porcentaje&#xa;+ stockAsignado: Entero&#xa;+ stockDisponible: Entero&#xa;+ fechaInicio: FechaHora&#xa;+ fechaFin: FechaHora&#xa;+ estadoCampana: EstadoPromo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#16a34a;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="530" y="440" width="260" height="160" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Comercio publica Promocion -->
-        <mxCell id="rel_com_promo" value="publica" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_comercio" target="class_promocion">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_com_promo_1" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_com_promo">
-          <mxGeometry x="-0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_com_promo_n" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_com_promo">
-          <mxGeometry x="0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Promocion aplica a MenuProducto -->
-        <mxCell id="rel_promo_menu" value="aplica a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_promocion" target="class_menu">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_promo_menu_p" value="0..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_promo_menu">
-          <mxGeometry x="-0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_promo_menu_m" value="1..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_promo_menu">
-          <mxGeometry x="0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- CLASE 7: Cupon -->
-        <mxCell id="class_cupon" value="&lt;&lt;concept&gt;&gt; Cupon&#xa;==============================&#xa;+ codigoAlfanumerico: Texto&#xa;+ estadoCanje: EstadoCupon&#xa;+ fechaHoraEmision: FechaHora&#xa;+ fechaHoraExpiracion: FechaHora&#xa;+ firmaVerificacion: Hash" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#16a34a;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="460" width="250" height="120" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Promocion genera Cupon -->
-        <mxCell id="rel_promo_cupon" value="genera" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_promocion" target="class_cupon">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_promo_cupon_p" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_promo_cupon">
-          <mxGeometry x="-0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_promo_cupon_c" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_promo_cupon">
-          <mxGeometry x="0.8" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Visitante adquiere Cupon -->
-        <mxCell id="rel_vis_cupon" value="adquiere y porta" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_visitante" target="class_cupon">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_vis_cupon_v" value="1" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_vis_cupon">
-          <mxGeometry x="-0.7" y="-10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_vis_cupon_c" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_vis_cupon">
-          <mxGeometry x="0.7" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- CLASE 8: BitacoraCanje -->
-        <mxCell id="class_bitacora" value="&lt;&lt;concept&gt;&gt; BitacoraCanje&#xa;==============================&#xa;+ fechaHoraCanje: FechaHora&#xa;+ montoDescuentoEfectivo: Moneda&#xa;+ terminalPOSUtilizada: Texto&#xa;+ estadoAuditoria: EstadoAuditoria" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8fafc;strokeColor=#dc2626;strokeWidth=1.5;fontSize=11;rounded=1;html=1;" vertex="1" parent="1">
-          <mxGeometry x="140" y="670" width="250" height="110" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION: Cupon registra BitacoraCanje -->
-        <mxCell id="rel_cupon_bit" value="queda registrado en" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_cupon" target="class_bitacora">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_cup_bit_c" value="1" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_cupon_bit">
-          <mxGeometry x="-0.7" y="-10" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mult_cup_bit_b" value="0..1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;" vertex="1" connectable="0" parent="rel_cupon_bit">
-          <mxGeometry x="0.7" y="10" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- ASOCIACION SIN CRUCES: Locatario valida BitacoraCanje bordeando por el exterior derecho e inferior -->
-        <mxCell id="rel_loc_bit" value="valida y firma en caja" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#dc2626;exitX=0.9;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="class_locatario" target="class_bitacora">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="rel_loc_com" edge="1" parent="1" source="class_locatario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=1.002;exitY=0.388;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;exitPerimeter=0;" target="class_comercio" value="administra">
+          <mxGeometry relative="1" x="-0.059" as="geometry">
             <Array as="points">
-              <mxPoint x="765" y="230" />
-              <mxPoint x="1170" y="230" />
-              <mxPoint x="1170" y="725" />
+              <mxPoint x="790.5" y="340" />
+              <mxPoint x="860" y="340" />
+              <mxPoint x="860" y="265" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="mult_loc_bit_l" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#dc2626;fontStyle=1;" vertex="1" connectable="0" parent="rel_loc_bit">
-          <mxGeometry x="-0.9" y="10" relative="1" as="geometry" />
+        <mxCell id="mult_loc_com_loc" connectable="0" parent="rel_loc_com" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="-0.9063" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="mult_loc_bit_b" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#dc2626;fontStyle=1;" vertex="1" connectable="0" parent="rel_loc_bit">
-          <mxGeometry x="0.9" y="10" relative="1" as="geometry" />
+        <mxCell id="mult_loc_com_com" connectable="0" parent="rel_loc_com" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.7882" y="10" as="geometry" />
         </mxCell>
-
+        <mxCell id="class_producto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#f8fafc;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; MenuProducto&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #0284c7;margin:4px 0px;&quot;/&gt;+ nombreItem: Texto&lt;br/&gt;+ descripcionCorta: Texto&lt;br/&gt;+ precioBase: Moneda (COP)&lt;br/&gt;+ categoriaPlato: CategoriaMenu&lt;br/&gt;+ disponibleEnCarta: Booleano" vertex="1">
+          <mxGeometry height="135" width="260" x="930" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_com_prod" edge="1" parent="1" source="class_comercio" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_producto" value="ofrece en carta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_com_prod_com" connectable="0" parent="rel_com_prod" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry">
+            <mxPoint x="30" y="-27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_com_prod_prod" connectable="0" parent="rel_com_prod" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.7" y="10" as="geometry">
+            <mxPoint x="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="class_promocion" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#f8fafc;strokeColor=#16a34a;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Promocion&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #16a34a;margin:4px 0px;&quot;/&gt;+ tituloOferta: Texto&lt;br/&gt;+ descripcionTerminos: Texto&lt;br/&gt;+ porcentajeDescuento: Porcentaje&lt;br/&gt;+ stockAsignado: Entero&lt;br/&gt;+ stockDisponible: Entero&lt;br/&gt;+ fechaInicio / fechaFin: FechaHora&lt;br/&gt;+ estadoCampana: EstadoPromo" vertex="1">
+          <mxGeometry height="165" width="260" x="490" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_com_promo" edge="1" parent="1" source="class_comercio" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_promocion" value="publica">
+          <mxGeometry relative="1" x="-0.0085" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="390" />
+              <mxPoint x="830" y="390" />
+              <mxPoint x="830" y="473" />
+              <mxPoint x="685" y="473" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_com_promo_com" connectable="0" parent="rel_com_promo" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8136" y="10" as="geometry">
+            <mxPoint x="-35" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_com_promo_pro" connectable="0" parent="rel_com_promo" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.6907" y="10" as="geometry">
+            <mxPoint x="-9" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_promo_prod" edge="1" parent="1" source="class_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_producto" value="aplica a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_promo_prod_pro" connectable="0" parent="rel_promo_prod" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_promo_prod_prd" connectable="0" parent="rel_promo_prod" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="class_cupon" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#f8fafc;strokeColor=#16a34a;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; Cupon&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #16a34a;margin:4px 0px;&quot;/&gt;+ codigoAlfanumerico: Texto [8 car]&lt;br/&gt;+ estadoCanje: EstadoCupon&lt;br/&gt;+ fechaHoraEmision: FechaHora&lt;br/&gt;+ fechaHoraExpiracion: FechaHora&lt;br/&gt;+ firmaVerificacion: Hash" vertex="1">
+          <mxGeometry height="135" width="250" x="140" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_vis_cup" edge="1" parent="1" source="class_visitante" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_cupon" value="adquiere y porta">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_vis_cup_vis" connectable="0" parent="rel_vis_cup" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry">
+            <mxPoint x="-15" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_vis_cup_cup" connectable="0" parent="rel_vis_cup" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.7" y="10" as="geometry">
+            <mxPoint x="-25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_promo_cup" edge="1" parent="1" source="class_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_cupon" value="genera">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_promo_cup_pro" connectable="0" parent="rel_promo_cup" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" y="10" as="geometry">
+            <mxPoint y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_promo_cup_cup" connectable="0" parent="rel_promo_cup" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="10" as="geometry">
+            <mxPoint x="9" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="class_bitacora" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;&quot;&gt;&amp;lt;&amp;lt;concept&amp;gt;&amp;gt; BitacoraCanje&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #dc2626;margin:4px 0px;&quot;/&gt;+ fechaHoraCanje: FechaHora&lt;br/&gt;+ montoDescuentoEfectivo: Moneda&lt;br/&gt;+ terminalPOSUtilizada: Texto&lt;br/&gt;+ estadoAuditoria: EstadoAuditoria" vertex="1">
+          <mxGeometry height="120" width="250" x="140" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_cup_bit" edge="1" parent="1" source="class_cupon" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" target="class_bitacora" value="queda registrado en">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_cup_bit_cup" connectable="0" parent="rel_cup_bit" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="mult_cup_bit_bit" connectable="0" parent="rel_cup_bit" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.7" y="10" as="geometry">
+            <mxPoint x="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_loc_bit" edge="1" parent="1" source="class_locatario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#dc2626;dashed=1;labelBackgroundColor=#ffffff;labelPadding=4;fontColor=#dc2626;exitX=0.921;exitY=-0.008;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;exitPerimeter=0;" target="class_bitacora" value="valida y firma en caja">
+          <mxGeometry relative="1" x="0.7407" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="299.1" />
+              <mxPoint x="790" y="258.8" />
+              <mxPoint x="791.5" y="258.8" />
+              <mxPoint x="791.5" y="140" />
+              <mxPoint x="1241.5" y="140" />
+              <mxPoint x="1241.5" y="780" />
+              <mxPoint x="500" y="780" />
+              <mxPoint x="500" y="840" />
+            </Array>
+            <mxPoint x="790" y="262.20000000000005" as="sourcePoint" />
+            <mxPoint x="412" y="732.1199999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_loc_bit_loc" connectable="0" parent="rel_loc_bit" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#dc2626;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7259" y="10" as="geometry">
+            <mxPoint x="-140" y="160" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult_loc_bit_bit" connectable="0" parent="rel_loc_bit" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#dc2626;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.9049" y="10" as="geometry">
+            <mxPoint x="-61" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
