@@ -16,26 +16,26 @@ El proyecto **Nuvora** surge como respuesta a la necesidad operativa y comercial
 2. **Fricción en la toma de decisiones por presupuesto:** Los visitantes pierden tiempo recorriendo físicamente los más de 25 locales de comida sin claridad sobre precios, combos o disponibilidad de promociones ajustadas a su capacidad de gasto.
 3. **Desconfianza y fraude en cupones físicos o estáticos:** Pérdidas económicas para los locatarios por cupones reutilizados indebidamente mediante capturas de pantalla de WhatsApp o fotocopias no auditadas.
 
-**Objetivo de la Solución:** Desarrollar un ecosistema digital interactivo y transaccional que centralice el directorio gastronómico, permita el filtrado algorítmico por presupuesto en pesos colombianos (`COP`), emita cupones dinámicos con vigencia estricta de 2 horas (QR firmado con HMAC-SHA256) y provea una terminal POS en caja con verificación atómica y registro inmutable de auditoría.
+**Objetivo de la Solución:** Desarrollar un ecosistema digital interactivo y transaccional que centralice el directorio gastronómico, permita el filtrado algorítmico por presupuesto en pesos colombianos (`COP`), emita cupones dinámicos con vigencia estricta de 2 horas y provea una estación operativa en caja con validación atómica y registro inmutable de auditoría.
 
 ---
 
 ### 1.2 Interpretación de Requisitos del Sistema
 
 #### A. Requisitos Funcionales Interpretados (RF-01 al RF-20)
-Los 20 requisitos funcionales del sistema fueron organizados e interpretados en cinco componentes operacionales:
-1. **Módulo de Identidad y Acceso (RF01 - RF03):** Control de acceso basado en roles (`Visitante`, `Locatario`, `Administrador`) mediante tokens seguros JWT con expiración temporal.
-2. **Módulo de Catálogo y Presupuesto (RF04 - RF08):** Directorio interactivo de locales comerciales categorizados, buscador por texto libre y motor de cálculo de combinaciones de menú por rango monetario.
-3. **Módulo Motor de Promociones y Franjas (RF09 - RF12):** Gestión integral de ofertas con inventario (stock) asignado, parametrización de franjas horarias restrictivas y control de estados de ciclo de vida.
-4. **Módulo Billetera Digital y Cupones (RF13 - RF15):** Generación criptográfica de cupones, renderizado de QR dinámico con token efímero y billetera móvil con reloj regresivo y cupo máximo de 3 cupones activos simultáneos.
-5. **Módulo de Redención POS y Analítica (RF16 - RF20):** Terminal web de caja con soporte para escáner óptico o digitación manual, validación ACID con bloqueo de fila en BD (`SELECT ... FOR UPDATE`), prevención de colisiones de canje y bitácora transaccional inmutable.
+Los 20 requisitos funcionales del sistema fueron organizados e interpretados en cinco módulos operacionales:
+1. **Módulo de Identidad y Acceso (RF01 - RF03):** Control de acceso basado en roles (`Visitante`, `Locatario`, `Administrador`) mediante sesiones verificadas con expiración controlada.
+2. **Módulo de Catálogo y Presupuesto (RF04 - RF08):** Directorio interactivo de locales comerciales categorizados, buscador por texto libre y filtro de combinaciones de menú por rango monetario.
+3. **Módulo Motor de Promociones y Franjas (RF09 - RF12):** Gestión integral de ofertas con inventario (cupos) asignado, parametrización de franjas horarias restrictivas y control de estados de ciclo de vida.
+4. **Módulo Billetera Digital y Cupones (RF13 - RF15):** Generación única de cupones con código corto y representación QR temporal, más billetera del visitante con reloj regresivo de 2 horas (RN-02) y regla de 1 cupón activo por promoción cada 24 h (RN-01).
+5. **Módulo de Redención en Caja y Analítica (RF16 - RF20):** Estación operativa de punto de venta con lector óptico o digitación manual de contingencia, validación exclusiva atómica contra doble canje, métricas por campaña (RF19) y bitácora inmutable de auditoría (RF20).
 
 #### B. Requisitos No Funcionales Interpretados (ISO/IEC 25010)
 - **Rendimiento (RNF01):** Tiempo de respuesta en la validación del cupón en caja $\le 1.5$ segundos bajo condiciones reales de red comercial.
-- **Seguridad (RNF02, RNF03):** Contraseñas dispersadas con `bcrypt` (factor de costo $\ge 10$) y cupones protegidos con firma digital criptográfica contra falsificación.
-- **Fiabilidad e Integridad (RNF04, RNF05):** Transacciones ACID en base de datos PostgreSQL, garantizando aislamiento total contra condiciones de carrera (*race conditions*) y disponibilidad de servicio $\ge 99.5\%$ en horario comercial.
-- **Usabilidad (RNF06):** Interfaz adaptativa *Mobile-First* operable a una mano, con contraste visual certificado WCAG 2.1 AA para visualización de pantallas bajo luz diurna.
-- **Continuidad Operativa (RNF10):** Mecanismo de contingencia manual operativo en caja en caso de falla de hardware o deterioro de pantalla del usuario.
+- **Seguridad (RNF02, RNF03):** Protección irreversible de credenciales con sal y generación con entropía criptográfica de cupones para evitar falsificaciones o enumeración.
+- **Fiabilidad e Integridad (RNF04, RNF05):** Aislamiento transaccional estricto para neutralizar condiciones de carrera (*race conditions*) y disponibilidad de servicio $\ge 99.5\%$ en horario comercial.
+- **Usabilidad (RNF06):** Interfaz adaptativa móvil operable a una mano, con contraste visual accesible (WCAG 2.1 AA) para lectura clara bajo luz diurna.
+- **Continuidad Operativa (RNF08, RNF10):** Mecanismo de contingencia manual operativo en caja ante fallas de hardware óptico o deterioro de pantalla.
 
 ---
 
@@ -43,8 +43,8 @@ Los 20 requisitos funcionales del sistema fueron organizados e interpretados en 
 
 La solución conceptual ha sido formalmente modelada y se encuentra documentada en los siguientes artefactos de este repositorio:
 
-* **Plantillas Extendidas de Casos de Uso:** [`01-plantillas-casos-de-uso.md`](01-plantillas-casos-de-uso.md) (Especificación de CU-03, CU-05 y CU-07 con 8 pasos, flujos alternos y excepciones).
-* **Diagramas de Actividades UML (Fuente Editable):** [`02-diagramas-actividades.drawio`](02-diagramas-actividades.drawio) (Diagramas editables con calles, decisiones, guardas `[ ]` y concurrencia fork/join).
+* **Plantillas Extendidas de Casos de Uso:** [`01-plantillas-casos-de-uso.md`](01-plantillas-casos-de-uso.md) (Especificación de CU03, CU05 y CU07 con 8 pasos, flujos alternos y excepciones, sin detalles de implementación).
+* **Diagramas de Actividades UML (Fuente Editable):** [`02-diagramas-actividades.drawio`](02-diagramas-actividades.drawio) (Diagramas editables con calles, decisiones, guardas `[ ]` y nota explícita sobre ejecución secuencial atómica sin bifurcaciones concurrentes).
 * **Diagramas de Actividades UML (Gráfico Vectorial):** [`02-diagramas-actividades.svg`](02-diagramas-actividades.svg) (Visualización de alta definición).
 * **Modelo de Dominio Conceptual (Fuente Editable):** [`03-modelo-dominio.drawio`](03-modelo-dominio.drawio) (8 clases conceptuales, atributos de negocio, multiplicidades y herencia; sin métodos ni claves técnicas).
 * **Modelo de Dominio Conceptual (Gráfico Vectorial):** [`03-modelo-dominio.svg`](03-modelo-dominio.svg) (Visualización de clases abstractas).
@@ -61,39 +61,39 @@ Tras aplicar la lista de chequeo formal de validación documental (`06-lista-che
 
 **Resumen de Ajustes Técnicos Realizados:**
 1. **Contingencia en Caja:** Incorporación del flujo alterno de digitación manual de 8 caracteres alfanuméricos (`NUV-8K42`) en plantillas, actividades y mockup de caja, resolviendo posibles fallas de hardware óptico.
-2. **Purificación del Dominio:** Eliminación total de métodos de software y claves foráneas en el diagrama de dominio conceptual, preservando la semántica pura del negocio.
-3. **Consistencia en Guardas UML:** Incorporación de condiciones explícitas entre corchetes `[ ]` en el 100% de las salidas de decisión en diagramas de actividades.
+2. **Purificación Conceptual (Análisis):** Eliminación de métodos, claves foráneas y detalles de implementación SQL/tecnológicos dentro del dominio y las plantillas extendidas (Reglas de arbitraje #5 y #10).
+3. **Consistencia en Guardas UML:** Incorporación de condiciones explícitas entre corchetes `[ ]` en el 100% de las salidas de decisión en diagramas de actividades y justificación escrita de ejecución atómica secuencial.
 4. **Normalización Relacional:** Formalización de la entidad asociativa `CUPON` y la entidad débil `FRANJA_HORARIA` con clave primaria compuesta en el MER.
-5. **Aislamiento Transaccional:** Modelado explícito del bloqueo de fila `SELECT ... FOR UPDATE` para neutralizar intentos de doble canje por condición de carrera.
+5. **Aislamiento Transaccional:** Especificación de validación atómica con bloqueo exclusivo del cupón para neutralizar intentos de doble canje concurrente.
 
 ---
 
-## PARTE 2: MATRIZ DE TRAZABILIDAD REQUISITO $\rightarrow$ ARTEFACTOS (ANEXO C)
+## PARTE 2: MATRIZ DE TRAZABILIDAD REQUISITO → ARTEFACTOS (ANEXO C)
 
 La siguiente matriz traza el **100% de los 20 requisitos funcionales** especificados en la caracterización de la solución, vinculándolos de forma rigurosa y bidireccional a través de cada artefacto de análisis:
 
 | Requisito Funcional | Nombre / Alcance del Requisito | Caso de Uso | Diagrama de Actividades | Plantilla de CU | Clase de Dominio UML | Entidad del MER Relacional | Pantalla Prototipo (Mockup) |
 |:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **RF01** | Registro de nuevos visitantes | `CU04` | Diagrama 2 (`CU03` incluye login) | Plantilla CU-03 (Paso 1a) | `Usuario`, `Visitante` | `USUARIO` | `M-01` (Acceso Perfil) |
-| **RF02** | Inicio de sesión y token de sesión | `CU04` | Diagrama 2 (`CU03` validación) | Plantilla CU-03 (Paso 1) | `Usuario` | `USUARIO` | `M-01` (Acceso Perfil) |
-| **RF03** | Recuperación de credenciales | `CU04` | Flujo Alterno Seguridad | Regla Negocio RN-01 | `Usuario` | `USUARIO` | `M-01` (Modal Acceso) |
-| **RF04** | Gestión de perfil de local comercial | `CU05` | Proceso administrativo tienda | Plantilla CU-05 (Paso 1-3) | `Comercio`, `Locatario` | `LOCAL_COMERCIAL` | `M-03` (Encabezado POS) |
-| **RF05** | Catálogo general de locales y marcas | `CU01` | Flujo de consulta catálogo | Plantilla CU-03 (Precondición) | `Comercio` | `LOCAL_COMERCIAL` | `M-01` (Directorio y Búsqueda) |
-| **RF06** | Ficha detallada de local y menús | `CU01` | Exploración de platos | Plantilla CU-03 (Paso 1) | `MenuProducto` | `PRODUCTO` | `M-01` (Tarjetas de Menú) |
-| **RF07** | Algoritmo de filtro por presupuesto | `CU02` | Diagrama 2 (`CU03` inicio) | Plantilla CU-03 (Disparador) | `MenuProducto`, `Promocion` | `PRODUCTO`, `PROMOCION` | `M-01` (Selector de Presupuesto) |
-| **RF08** | Búsqueda por texto libre / tags | `CU01` | Filtrado instantáneo | Plantilla CU-03 (Precondición) | `MenuProducto` | `PRODUCTO` | `M-01` (Barra de Búsqueda) |
-| **RF09** | Creación y edición de promociones | `CU05` | Proceso publicación ofertas | Plantilla CU-05 (Flujo principal) | `Promocion` | `PROMOCION` | `M-01` (Badges de Descuento) |
-| **RF10** | Parametrización de franjas horarias | `CU06` | Diagrama 1 (`CU07` decisión franja) | Plantilla CU-05 (Flujo Alt. 3a) | `Promocion` | `FRANJA_HORARIA` | `M-01` y `M-02` (Horario de Validez) |
-| **RF11** | Control de estados de la promoción | `CU05` | Diagrama 1 y 2 (Decisiones estado) | Plantilla CU-05 (Paso 5) | `Promocion` | `PROMOCION` | `M-01` (Disponibilidad) |
-| **RF12** | Límite y decremento de stock | `CU05` | Diagrama 2 (`CU03` fork concurrente) | Plantilla CU-03 (Excepción 4a) | `Promocion` | `PROMOCION` | `M-01` (Indicador Stock Restante) |
-| **RF13** | Generación criptográfica de cupón | `CU03` | Diagrama 2 (`CU03` rama cripto) | Plantilla CU-03 (Paso 5) | `Cupon` | `CUPON` | `M-02` (Token de Billetera) |
-| **RF14** | Renderizado de QR dinámico | `CU03` | Diagrama 2 (`CU03` join final) | Plantilla CU-03 (Paso 6) | `Cupon` | `CUPON` | `M-02` (Matriz QR y Código 8 car) |
-| **RF15** | Billetera digital y reloj regresivo | `CU03` | Diagrama 2 (`CU03` actividad cliente) | Plantilla CU-03 (Postcondición) | `Cupon`, `Visitante` | `CUPON` | `M-02` (Reloj regresivo 2 horas) |
-| **RF16** | Interfaz operativa de terminal caja | `CU07` | Diagrama 1 (`CU07` calle cajero) | Plantilla CU-07 (Paso 1-3) | `Locatario` | `LOCAL_COMERCIAL` | `M-03` (Consola de Validación POS) |
-| **RF17** | Validación transaccional inmediata | `CU08` | Diagrama 1 (`CU07` calle Nuvora) | Plantilla CU-07 (Paso 4) | `Cupon`, `Promocion` | `CUPON`, `PROMOCION` | `M-03` (Panel Verificación en Vivo) |
-| **RF18** | Marcado de canje y respuesta visual | `CU07` | Diagrama 1 (`CU07` commit BD) | Plantilla CU-07 (Paso 5-8) | `Cupon`, `BitacoraCanje` | `CUPON`, `BITACORA_CANJE` | `M-03` (Aprobación y Facturación) |
-| **RF19** | Prevención de fraude y re-canje | `CU07` | Diagrama 1 (`CU07` excepción 6a) | Plantilla CU-07 (Excepción 6a) | `Cupon`, `BitacoraCanje` | `CUPON`, `BITACORA_CANJE` | `M-03` (Alerta Roja Rechazo Fraude) |
-| **RF20** | Bitácora inmutable de auditoría | `CU10` | Diagrama 1 (`CU07` inserción) | Plantilla CU-07 (Paso 6) | `BitacoraCanje` | `BITACORA_CANJE` | `M-03` (Resumen de Turno en Caja) |
+| **RF01** | Registro de nuevos visitantes | `CU04` | Diagrama 2 (`CU03` valida sesión) | Plantilla CU03 (FA-01) | `Usuario`, `Visitante` | `USUARIO` | `M-02` (Acceso perfil/sesión) |
+| **RF02** | Inicio de sesión y credenciales | `CU04` | Diagrama 2 (`CU03` validación sesión) | Plantilla CU03 (Paso 4) | `Usuario` | `USUARIO` | `M-02` (Autenticación usuario) |
+| **RF03** | Recuperación básica de contraseña | `CU04` | Diagrama 2 (Flujo acceso `CU04`) | Plantilla CU03 (FA-01) | `Usuario` | `USUARIO` | `M-02` (Acceso cuenta) |
+| **RF04** | Gestión de perfil de local comercial | `CU05` | Proceso administrativo de comercio | Plantilla CU05 (Precondición 2) | `Comercio`, `Locatario` | `LOCAL_COMERCIAL` | `M-03` (Encabezado POS local) |
+| **RF05** | Catálogo general de locales y marcas | `CU01` | Diagrama 2 (`CU03` catálogo inicial) | Plantilla CU03 (Paso 1) | `Comercio` | `LOCAL_COMERCIAL` | `M-01` (Directorio de locales) |
+| **RF06** | Ficha detallada de local y menús | `CU01` | Diagrama 2 (Selección oferta) | Plantilla CU03 (Paso 1) | `MenuProducto` | `PRODUCTO` | `M-01` (Tarjetas de menú) |
+| **RF07** | Algoritmo de filtro por presupuesto | `CU02` | Diagrama 2 (`CU03` inicio) | Plantilla CU03 (FA-02) | `MenuProducto`, `Promocion` | `PRODUCTO`, `PROMOCION` | `M-01` (Selector de presupuesto) |
+| **RF08** | Búsqueda por texto libre / tags | `CU01` | Diagrama 2 (Exploración catálogo) | Plantilla CU03 (Paso 1) | `MenuProducto`, `Comercio` | `PRODUCTO`, `LOCAL_COMERCIAL` | `M-01` (Barra de búsqueda) |
+| **RF09** | Creación y edición de promociones | `CU05` | Proceso de oferta en catálogo | Plantilla CU05 (Flujo principal) | `Promocion` | `PROMOCION` | `M-01` (Badges de descuento) |
+| **RF10** | Parametrización de franjas horarias | `CU06` | Diagrama 1 (`CU07` verifica horario) | Plantilla CU05 (Paso 4 / EX-02) | `Promocion` | `FRANJA_HORARIA` | `M-01` (Horario de validez) |
+| **RF11** | Control de estados de la promoción | `CU05` | Diagrama 2 (Decisión promo activa) | Plantilla CU05 (FA-01 / Paso 8) | `Promocion` | `PROMOCION` | `M-01` (Disponibilidad activa) |
+| **RF12** | Límite de cupos por promoción | `CU05` | Diagrama 2 (`CU03` decisión cupos > 0) | Plantilla CU03 (EX-01) / CU05 (Paso 6) | `Promocion` | `PROMOCION` | `M-01` (Indicador cupos disponibles) |
+| **RF13** | Generación de cupón único | `CU03` | Diagrama 2 (`CU03` genera identificador) | Plantilla CU03 (Paso 6) | `Cupon` | `CUPON` | `M-01` / `M-02` (Emisión y código) |
+| **RF14** | Renderizado de código QR dinámico | `CU03` | Diagrama 2 (`CU03` renderiza QR) | Plantilla CU03 (Paso 8) | `Cupon` | `CUPON` | `M-02` (Matriz QR y código 8 car) |
+| **RF15** | Billetera de cupones del visitante | `CU03` | Diagrama 2 (`CU03` muestra en billetera) | Plantilla CU03 (Paso 8) | `Cupon`, `Visitante` | `CUPON` | `M-02` (Billetera y reloj 2 horas) |
+| **RF16** | Interfaz operativa de caja (POS) | `CU07` / `CU09` | Diagrama 1 (`CU07` calle cajero y contingencia) | Plantilla CU07 (Pasos 1-3 / FA-01) | `Locatario` | `LOCAL_COMERCIAL` | `M-03` (Escáner e ingreso manual) |
+| **RF17** | Validación transaccional inmediata | `CU07` / `CU08` | Diagrama 1 (`CU07` calle sistema) | Plantilla CU07 (Pasos 4-5) | `Cupon`, `Promocion` | `CUPON`, `PROMOCION` | `M-03` (Validación y alertas EX-01..04) |
+| **RF18** | Respuesta visual de redención y marcado | `CU07` | Diagrama 1 (`CU07` confirma redención) | Plantilla CU07 (Pasos 6-8) | `Cupon`, `BitacoraCanje` | `CUPON`, `BITACORA_CANJE` | `M-03` (Confirmación verde de cobro) |
+| **RF19** | Dashboard de métricas para el locatario | `CU10` | Flujo analítico de campañas | Plantilla CU05 (Postcondición) / CU07 (Paso 7) | `Promocion`, `Cupon`, `BitacoraCanje` | `PROMOCION`, `CUPON`, `BITACORA_CANJE` | `M-03` (Resumen del turno / métricas) |
+| **RF20** | Bitácora inmutable de auditoría | `CU10` | Diagrama 1 (`CU07` asienta auditoría) | Plantilla CU07 (Paso 7) | `BitacoraCanje` | `BITACORA_CANJE` | `M-03` (Resumen e historial de auditoría) |
 
 ---
 

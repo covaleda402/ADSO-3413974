@@ -25,40 +25,40 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | :--- | :--- |
 | **Identificador y Nombre** | **CU03: Generar cupón digital de descuento** |
 | **Actor Principal** | **Visitante / Consumidor** |
-| **Actores Secundarios** | Sistema de Autenticación JWT / Servidor de Base de Datos PostgreSQL |
-| **Objetivo de Negocio** | Permitir al visitante obtener un cupón promocional único para redimir en un local de la plazoleta de comidas de San Pedro Plaza, garantizando el límite de 1 cupón diario por persona (Regla RN-01). |
+| **Actores Secundarios** | Servicio de Identidad de Nuvora / Repositorio Central del Negocio |
+| **Objetivo de Negocio** | Permitir al visitante obtener un cupón promocional único para redimir en un local de la plazoleta de comidas de San Pedro Plaza, garantizando el límite de 1 cupón diario por promoción (Regla RN-01). |
 | **Tipo de Caso de Uso** | Crítico / Transaccional de Cara al Consumidor |
-| **Relaciones Asociadas** | `«include»` a **CU04 (Autenticar usuario en la plataforma)**<br>`«extend»` desde **CU02 (Filtrar productos por presupuesto)** |
-| **Precondiciones** | 1. El visitante accede a la PWA de Nuvora desde su dispositivo móvil.<br>2. La promoción solicitada se encuentra en estado `Activa` en la base de datos.<br>3. Existen cupos disponibles para la promoción en la fecha actual (`cupos_restantes > 0`). |
+| **Relaciones Asociadas** | `«include»` a **CU04 (Autenticar usuario en la plataforma)** |
+| **Precondiciones** | 1. El visitante accede a la aplicación de Nuvora desde su dispositivo móvil.<br>2. La promoción solicitada se encuentra publicada en estado `Activa`.<br>3. Existen cupos disponibles para la promoción en la fecha actual (`cupos disponibles > 0`). |
 
 ### Flujo Principal de Eventos (Camino Feliz):
 1. **Selección de la Oferta:** El visitante visualiza el catálogo de promociones de San Pedro Plaza y pulsa sobre una oferta de su interés.
-2. **Verificación de Disponibilidad:** El sistema consulta el servidor y comprueba en tiempo real que la promoción esté activa y cuente con cupos disponibles.
-3. **Solicitud de Emisión:** El visitante presiona el botón interactivo *"Obtener Cupón de Descuento"*.
-4. **Validación de Identidad (`«include» CU04`):** El sistema invoca obligatoriamente el caso de uso `CU04`, validando el token de sesión JWT del visitante.
-5. **Control de Límite Diario (Regla RN-01):** El sistema verifica en la base de datos que el usuario no haya generado otro cupón para el mismo local o categoría gastronómica durante el día calendario en curso.
-6. **Generación Criptográfica (Regla RN-05):** El sistema genera un identificador alfanumérico aleatorio único de 8 caracteres (ej. `SPP-7K2X9M`) y calcula la hora exacta de caducidad fijando una ventana estricta de 2 horas según el reloj oficial del servidor.
-7. **Persistencia Transaccional:** El sistema registra el nuevo cupón en la tabla `cupon` con estado `Emitido`, descontando atómicamente un cupo en la promoción (`cupos_restantes = cupos_restantes - 1`).
-8. **Renderizado de Billetera:** El sistema muestra en pantalla el código QR dinámico, el código alfanumérico visible y un temporizador regresivo de 2 horas en la sección "Mis Cupones".
+2. **Verificación de Disponibilidad:** El sistema verifica en línea que la promoción esté activa y cuente con cupos disponibles.
+3. **Solicitud de Emisión:** El visitante presiona la opción *"Obtener Cupón de Descuento"*.
+4. **Validación de Identidad (`«include» CU04`):** El sistema invoca obligatoriamente el caso de uso `CU04`, verificando la sesión activa e identidad del visitante.
+5. **Control de Límite Diario (Regla RN-01):** El sistema comprueba en el historial de cupones que el usuario no haya generado otro cupón activo para la misma promoción durante las últimas 24 horas.
+6. **Generación de Código Único (Regla RN-02):** El sistema genera un identificador alfanumérico aleatorio único de 8 caracteres (ej. `NUV-8K42`) junto con su credencial verificable y fija una vigencia estricta de 2 horas según el reloj oficial del sistema.
+7. **Registro Transaccional:** El sistema registra el nuevo cupón en estado `Emitido` y descuenta una unidad del inventario de cupos disponibles de la promoción (`cupos disponibles - 1`).
+8. **Presentación en Billetera:** El sistema exhibe en la vista del visitante el código QR de verificación, el código alfanumérico visible y un reloj regresivo de 2 horas en la sección "Mis Cupones".
 
 ### Flujos Alternativos:
 * **FA-01: Usuario sin sesión iniciada al momento de la solicitud:**
-  * En el paso 4, si el visitante no tiene sesión activa, el sistema guarda en memoria la intención de cupón y redirige a la pantalla de inicio de sesión o registro rápido.
-  * Una vez autenticado exitosamente mediante JWT, el sistema retoma automáticamente el flujo en el paso 5 sin que el visitante deba buscar nuevamente la oferta.
-* **FA-02: Acceso mediante filtro de presupuesto (`«extend» CU02`):**
-  * En el paso 1, el visitante llega a la promoción tras haber ingresado un monto monetario en el filtro interactivo (ej. $15.000 COP); el sistema resalta el cupón que optimiza su presupuesto.
+  * En el paso 4, si el visitante no tiene sesión activa, el sistema conserva temporalmente su selección y lo redirige al flujo de autenticación o registro rápido (`CU04`).
+  * Una vez autenticado, el sistema retoma automáticamente el flujo en el paso 5 sin que el visitante deba buscar nuevamente la oferta.
+* **FA-02: Acceso tras filtrado previo por presupuesto (`CU02`):**
+  * En el paso 1, el visitante llega a la promoción desde los resultados del filtro monetario (ej. $15.000 COP); el sistema resalta el valor con descuento dentro del rango elegido.
 
 ### Flujos de Excepción (Manejo de Errores):
 * **EX-01: Cupos agotados concurrentemente por otro usuario:**
-  * Si en el paso 5, durante la concurrencia, otro usuario toma el último cupo disponible (`cupos_restantes = 0`), el sistema aborta la transacción, actualiza la promoción a estado `Agotada` y notifica al usuario: *"Lo sentimos, los cupos para esta oferta acaban de agotarse. Te invitamos a explorar otras promociones de la plazoleta"*.
+  * Si en el paso 5 o 7 otro visitante toma el último cupo disponible (`cupos disponibles = 0`), el sistema cancela la emisión, actualiza la promoción a estado `Agotada` y notifica al usuario: *"Lo sentimos, los cupos para esta oferta acaban de agotarse. Te invitamos a explorar otras promociones de la plazoleta"*.
 * **EX-02: Límite diario alcanzado por el usuario (Regla RN-01):**
-  * Si en el paso 5 se detecta que el usuario ya emitió un cupón hoy para ese comercio, el sistema detiene la emisión y muestra una alerta informativa: *"Ya has reclamado tu cupón diario para este restaurante. Podrás solicitar uno nuevo mañana a partir de las 8:00 a. m."*.
-* **EX-03: Falla de conectividad de red durante la persistencia:**
-  * Si en el paso 7 la conexión móvil se interrumpe antes de recibir la confirmación, el sistema ejecuta un rollback y presenta el botón *"Reintentar solicitud"* sin penalizar el límite del usuario.
+  * Si en el paso 5 se detecta que el usuario ya emitió un cupón vigente para esa promoción dentro de las últimas 24 horas, el sistema detiene la emisión y muestra una alerta informativa: *"Ya has reclamado tu cupón disponible para esta promoción. Podrás solicitar otro pasado el período vigente"*.
+* **EX-03: Interrupción de conectividad durante la confirmación:**
+  * Si en el paso 7 la conexión móvil se interrumpe antes de confirmarse la operación, el sistema revierte la reserva parcial y ofrece *"Reintentar solicitud"* sin consumir el límite del usuario.
 
 ### Postcondiciones:
-* **Postcondición de Éxito:** Se crea un registro en tabla `cupon` con estado `Emitido`, se decrementa el stock de cupos, el código QR queda disponible en la billetera del cliente y el reloj de 2 horas inicia su cuenta regresiva.
-* **Postcondición de Fallo:** No se descuentan cupos, no se crea registro en la base de datos y el visitante permanece en la vista de la oferta con un mensaje claro del motivo.
+* **Postcondición de Éxito:** El cupón queda registrado en estado `Emitido` asociado al visitante, se descuenta un cupo disponible, el código de verificación queda listo en la billetera y comienza la ventana de 2 horas.
+* **Postcondición de Fallo:** No se descuentan cupos, no se emite ningún cupón y el visitante permanece en la vista de la oferta con el motivo informado.
 
 ---
 
@@ -68,39 +68,39 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | :--- | :--- |
 | **Identificador y Nombre** | **CU05: Gestionar promociones del local** |
 | **Actor Principal** | **Locatario / Administrador de Tienda** |
-| **Actores Secundarios** | Servidor de Aplicaciones Nuvora / Base de Datos PostgreSQL |
+| **Actores Secundarios** | Repositorio de Ofertas y Catálogo de Nuvora |
 | **Objetivo de Negocio** | Permitir al comerciante dar de alta, modificar, pausar y parametrizar ofertas con cupos limitados y franjas relámpago para dinamizar el consumo en horarios de baja afluencia. |
 | **Tipo de Caso de Uso** | Administrativo / Comercial de Gestión |
 | **Relaciones Asociadas** | `«extend»` desde **CU06 (Parametrizar franjas horarias relámpago)** |
 | **Precondiciones** | 1. El locatario ha iniciado sesión con credenciales válidas y rol `Locatario`.<br>2. El establecimiento comercial se encuentra en estado `Activo` en el directorio de San Pedro Plaza.<br>3. El locatario tiene registrado al menos un producto en su menú. |
 
 ### Flujo Principal de Eventos (Camino Feliz):
-1. **Acceso al Módulo:** El locatario ingresa a su panel administrativo y pulsa en *"Crear Nueva Promoción"*.
-2. **Formulario de Parámetros:** El sistema presenta el formulario de configuración solicitando: título comercial, producto base del menú, porcentaje de descuento o precio de oferta, fecha de inicio, fecha de fin y límite de cupos diarios.
-3. **Selección de Producto y Precios:** El locatario selecciona el combo o plato gastronómico y digita el valor promocional.
-4. **Activación de Franja Relámpago (`«extend» CU06`):** El locatario activa la opción *"Oferta Relámpago Horas Valle"* y parametriza los días de aplicación (ej. martes a jueves) y el intervalo de horas valle (ej. 2:30 p.m. a 5:30 p.m.).
-5. **Validación de Reglas de Negocio:** El sistema valida que el precio de oferta sea estrictamente menor al precio regular (Regla RN-02) y que las horas relámpago se encuentren dentro del horario habilitado de la plazoleta (10:00 a.m. a 9:00 p.m., Regla RN-03).
-6. **Fijación de Cupos y Stock:** El locatario asigna el cupo máximo por jornada (ej. 25 cupones diarios).
-7. **Confirmación y Publicación:** El locatario presiona *"Publicar Promoción"*.
-8. **Persistencia e Indexación:** El sistema almacena la oferta en la tabla `promocion` y las restricciones horarias en `franja_horaria`, dejándola en estado `Activa` y actualizando en tiempo real el directorio público de Nuvora.
+1. **Acceso al Módulo:** El locatario ingresa a su panel administrativo y selecciona *"Crear Nueva Promoción"*.
+2. **Formulario de Parámetros:** El sistema presenta el formulario de configuración solicitando: título comercial, producto del menú, porcentaje o monto de descuento, fechas de vigencia y límite de cupos disponibles.
+3. **Selección de Producto y Beneficio:** El locatario selecciona el combo o plato gastronómico y establece el descuento aplicable.
+4. **Activación de Franja Relámpago (`«extend» CU06`):** De manera opcional, el locatario activa *"Oferta Relámpago Horas Valle"* y define los días y el intervalo horario (ej. martes a jueves de 2:30 p. m. a 5:30 p. m.).
+5. **Validación de Reglas de Negocio:** El sistema valida que el precio resultante sea inferior al precio ordinario y que las franjas horarias estén dentro del horario comercial del centro comercial (10:00 a. m. a 9:00 p. m., Regla RN-05).
+6. **Fijación de Cupos y Stock:** El locatario asigna el cupo máximo disponible para la campaña (ej. 25 cupones).
+7. **Confirmación y Publicación:** El locatario confirma mediante *"Publicar Promoción"*.
+8. **Publicación en Catálogo:** El sistema registra la promoción y sus franjas horarias asociadas en estado `Activa`, habilitándola en el directorio de ofertas de Nuvora.
 
 ### Flujos Alternativos:
 * **FA-01: Guardado en modo Borrador:**
-  * En el paso 7, el locatario decide no publicar de inmediato y selecciona *"Guardar como Borrador"*. El sistema persiste la configuración en estado `Borrador` sin hacerla visible para los visitantes.
+  * En el paso 7, el locatario decide no publicar de inmediato y elige *"Guardar como Borrador"*. El sistema conserva la configuración en estado `Borrador` sin hacerla visible al público.
 * **FA-02: Promoción estándar sin franja relámpago:**
-  * En el paso 4, el locatario omite la configuración horaria; el sistema establece la promoción como de validez continua durante todos los días del rango de fechas fijado.
+  * En el paso 4, el locatario omite la extensión `CU06`; el sistema establece validez continua durante todo el rango de fechas autorizado.
 
 ### Flujos de Excepción (Manejo de Errores):
 * **EX-01: Inconsistencia financiera en el valor de la oferta:**
-  * Si en el paso 5 el precio promocional ingresado es igual o superior al precio original del producto, el sistema bloquea el guardado, resalta el campo numérico y muestra: *"El precio promocional ($COP) debe ser inferior al precio regular registrado en el menú"*.
+  * Si en el paso 5 el beneficio configurado deja un valor igual o superior al precio regular del plato, el sistema impide el guardado y notifica: *"El valor con descuento ($COP) debe ser estrictamente menor al precio base del producto"*.
 * **EX-02: Solapamiento de franjas horarias relámpago:**
-  * Si en el paso 5 el sistema detecta que el locatario ya tiene otra oferta activa para el mismo producto en el mismo rango horario, el sistema notifica: *"Ya existe una oferta relámpago programada para este producto en ese horario. Debe modificar la franja o pausar la anterior"*.
+  * Si en el paso 5 el sistema detecta otra oferta activa para el mismo producto en el mismo rango horario, notifica: *"Ya existe una oferta relámpago programada para este producto en ese horario. Ajuste la franja o pause la anterior"*.
 * **EX-03: Incoherencia en fechas de vigencia:**
-  * Si la fecha de finalización es anterior a la fecha de inicio, el sistema muestra: *"La fecha de expiración debe ser posterior a la fecha de inicio de la promoción"*.
+  * Si la fecha de finalización es anterior o igual a la fecha de inicio, el sistema informa: *"La fecha de finalización debe ser posterior a la fecha de inicio de la promoción"*.
 
 ### Postcondiciones:
-* **Postcondición de Éxito:** Se crea el registro en `promocion` en estado `Activa` con sus franjas vinculadas, visible en el catálogo de San Pedro Plaza durante los horarios permitidos.
-* **Postcondición de Fallo:** No se publican cambios en el catálogo público y los datos permanecen en el formulario para corrección del usuario.
+* **Postcondición de Éxito:** La promoción queda registrada en estado `Activa` (o `Borrador`) con sus franjas asociadas y visible en el catálogo durante las ventanas válidas.
+* **Postcondición de Fallo:** No se publican cambios en el catálogo y los datos ingresados permanecen editables para corrección.
 
 ---
 
@@ -110,43 +110,43 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | :--- | :--- |
 | **Identificador y Nombre** | **CU07: Canjear cupón de descuento en caja** |
 | **Actor Principal** | **Cajero / Validador en Punto de Venta** |
-| **Actores Secundarios** | Cliente / Consumidor (Portador) · Motor Transaccional PostgreSQL |
-| **Objetivo de Negocio** | Validar la autenticidad, vigencia y unicidad de un cupón presentado por el cliente en el mostrador del restaurante, aplicando el descuento en menos de 1.5 segundos e impidiendo el doble canje fraudulento (Regla RN-04). |
+| **Actores Secundarios** | Cliente / Consumidor (Portador) · Servicio Central de Validación Nuvora |
+| **Objetivo de Negocio** | Validar la autenticidad, vigencia, pertenencia al local y unicidad de uso de un cupón presentado en el mostrador, aplicando el descuento en menos de 1.5 segundos e impidiendo el doble canje (Reglas RN-04 y RN-07). |
 | **Tipo de Caso de Uso** | Crítico / Operativo de Redención Inmediata |
 | **Relaciones Asociadas** | `«include»` a **CU08 (Verificar código QR criptográfico)**<br>`«extend»` desde **CU09 (Digitar código de cupón manualmente)** |
-| **Precondiciones** | 1. El cajero ha iniciado sesión en el módulo operativo de caja de su restaurante.<br>2. El dispositivo de caja cuenta con cámara funcional o teclado numérico habilitado.<br>3. El cliente presenta en su celular el código QR generado en Nuvora. |
+| **Precondiciones** | 1. El cajero ha iniciado sesión en la estación de validación de su establecimiento comercial.<br>2. La estación de caja dispone de cámara funcional o teclado numérico habilitado.<br>3. El cliente presenta en su dispositivo móvil el código QR o el código de respaldo generado en Nuvora. |
 
 ### Flujo Principal de Eventos (Camino Feliz):
-1. **Activación de Escaneo:** El cajero pulsa el botón *"Escanear Cupón"* en la interfaz rápida de punto de venta.
-2. **Lectura Óptica:** El cajero apunta la cámara del dispositivo hacia el código QR exhibido en el celular del cliente.
-3. **Captura y Decodificación:** El sistema procesa la imagen, decodifica el código QR y extrae el identificador criptográfico (`codigo_alfa`).
-4. **Validación Transaccional (`«include» CU08`):** El sistema despacha una solicitud atómica HTTPS al servidor ejecutando `CU08`.
-5. **Verificación de Reglas en Servidor (Tiempo < 1.5 s):** El servidor ejecuta una transacción ACID con bloqueo de fila (`SELECT ... FOR UPDATE`) y comprueba simultáneamente:
-   - Que el código exista en la tabla `cupon`.
-   - Que el cupón pertenezca al `id_local` asignado al cajero en sesión.
-   - Que el estado actual del cupón sea estrictamente `Emitido`.
-   - Que la hora oficial del servidor no supere las 2 horas de vigencia desde su emisión (Regla RN-05).
-   - Que si la oferta es relámpago, la hora oficial del servidor coincida con la franja habilitada.
-6. **Marcado Atómico de Canje (Regla RN-04):** Al superar todas las validaciones, el servidor actualiza inmediatamente el estado del cupón a `Redimido` y fija el timestamp de canje.
-7. **Registro Inmutable de Auditoría:** El sistema inserta un registro en la tabla `bitacora_canje` con: `id_cupon`, `id_cajero`, `timestamp_canje`, `ip_origen` y `monto_descuento`.
-8. **Respuesta Visual y Cierre:** La pantalla del cajero emite un sonido de confirmación y despliega una tarjeta visual verde con los datos del pedido: nombre del plato, porcentaje de descuento y valor final a cobrar en caja física.
+1. **Activación de Lectura:** El cajero selecciona *"Escanear Cupón"* en la pantalla de punto de venta.
+2. **Lectura Óptica:** El cajero apunta el lector óptico hacia el código QR exhibido en el celular del cliente.
+3. **Decodificación del Identificador:** El sistema lee la imagen y extrae el código único y la credencial de verificación del cupón.
+4. **Validación Central (`«include» CU08`):** El sistema envía la solicitud por canal cifrado al validador central ejecutando `CU08`.
+5. **Verificación de Reglas de Negocio (Tiempo < 1.5 s):** El sistema bloquea de manera exclusiva el registro del cupón para evitar usos simultáneos y comprueba:
+   - Que el cupón exista y sea auténtico.
+   - Que la promoción pertenezca exactamente al establecimiento del cajero autenticado (Regla RN-07).
+   - Que el estado actual del cupón sea `Emitido`.
+   - Que la hora oficial del sistema no supere el límite de 2 horas desde la emisión (Regla RN-02).
+   - Que, si aplica a franja relámpago, la hora del sistema esté dentro del intervalo autorizado (Regla RN-05).
+6. **Marcado Irreversible de Canje (Regla RN-04):** Al aprobarse todas las validaciones, el sistema transiciona atómicamente el estado del cupón a `Redimido` y libera el bloqueo.
+7. **Asiento de Auditoría Inmutable:** El sistema genera un asiento definitivo en la bitácora de auditoría con referencia del cupón, cajero validador, comercio, hora exacta de redención, terminal utilizada y valor descontado.
+8. **Confirmación Visual y Cierre:** La terminal del cajero emite confirmación sonora y visual en tarjeta verde indicando producto, descuento aplicado y valor neto final a cobrar en caja física.
 
 ### Flujos Alternativos:
 * **FA-01: Digitación manual de contingencia (`«extend» CU09`):**
-  * En el paso 2, si la cámara del cajero no enfoca o la pantalla del cliente presenta brillo insuficiente o roturas, el cajero pulsa *"Ingreso Manual"* (`CU09`).
-  * El cajero tipea los 8 caracteres alfanuméricos mediante el teclado táctil de caja y presiona *"Validar"*, continuando directamente en el paso 4.
+  * En el paso 2, si el lector óptico no logra enfocar o la pantalla móvil presenta reflejos o deterioro, el cajero activa *"Ingreso Manual"* (`CU09`).
+  * El cajero digita los 8 caracteres alfanuméricos visibles (`NUV-8K42`) y pulsa *"Validar"*, retomando directamente en el paso 4.
 
 ### Flujos de Excepción (Manejo de Errores y Antifraude):
-* **EX-01: Cupón ya redimido previamente (Doble canje / Fraude con captura de pantalla):**
-  * Si en el paso 5 el servidor detecta que el cupón está en estado `Redimido`, bloquea la operación y muestra una alerta roja parpadeante: *"ALERTA DE SEGURIDAD: Este cupón ya fue canjeado hoy a las [Hora] en este restaurante. No aplique el descuento"*. Se registra la alerta en auditoría.
-* **EX-02: Cupón vencido por expiración de tiempo (Límite de 2 horas superado):**
-  * Si en el paso 5 la hora del servidor supera los 120 minutos desde la emisión, el sistema marca el cupón como `Vencido` y muestra un aviso ámbar: *"Cupón caducado. El tiempo límite de 2 horas para redimir esta promoción ha expirado"*.
-* **EX-03: Cupón perteneciente a otro restaurante de la plazoleta:**
-  * Si en el paso 5 el código corresponde a un restaurante diferente (ej. cupón de *El Corralito* presentado en *Delicias del Huila*), el sistema alerta en amarillo: *"Cupón no válido en este establecimiento. Esta promoción pertenece a [Nombre del Otro Local]"*.
-* **EX-04: Cupón fuera de franja horaria relámpago:**
-  * Si el cupón corresponde a una oferta relámpago pero la hora de redención no coincide con la ventana autorizada (ej. 2:30 p.m. a 5:30 p.m.), el sistema rechaza: *"Oferta relámpago inactiva en este horario"*.
+* **EX-01: Cupón ya redimido previamente (Doble canje / Intento con captura de pantalla):**
+  * Si en el paso 5 el sistema verifica estado `Redimido`, rechaza la operación y despliega alerta roja: *"ALERTA DE SEGURIDAD: Este cupón ya fue canjeado previamente. No aplique el descuento"*. El intento fallido queda asentado en auditoría.
+* **EX-02: Cupón vencido por expiración de tiempo (Límite de 2 horas superado - RN-02):**
+  * Si en el paso 5 el tiempo transcurrido supera los 120 minutos desde la emisión, el sistema actualiza el cupón a `Expirado` y muestra: *"Cupón caducado. El límite de 2 horas para redimir esta promoción ha expirado"*.
+* **EX-03: Cupón perteneciente a otro restaurante de la plazoleta (RN-07):**
+  * Si el código pertenece a otro establecimiento comercial, el sistema rechaza el canje e informa: *"Cupón no válido en este establecimiento. Esta oferta corresponde a [Nombre del Local]"*.
+* **EX-04: Cupón fuera de franja horaria relámpago (RN-05):**
+  * Si la hora oficial está fuera de la ventana horaria autorizada de la campaña, el sistema rechaza: *"Oferta relámpago inactiva en este horario"*.
 
 ### Postcondiciones:
-* **Postcondición de Éxito:** El cupón queda marcado irreversiblemente como `Redimido`, el registro de auditoría queda sellado, el cajero aplica el descuento en la factura física y la pantalla del cliente se actualiza a "Cupón Canjeado".
-* **Postcondición de Fallo:** El cupón mantiene su estado (o pasa a `Vencido`), no se otorga descuento comercial y el incidente queda registrado en la bitácora técnica.
+* **Postcondición de Éxito:** El cupón queda marcado irreversiblemente como `Redimido`, se asienta la auditoría contable del canje, el cajero descuenta el monto en su factura física y el visitante ve el cupón como canjeado.
+* **Postcondición de Fallo:** No se aplica descuento comercial, el cupón conserva su estado original (o cambia a `Expirado` si caducó) y se registra el motivo del rechazo.
 

@@ -18,8 +18,8 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 ## 2. Pantalla 1 (M-01) · Catálogo Gastronómico y Filtro por Presupuesto
 
 - **Identificador de Pantalla:** `M-01_CATALOGO_PRESUPUESTO`
-- **Casos de Uso Atendidos:** `CU-02` (Consultar Directorio y Menús Gastronómicos), `CU-03` (Generar Cupón de Descuento Promocional).
-- **Requisitos Satisfechos:** `RF-01`, `RF-02`, `RF-03`.
+- **Casos de Uso Atendidos:** `CU01` (Consultar catálogo de locales y menús), `CU02` (Filtrar productos por presupuesto), `CU03` (Generar cupón digital de descuento).
+- **Requisitos Satisfechos:** `RF-05`, `RF-06`, `RF-07`, `RF-08`, `RF-13`.
 - **Actor Primario:** Visitante / Consumidor.
 - **Dispositivo Objetivo:** Mobile Web Responsive (360px a 420px de ancho) / Terminal Autoservicio Kiosko.
 
@@ -67,17 +67,17 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 
 ### 2.2 Especificación de Componentes e Interacción
 
-1. **Selector de Rango Presupuestal:** Chips interactivos de un solo toque que filtran en tiempo real los menús de los locales sin recargar la página (Lazy Query vía API).
+1. **Selector de Rango Presupuestal:** Chips interactivos de un solo toque que filtran en tiempo real los menús de los locales sin recargar la página (consulta dinámica en vivo).
 2. **Tarjeta de Promoción:** Muestra información clara sin ambigüedades: nombre comercial, local físico, ahorro monetario exacto en pesos colombianos (`COP`), stock en tiempo real y franja horaria aplicable.
-3. **Disparador de Caso de Uso (`CU-03`):** Al presionar el botón `[ OBTENER CUPÓN DIGITAL ]`, el sistema valida si el visitante tiene sesión iniciada (Flujo Alterno 1a si es anónimo) y si posee menos de 3 cupones activos (Excepción 3a).
+3. **Disparador de Caso de Uso (`CU03`):** Al presionar el botón `[ OBTENER CUPÓN DIGITAL ]`, el sistema valida si el visitante tiene sesión iniciada (Flujo Alterno `FA-01`, `CU04`) y si cumple el límite diario de la promoción (Excepción `EX-02`, `RN-01`).
 
 ---
 
 ## 3. Pantalla 2 (M-02) · Billetera Digital de Cupones Activos
 
 - **Identificador de Pantalla:** `M-02_BILLETERA_CUPONES`
-- **Casos de Uso Atendidos:** `CU-03` (Generar Cupón de Descuento Promocional), `CU-15` (Visualizar Billetera de Cupones Activos y Estado de Expiración).
-- **Requisitos Satisfechos:** `RF-03`, `RF-15`, `RF-18`.
+- **Casos de Uso Atendidos:** `CU03` (Generar cupón digital de descuento), `CU04` (Autenticar usuario en la plataforma).
+- **Requisitos Satisfechos:** `RF-13`, `RF-14`, `RF-15`.
 - **Actor Primario:** Visitante / Consumidor.
 - **Dispositivo Objetivo:** Mobile Web / Smartphone del Cliente.
 
@@ -130,17 +130,17 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 
 ### 3.2 Especificación de Componentes e Interacción
 
-1. **Código QR Dinámico:** Matriz bidimensional que encierra un Token temporal encriptado (JWT) con clave efímera. Se refresca en segundo plano para evitar capturas de pantalla estáticas compartidas fraudulentamente.
-2. **Código Alfanumérico de Respaldo (`NUV-8K42`):** Elemento clave para garantizar la continuidad operativa cuando el lente óptico del cajero sufra averías o el brillo del teléfono del usuario impida el escaneo (atiende directamente el **Flujo Alterno 1a de CU-07**).
-3. **Temporizador Regresivo de 2 Horas:** Contador descendente en JavaScript/WebAssembly sincronizado con el reloj del servidor NTP. A los 00:00:00 el cupón conmuta automáticamente a estado `EXPIRADO`, liberando el cupo en la billetera y restaurando el stock al comercio.
+1. **Código QR Dinámico:** Matriz bidimensional que contiene un token cifrado temporal con verificación criptográfica. Se refresca en segundo plano para evitar capturas de pantalla estáticas compartidas fraudulentamente.
+2. **Código Alfanumérico de Respaldo (`NUV-8K42`):** Elemento clave para garantizar la continuidad operativa cuando el lente óptico del cajero sufra averías o el brillo del teléfono del usuario impida el escaneo (atiende directamente el **Flujo Alterno FA-01 / CU09**).
+3. **Temporizador Regresivo de 2 Horas:** Contador descendente en pantalla sincronizado con el reloj oficial del sistema. Al llegar a `00:00:00`, el cupón conmuta automáticamente a estado `EXPIRADO` (Regla `RN-02`).
 
 ---
 
 ## 4. Pantalla 3 (M-03) · Terminal de Validación POS en Caja
 
 - **Identificador de Pantalla:** `M-03_TERMINAL_POS_CAJA`
-- **Casos de Uso Atendidos:** `CU-07` (Canjear Cupón de Descuento en Caja), `CU-08` (Validar Autenticidad de Cupón), `CU-09` (Registrar Transacción en Bitácora).
-- **Requisitos Satisfechos:** `RF-07`, `RF-08`, `RF-09`, `RF-16`.
+- **Casos de Uso Atendidos:** `CU07` (Canjear cupón de descuento en caja), `CU08` (Verificar código QR criptográfico), `CU09` (Digitar código de cupón manualmente).
+- **Requisitos Satisfechos:** `RF-16`, `RF-17`, `RF-18`, `RF-20`.
 - **Actor Primario:** Locatario / Cajero del Punto de Venta.
 - **Dispositivo Objetivo:** Tablet de Caja / PC de Mostrador con Escáner Óptico o Cámara Web (Resolución mínima 1024x768).
 
@@ -164,7 +164,7 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 |  +===========================================================================+  |
 |  | [OK] CUPÓN VÁLIDO Y ACTIVO · TRANSACCIÓN AUTORIZADA                       |  |
 |  |---------------------------------------------------------------------------|  |
-|  | Beneficiario:   Carlos Méndez (CC: *******312)                           |  |
+|  | Beneficiario:   Visitante Demo (@visitante_sp)                           |  |
 |  | Promoción:      25% Descuento Almuerzo Ejecutivo (Bandeja Paisa)          |  |
 |  | Código Cupón:   NUV-8K42                                                  |  |
 |  | Tiempo Emisión: Generado hace 18 minutos (Vence en 01:42:00)              |  |
@@ -206,7 +206,7 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 
 1. **Visor de Escaneo Híbrido:** Permite captura directa por cámara web, escáner láser USB tipo pistola o digitalización manual de los 8 caracteres.
 2. **Panel de Liquidación Financiera:** Calcula automáticamente la deducción porcentual sobre el subtotal bruto y estampa el valor neto exacto que el cajero debe cobrar en efectivo o datáfono.
-3. **Mecanismo de Prevención de Fraude:** Al pulsar `[ FINALIZAR CANJE ]`, el POS ejecuta un bloqueo pesimista en base de datos (`SELECT ... FOR UPDATE`). Si detecta que el estado ya es `CANJEADO`, aborta la transacción con `ROLLBACK`, registra el incidente de auditoría y despliega la alerta en color rojo (Excepción 6a).
+3. **Mecanismo de Prevención de Fraude:** Al pulsar `[ APLICAR DESCUENTO Y FINALIZAR CANJE ]`, el sistema ejecuta una validación exclusiva atómica contra doble canje. Si detecta que el estado ya es `CANJEADO`, aborta la operación, registra el incidente de auditoría y despliega la alerta en color rojo (Excepción `EX-01`).
 
 ---
 
@@ -214,9 +214,9 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 
 | Código Pantalla | Nombre de Pantalla | Caso de Uso Atendido | Requisitos Satisfechos | Rol de Usuario |
 |---|---|---|---|---|
-| `M-01` | Catálogo por Presupuesto | `CU-02`, `CU-03` | `RF-01`, `RF-02`, `RF-03` | Visitante / Consumidor |
-| `M-02` | Billetera Digital con QR | `CU-03`, `CU-15` | `RF-03`, `RF-15`, `RF-18` | Visitante / Consumidor |
-| `M-03` | Terminal de Validación POS | `CU-07`, `CU-08`, `CU-09` | `RF-07`, `RF-08`, `RF-09`, `RF-16` | Locatario / Cajero |
+| `M-01` | Catálogo por Presupuesto | `CU01`, `CU02`, `CU03` | `RF-05`, `RF-06`, `RF-07`, `RF-08`, `RF-13` | Visitante / Consumidor |
+| `M-02` | Billetera Digital con QR | `CU03`, `CU04` | `RF-13`, `RF-14`, `RF-15` | Visitante / Consumidor |
+| `M-03` | Terminal de Validación POS | `CU07`, `CU08`, `CU09` | `RF-16`, `RF-17`, `RF-18`, `RF-20` | Locatario / Cajero |
 
 ---
 

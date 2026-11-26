@@ -14,7 +14,7 @@
 - **Producto:** P2 · Modelo de análisis y verificación (Guía 1 - Modelo Conceptual)
 - **Usuario de GitHub del autor:** `covaleda402`
 - **Caso de estudio:** Nuvora — Plataforma web y móvil para directorio comercial interactivo, filtro por presupuesto y canje transaccional de cupones con QR dinámico en la plazoleta de comidas de San Pedro Plaza (Neiva, Huila).
-- **Trabajo en equipo del año:** No (Trabajo estrictamente individual).
+- **Trabajo en equipo del año:** Sí (Equipo formativo ADSO Ficha 3413974 para la definición inicial del caso en el SRS colaborativo v2.0; todos los artefactos de análisis y verificación de esta carpeta `G1-P2-covaleda` son elaborados individualmente por `covaleda402`).
 
 ---
 
@@ -22,10 +22,10 @@
 
 | Artefacto | Ruta original en mi fork (semana) | ¿Lo hice solo o en equipo? |
 |---|---|---|
-| Documento de Requisitos SRS v2.0 (20 RF / 10 RNF) | `02-training-project/01-phase/01-analysis/01-requirements/` | Solo (`covaleda402`) |
-| Caracterización de la Solución y Metodología | `.../G1-P1-covaleda/01-caracterizacion-y-metodologia.md` | Solo (`covaleda402`) |
-| Diagrama General de Casos de Uso UML | `.../G1-P1-covaleda/03-diagrama-casos-de-uso.drawio` | Solo (`covaleda402`) |
-| Catálogo de Casos de Uso y Matriz Requisito $\rightarrow$ CU | `.../G1-P1-covaleda/04-matriz-requisito-caso-uso.md` | Solo (`covaleda402`) |
+| Documento base de Requisitos SRS v2.0 (20 RF / 10 RNF) | Insumo colaborativo del equipo (`SRS_MercaGo_SanPedroPlaza.md`, fuera de este repo) | En equipo (3 aprendices, sin datos personales) |
+| Caracterización de la Solución y Metodología | [`../G1-P1-covaleda/01-caracterizacion-y-metodologia.md`](../G1-P1-covaleda/01-caracterizacion-y-metodologia.md) | Solo (`covaleda402`) |
+| Diagrama General de Casos de Uso UML | [`../G1-P1-covaleda/03-diagrama-casos-de-uso.drawio`](../G1-P1-covaleda/03-diagrama-casos-de-uso.drawio) | Solo (`covaleda402`) |
+| Catálogo de Casos de Uso y Matriz Requisito $\rightarrow$ CU | [`../G1-P1-covaleda/04-matriz-requisito-caso-uso.md`](../G1-P1-covaleda/04-matriz-requisito-caso-uso.md) | Solo (`covaleda402`) |
 
 ---
 
@@ -33,10 +33,10 @@
 
 | # | Artefacto | Qué cambié y por qué | Criterio de Rúbrica Mejorado | Enlace al Commit |
 |---|---|---|---|---|
-| 1 | Diagramas de Actividades (`CU-03` y `CU-07`) | Se amplió la altura y espaciado vertical de los carriles, eliminando solapamientos de cajas transaccionales y asegurando guardas explícitas `[ ]` en cada rama y concurrencia `<<fork>>` / `<<join>>` sin colisiones de texto. | C1 (Diagrama de actividades con concurrencia y guardas) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) |
-| 2 | Modelo de Dominio Conceptual | Se implementó enrutamiento ortogonal perimetral exterior para la asociación de validación entre `Locatario` y `BitacoraCanje`, eliminando el cruce de líneas por el centro del diagrama, y se sanearon las etiquetas de texto para renderizado nativo en Draw.io. | C3 (Modelo de dominio conceptual sin cruces ni métodos) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) |
-| 3 | Modelo Entidad-Relación | Se corrigió la sintaxis XML de comentarios (eliminación de guiones consecutivos `--`) para plena compatibilidad con analizadores W3C y Draw.io, preservando la resolución asociativa N:M (`CUPON`) y la entidad débil (`FRANJA_HORARIA`). | C4 (MER en notación declarada con N:M y entidad débil) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) |
-| 4 | Plantillas y Mockup de Caja | Se diseñó el **Flujo Alterno 1a** de digitación manual de 8 caracteres alfanuméricos (`NUV-8K42`) para garantizar la continuidad operativa en el Punto de Venta ante fallas de lectura de cámara o pantallas dañadas. | C2 (Plantillas) y C5 (Mockups sin pantallas huérfanas) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) |
+| 1 | Diagramas de Actividades (`CU03` y `CU07`) | Se amplió la altura y espaciado vertical de los carriles, eliminando solapamientos, asegurando guardas explícitas `[ ]` en el 100 % de salidas de decisión, sanitizando términos de implementación y añadiendo justificación escrita de ejecución secuencial atómica sin bifurcaciones concurrentes. | C1 (Diagrama de actividades con guardas y justificación de concurrencia) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) / [`5bf28da`](https://github.com/covaleda402/ADSO-3413974/commit/5bf28da) |
+| 2 | Modelo de Dominio Conceptual | Se implementó enrutamiento ortogonal perimetral exterior para la asociación de validación entre `Locatario` y `BitacoraCanje`, eliminando el cruce de líneas por el centro del diagrama, y se sanearon las etiquetas de texto para renderizado nativo en Draw.io. | C3 (Modelo de dominio conceptual sin cruces ni métodos) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) / [`a8fe94a`](https://github.com/covaleda402/ADSO-3413974/commit/a8fe94a) |
+| 3 | Modelo Entidad-Relación | Se corrigió la sintaxis XML de comentarios (eliminación de guiones consecutivos `--`), se ajustó la etiqueta `valida y firma` fuera del contorno de `CUPON` y se amplió la caja de convenciones para evitar desbordes. | C4 (MER en notación declarada con N:M y entidad débil) | [`a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177) / [`a8fe94a`](https://github.com/covaleda402/ADSO-3413974/commit/a8fe94a) |
+| 4 | Plantillas, Mockups y Privacidad | Se diseñó el **Flujo Alterno 1a** (`NUV-8K42`), se eliminaron términos de implementación física (motores, protocolos y tokens de sesión) de las plantillas (Regla #10), se alinearon `CU01..CU10` y `RF01..RF20`, y se reemplazó toda referencia personal por `covaleda402`. | C2 (Plantillas sin detalle técnico) y C5 (Mockups sin pantallas huérfanas) | [`75c2f37`](https://github.com/covaleda402/ADSO-3413974/commit/75c2f37) |
 
 ---
 
@@ -44,8 +44,8 @@
 
 Para este Producto 2 se desarrolló una suite completa de ingeniería de análisis conceptual:
 
-1. **Plantillas Extendidas de Casos de Uso (`01-plantillas-casos-de-uso.md`):** Especificación profunda de `CU-03` (Generar cupón), `CU-05` (Gestionar promociones) y `CU-07` (Canjear cupón en caja), cada una con precondiciones, flujo principal de 7 a 8 pasos estructurados, flujos alternos válidos, excepciones técnicas justificadas, postcondiciones y reglas de negocio.
-2. **Diagramas de Actividades UML (`02-diagramas-actividades.drawio` y `.svg`):** Modelado gráfico con 3 calles de responsabilidad por diagrama (Cliente, Cajero, Sistema Core / API / Base de Datos), decisiones exhaustivas con guardas `[ ]` y concurrencia fork/join con espaciado vertical holgado.
+1. **Plantillas Extendidas de Casos de Uso (`01-plantillas-casos-de-uso.md`):** Especificación profunda de `CU03` (Generar cupón), `CU05` (Gestionar promociones) y `CU07` (Canjear cupón en caja), cada una con precondiciones, flujo principal de 8 pasos estructurados, flujos alternos válidos, excepciones justificadas y postcondiciones libres de detalles de implementación SQL/código.
+2. **Diagramas de Actividades UML (`02-diagramas-actividades.drawio` y `.svg`):** Modelado gráfico con 3 calles de responsabilidad por diagrama, decisiones exhaustivas con guardas `[ ]` y justificación explícita de ejecución secuencial atómica sin paralelismo.
 3. **Modelo de Dominio Conceptual (`03-modelo-dominio.drawio` y `.svg`):** Diagrama de 8 clases conceptuales con atributos de negocio puros, multiplicidades rigurosas, jerarquía de herencia raíz y topología ortogonal limpia con cero cruces de líneas.
 4. **Modelo Entidad-Relación Extendido (`04-modelo-entidad-relacion.drawio` y `.svg`):** Esquema relacional de 7 entidades en notación Pata de Gallo (Crow's Foot), con resolución asociativa N:M y entidad débil identificadora, 100% validado sintácticamente.
 5. **Prototipos de Pantallas y Mockups UI (`05-prototipos-mockups.md`):** Especificación funcional de 3 interfaces clave: Catálogo por Presupuesto (`M-01`), Billetera con QR y Reloj de 2 Horas (`M-02`) y Consola POS de Caja con Lector y Alertas de Duplicidad (`M-03`).
@@ -105,7 +105,7 @@ Todos los artefactos requeridos por `Rubricas_G1.md` (Sección 5.1) se encuentra
 
 - [x] **Commits en al menos 2 días distintos:**
   - **Día 1 (Miércoles 25 de noviembre de 2026):** Creación y entrega base de la suite completa de modelos de análisis, actividades, dominio, MER, mockups y verificación ([commit `a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177)).
-  - **Día 2 (Jueves 26 de noviembre de 2026):** Corrección de sintaxis XML en MER, enrutamiento perimetral sin cruces en modelo de dominio, re-espaciado amplio en actividades y verificación cruzada de trazabilidad.
+  - **Día 2 (Jueves 26 de noviembre de 2026):** Corrección de sintaxis XML en MER, enrutamiento perimetral sin cruces en modelo de dominio, sanitización de privacidad y auditoría final ([`a8fe94a`](https://github.com/covaleda402/ADSO-3413974/commit/a8fe94a), [`5bf28da`](https://github.com/covaleda402/ADSO-3413974/commit/5bf28da), [`75c2f37`](https://github.com/covaleda402/ADSO-3413974/commit/75c2f37)).
 - [x] **No subí el marco documental del instructor ni plantillas sin diligenciar:** Todos los campos han sido rigurosamente completados con la información real de Nuvora.
 - [x] **Push y comprobación en GitHub:** Se verificará en el repositorio público de GitHub tras la sincronización de la rama `main`.
 
