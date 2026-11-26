@@ -1,0 +1,255 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1120" width="1560" height="1120" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- ENCABEZADO -->
+  <rect x="30" y="20" width="1500" height="65" rx="8" fill="#0f172a"/>
+  <text x="55" y="48" fill="#ffffff" font-size="18" font-weight="bold">NUVORA · MODELO LÓGICO RELACIONAL EN 3FN (NOTACIÓN PATA DE GALLO / CROW'S FOOT)</text>
+  <text x="55" y="70" fill="#94a3b8" font-size="12">Centro Comercial San Pedro Plaza · 8 Tablas Relacionales ANSI SQL (PostgreSQL 15+) · Rúbrica G2-P2 Criterio 2 · Autor: covaleda402</text>
+
+  <!-- ENTIDAD 1: USUARIO -->
+  <g id="ent_usuario" transform="translate(70, 100)" filter="url(#shadow)">
+    <rect x="0" y="0" width="280" height="28" rx="6" fill="#0f172a"/>
+    <rect x="0" y="28" width="280" height="182" rx="0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="140" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">USUARIO</text>
+    <text x="14" y="48" fill="#0f172a" font-size="11" font-weight="bold">PK id_usuario : BIGSERIAL</text>
+    <line x1="0" y1="56" x2="280" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#334155" font-size="11">nombre_completo : VARCHAR(150)</text>
+    <text x="14" y="92" fill="#334155" font-size="11">correo : VARCHAR(150) [UNIQUE]</text>
+    <text x="14" y="110" fill="#334155" font-size="11">telefono : VARCHAR(20)</text>
+    <text x="14" y="128" fill="#334155" font-size="11">tipo_rol : ENUM('VISITANTE', 'LOCATARIO', 'ADMIN')</text>
+    <text x="14" y="146" fill="#334155" font-size="11">hash_password : VARCHAR(255)</text>
+    <text x="14" y="164" fill="#334155" font-size="11">fecha_registro : TIMESTAMPTZ</text>
+    <text x="14" y="182" fill="#334155" font-size="11">estado_cuenta : VARCHAR(20)</text>
+  </g>
+
+  <!-- ENTIDAD 8: CATEGORIA_COMERCIO (Normalización 3FN) -->
+  <g id="ent_categoria" transform="translate(400, 210)" filter="url(#shadow)">
+    <rect x="0" y="0" width="260" height="28" rx="6" fill="#0891b2"/>
+    <rect x="0" y="28" width="260" height="107" rx="0" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="130" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">CATEGORIA_COMERCIO</text>
+    <text x="14" y="48" fill="#0e7490" font-size="11" font-weight="bold">PK id_categoria : SERIAL</text>
+    <line x1="0" y1="56" x2="260" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#334155" font-size="11">nombre_categoria : VARCHAR(50) [UNIQUE]</text>
+    <text x="14" y="94" fill="#334155" font-size="11">descripcion : VARCHAR(255)</text>
+    <text x="14" y="114" fill="#334155" font-size="11">icono_representativo : VARCHAR(100)</text>
+  </g>
+
+  <!-- RELACION: CATEGORIA clasifica LOCAL_COMERCIAL -->
+  <line x1="660" y1="275" x2="710" y2="275" stroke="#0891b2" stroke-width="1.5"/>
+  <line x1="670" y1="267" x2="670" y2="283" stroke="#0891b2" stroke-width="1.5"/>
+  <line x1="675" y1="267" x2="675" y2="283" stroke="#0891b2" stroke-width="1.5"/>
+  <circle cx="695" cy="275" r="3.5" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <line x1="698" y1="267" x2="710" y2="275" stroke="#0891b2" stroke-width="1.5"/>
+  <line x1="698" y1="283" x2="710" y2="275" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="670" y="260" fill="#0891b2" font-size="10" font-weight="bold">1</text>
+  <text x="692" y="260" fill="#0891b2" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- ENTIDAD 2: LOCAL_COMERCIAL -->
+  <g id="ent_local" transform="translate(710, 100)" filter="url(#shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#0284c7"/>
+    <rect x="0" y="28" width="290" height="200" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="145" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">LOCAL_COMERCIAL</text>
+    <text x="14" y="48" fill="#0284c7" font-size="11" font-weight="bold">PK id_local : SERIAL</text>
+    <line x1="0" y1="56" x2="290" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#0891b2" font-size="11" font-style="italic">FK id_categoria : INT [NOT NULL]</text>
+    <text x="14" y="92" fill="#0369a1" font-size="11" font-style="italic">FK id_usuario_responsable : BIGINT</text>
+    <text x="14" y="110" fill="#334155" font-size="11">numero_local : VARCHAR(10) [UNIQUE]</text>
+    <text x="14" y="128" fill="#334155" font-size="11">razon_social : VARCHAR(150)</text>
+    <text x="14" y="146" fill="#334155" font-size="11">descripcion : TEXT</text>
+    <text x="14" y="164" fill="#334155" font-size="11">telefono_contacto : VARCHAR(20)</text>
+    <text x="14" y="182" fill="#334155" font-size="11">estado_operativo : VARCHAR(20)</text>
+  </g>
+
+  <!-- RELACION: USUARIO administra LOCAL_COMERCIAL (Pasa limpia a y=150) -->
+  <line x1="350" y1="150" x2="710" y2="150" stroke="#334155" stroke-width="1.5"/>
+  <rect x="500" y="140" width="60" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="530" y="153" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">administra</text>
+  <line x1="365" y1="142" x2="365" y2="158" stroke="#334155" stroke-width="1.5"/>
+  <line x1="370" y1="142" x2="370" y2="158" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="685" cy="150" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <line x1="695" y1="142" x2="710" y2="150" stroke="#334155" stroke-width="1.5"/>
+  <line x1="695" y1="158" x2="710" y2="150" stroke="#334155" stroke-width="1.5"/>
+  <text x="360" y="135" fill="#475569" font-size="10" font-weight="bold">1</text>
+  <text x="685" y="135" fill="#475569" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- ENTIDAD 3: PRODUCTO -->
+  <g id="ent_producto" transform="translate(1210, 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="260" height="28" rx="6" fill="#0284c7"/>
+    <rect x="0" y="28" width="260" height="162" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="130" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">PRODUCTO</text>
+    <text x="14" y="48" fill="#0284c7" font-size="11" font-weight="bold">PK id_producto : BIGSERIAL</text>
+    <line x1="0" y1="56" x2="260" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#0369a1" font-size="11" font-style="italic">FK id_local : INT</text>
+    <text x="14" y="92" fill="#334155" font-size="11">nombre : VARCHAR(120)</text>
+    <text x="14" y="110" fill="#334155" font-size="11">descripcion : TEXT</text>
+    <text x="14" y="128" fill="#334155" font-size="11">precio_base : NUMERIC(12,2)</text>
+    <text x="14" y="146" fill="#334155" font-size="11">categoria_menu : VARCHAR(50)</text>
+    <text x="14" y="164" fill="#334155" font-size="11">disponible : BOOLEAN</text>
+  </g>
+
+  <!-- RELACION: LOCAL ofrece PRODUCTO -->
+  <line x1="1000" y1="205" x2="1210" y2="205" stroke="#334155" stroke-width="1.5"/>
+  <rect x="1080" y="195" width="80" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="1120" y="208" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">ofrece en carta</text>
+  <line x1="1015" y1="197" x2="1015" y2="213" stroke="#334155" stroke-width="1.5"/>
+  <line x1="1020" y1="197" x2="1020" y2="213" stroke="#334155" stroke-width="1.5"/>
+  <line x1="1195" y1="197" x2="1210" y2="205" stroke="#334155" stroke-width="1.5"/>
+  <line x1="1195" y1="213" x2="1210" y2="205" stroke="#334155" stroke-width="1.5"/>
+  <text x="1015" y="190" fill="#475569" font-size="10" font-weight="bold">1</text>
+  <text x="1195" y="190" fill="#475569" font-size="10" font-weight="bold">1..*</text>
+
+  <!-- ENTIDAD 4: PROMOCION -->
+  <g id="ent_promocion" transform="translate(710, 410)" filter="url(#shadow)">
+    <rect x="0" y="0" width="290" height="28" rx="6" fill="#16a34a"/>
+    <rect x="0" y="28" width="290" height="200" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="145" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">PROMOCION</text>
+    <text x="14" y="48" fill="#16a34a" font-size="11" font-weight="bold">PK id_promocion : BIGSERIAL</text>
+    <line x1="0" y1="56" x2="290" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#15803d" font-size="11" font-style="italic">FK id_local : INT</text>
+    <text x="14" y="92" fill="#334155" font-size="11">titulo_oferta : VARCHAR(150)</text>
+    <text x="14" y="110" fill="#334155" font-size="11">porcentaje_descuento : NUMERIC(5,2)</text>
+    <text x="14" y="128" fill="#334155" font-size="11">stock_total : INT</text>
+    <text x="14" y="146" fill="#334155" font-size="11">stock_disponible : INT</text>
+    <text x="14" y="164" fill="#334155" font-size="11">fecha_inicio : TIMESTAMPTZ</text>
+    <text x="14" y="182" fill="#334155" font-size="11">fecha_fin : TIMESTAMPTZ</text>
+    <text x="14" y="200" fill="#334155" font-size="11">estado_campana : VARCHAR(20)</text>
+  </g>
+
+  <!-- RELACION: LOCAL publica PROMOCION -->
+  <line x1="855" y1="328" x2="855" y2="410" stroke="#334155" stroke-width="1.5"/>
+  <rect x="830" y="355" width="50" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="855" y="368" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">publica</text>
+  <line x1="847" y1="335" x2="863" y2="335" stroke="#334155" stroke-width="1.5"/>
+  <line x1="847" y1="340" x2="863" y2="340" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="855" cy="395" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <line x1="847" y1="400" x2="855" y2="410" stroke="#334155" stroke-width="1.5"/>
+  <line x1="863" y1="400" x2="855" y2="410" stroke="#334155" stroke-width="1.5"/>
+  <text x="870" y="340" fill="#475569" font-size="10" font-weight="bold">1</text>
+  <text x="870" y="400" fill="#475569" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- ENTIDAD 5: FRANJA_HORARIA (Débil) -->
+  <g id="ent_franja" transform="translate(1220, 420)" filter="url(#shadow)">
+    <rect x="0" y="0" width="280" height="28" rx="6" fill="#d97706"/>
+    <rect x="0" y="28" width="280" height="172" rx="0" fill="#fffbeb" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <text x="140" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;weak&gt;&gt; FRANJA_HORARIA</text>
+    <text x="14" y="48" fill="#b45309" font-size="11" font-weight="bold">PK, FK id_promocion : BIGINT</text>
+    <text x="14" y="66" fill="#b45309" font-size="11" font-weight="bold">PK dia_semana : SMALLINT [1..7]</text>
+    <text x="14" y="84" fill="#b45309" font-size="11" font-weight="bold">PK hora_inicio : TIME</text>
+    <line x1="0" y1="92" x2="280" y2="92" stroke="#fcd34d" stroke-width="1"/>
+    <text x="14" y="112" fill="#334155" font-size="11">hora_fin : TIME</text>
+    <text x="14" y="130" fill="#334155" font-size="11">aplica_festivos : BOOLEAN</text>
+    <text x="14" y="148" fill="#334155" font-size="11">cupo_maximo_franja : INT</text>
+    <text x="14" y="174" fill="#b45309" font-size="10" font-style="italic">Dependencia de Existencia e ID</text>
+  </g>
+
+  <!-- RELACION: PROMOCION restringida por FRANJA_HORARIA -->
+  <line x1="1000" y1="522" x2="1220" y2="522" stroke="#d97706" stroke-width="1.5"/>
+  <rect x="1080" y="512" width="85" height="18" rx="3" fill="#ffffff" stroke="#fcd34d" stroke-width="0.5"/>
+  <text x="1122" y="525" text-anchor="middle" fill="#b45309" font-size="10" font-weight="bold">restringida por</text>
+  <line x1="1015" y1="514" x2="1015" y2="530" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="1020" y1="514" x2="1020" y2="530" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="1205" y1="514" x2="1220" y2="522" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="1205" y1="530" x2="1220" y2="522" stroke="#d97706" stroke-width="1.5"/>
+  <text x="1015" y="505" fill="#d97706" font-size="10" font-weight="bold">1 (Id)</text>
+  <text x="1195" y="505" fill="#d97706" font-size="10" font-weight="bold">1..*</text>
+
+  <!-- ENTIDAD 6: CUPON (Asociativa) -->
+  <g id="ent_cupon" transform="translate(60, 410)" filter="url(#shadow)">
+    <rect x="0" y="0" width="300" height="28" rx="6" fill="#16a34a"/>
+    <rect x="0" y="28" width="300" height="197" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="150" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;associative&gt;&gt; CUPON</text>
+    <text x="14" y="48" fill="#16a34a" font-size="11" font-weight="bold">PK id_cupon : BIGSERIAL</text>
+    <line x1="0" y1="56" x2="300" y2="56" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="14" y="74" fill="#15803d" font-size="11" font-style="italic">FK id_usuario_visitante : BIGINT</text>
+    <text x="14" y="92" fill="#15803d" font-size="11" font-style="italic">FK id_promocion : BIGINT</text>
+    <text x="14" y="110" fill="#334155" font-size="11">codigo_alfanumerico : VARCHAR(8) [UQ]</text>
+    <text x="14" y="128" fill="#334155" font-size="11">token_dinamico_hash : VARCHAR(255)</text>
+    <text x="14" y="146" fill="#334155" font-size="11">estado_canje : ENUM('ACTIVO','CANJEADO','EXPIRADO')</text>
+    <text x="14" y="164" fill="#334155" font-size="11">fecha_generacion : TIMESTAMPTZ</text>
+    <text x="14" y="182" fill="#334155" font-size="11">fecha_expiracion : TIMESTAMPTZ</text>
+    <text x="14" y="206" fill="#15803d" font-size="10" font-weight="bold">Resuelve N:M Usuario a Promocion</text>
+  </g>
+
+  <!-- RELACION: USUARIO adquiere CUPON -->
+  <line x1="210" y1="310" x2="210" y2="410" stroke="#16a34a" stroke-width="1.5"/>
+  <rect x="165" y="350" width="90" height="18" rx="3" fill="#ffffff" stroke="#86efac" stroke-width="0.5"/>
+  <text x="210" y="363" text-anchor="middle" fill="#15803d" font-size="10" font-weight="bold">adquiere</text>
+  <line x1="202" y1="320" x2="218" y2="320" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="202" y1="325" x2="218" y2="325" stroke="#16a34a" stroke-width="1.5"/>
+  <circle cx="210" cy="395" r="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="202" y1="400" x2="210" y2="410" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="218" y1="400" x2="210" y2="410" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="225" y="330" fill="#15803d" font-size="10" font-weight="bold">1</text>
+  <text x="225" y="405" fill="#15803d" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- RELACION: PROMOCION emite CUPON -->
+  <line x1="710" y1="522" x2="360" y2="522" stroke="#16a34a" stroke-width="1.5"/>
+  <rect x="510" y="512" width="45" height="18" rx="3" fill="#ffffff" stroke="#86efac" stroke-width="0.5"/>
+  <text x="532" y="525" text-anchor="middle" fill="#15803d" font-size="10" font-weight="bold">emite</text>
+  <line x1="695" y1="514" x2="695" y2="530" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="700" y1="514" x2="700" y2="530" stroke="#16a34a" stroke-width="1.5"/>
+  <circle cx="375" cy="522" r="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="375" y1="514" x2="360" y2="522" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="375" y1="530" x2="360" y2="522" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="690" y="505" fill="#15803d" font-size="10" font-weight="bold">1</text>
+  <text x="375" y="505" fill="#15803d" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- ENTIDAD 7: BITACORA_CANJE (Auditoría) -->
+  <g id="ent_bitacora" transform="translate(150, 830)" filter="url(#shadow)">
+    <rect x="0" y="0" width="310" height="28" rx="6" fill="#dc2626"/>
+    <rect x="0" y="28" width="310" height="207" rx="0" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="155" y="19" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">BITACORA_CANJE</text>
+    <text x="14" y="48" fill="#dc2626" font-size="11" font-weight="bold">PK id_canje : BIGSERIAL</text>
+    <line x1="0" y1="56" x2="310" y2="56" stroke="#fca5a5" stroke-width="1"/>
+    <text x="14" y="74" fill="#b91c1c" font-size="11" font-style="italic">FK id_cupon : BIGINT [UNIQUE / 1 a 1]</text>
+    <text x="14" y="92" fill="#b91c1c" font-size="11" font-style="italic">FK id_usuario_cajero : BIGINT</text>
+    <text x="14" y="110" fill="#b91c1c" font-size="11" font-style="italic">FK id_local : INT</text>
+    <text x="14" y="128" fill="#334155" font-size="11">fecha_hora_canje : TIMESTAMPTZ</text>
+    <text x="14" y="146" fill="#334155" font-size="11">monto_descuento_aplicado : NUMERIC(10,2)</text>
+    <text x="14" y="164" fill="#334155" font-size="11">numero_factura_pos : VARCHAR(50)</text>
+    <text x="14" y="182" fill="#334155" font-size="11">ip_origen : VARCHAR(45)</text>
+    <text x="14" y="200" fill="#334155" font-size="11">firma_hash_transaccion : VARCHAR(255)</text>
+  </g>
+
+  <!-- RELACION: CUPON se registra en BITACORA_CANJE -->
+  <line x1="210" y1="635" x2="210" y2="830" stroke="#dc2626" stroke-width="1.5"/>
+  <rect x="165" y="720" width="90" height="18" rx="3" fill="#ffffff" stroke="#fca5a5" stroke-width="0.5"/>
+  <text x="210" y="733" text-anchor="middle" fill="#dc2626" font-size="10" font-weight="bold">se registra en</text>
+  <line x1="202" y1="645" x2="218" y2="645" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="202" y1="650" x2="218" y2="650" stroke="#dc2626" stroke-width="1.5"/>
+  <circle cx="210" cy="815" r="4" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="202" y1="822" x2="218" y2="822" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="225" y="655" fill="#dc2626" font-size="10" font-weight="bold">1</text>
+  <text x="225" y="815" fill="#dc2626" font-size="10" font-weight="bold">0..1</text>
+
+  <!-- RELACION: USUARIO Cajero valida BITACORA_CANJE (Bordeando por la izquierda) -->
+  <path d="M 70 247 L 25 247 L 25 947.5 L 30 947.5 L 150 947.5" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <rect x="40" y="580" width="80" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+  <text x="80" y="593" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">valida y firma</text>
+  <line x1="55" y1="240" x2="55" y2="254" stroke="#334155" stroke-width="1.5"/>
+  <line x1="60" y1="240" x2="60" y2="254" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="135" cy="947.5" r="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <line x1="140" y1="940" x2="150" y2="947.5" stroke="#334155" stroke-width="1.5"/>
+  <line x1="140" y1="955" x2="150" y2="947.5" stroke="#334155" stroke-width="1.5"/>
+  <text x="45" y="235" fill="#475569" font-size="10" font-weight="bold">1</text>
+  <text x="130" y="935" fill="#475569" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- CONVENCIONES TECNICAS (Caja informativa) -->
+  <g transform="translate(610, 700)" filter="url(#shadow)">
+    <rect x="0" y="0" width="500" height="210" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#1e293b" font-size="12" font-weight="bold">Convenciones Técnicas del Modelo Lógico Relacional en 3FN (Rúbrica G2 · C2):</text>
+    <line x1="20" y1="36" x2="480" y2="36" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="20" y="55" fill="#475569" font-size="11">• Notación Declarada: Pata de Gallo (Crow's Foot) extendida con tipos de datos ANSI SQL.</text>
+    <text x="20" y="75" fill="#475569" font-size="11">• 8 Tablas Normalizadas en 3FN: Extracción de CATEGORIA_COMERCIO para dependencias transitivas.</text>
+    <text x="20" y="95" fill="#475569" font-size="11">• Resolución N:M: Entidad asociativa CUPON con atributos propios (código, fechas, estado).</text>
+    <text x="20" y="115" fill="#475569" font-size="11">• Entidad Débil: FRANJA_HORARIA depende en ID y existencia de PROMOCION (PK compuesta).</text>
+    <text x="20" y="135" fill="#475569" font-size="11">• Integridad Transaccional: BITACORA_CANJE garantiza auditoría estricta e irrepudiabilidad.</text>
+    <text x="20" y="160" fill="#0f172a" font-size="11" font-weight="bold">Símbolos de Cardinalidad:</text>
+    <text x="20" y="180" fill="#475569" font-size="11">||  Uno y solo uno (Obligatorio)         o|  Cero o uno (Opcional)</text>
+    <text x="20" y="195" fill="#475569" font-size="11">|&lt;  Uno a muchos (Obligatorio)           o&lt;  Cero a muchos (Opcional)</text>
+  </g>
+</svg>
