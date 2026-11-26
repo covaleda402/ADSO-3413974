@@ -29,18 +29,18 @@ Ruta oficial en el repositorio:
 
 | # | Artefacto | Qué cambié y por qué | Criterio de Rúbrica que Mejora | Enlace al commit |
 | :---: | :--- | :--- | :--- | :--- |
-| **1** | **Delimitación de Alcance y Definición de Nuvora** | Se acotó la visión del proyecto: de un marketplace comercial disperso hacia un ecosistema cerrado para la plazoleta de comidas de San Pedro Plaza, eliminando pasarelas de pago online y domicilios externos para centrar la ingeniería en cupones QR y validación transaccional inmediata en punto de venta. | Criterio C1 (RAP 592375): Caracterización precisa y estabilidad de requisitos. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
-| **2** | **Diagrama de Casos de Uso UML** | Se estructuraron 10 casos de uso bajo estándar formal (*Verbo + Objeto*), delimitando la frontera del sistema con 4 actores de negocio en el exterior y modelando relaciones `«include»` y `«extend»` con justificación técnica y dirección de flechas normada. | Criterio C4 (RAP 592373): Notación UML estandarizada y justificación de relaciones. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
-| **3** | **Selección Metodológica y Plan de Análisis** | Se formuló una comparativa formal entre RUP, XP y Scrum bajo los 4 parámetros del caso de estudio, seleccionando Scrum bajo iteraciones continuas de 2 semanas y estructurando un cronograma de 8 actividades de análisis priorizadas dentro del marco oficial. | Criterios C1 y C2 (RAP 592375): Metodología justificada y plan de análisis coherente. | [`6578b21`](https://github.com/covaleda402/ADSO-3413974/commit/6578b21) |
+| **1** | **Delimitación de Alcance y Definición de Nuvora** | Se acotó la visión del proyecto: de un marketplace comercial disperso hacia un ecosistema cerrado para la plazoleta de comidas de San Pedro Plaza, eliminando pasarelas de pago online y domicilios externos para centrar la ingeniería en cupones QR y validación transaccional inmediata en punto de venta. | Criterio C1 (RAP 592375): Caracterización precisa y estabilidad de requisitos. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
+| **2** | **Diagrama de Casos de Uso UML** | Se estructuraron 10 casos de uso bajo estándar formal (*Verbo + Objeto*), delimitando la frontera del sistema con 4 actores de negocio en el exterior y modelando relaciones `«include»` y `«extend»` con justificación técnica, corredor superior y cero cruces de líneas. | Criterio C4 (RAP 592373): Notación UML estandarizada, justificación de relaciones y topología limpia. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
+| **3** | **Selección Metodológica, Plan de Análisis y Tabla RNF** | Se formuló una comparativa formal entre RUP, XP y Scrum bajo los 4 parámetros del caso de estudio, seleccionando Scrum bajo iteraciones continuas de 2 semanas, cronograma de 8 actividades de análisis y especificación formal de 10 RNFs bajo norma ISO/IEC 25010. | Criterios C1, C2 y C3 (RAP 592375 y 592373): Metodología justificada, plan coherente y calidad de requisitos. | [`79d73c0`](https://github.com/covaleda402/ADSO-3413974/commit/79d73c0) |
 
 ---
 
 ## 4. Qué Construí Nuevo
 
 1. **Documento de Caracterización y Comparativa:** `01-caracterizacion-y-metodologia.md` con matriz comparativa (RUP vs XP vs Scrum) y justificación técnica para el equipo.
-2. **Plan de 8 Actividades de Análisis:** `02-plan-actividades-analisis.md` con prioridades, fechas de ejecución y entregables verificables.
-3. **Diagrama de Casos de Uso Nuvora:** `03-diagrama-casos-de-uso.drawio` (fuente editable en Draw.io) y `03-diagrama-casos-de-uso.svg` (renderizado vectorial visible).
-4. **Matriz de Trazabilidad Requisito → Caso de Uso:** `04-matriz-requisito-caso-uso.md` cubriendo el 100% de los 20 Requerimientos Funcionales (RF01 - RF20) del SRS de Nuvora.
+2. **Plan de 8 Actividades de Análisis:** `02-plan-actividades-analisis.md` con prioridades, fechas de ejecución (21 al 27 nov) y entregables verificables.
+3. **Diagrama de Casos de Uso Nuvora:** `03-diagrama-casos-de-uso.drawio` (fuente editable en Draw.io) y `03-diagrama-casos-de-uso.svg` (renderizado vectorial visible sin cruces de líneas).
+4. **Matriz de Trazabilidad Requisito → Caso de Uso y Tabla RNF:** `04-matriz-requisito-caso-uso.md` cubriendo el 100% de los 20 Requerimientos Funcionales (RF01 - RF20) del SRS de Nuvora y 10 Requisitos No Funcionales bajo estándar ISO/IEC 25010.
 
 ---
 
@@ -62,7 +62,7 @@ Ruta oficial en el repositorio:
 - [x] Entiendo que el sábado 28 de noviembre de 2026 el instructor me hará **3 preguntas orales** sobre mis productos (una del producto 1, una del producto 2 y una tercera a su elección) y que, si respondo bien menos de 2, el producto sobre el que fallé queda con tope de 50.
 
 **Firma (usuario de GitHub y fecha):**  
-`covaleda402` · 25 de noviembre de 2026
+`covaleda402` · 26 de noviembre de 2026
 
 ---
 
