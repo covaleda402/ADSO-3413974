@@ -1,7 +1,7 @@
-# 04 · Especificación de Casos de Uso y Matriz de Trazabilidad
+﻿# 04 · Especificación de Casos de Uso y Matriz de Trazabilidad
 ## Proyecto Formativo: Nuvora — Ecosistema Digital San Pedro Plaza
 **Ficha SENA:** 3413974 · ADSO · Regional Huila  
-**Aprendiz:** Jose Esneider Covaleda Hortua  
+**Aprendiz:** `covaleda402`  
 
 ---
 
@@ -98,3 +98,4 @@ Para satisfacer la distinción explícita exigida en el Criterio C3 (RAP 592373)
 | **RNF08** | **Mantenibilidad (Modularidad)** | Desacoplamiento entre la capa de presentación frontend y los servicios de backend/datos. | Arquitectura basada en API RESTful con contratos de interfaz claros y serialización en formato JSON. |
 | **RNF09** | **Cumplimiento Legal (Privacidad)** | Adherencia a la legislación colombiana vigente en materia de tratamiento de datos personales. | Cumplimiento estricto de la Ley Estatutaria 1581 de 2012 (Habeas Data) en el registro y captura de correos electrónicos. |
 | **RNF10** | **Resiliencia (Recuperabilidad)** | Continuidad operativa del punto de venta en caso de falla en el hardware de captura óptica (cámara/escáner). | Disponibilidad del flujo alterno de digitación manual de código alfanumérico en caja con validación inmediata. |
+

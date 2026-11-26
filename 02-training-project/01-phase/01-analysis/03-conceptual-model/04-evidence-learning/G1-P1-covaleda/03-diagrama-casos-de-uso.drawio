@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Antigravity UML Engine">
   <diagram id="NuvoraCasosUso" name="Diagrama de Casos de Uso - Nuvora">
-    <mxGraphModel dx="1373" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1567" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -77,7 +77,9 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rel_ext_06_05" edge="1" parent="1" source="cu06" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#82b366;" target="cu05" value="«extend»&#xa;[Oferta relámpago]">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" x="-0.6" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="rel_ext_09_07" edge="1" parent="1" source="cu09" style="html=1;verticalAlign=bottom;labelBackgroundColor=#ffffff;endArrow=open;dashed=1;endSize=8;strokeWidth=1.5;strokeColor=#82b366;" target="cu07" value="«extend»&#xa;[Falla lectura cámara]">
           <mxGeometry relative="1" as="geometry" />

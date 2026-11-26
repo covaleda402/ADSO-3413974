@@ -1,7 +1,7 @@
-# 01 · Caracterización de la Solución y Comparación de Metodologías
+﻿# 01 · Caracterización de la Solución y Comparación de Metodologías
 ## Proyecto Formatívo: Nuvora — Ecosistema Digital San Pedro Plaza
 **Ficha SENA:** 3413974 · ADSO · Regional Huila  
-**Aprendiz:** Jose Esneider Covaleda Hortua  
+**Aprendiz:** `covaleda402`  
 
 ---
 
@@ -40,6 +40,7 @@ Se analizan tres metodologías reconocidas de la industria de acuerdo con las cu
 2. **Eficiencia en la división de responsabilidades:**
    - Permite que cada aprendiz lidere su frente sin bloquear a los demás:
      - **Edwin Esquivel:** Arquitectura de datos, backend relacional y transacciones atómicas.
-     - **Jose Covaleda:** Panel administrativo de locatarios, configuración de promociones y módulo de validación en caja.
+     - **covaleda402:** Panel administrativo de locatarios, configuración de promociones y módulo de validación en caja.
      - **Paula Claros:** Diseño de experiencia de usuario en Figma, catálogo de visitante y filtro de presupuesto.
 3. **Control de entregables por Sprint:** Al final de cada ciclo se obtiene un incremento de producto potencialmente desplegable (MVP), permitiendo realizar pruebas tempranas del lector QR y verificar que la respuesta en caja tome menos de 1.5 segundos.
+
