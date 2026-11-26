@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 920" width="1280" height="920" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
   <defs>
-    <!-- Triángulo de Herencia / Generalización UML -->
+    <!-- Triangulo de Herencia / Generalizacion UML -->
     <marker id="inheritance" viewBox="0 0 16 16" refX="16" refY="8" markerWidth="14" markerHeight="14" orient="auto">
       <polygon points="0,0 16,8 0,16" fill="#ffffff" stroke="#334155" stroke-width="1.5" />
     </marker>
 
-    <!-- Marcador de asociación simple -->
+    <!-- Marcador de asociacion simple -->
     <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626" />
     </marker>
 
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
@@ -16,52 +19,53 @@
   </defs>
 
   <!-- ENCABEZADO -->
-  <rect x="20" y="20" width="1160" height="65" rx="8" fill="#1e293b"/>
+  <rect x="20" y="20" width="1240" height="65" rx="8" fill="#1e293b"/>
   <text x="45" y="48" fill="#ffffff" font-size="18" font-weight="bold">NUVORA · MODELO DE DOMINIO CONCEPTUAL (CLASES ABSTRACTAS UML)</text>
-  <text x="45" y="70" fill="#94a3b8" font-size="12">Centro Comercial San Pedro Plaza · Sin métodos ni atributos técnicos de BD · Rúbrica G1 C3 · Autor: covaleda402</text>
+  <text x="45" y="70" fill="#94a3b8" font-size="12">Centro Comercial San Pedro Plaza · Sin métodos ni atributos técnicos de BD · Cero cruces de líneas · Rúbrica G1 C3 · Autor: covaleda402</text>
 
-  <!-- CLASE 1: Usuario (Clase Padre / Generalización Raíz) -->
-  <g id="clase_usuario" transform="translate(480, 110)" filter="url(#shadow)">
-    <rect x="0" y="0" width="240" height="28" rx="6" fill="#0f172a"/>
-    <rect x="0" y="28" width="240" height="92" rx="0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
-    <text x="120" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Usuario</text>
+  <!-- CLASE 1: Usuario (Clase Padre / Generalizacion Raiz) -->
+  <g id="clase_usuario" transform="translate(480, 100)" filter="url(#shadow)">
+    <rect x="0" y="0" width="250" height="28" rx="6" fill="#0f172a"/>
+    <rect x="0" y="28" width="250" height="98" rx="0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <text x="125" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Usuario</text>
     <text x="12" y="48" fill="#334155" font-size="11">+ nombreCompleto: Texto</text>
     <text x="12" y="66" fill="#334155" font-size="11">+ correoElectronico: Texto</text>
     <text x="12" y="84" fill="#334155" font-size="11">+ telefonoContacto: Texto</text>
     <text x="12" y="102" fill="#334155" font-size="11">+ fechaRegistro: FechaHora</text>
+    <text x="12" y="120" fill="#334155" font-size="11">+ estadoCuenta: EstadoUsuario</text>
   </g>
 
-  <!-- LÍNEAS DE HERENCIA / GENERALIZACIÓN -->
+  <!-- LINEAS DE HERENCIA / GENERALIZACION -->
   <!-- De Visitante a Usuario -->
-  <path d="M 270 270 L 270 230 L 540 230 L 540 215" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#inheritance)"/>
-  <text x="360" y="222" fill="#64748b" font-size="10" font-style="italic">es-un (generalización)</text>
+  <path d="M 265 260 L 265 235 L 542 235 L 542 228" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#inheritance)"/>
+  <text x="360" y="228" fill="#64748b" font-size="10" font-style="italic">es-un</text>
 
   <!-- De Locatario a Usuario -->
-  <path d="M 660 270 L 660 215" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#inheritance)"/>
-  <text x="668" y="245" fill="#64748b" font-size="10" font-style="italic">es-un</text>
+  <path d="M 665 260 L 665 228" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#inheritance)"/>
+  <text x="675" y="248" fill="#64748b" font-size="10" font-style="italic">es-un</text>
 
   <!-- CLASE 2: Visitante (Subclase) -->
-  <g id="clase_visitante" transform="translate(150, 270)" filter="url(#shadow)">
-    <rect x="0" y="0" width="240" height="28" rx="6" fill="#2563eb"/>
-    <rect x="0" y="28" width="240" height="72" rx="0" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
-    <text x="120" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Visitante</text>
+  <g id="clase_visitante" transform="translate(140, 260)" filter="url(#shadow)">
+    <rect x="0" y="0" width="250" height="28" rx="6" fill="#2563eb"/>
+    <rect x="0" y="28" width="250" height="72" rx="0" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="125" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Visitante</text>
     <text x="12" y="48" fill="#334155" font-size="11">+ preferenciaGastronomica: Categoria</text>
     <text x="12" y="66" fill="#334155" font-size="11">+ canalNotificacion: TipoCanal</text>
     <text x="12" y="84" fill="#334155" font-size="11">+ cuponesActivos: Entero [0..3]</text>
   </g>
 
   <!-- CLASE 3: Locatario (Subclase) -->
-  <g id="clase_locatario" transform="translate(540, 270)" filter="url(#shadow)">
-    <rect x="0" y="0" width="240" height="28" rx="6" fill="#2563eb"/>
-    <rect x="0" y="28" width="240" height="72" rx="0" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
-    <text x="120" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Locatario</text>
+  <g id="clase_locatario" transform="translate(540, 260)" filter="url(#shadow)">
+    <rect x="0" y="0" width="250" height="28" rx="6" fill="#2563eb"/>
+    <rect x="0" y="28" width="250" height="72" rx="0" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="125" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Locatario</text>
     <text x="12" y="48" fill="#334155" font-size="11">+ cargoPuesto: CargoComercial</text>
     <text x="12" y="66" fill="#334155" font-size="11">+ turnoAtencion: HorarioTurno</text>
     <text x="12" y="84" fill="#334155" font-size="11">+ codigoAutorizacionPOS: Texto</text>
   </g>
 
   <!-- CLASE 4: Comercio -->
-  <g id="clase_comercio" transform="translate(900, 260)" filter="url(#shadow)">
+  <g id="clase_comercio" transform="translate(890, 250)" filter="url(#shadow)">
     <rect x="0" y="0" width="260" height="28" rx="6" fill="#0284c7"/>
     <rect x="0" y="28" width="260" height="110" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
     <text x="130" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Comercio</text>
@@ -72,14 +76,14 @@
     <text x="12" y="120" fill="#334155" font-size="11">+ estadoOperativo: EstadoComercio</text>
   </g>
 
-  <!-- ASOCIACIÓN: Locatario administra Comercio -->
-  <line x1="780" y1="315" x2="900" y2="315" stroke="#334155" stroke-width="1.5"/>
-  <text x="840" y="307" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">administra ▸</text>
-  <text x="790" y="330" fill="#475569" font-size="10">1..*</text>
-  <text x="880" y="330" fill="#475569" font-size="10">1</text>
+  <!-- ASOCIACION: Locatario administra Comercio -->
+  <line x1="790" y1="305" x2="890" y2="305" stroke="#334155" stroke-width="1.5"/>
+  <text x="840" y="297" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">administra ▸</text>
+  <text x="800" y="320" fill="#475569" font-size="10">1..*</text>
+  <text x="870" y="320" fill="#475569" font-size="10">1</text>
 
   <!-- CLASE 5: MenuProducto -->
-  <g id="clase_menu" transform="translate(900, 460)" filter="url(#shadow)">
+  <g id="clase_menu" transform="translate(890, 460)" filter="url(#shadow)">
     <rect x="0" y="0" width="260" height="28" rx="6" fill="#0284c7"/>
     <rect x="0" y="28" width="260" height="92" rx="0" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
     <text x="130" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; MenuProducto</text>
@@ -89,14 +93,14 @@
     <text x="12" y="102" fill="#334155" font-size="11">+ disponibleEnCarta: Booleano</text>
   </g>
 
-  <!-- ASOCIACIÓN: Comercio ofrece MenuProducto -->
-  <line x1="1030" y1="398" x2="1030" y2="460" stroke="#334155" stroke-width="1.5"/>
-  <text x="1040" y="430" fill="#334155" font-size="10" font-weight="bold">ofrece ▾</text>
-  <text x="1010" y="415" fill="#475569" font-size="10">1</text>
-  <text x="1010" y="450" fill="#475569" font-size="10">1..*</text>
+  <!-- ASOCIACION: Comercio ofrece MenuProducto -->
+  <line x1="1020" y1="388" x2="1020" y2="460" stroke="#334155" stroke-width="1.5"/>
+  <text x="1030" y="425" fill="#334155" font-size="10" font-weight="bold">ofrece ▾</text>
+  <text x="1000" y="410" fill="#475569" font-size="10">1</text>
+  <text x="1000" y="450" fill="#475569" font-size="10">1..*</text>
 
   <!-- CLASE 6: Promocion -->
-  <g id="clase_promocion" transform="translate(530, 450)" filter="url(#shadow)">
+  <g id="clase_promocion" transform="translate(530, 440)" filter="url(#shadow)">
     <rect x="0" y="0" width="260" height="28" rx="6" fill="#16a34a"/>
     <rect x="0" y="28" width="260" height="135" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
     <text x="130" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Promocion</text>
@@ -109,23 +113,23 @@
     <text x="12" y="156" fill="#334155" font-size="11">+ estadoCampana: EstadoPromo</text>
   </g>
 
-  <!-- ASOCIACIÓN: Comercio publica Promocion -->
-  <path d="M 900 370 L 830 370 L 830 450 L 790 450" fill="none" stroke="#334155" stroke-width="1.5"/>
-  <text x="825" y="410" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">◂ publica</text>
-  <text x="870" y="365" fill="#475569" font-size="10">1</text>
+  <!-- ASOCIACION: Comercio publica Promocion -->
+  <path d="M 890 350 L 830 350 L 830 450 L 790 450" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="825" y="400" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">◂ publica</text>
+  <text x="865" y="345" fill="#475569" font-size="10">1</text>
   <text x="800" y="445" fill="#475569" font-size="10">0..*</text>
 
-  <!-- ASOCIACIÓN: Promocion aplica a MenuProducto -->
-  <line x1="790" y1="520" x2="900" y2="520" stroke="#334155" stroke-width="1.5"/>
-  <text x="845" y="512" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">aplica a ▸</text>
-  <text x="800" y="535" fill="#475569" font-size="10">0..*</text>
-  <text x="880" y="535" fill="#475569" font-size="10">1..*</text>
+  <!-- ASOCIACION: Promocion aplica a MenuProducto -->
+  <line x1="790" y1="510" x2="890" y2="510" stroke="#334155" stroke-width="1.5"/>
+  <text x="840" y="502" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">aplica a ▸</text>
+  <text x="800" y="525" fill="#475569" font-size="10">0..*</text>
+  <text x="870" y="525" fill="#475569" font-size="10">1..*</text>
 
   <!-- CLASE 7: Cupon -->
-  <g id="clase_cupon" transform="translate(150, 460)" filter="url(#shadow)">
-    <rect x="0" y="0" width="240" height="28" rx="6" fill="#16a34a"/>
-    <rect x="0" y="28" width="240" height="92" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
-    <text x="120" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Cupon</text>
+  <g id="clase_cupon" transform="translate(140, 450)" filter="url(#shadow)">
+    <rect x="0" y="0" width="250" height="28" rx="6" fill="#16a34a"/>
+    <rect x="0" y="28" width="250" height="92" rx="0" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="125" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; Cupon</text>
     <text x="12" y="48" fill="#334155" font-size="11">+ codigoAlfanumerico: Texto [8 car]</text>
     <text x="12" y="66" fill="#334155" font-size="11">+ estadoCanje: EstadoCupon</text>
     <text x="12" y="84" fill="#334155" font-size="11">+ fechaHoraEmision: FechaHora</text>
@@ -133,48 +137,48 @@
     <text x="12" y="115" fill="#334155" font-size="10" fill-opacity="0.8">+ firmaVerificacion: Hash</text>
   </g>
 
-  <!-- ASOCIACIÓN: Visitante adquiere Cupon -->
-  <line x1="270" y1="370" x2="270" y2="460" stroke="#334155" stroke-width="1.5"/>
-  <text x="280" y="415" fill="#334155" font-size="10" font-weight="bold">adquiere ▾</text>
-  <text x="250" y="390" fill="#475569" font-size="10">1</text>
-  <text x="250" y="450" fill="#475569" font-size="10">0..*</text>
+  <!-- ASOCIACION: Visitante adquiere Cupon -->
+  <line x1="265" y1="360" x2="265" y2="450" stroke="#334155" stroke-width="1.5"/>
+  <text x="275" y="405" fill="#334155" font-size="10" font-weight="bold">adquiere ▾</text>
+  <text x="245" y="380" fill="#475569" font-size="10">1</text>
+  <text x="245" y="440" fill="#475569" font-size="10">0..*</text>
 
-  <!-- ASOCIACIÓN: Promocion genera Cupon -->
-  <line x1="530" y1="520" x2="390" y2="520" stroke="#334155" stroke-width="1.5"/>
-  <text x="460" y="512" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">◂ genera</text>
-  <text x="510" y="535" fill="#475569" font-size="10">1</text>
-  <text x="400" y="535" fill="#475569" font-size="10">0..*</text>
+  <!-- ASOCIACION: Promocion genera Cupon -->
+  <line x1="530" y1="510" x2="390" y2="510" stroke="#334155" stroke-width="1.5"/>
+  <text x="460" y="502" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">◂ genera</text>
+  <text x="510" y="525" fill="#475569" font-size="10">1</text>
+  <text x="400" y="525" fill="#475569" font-size="10">0..*</text>
 
   <!-- CLASE 8: BitacoraCanje -->
-  <g id="clase_bitacora" transform="translate(150, 680)" filter="url(#shadow)">
-    <rect x="0" y="0" width="240" height="28" rx="6" fill="#dc2626"/>
-    <rect x="0" y="28" width="240" height="92" rx="0" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
-    <text x="120" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; BitacoraCanje</text>
+  <g id="clase_bitacora" transform="translate(140, 670)" filter="url(#shadow)">
+    <rect x="0" y="0" width="250" height="28" rx="6" fill="#dc2626"/>
+    <rect x="0" y="28" width="250" height="92" rx="0" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="125" y="18" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;&lt;concept&gt;&gt; BitacoraCanje</text>
     <text x="12" y="48" fill="#334155" font-size="11">+ fechaHoraCanje: FechaHora</text>
     <text x="12" y="66" fill="#334155" font-size="11">+ montoDescuentoEfectivo: Moneda</text>
     <text x="12" y="84" fill="#334155" font-size="11">+ terminalPOSUtilizada: Texto</text>
     <text x="12" y="102" fill="#334155" font-size="11">+ estadoAuditoria: EstadoAuditoria</text>
   </g>
 
-  <!-- ASOCIACIÓN: Cupon queda registrado en BitacoraCanje -->
-  <line x1="270" y1="580" x2="270" y2="680" stroke="#334155" stroke-width="1.5"/>
-  <text x="280" y="630" fill="#334155" font-size="10" font-weight="bold">registrado en ▾</text>
-  <text x="250" y="605" fill="#475569" font-size="10">1</text>
-  <text x="250" y="665" fill="#475569" font-size="10">0..1</text>
+  <!-- ASOCIACION: Cupon queda registrado en BitacoraCanje -->
+  <line x1="265" y1="570" x2="265" y2="670" stroke="#334155" stroke-width="1.5"/>
+  <text x="275" y="620" fill="#334155" font-size="10" font-weight="bold">registrado en ▾</text>
+  <text x="245" y="595" fill="#475569" font-size="10">1</text>
+  <text x="245" y="655" fill="#475569" font-size="10">0..1</text>
 
-  <!-- ASOCIACIÓN: Locatario valida y firma BitacoraCanje -->
-  <path d="M 660 370 L 660 730 L 390 730" fill="none" stroke="#334155" stroke-width="1.5"/>
-  <text x="540" y="722" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">◂ valida y firma en caja</text>
-  <text x="670" y="395" fill="#475569" font-size="10">1</text>
-  <text x="405" y="745" fill="#475569" font-size="10">0..*</text>
+  <!-- ASOCIACION SIN CRUCES: Locatario valida BitacoraCanje bordeando por el exterior -->
+  <path d="M 765 260 L 765 210 L 1190 210 L 1190 715 L 390 715" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow-red)"/>
+  <text x="1180" y="450" text-anchor="middle" fill="#dc2626" font-size="10" font-weight="bold" transform="rotate(90 1180 450)">valida y firma en caja ▸</text>
+  <text x="775" y="240" fill="#dc2626" font-size="10">1</text>
+  <text x="405" y="730" fill="#dc2626" font-size="10">0..*</text>
 
   <!-- NOTA DE REGLA DEL DOMINIO (Caja informativa) -->
-  <g transform="translate(530, 680)" filter="url(#shadow)">
-    <rect x="0" y="0" width="630" height="120" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
-    <text x="15" y="25" fill="#b45309" font-size="12" font-weight="bold">Reglas Estrictas del Modelo de Dominio Conceptual (SENA Rúbrica G1 · C3):</text>
-    <text x="15" y="48" fill="#78350f" font-size="11">1. Ausencia de Métodos: Modela el espacio del problema de negocio, sin operaciones de software ni verbos CRUD.</text>
-    <text x="15" y="68" fill="#78350f" font-size="11">2. Ausencia de Claves Foráneas: Las relaciones se expresan mediante semántica pura de asociación y multiplicidades.</text>
-    <text x="15" y="88" fill="#78350f" font-size="11">3. Generalización Raíz: 'Usuario' agrupa atributos comunes hacia roles especializados 'Visitante' y 'Locatario'.</text>
-    <text x="15" y="108" fill="#78350f" font-size="11">4. Coherencia 100%: Cada concepto modelado corresponde a las entidades analizadas en las plantillas CU03, CU05 y CU07.</text>
+  <g transform="translate(530, 670)" filter="url(#shadow)">
+    <rect x="0" y="0" width="620" height="110" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+    <text x="15" y="24" fill="#b45309" font-size="12" font-weight="bold">Reglas Estrictas del Modelo de Dominio Conceptual (SENA Rúbrica G1 · C3):</text>
+    <text x="15" y="45" fill="#78350f" font-size="11">1. Ausencia de Métodos: Modela el espacio del problema de negocio, sin operaciones ni CRUD.</text>
+    <text x="15" y="65" fill="#78350f" font-size="11">2. Ausencia de Claves Foráneas: Las relaciones se expresan mediante semántica pura y multiplicidades.</text>
+    <text x="15" y="85" fill="#78350f" font-size="11">3. Generalización Raíz: 'Usuario' agrupa atributos comunes hacia roles 'Visitante' y 'Locatario'.</text>
+    <text x="15" y="105" fill="#78350f" font-size="11">4. Cero Cruces de Líneas: Topología ortogonal perimetral limpia para máxima legibilidad técnica.</text>
   </g>
 </svg>
