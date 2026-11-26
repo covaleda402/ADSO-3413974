@@ -1,8 +1,8 @@
-# Informe de Análisis y Matriz de Trazabilidad · Producto 2
+﻿# Informe de Análisis y Matriz de Trazabilidad · Producto 2
 
 > **Centro Comercial San Pedro Plaza · Neiva, Huila**  
 > **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
-> **Autor:** `covaleda402` (Jose Esneider Covaleda Hortua)  
+> **Autor:** `covaleda402`  
 > **Rúbrica de Evaluación:** `Rubricas_G1.md` · Sección 5.1 (Artefactos h e i) y Sección 5.2 (Criterio C8 - 15 Puntos)
 
 ---
@@ -102,3 +102,4 @@ La siguiente matriz traza el **100% de los 20 requisitos funcionales** especific
 - **Cobertura Absoluta (100%):** Se demuestra que ningún requisito funcional quedó huérfano ni desatendido en el diseño.
 - **Consistencia Multidimensional:** Cada entidad modelada en la base de datos relacional se respalda conceptualmente en el modelo de dominio y se operacionaliza a través de los casos de uso y las vistas de usuario correspondientes.
 - **Sustentación:** La estructura unificada asegura trazabilidad inmediata ante cualquier requerimiento que sea cuestionado durante la prueba de desempeño y la defensa oral del 28 de noviembre de 2026.
+

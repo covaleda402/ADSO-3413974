@@ -1,4 +1,4 @@
-# Producto 2 · Modelo de Análisis y Verificación · Guía 1
+﻿# Producto 2 · Modelo de Análisis y Verificación · Guía 1
 
 > **Ecosistema Digital Nuvora · Centro Comercial San Pedro Plaza (Neiva, Huila)**  
 > **Programa de Formación:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
@@ -88,7 +88,7 @@ Todos los artefactos requeridos por `Rubricas_G1.md` (Sección 5.1) se encuentra
 - [x] Declaro que lo que tomé de mi equipo o de otra fuente está identificado en la sección 2.
 - [x] Entiendo que el sábado 28 de noviembre de 2026 el instructor me hará **3 preguntas orales** sobre mis productos (una del producto 1, una del producto 2 y una tercera a su elección) y que, si respondo bien menos de 2, el producto sobre el que fallé queda con tope de 50.
 
-**Firma:** `covaleda402` (Jose Esneider Covaleda Hortua)  
+**Firma:** `covaleda402`  
 **Fecha:** 26 de noviembre de 2026  
 
 ---
@@ -108,3 +108,4 @@ Todos los artefactos requeridos por `Rubricas_G1.md` (Sección 5.1) se encuentra
   - **Día 2 (Jueves 26 de noviembre de 2026):** Corrección de sintaxis XML en MER, enrutamiento perimetral sin cruces en modelo de dominio, re-espaciado amplio en actividades y verificación cruzada de trazabilidad.
 - [x] **No subí el marco documental del instructor ni plantillas sin diligenciar:** Todos los campos han sido rigurosamente completados con la información real de Nuvora.
 - [x] **Push y comprobación en GitHub:** Se verificará en el repositorio público de GitHub tras la sincronización de la rama `main`.
+

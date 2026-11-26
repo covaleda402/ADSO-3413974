@@ -1,8 +1,8 @@
-# Lista de Chequeo de Validación y Registro de Ajustes · Producto 2
+﻿# Lista de Chequeo de Validación y Registro de Ajustes · Producto 2
 
 > **Centro Comercial San Pedro Plaza · Neiva, Huila**  
 > **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
-> **Autor:** `covaleda402` (Jose Esneider Covaleda Hortua)  
+> **Autor:** `covaleda402`  
 > **Rúbrica de Evaluación:** `Rubricas_G1.md` · Sección 5.1 (Artefactos f y g) y Sección 5.2 (Criterios C6 y C7 - 20 Puntos Totales)
 
 ---
@@ -56,3 +56,4 @@ A continuación se detallan los hallazgos identificados durante la fase de anál
 ## 4. Conclusión de la Evaluación de Calidad
 
 El Producto 2 alcanza una calificación de **100% de cumplimiento** sobre la totalidad de los criterios evaluados, habiendo transformado oportunamente 6 inconsistencias conceptuales en fortalezas arquitectónicas verificadas. La documentación resultante garantiza solidez para la sustentación oral individual y la defensa técnica del sábado 28 de noviembre de 2026.
+

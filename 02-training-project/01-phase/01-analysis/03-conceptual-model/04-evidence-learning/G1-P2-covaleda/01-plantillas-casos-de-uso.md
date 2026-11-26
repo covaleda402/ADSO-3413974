@@ -1,7 +1,7 @@
-# 01 · Especificación Extendida de Casos de Uso Críticos
+﻿# 01 · Especificación Extendida de Casos de Uso Críticos
 ## Proyecto Formativo: Nuvora — Ecosistema Digital San Pedro Plaza
 **Ficha SENA:** 3413974 · ADSO · Regional Huila  
-**Aprendiz:** Jose Esneider Covaleda Hortua (`covaleda402`)  
+**Aprendiz:** `covaleda402`  
 **Guía 1:** Modelo Conceptual (Análisis) — **Producto 2:** Modelo de Análisis y Verificación (G1-P2)  
 **Criterio de Evaluación:** C2 de `Rubricas_G1.md` (RAP 592373 - Modelar las funciones del software)  
 
@@ -149,3 +149,4 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 ### Postcondiciones:
 * **Postcondición de Éxito:** El cupón queda marcado irreversiblemente como `Redimido`, el registro de auditoría queda sellado, el cajero aplica el descuento en la factura física y la pantalla del cliente se actualiza a "Cupón Canjeado".
 * **Postcondición de Fallo:** El cupón mantiene su estado (o pasa a `Vencido`), no se otorga descuento comercial y el incidente queda registrado en la bitácora técnica.
+

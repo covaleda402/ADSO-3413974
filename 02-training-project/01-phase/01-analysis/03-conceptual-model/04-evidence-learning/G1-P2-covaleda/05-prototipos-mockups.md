@@ -1,8 +1,8 @@
-# Prototipos y Mockups Iniciales · Sistema Nuvora
+﻿# Prototipos y Mockups Iniciales · Sistema Nuvora
 
 > **Centro Comercial San Pedro Plaza · Neiva, Huila**  
 > **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
-> **Autor:** `covaleda402` (Jose Esneider Covaleda Hortua)  
+> **Autor:** `covaleda402`  
 > **Rúbrica de Evaluación:** `Rubricas_G1.md` · Sección 5.1 (Artefacto e) y Sección 5.2 (Criterio C5 - 10 Puntos)
 
 ---
@@ -148,7 +148,7 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 
 ```text
 +---------------------------------------------------------------------------------+
-|  NUVORA POS v1.0 · COMERCIO: DON JEDIONDO (LOCAL 214) · CAJERO: J. COVALEDA     |
+|  NUVORA POS v1.0 · COMERCIO: DON JEDIONDO (LOCAL 214) · CAJERO: OPERADOR POS 01 |
 +---------------------------------------------------------------------------------+
 |  ESTACIÓN DE CANJE Y LECTURA                                                    |
 |                                                                                 |
@@ -225,3 +225,4 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 - **Cero Pantallas Huérfanas:** Cada una de las 3 interfaces responde a eventos y flujos de negocio modelados previamente en los diagramas de actividades.
 - **Rótulo Explícito:** Cada interfaz cuenta con su identificador, caso de uso y descripción funcional en el encabezado.
 - **Soporte a Contingencias Reales:** La pantalla de caja contempla tanto la lectura óptica ideal como la digitación manual y la detección inmediata de duplicidad o vencimiento.
+
