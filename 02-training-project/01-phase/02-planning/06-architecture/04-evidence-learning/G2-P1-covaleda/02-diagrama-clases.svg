@@ -1,297 +1,363 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1780 1290" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
   <defs>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
     </filter>
-    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4B5563" />
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#9333EA" />
     </marker>
-    <marker id="inheritance" viewBox="0 0 12 12" refX="12" refY="6" markerWidth="10" markerHeight="10" orient="auto">
-      <path d="M 0 0 L 12 6 L 0 12 z" fill="#ffffff" stroke="#2563EB" stroke-width="1.8" />
+    <marker id="arrow_red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#DC2626" />
     </marker>
-    <marker id="composition" viewBox="0 0 16 10" refX="0" refY="5" markerWidth="12" markerHeight="8" orient="auto">
+    <marker id="inheritance" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 11 6 L 0 12 z" fill="#ffffff" stroke="#2563EB" stroke-width="1.8" />
+    </marker>
+    <marker id="realization" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 11 6 L 0 12 z" fill="#ffffff" stroke="#D97706" stroke-width="1.8" />
+    </marker>
+    <marker id="composition" viewBox="0 0 16 10" refX="0" refY="5" markerWidth="14" markerHeight="9" orient="auto">
       <path d="M 0 5 L 8 0 L 16 5 L 8 10 z" fill="#0D9488" stroke="#0D9488" />
     </marker>
-    <marker id="aggregation" viewBox="0 0 16 10" refX="0" refY="5" markerWidth="12" markerHeight="8" orient="auto">
-      <path d="M 0 5 L 8 0 L 16 5 L 8 10 z" fill="#ffffff" stroke="#D97706" stroke-width="1.8" />
+    <marker id="composition_green" viewBox="0 0 16 10" refX="0" refY="5" markerWidth="14" markerHeight="9" orient="auto">
+      <path d="M 0 5 L 8 0 L 16 5 L 8 10 z" fill="#16A34A" stroke="#16A34A" />
+    </marker>
+    <marker id="aggregation" viewBox="0 0 16 10" refX="0" refY="5" markerWidth="14" markerHeight="9" orient="auto">
+      <path d="M 0 5 L 8 0 L 16 5 L 8 10 z" fill="#ffffff" stroke="#D97706" stroke-width="1.6" />
     </marker>
   </defs>
 
   <!-- Title Banner -->
-  <rect x="50" y="20" width="1500" height="46" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
-  <text x="800" y="42" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle">NUVORA — DIAGRAMA DE CLASES DE DISEÑO ORIENTADO A OBJETOS (UML)</text>
-  <text x="800" y="58" fill="#DBEAFE" font-size="11" text-anchor="middle">Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterios C2 y C3) · Autor: Jose Esneider Covaleda (covaleda402) · Ficha 3413974</text>
+  <rect x="40" y="20" width="1700" height="48" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="890" y="42" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle">NUVORA — DIAGRAMA DE CLASES DE DISEÑO ORIENTADO A OBJETOS (UML)</text>
+  <text x="890" y="59" fill="#DBEAFE" font-size="11" text-anchor="middle">Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterios C2 y C3) · Autor: covaleda402 · Ficha 3413974</text>
 
-  <!-- Class 1: Usuario -->
-  <g transform="translate(480, 90)" filter="url(#shadow)">
-    <rect width="280" height="175" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-    <rect width="280" height="34" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="1"/>
-    <text x="140" y="16" fill="#1E40AF" font-size="10" font-style="italic" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
-    <text x="140" y="28" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Usuario</text>
-    <line x1="0" y1="34" x2="280" y2="34" stroke="#2563EB" stroke-width="1.5"/>
-    <text x="12" y="52" fill="#1F2937" font-size="11">- idUsuario: string</text>
-    <text x="12" y="67" fill="#1F2937" font-size="11">- nombreCompleto: string</text>
-    <text x="12" y="82" fill="#1F2937" font-size="11">- correoElectronico: string</text>
-    <text x="12" y="97" fill="#1F2937" font-size="11">- hashPassword: string</text>
-    <text x="12" y="112" fill="#1F2937" font-size="11">- estadoCuenta: EstadoUsuario</text>
-    <line x1="0" y1="120" x2="280" y2="120" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="138" fill="#111827" font-size="11">+ autenticar(pass: string): boolean</text>
-    <text x="12" y="153" fill="#111827" font-size="11">+ actualizarPerfil(datos: object): void</text>
-    <text x="12" y="168" fill="#111827" font-size="11">+ getRol(): TipoRol</text>
+  <!-- Class 1: Usuario (Abstract) -->
+  <g transform="translate(440, 90)" filter="url(#shadow)">
+    <rect width="290" height="190" rx="5" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <rect width="290" height="36" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+    <text x="145" y="15" fill="#1E40AF" font-size="10" font-style="italic" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="145" y="30" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Usuario</text>
+    <line x1="0" y1="36" x2="290" y2="36" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="12" y="54" fill="#1F2937" font-size="11">- idUsuario: string</text>
+    <text x="12" y="69" fill="#1F2937" font-size="11">- nombreCompleto: string</text>
+    <text x="12" y="84" fill="#1F2937" font-size="11">- correoElectronico: string</text>
+    <text x="12" y="99" fill="#1F2937" font-size="11">- telefonoContacto: string</text>
+    <text x="12" y="114" fill="#1F2937" font-size="11">- hashPassword: string</text>
+    <text x="12" y="129" fill="#1F2937" font-size="11">- estadoCuenta: EstadoUsuario</text>
+    <line x1="0" y1="138" x2="290" y2="138" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="154" fill="#111827" font-size="11">+ autenticar(pass: string): boolean</text>
+    <text x="12" y="169" fill="#111827" font-size="11">+ actualizarPerfil(datos: object): void</text>
+    <text x="12" y="184" fill="#111827" font-size="11">+ getRol(): TipoRol</text>
   </g>
 
   <!-- Class 2: Visitante -->
-  <g transform="translate(180, 310)" filter="url(#shadow)">
-    <rect width="270" height="145" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-    <rect width="270" height="28" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
-    <text x="135" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Visitante</text>
-    <line x1="0" y1="28" x2="270" y2="28" stroke="#2563EB" stroke-width="1.5"/>
+  <g transform="translate(140, 340)" filter="url(#shadow)">
+    <rect width="290" height="155" rx="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+    <rect width="290" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+    <text x="145" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Visitante</text>
+    <line x1="0" y1="28" x2="290" y2="28" stroke="#2563EB" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- preferenciaGastronomica: string</text>
-    <text x="12" y="61" fill="#1F2937" font-size="11">- saldoPuntosFidelidad: number</text>
-    <text x="12" y="76" fill="#1F2937" font-size="11">- cuponesActivos: Cupon[0..3]</text>
-    <line x1="0" y1="84" x2="270" y2="84" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="102" fill="#111827" font-size="11">+ emitirCupon(p: Promocion): Cupon</text>
-    <text x="12" y="117" fill="#111827" font-size="11">+ consultarBilletera(): Cupon[]</text>
-    <text x="12" y="132" fill="#111827" font-size="11">+ cancelarCupon(id: string): boolean</text>
+    <text x="12" y="62" fill="#1F2937" font-size="11">- saldoPuntosFidelidad: number</text>
+    <text x="12" y="78" fill="#1F2937" font-size="11">- cuponesActivos: Cupon[0..3]</text>
+    <line x1="0" y1="88" x2="290" y2="88" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="106" fill="#111827" font-size="11">+ emitirCupon(promo: Promocion): Cupon</text>
+    <text x="12" y="122" fill="#111827" font-size="11">+ consultarBilletera(): Cupon[]</text>
+    <text x="12" y="138" fill="#111827" font-size="11">+ cancelarCupon(idCupon: string): boolean</text>
   </g>
 
   <!-- Class 3: Locatario -->
-  <g transform="translate(580, 310)" filter="url(#shadow)">
-    <rect width="280" height="145" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-    <rect width="280" height="28" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
-    <text x="140" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Locatario</text>
-    <line x1="0" y1="28" x2="280" y2="28" stroke="#2563EB" stroke-width="1.5"/>
+  <g transform="translate(500, 340)" filter="url(#shadow)">
+    <rect width="290" height="155" rx="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+    <rect width="290" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+    <text x="145" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Locatario</text>
+    <line x1="0" y1="28" x2="290" y2="28" stroke="#2563EB" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- cargoComercial: string</text>
-    <text x="12" y="61" fill="#1F2937" font-size="11">- turnoAtencion: string</text>
-    <text x="12" y="76" fill="#1F2937" font-size="11">- codigoAutorizacionPOS: string</text>
-    <line x1="0" y1="84" x2="280" y2="84" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="102" fill="#111827" font-size="11">+ publicarPromocion(p: Promo): void</text>
-    <text x="12" y="117" fill="#111827" font-size="11">+ validarCanjeEnCaja(tQR: str): Res</text>
-    <text x="12" y="132" fill="#111827" font-size="11">+ consultarReporteDiario(): Reporte</text>
+    <text x="12" y="62" fill="#1F2937" font-size="11">- turnoAtencion: string</text>
+    <text x="12" y="78" fill="#1F2937" font-size="11">- codigoAutorizacionPOS: string</text>
+    <line x1="0" y1="88" x2="290" y2="88" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="106" fill="#111827" font-size="11">+ publicarPromocion(promo: Promocion): void</text>
+    <text x="12" y="122" fill="#111827" font-size="11">+ pausarPromocion(idPromo: string): void</text>
+    <text x="12" y="138" fill="#111827" font-size="11">+ autorizarTerminalPOS(codigo: string): boolean</text>
   </g>
 
   <!-- Class 4: Comercio -->
-  <g transform="translate(980, 310)" filter="url(#shadow)">
-    <rect width="280" height="165" rx="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
-    <rect width="280" height="28" rx="4" fill="#CCFBF1" stroke="#0D9488" stroke-width="1"/>
-    <text x="140" y="19" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">Comercio</text>
-    <line x1="0" y1="28" x2="280" y2="28" stroke="#0D9488" stroke-width="1.5"/>
+  <g transform="translate(920, 325)" filter="url(#shadow)">
+    <rect width="300" height="190" rx="5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
+    <rect width="300" height="28" rx="5" fill="#CCFBF1" stroke="#0D9488" stroke-width="1"/>
+    <text x="150" y="19" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">Comercio</text>
+    <line x1="0" y1="28" x2="300" y2="28" stroke="#0D9488" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- idComercio: string</text>
     <text x="12" y="61" fill="#1F2937" font-size="11">- razonSocial: string</text>
     <text x="12" y="76" fill="#1F2937" font-size="11">- numeroLocal: string</text>
     <text x="12" y="91" fill="#1F2937" font-size="11">- categoriaGastronomica: string</text>
-    <text x="12" y="106" fill="#1F2937" font-size="11">- estadoOperativo: boolean</text>
-    <line x1="0" y1="114" x2="280" y2="114" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="132" fill="#111827" font-size="11">+ agregarProducto(p: Menu): void</text>
-    <text x="12" y="147" fill="#111827" font-size="11">+ listarMenuCompleto(): Menu[]</text>
+    <text x="12" y="106" fill="#1F2937" font-size="11">- horarioAtencionSemanal: string</text>
+    <text x="12" y="121" fill="#1F2937" font-size="11">- estadoOperativo: boolean</text>
+    <line x1="0" y1="130" x2="300" y2="130" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="148" fill="#111827" font-size="11">+ agregarProducto(prod: MenuProducto): void</text>
+    <text x="12" y="164" fill="#111827" font-size="11">+ listarMenuCompleto(): MenuProducto[]</text>
+    <text x="12" y="180" fill="#111827" font-size="11">+ actualizarHorario(horario: string): void</text>
   </g>
 
   <!-- Class 5: MenuProducto -->
-  <g transform="translate(1310, 310)" filter="url(#shadow)">
-    <rect width="250" height="155" rx="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
-    <rect width="250" height="28" rx="4" fill="#CCFBF1" stroke="#0D9488" stroke-width="1"/>
-    <text x="125" y="19" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">MenuProducto</text>
-    <line x1="0" y1="28" x2="250" y2="28" stroke="#0D9488" stroke-width="1.5"/>
+  <g transform="translate(1360, 335)" filter="url(#shadow)">
+    <rect width="280" height="175" rx="5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
+    <rect width="280" height="28" rx="5" fill="#CCFBF1" stroke="#0D9488" stroke-width="1"/>
+    <text x="140" y="19" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">MenuProducto</text>
+    <line x1="0" y1="28" x2="280" y2="28" stroke="#0D9488" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- idProducto: string</text>
     <text x="12" y="61" fill="#1F2937" font-size="11">- nombreItem: string</text>
-    <text x="12" y="76" fill="#1F2937" font-size="11">- precioBaseCOP: number</text>
-    <text x="12" y="91" fill="#1F2937" font-size="11">- disponibleEnCarta: boolean</text>
-    <line x1="0" y1="100" x2="250" y2="100" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="120" fill="#111827" font-size="11">+ actualizarPrecio(n: num): void</text>
-    <text x="12" y="138" fill="#111827" font-size="11">+ cambiarDisponibilidad(d: bool): void</text>
+    <text x="12" y="76" fill="#1F2937" font-size="11">- descripcionCorta: string</text>
+    <text x="12" y="91" fill="#1F2937" font-size="11">- precioBaseCOP: number</text>
+    <text x="12" y="106" fill="#1F2937" font-size="11">- categoriaPlato: CategoriaPlato</text>
+    <text x="12" y="121" fill="#1F2937" font-size="11">- disponibleEnCarta: boolean</text>
+    <line x1="0" y1="130" x2="280" y2="130" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="148" fill="#111827" font-size="11">+ actualizarPrecio(nuevo: number): void</text>
+    <text x="12" y="164" fill="#111827" font-size="11">+ cambiarDisponibilidad(disp: boolean): void</text>
   </g>
 
   <!-- Class 6: Cupon -->
-  <g transform="translate(180, 540)" filter="url(#shadow)">
-    <rect width="280" height="190" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-    <rect width="280" height="28" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
-    <text x="140" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Cupon</text>
-    <line x1="0" y1="28" x2="280" y2="28" stroke="#2563EB" stroke-width="1.5"/>
+  <g transform="translate(140, 595)" filter="url(#shadow)">
+    <rect width="290" height="205" rx="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+    <rect width="290" height="28" rx="5" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+    <text x="145" y="19" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Cupon</text>
+    <line x1="0" y1="28" x2="290" y2="28" stroke="#2563EB" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- idCupon: string</text>
     <text x="12" y="61" fill="#1F2937" font-size="11">- codigoAlfanumerico: string</text>
     <text x="12" y="76" fill="#1F2937" font-size="11">- tokenQRHash: string</text>
     <text x="12" y="91" fill="#1F2937" font-size="11">- fechaHoraEmision: Date</text>
     <text x="12" y="106" fill="#1F2937" font-size="11">- fechaHoraExpiracion: Date</text>
     <text x="12" y="121" fill="#1F2937" font-size="11">- estadoCanje: EstadoCupon</text>
-    <line x1="0" y1="130" x2="280" y2="130" stroke="#E5E7EB" stroke-width="1"/>
+    <line x1="0" y1="130" x2="290" y2="130" stroke="#CBD5E1" stroke-width="1"/>
     <text x="12" y="148" fill="#111827" font-size="11">+ estaVencido(): boolean</text>
-    <text x="12" y="163" fill="#111827" font-size="11">+ marcarCanjeado(cajero: string): void</text>
-    <text x="12" y="178" fill="#111827" font-size="11">+ expirar(): void</text>
+    <text x="12" y="163" fill="#111827" font-size="11">+ validarPertenencia(idLoc: string): boolean</text>
+    <text x="12" y="178" fill="#111827" font-size="11">+ marcarCanjeado(idCajero: string): void</text>
+    <text x="12" y="193" fill="#111827" font-size="11">+ expirar(): void</text>
   </g>
 
   <!-- Class 7: Promocion -->
-  <g transform="translate(800, 540)" filter="url(#shadow)">
-    <rect width="310" height="230" rx="4" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
-    <rect width="310" height="28" rx="4" fill="#DCFCE7" stroke="#16A34A" stroke-width="1"/>
-    <text x="155" y="19" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">Promocion</text>
-    <line x1="0" y1="28" x2="310" y2="28" stroke="#16A34A" stroke-width="1.5"/>
+  <g transform="translate(790, 595)" filter="url(#shadow)">
+    <rect width="320" height="252" rx="5" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+    <rect width="320" height="28" rx="5" fill="#DCFCE7" stroke="#16A34A" stroke-width="1"/>
+    <text x="160" y="19" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">Promocion</text>
+    <line x1="0" y1="28" x2="320" y2="28" stroke="#16A34A" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- idPromocion: string</text>
     <text x="12" y="61" fill="#1F2937" font-size="11">- tituloOferta: string</text>
-    <text x="12" y="76" fill="#1F2937" font-size="11">- stockAsignado: number</text>
-    <text x="12" y="91" fill="#1F2937" font-size="11">- stockDisponible: number</text>
-    <text x="12" y="106" fill="#1F2937" font-size="11">- fechaInicio: Date</text>
-    <text x="12" y="121" fill="#1F2937" font-size="11">- fechaFin: Date</text>
-    <text x="12" y="136" fill="#1F2937" font-size="11">- estrategia: IEstrategiaDescuento</text>
-    <line x1="0" y1="145" x2="310" y2="145" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="165" fill="#111827" font-size="11">+ esVigente(): boolean</text>
-    <text x="12" y="180" fill="#111827" font-size="11">+ liquidarDescuento(monto: num): num</text>
-    <text x="12" y="195" fill="#111827" font-size="11">+ decrementarStock(): boolean</text>
-    <text x="12" y="210" fill="#111827" font-size="11">+ setEstrategia(e: IEstrategia): void</text>
+    <text x="12" y="76" fill="#1F2937" font-size="11">- descripcionTerminos: string</text>
+    <text x="12" y="91" fill="#1F2937" font-size="11">- stockAsignado: number</text>
+    <text x="12" y="106" fill="#1F2937" font-size="11">- stockDisponible: number</text>
+    <text x="12" y="121" fill="#1F2937" font-size="11">- fechaInicio: Date</text>
+    <text x="12" y="136" fill="#1F2937" font-size="11">- fechaFin: Date</text>
+    <text x="12" y="151" fill="#1F2937" font-size="11">- estadoCampana: EstadoCampana</text>
+    <text x="12" y="166" fill="#1F2937" font-size="10">- estrategiaDescuento: IEstrategiaDescuento</text>
+    <line x1="0" y1="179" x2="320" y2="179" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="196" fill="#111827" font-size="11">+ esVigente(): boolean</text>
+    <text x="12" y="211" fill="#111827" font-size="11">+ liquidarDescuento(monto: number): number</text>
+    <text x="12" y="226" fill="#111827" font-size="11">+ decrementarStock(): boolean</text>
+    <text x="12" y="241" fill="#111827" font-size="10">+ setEstrategia(e: IEstrategiaDescuento): void</text>
   </g>
 
   <!-- Class 8: FranjaHoraria -->
-  <g transform="translate(1200, 540)" filter="url(#shadow)">
-    <rect width="280" height="150" rx="4" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
-    <rect width="280" height="28" rx="4" fill="#DCFCE7" stroke="#16A34A" stroke-width="1"/>
+  <g transform="translate(1240, 600)" filter="url(#shadow)">
+    <rect width="280" height="180" rx="5" fill="#FFFFFF" stroke="#16A34A" stroke-width="2"/>
+    <rect width="280" height="28" rx="5" fill="#DCFCE7" stroke="#16A34A" stroke-width="1"/>
     <text x="140" y="19" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">FranjaHoraria</text>
     <line x1="0" y1="28" x2="280" y2="28" stroke="#16A34A" stroke-width="1.5"/>
     <text x="12" y="46" fill="#1F2937" font-size="11">- idFranja: string</text>
     <text x="12" y="61" fill="#1F2937" font-size="11">- diaSemana: number [1..7]</text>
     <text x="12" y="76" fill="#1F2937" font-size="11">- horaInicio: string (HH:MM)</text>
     <text x="12" y="91" fill="#1F2937" font-size="11">- horaFin: string (HH:MM)</text>
-    <line x1="0" y1="100" x2="280" y2="100" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="120" fill="#111827" font-size="11">+ aplicaEnFechaHora(f: Date): boolean</text>
-    <text x="12" y="135" fill="#111827" font-size="11">+ validarSolapamiento(): boolean</text>
+    <text x="12" y="106" fill="#1F2937" font-size="11">- aplicaFestivos: boolean</text>
+    <text x="12" y="121" fill="#1F2937" font-size="11">- cupoMaximoFranja: number</text>
+    <line x1="0" y1="130" x2="280" y2="130" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="148" fill="#111827" font-size="11">+ aplicaEnFechaHora(fecha: Date): boolean</text>
+    <text x="12" y="164" fill="#111827" font-size="10">+ validarSolapamiento(otra: FranjaHoraria): boolean</text>
+  </g>
+
+  <!-- Class 9: ReporteComercial -->
+  <g transform="translate(1475, 835)" filter="url(#shadow)">
+    <rect width="265" height="175" rx="5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2"/>
+    <rect width="265" height="28" rx="5" fill="#CCFBF1" stroke="#0D9488" stroke-width="1"/>
+    <text x="132" y="19" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">ReporteComercial</text>
+    <line x1="0" y1="28" x2="265" y2="28" stroke="#0D9488" stroke-width="1.5"/>
+    <text x="12" y="46" fill="#1F2937" font-size="11">- idReporte: string</text>
+    <text x="12" y="61" fill="#1F2937" font-size="11">- periodoInicio: Date</text>
+    <text x="12" y="76" fill="#1F2937" font-size="11">- periodoFin: Date</text>
+    <text x="12" y="91" fill="#1F2937" font-size="11">- cuponesEmitidos: number</text>
+    <text x="12" y="106" fill="#1F2937" font-size="11">- cuponesRedimidos: number</text>
+    <text x="12" y="121" fill="#1F2937" font-size="11">- tasaConversion: number</text>
+    <line x1="0" y1="130" x2="265" y2="130" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="148" fill="#111827" font-size="11">+ calcularTasaConversion(): number</text>
+    <text x="12" y="164" fill="#111827" font-size="11">+ generarResumenPeriodo(): ReporteDTO</text>
   </g>
 
   <!-- PATRON 1: STRATEGY INTERFAZ -->
-  <g transform="translate(800, 840)" filter="url(#shadow)">
-    <rect width="310" height="85" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
-    <text x="155" y="20" fill="#92400E" font-size="11" font-style="italic" text-anchor="middle">&lt;&lt;interface&gt;&gt; (Patrón Strategy)</text>
-    <text x="155" y="34" fill="#78350F" font-size="12" font-weight="bold" text-anchor="middle">IEstrategiaDescuento</text>
-    <line x1="0" y1="42" x2="310" y2="42" stroke="#D97706" stroke-width="1.5"/>
-    <text x="12" y="60" fill="#111827" font-size="11">+ calcularDescuento(base: num, p: obj): num</text>
-    <text x="12" y="75" fill="#111827" font-size="11">+ obtenerDetalleCalculo(): string</text>
+  <g transform="translate(780, 900)" filter="url(#shadow)">
+    <rect width="350" height="95" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="175" y="18" fill="#92400E" font-size="11" font-style="italic" text-anchor="middle">&lt;&lt;interface&gt;&gt; (Patrón Strategy)</text>
+    <text x="175" y="34" fill="#78350F" font-size="12" font-weight="bold" text-anchor="middle">IEstrategiaDescuento</text>
+    <line x1="0" y1="42" x2="350" y2="42" stroke="#D97706" stroke-width="1.5"/>
+    <text x="12" y="62" fill="#111827" font-size="10.5">+ calcularDescuento(montoBase: number, params: object): number</text>
+    <text x="12" y="80" fill="#111827" font-size="10.5">+ obtenerDetalleCalculo(): string</text>
   </g>
 
   <!-- Strategy 1: Porcentual -->
-  <g transform="translate(620, 990)" filter="url(#shadow)">
-    <rect width="250" height="110" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
-    <rect width="250" height="26" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
-    <text x="125" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoPorcentual</text>
-    <line x1="0" y1="26" x2="250" y2="26" stroke="#D97706" stroke-width="1.5"/>
-    <text x="10" y="44" fill="#1F2937" font-size="10">- porcentaje: number</text>
-    <text x="10" y="58" fill="#1F2937" font-size="10">- topeMaximoDescuento: number</text>
-    <line x1="0" y1="66" x2="250" y2="66" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="10" y="84" fill="#111827" font-size="10">+ calcularDescuento(): num</text>
-    <text x="10" y="98" fill="#111827" font-size="10">+ obtenerDetalleCalculo(): str</text>
+  <g transform="translate(600, 1085)" filter="url(#shadow)">
+    <rect width="255" height="125" rx="5" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+    <rect width="255" height="26" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+    <text x="127" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoPorcentual</text>
+    <line x1="0" y1="26" x2="255" y2="26" stroke="#D97706" stroke-width="1.5"/>
+    <text x="10" y="45" fill="#1F2937" font-size="10">- porcentaje: number</text>
+    <text x="10" y="60" fill="#1F2937" font-size="10">- topeMaximoDescuento: number</text>
+    <line x1="0" y1="70" x2="255" y2="70" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="10" y="90" fill="#111827" font-size="9.5">+ calcularDescuento(montoBase, params): number</text>
+    <text x="10" y="108" fill="#111827" font-size="9.5">+ obtenerDetalleCalculo(): string</text>
   </g>
 
   <!-- Strategy 2: Monto Fijo -->
-  <g transform="translate(900, 990)" filter="url(#shadow)">
-    <rect width="250" height="110" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
-    <rect width="250" height="26" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
-    <text x="125" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoMontoFijo</text>
-    <line x1="0" y1="26" x2="250" y2="26" stroke="#D97706" stroke-width="1.5"/>
-    <text x="10" y="44" fill="#1F2937" font-size="10">- montoFijoCOP: number</text>
-    <text x="10" y="58" fill="#1F2937" font-size="10">- montoMinimoCompra: number</text>
-    <line x1="0" y1="66" x2="250" y2="66" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="10" y="84" fill="#111827" font-size="10">+ calcularDescuento(): num</text>
-    <text x="10" y="98" fill="#111827" font-size="10">+ obtenerDetalleCalculo(): str</text>
+  <g transform="translate(890, 1085)" filter="url(#shadow)">
+    <rect width="255" height="125" rx="5" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+    <rect width="255" height="26" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+    <text x="127" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoMontoFijo</text>
+    <line x1="0" y1="26" x2="255" y2="26" stroke="#D97706" stroke-width="1.5"/>
+    <text x="10" y="45" fill="#1F2937" font-size="10">- montoFijoCOP: number</text>
+    <text x="10" y="60" fill="#1F2937" font-size="10">- montoMinimoCompra: number</text>
+    <line x1="0" y1="70" x2="255" y2="70" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="10" y="90" fill="#111827" font-size="9.5">+ calcularDescuento(montoBase, params): number</text>
+    <text x="10" y="108" fill="#111827" font-size="9.5">+ obtenerDetalleCalculo(): string</text>
   </g>
 
   <!-- Strategy 3: Combo Volumen -->
-  <g transform="translate(1180, 990)" filter="url(#shadow)">
-    <rect width="260" height="110" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
-    <rect width="260" height="26" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
-    <text x="130" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoComboVolumen</text>
-    <line x1="0" y1="26" x2="260" y2="26" stroke="#D97706" stroke-width="1.5"/>
-    <text x="10" y="44" fill="#1F2937" font-size="10">- cantidadMinimaItems: number</text>
-    <text x="10" y="58" fill="#1F2937" font-size="10">- factorDescuentoCombo: number</text>
-    <line x1="0" y1="66" x2="260" y2="66" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="10" y="84" fill="#111827" font-size="10">+ calcularDescuento(): num</text>
-    <text x="10" y="98" fill="#111827" font-size="10">+ obtenerDetalleCalculo(): str</text>
+  <g transform="translate(1180, 1085)" filter="url(#shadow)">
+    <rect width="265" height="125" rx="5" fill="#FFFFFF" stroke="#D97706" stroke-width="2"/>
+    <rect width="265" height="26" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+    <text x="132" y="18" fill="#78350F" font-size="11" font-weight="bold" text-anchor="middle">DescuentoComboVolumen</text>
+    <line x1="0" y1="26" x2="265" y2="26" stroke="#D97706" stroke-width="1.5"/>
+    <text x="10" y="45" fill="#1F2937" font-size="10">- cantidadMinimaItems: number</text>
+    <text x="10" y="60" fill="#1F2937" font-size="10">- factorDescuentoCombo: number</text>
+    <line x1="0" y1="70" x2="265" y2="70" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="10" y="90" fill="#111827" font-size="9.5">+ calcularDescuento(montoBase, params): number</text>
+    <text x="10" y="108" fill="#111827" font-size="9.5">+ obtenerDetalleCalculo(): string</text>
   </g>
 
   <!-- PATRON 2: FACADE -->
-  <g transform="translate(120, 800)" filter="url(#shadow)">
-    <rect width="380" height="135" rx="4" fill="#FAF5FF" stroke="#9333EA" stroke-width="2"/>
-    <text x="190" y="20" fill="#6B21A8" font-size="11" font-style="italic" text-anchor="middle">&lt;&lt;facade&gt;&gt; (Patrón Facade)</text>
-    <text x="190" y="34" fill="#581C87" font-size="12" font-weight="bold" text-anchor="middle">CanjeCuponFacade</text>
-    <line x1="0" y1="42" x2="380" y2="42" stroke="#9333EA" stroke-width="1.5"/>
-    <text x="12" y="60" fill="#1F2937" font-size="10">- validadorCripto: ValidadorTokenService</text>
-    <text x="12" y="74" fill="#1F2937" font-size="10">- transaccionService: TransaccionCanjeService</text>
-    <text x="12" y="88" fill="#1F2937" font-size="10">- bitacoraService: BitacoraAuditoriaService</text>
-    <line x1="0" y1="94" x2="380" y2="94" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="12" y="112" fill="#111827" font-size="10">+ procesarCanjeEnCaja(tQR: str, loc: str, caj: str): ResCanje</text>
-    <text x="12" y="126" fill="#111827" font-size="10">+ procesarContingenciaManual(cod8: str, loc: str): ResCanje</text>
+  <g transform="translate(140, 875)" filter="url(#shadow)">
+    <rect width="460" height="150" rx="5" fill="#FAF5FF" stroke="#9333EA" stroke-width="2"/>
+    <rect width="460" height="36" rx="5" fill="#F3E8FF" stroke="#9333EA" stroke-width="1"/>
+    <text x="230" y="15" fill="#6B21A8" font-size="10" font-style="italic" text-anchor="middle">&lt;&lt;facade&gt;&gt; (Patrón Facade)</text>
+    <text x="230" y="30" fill="#581C87" font-size="12" font-weight="bold" text-anchor="middle">CanjeCuponFacade</text>
+    <line x1="0" y1="36" x2="460" y2="36" stroke="#9333EA" stroke-width="1.5"/>
+    <text x="12" y="53" fill="#1F2937" font-size="10">- validadorCripto: ValidadorTokenService</text>
+    <text x="12" y="67" fill="#1F2937" font-size="10">- motorReglas: MotorReglasVigenciaService</text>
+    <text x="12" y="81" fill="#1F2937" font-size="10">- transaccionService: TransaccionCanjeService</text>
+    <text x="12" y="95" fill="#1F2937" font-size="10">- bitacoraService: BitacoraAuditoriaService</text>
+    <line x1="0" y1="103" x2="460" y2="103" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="121" fill="#111827" font-size="9.5">+ procesarCanjeEnCaja(tQR: string, idLoc: string, idCaj: string): ResultadoCanje</text>
+    <text x="12" y="137" fill="#111827" font-size="9.5">+ procesarContingenciaManual(cod8: string, idLoc: string, idCaj: string): ResultadoCanje</text>
   </g>
 
   <!-- Class: BitacoraCanje -->
-  <g transform="translate(180, 990)" filter="url(#shadow)">
-    <rect width="280" height="145" rx="4" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
-    <rect width="280" height="26" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
-    <text x="140" y="18" fill="#991B1B" font-size="11" font-weight="bold" text-anchor="middle">BitacoraCanje (Auditoría)</text>
-    <line x1="0" y1="26" x2="280" y2="26" stroke="#DC2626" stroke-width="1.5"/>
-    <text x="10" y="44" fill="#1F2937" font-size="10">- idBitacora: string</text>
-    <text x="10" y="58" fill="#1F2937" font-size="10">- fechaHoraCanje: Date</text>
-    <text x="10" y="72" fill="#1F2937" font-size="10">- montoDescuentoEfectivo: number</text>
-    <text x="10" y="86" fill="#1F2937" font-size="10">- terminalPOSUtilizada: string</text>
-    <text x="10" y="100" fill="#1F2937" font-size="10">- firmaHashTransaccion: string</text>
-    <line x1="0" y1="108" x2="280" y2="108" stroke="#E5E7EB" stroke-width="1"/>
-    <text x="10" y="126" fill="#111827" font-size="10">+ persistirRegistroInmutable(): void</text>
-    <text x="10" y="140" fill="#111827" font-size="10">+ verificarIntegridadHash(): boolean</text>
+  <g transform="translate(160, 1095)" filter="url(#shadow)">
+    <rect width="320" height="165" rx="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+    <rect width="320" height="28" rx="5" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+    <text x="160" y="19" fill="#991B1B" font-size="11.5" font-weight="bold" text-anchor="middle">BitacoraCanje (Auditoría)</text>
+    <line x1="0" y1="28" x2="320" y2="28" stroke="#DC2626" stroke-width="1.5"/>
+    <text x="12" y="46" fill="#1F2937" font-size="10.5">- idBitacora: string</text>
+    <text x="12" y="61" fill="#1F2937" font-size="10.5">- fechaHoraCanje: Date</text>
+    <text x="12" y="76" fill="#1F2937" font-size="10.5">- montoDescuentoEfectivo: number</text>
+    <text x="12" y="91" fill="#1F2937" font-size="10.5">- terminalPOSUtilizada: string</text>
+    <text x="12" y="106" fill="#1F2937" font-size="10.5">- firmaHashTransaccion: string</text>
+    <text x="12" y="121" fill="#1F2937" font-size="10.5">- estadoAuditoria: EstadoAuditoria</text>
+    <line x1="0" y1="129" x2="320" y2="129" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="12" y="144" fill="#111827" font-size="10">+ generarSelloHash(payload: string): string</text>
+    <text x="12" y="158" fill="#111827" font-size="10">+ verificarIntegridadHash(): boolean</text>
   </g>
 
-  <!-- CONNECTIONS -->
+  <!-- CONNECTIONS (ZERO CROSSINGS, ORTHOGONAL, ALL MULTIPLICITIES) -->
   <!-- Herencia Visitante -> Usuario -->
-  <path d="M 315 310 L 315 280 L 550 280 L 550 265" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#inheritance)"/>
+  <path d="M 285 340 L 285 310 L 512 310 L 512 282" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#inheritance)"/>
   <!-- Herencia Locatario -> Usuario -->
-  <path d="M 720 310 L 720 280 L 650 280 L 650 265" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#inheritance)"/>
+  <path d="M 645 340 L 645 282" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#inheritance)"/>
 
   <!-- Locatario administra Comercio -->
-  <path d="M 860 380 L 980 380" fill="none" stroke="#4B5563" stroke-width="1.5"/>
-  <text x="920" y="372" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">administra</text>
-  <text x="875" y="395" fill="#4B5563" font-size="9">1..*</text>
-  <text x="965" y="395" fill="#4B5563" font-size="9">1</text>
+  <path d="M 790 418 L 920 418" fill="none" stroke="#4B5563" stroke-width="1.6"/>
+  <rect x="822" y="398" width="66" height="16" fill="#ffffff" rx="2"/>
+  <text x="855" y="410" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">administra</text>
+  <text x="802" y="434" fill="#4B5563" font-size="10" font-weight="bold">1..*</text>
+  <text x="902" y="434" fill="#4B5563" font-size="10" font-weight="bold">1</text>
 
-  <!-- Composicion Comercio a MenuProducto -->
-  <path d="M 1260 380 L 1310 380" fill="none" stroke="#0D9488" stroke-width="1.8" marker-start="url(#composition)"/>
-  <text x="1275" y="395" fill="#0D9488" font-size="9" font-weight="bold">1</text>
-  <text x="1295" y="395" fill="#0D9488" font-size="9" font-weight="bold">1..*</text>
+  <!-- Composicion Comercio -> MenuProducto -->
+  <path d="M 1222 420 L 1360 420" fill="none" stroke="#0D9488" stroke-width="1.8" marker-start="url(#composition)"/>
+  <rect x="1244" y="400" width="92" height="16" fill="#ffffff" rx="2"/>
+  <text x="1290" y="412" fill="#0D9488" font-size="10" font-weight="bold" text-anchor="middle">ofrece en carta</text>
+  <text x="1240" y="436" fill="#0D9488" font-size="10" font-weight="bold">1</text>
+  <text x="1335" y="436" fill="#0D9488" font-size="10" font-weight="bold">1..*</text>
 
   <!-- Comercio publica Promocion -->
-  <path d="M 1100 475 L 1100 510 L 955 510 L 955 540" fill="none" stroke="#4B5563" stroke-width="1.5"/>
-  <text x="1030" y="504" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">publica</text>
-  <text x="1108" y="490" fill="#4B5563" font-size="9">1</text>
-  <text x="940" y="535" fill="#4B5563" font-size="9">0..*</text>
+  <path d="M 995 515 L 995 595" fill="none" stroke="#4B5563" stroke-width="1.6"/>
+  <rect x="1002" y="546" width="46" height="16" fill="#ffffff" rx="2"/>
+  <text x="1025" y="558" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">publica</text>
+  <text x="980" y="532" fill="#4B5563" font-size="10" font-weight="bold">1</text>
+  <text x="970" y="586" fill="#4B5563" font-size="10" font-weight="bold">0..*</text>
 
-  <!-- Composicion Promocion a FranjaHoraria -->
-  <path d="M 1110 615 L 1200 615" fill="none" stroke="#16A34A" stroke-width="1.8" marker-start="url(#composition)"/>
-  <text x="1125" y="630" fill="#16A34A" font-size="9" font-weight="bold">1</text>
-  <text x="1180" y="630" fill="#16A34A" font-size="9" font-weight="bold">1..*</text>
+  <!-- Comercio consolida ReporteComercial (corredor exterior derecho) -->
+  <path d="M 1160 515 L 1160 550 L 1608 550 L 1608 835" fill="none" stroke="#0D9488" stroke-width="1.6"/>
+  <rect x="1330" y="540" width="116" height="18" fill="#ffffff" rx="2"/>
+  <text x="1388" y="553" fill="#0D9488" font-size="10" font-weight="bold" text-anchor="middle">consolida analítica</text>
+  <text x="1168" y="532" fill="#0D9488" font-size="10" font-weight="bold">1</text>
+  <text x="1615" y="824" fill="#0D9488" font-size="10" font-weight="bold">0..*</text>
+
+  <!-- Composicion Promocion -> FranjaHoraria -->
+  <path d="M 1112 690 L 1240 690" fill="none" stroke="#16A34A" stroke-width="1.8" marker-start="url(#composition_green)"/>
+  <rect x="1132" y="670" width="88" height="16" fill="#ffffff" rx="2"/>
+  <text x="1176" y="682" fill="#16A34A" font-size="10" font-weight="bold" text-anchor="middle">restringida por</text>
+  <text x="1128" y="706" fill="#16A34A" font-size="10" font-weight="bold">1</text>
+  <text x="1216" y="706" fill="#16A34A" font-size="10" font-weight="bold">1..*</text>
 
   <!-- Visitante adquiere Cupon -->
-  <path d="M 315 455 L 315 540" fill="none" stroke="#4B5563" stroke-width="1.5"/>
-  <text x="325" y="495" fill="#1F2937" font-size="10" font-weight="bold">adquiere</text>
-  <text x="320" y="470" fill="#4B5563" font-size="9">1</text>
-  <text x="320" y="530" fill="#4B5563" font-size="9">0..*</text>
+  <path d="M 285 495 L 285 595" fill="none" stroke="#4B5563" stroke-width="1.6"/>
+  <rect x="292" y="536" width="96" height="16" fill="#ffffff" rx="2"/>
+  <text x="340" y="548" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">adquiere y porta</text>
+  <text x="270" y="512" fill="#4B5563" font-size="10" font-weight="bold">1</text>
+  <text x="260" y="586" fill="#4B5563" font-size="10" font-weight="bold">0..*</text>
 
-  <!-- Promocion genera Cupon -->
-  <path d="M 800 635 L 460 635" fill="none" stroke="#4B5563" stroke-width="1.5"/>
-  <text x="630" y="627" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">emite instancias</text>
-  <text x="780" y="650" fill="#4B5563" font-size="9">1</text>
-  <text x="470" y="650" fill="#4B5563" font-size="9">0..*</text>
+  <!-- Promocion emite Cupon -->
+  <path d="M 790 695 L 430 695" fill="none" stroke="#4B5563" stroke-width="1.6"/>
+  <rect x="558" y="677" width="104" height="16" fill="#ffffff" rx="2"/>
+  <text x="610" y="689" fill="#1F2937" font-size="10" font-weight="bold" text-anchor="middle">emite instancias</text>
+  <text x="770" y="712" fill="#4B5563" font-size="10" font-weight="bold">1</text>
+  <text x="442" y="712" fill="#4B5563" font-size="10" font-weight="bold">0..*</text>
 
-  <!-- Promocion a IEstrategiaDescuento (Agregacion) -->
-  <path d="M 955 770 L 955 840" fill="none" stroke="#D97706" stroke-width="1.8" marker-start="url(#aggregation)"/>
-  <text x="965" y="805" fill="#D97706" font-size="10" font-weight="bold">aplica estrategia (1)</text>
+  <!-- Promocion -> IEstrategiaDescuento (Agregacion) -->
+  <path d="M 955 849 L 955 900" fill="none" stroke="#D97706" stroke-width="1.8" marker-start="url(#aggregation)"/>
+  <rect x="964" y="864" width="98" height="16" fill="#ffffff" rx="2"/>
+  <text x="1013" y="876" fill="#D97706" font-size="10" font-weight="bold" text-anchor="middle">aplica estrategia</text>
+  <text x="940" y="863" fill="#D97706" font-size="10" font-weight="bold">1</text>
+  <text x="940" y="892" fill="#D97706" font-size="10" font-weight="bold">1</text>
 
   <!-- Implementaciones Strategy -->
-  <path d="M 745 990 L 745 950 L 900 950 L 900 925" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#inheritance)"/>
-  <path d="M 1025 990 L 1025 925" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#inheritance)"/>
-  <path d="M 1310 990 L 1310 950 L 1050 950 L 1050 925" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#inheritance)"/>
+  <path d="M 727 1085 L 727 1040 L 857 1040 L 857 997" fill="none" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#realization)"/>
+  <path d="M 1017 1085 L 1017 1040 L 955 1040 L 955 997" fill="none" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#realization)"/>
+  <path d="M 1312 1085 L 1312 1040 L 1053 1040 L 1053 997" fill="none" stroke="#D97706" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#realization)"/>
 
-  <!-- Facade orquesta Cupon -->
-  <path d="M 310 800 L 310 730" fill="none" stroke="#9333EA" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrow)"/>
-  <text x="320" y="765" fill="#9333EA" font-size="9" font-weight="bold">valida y transiciona</text>
+  <!-- Facade valida y transiciona Cupon -->
+  <path d="M 285 875 L 285 802" fill="none" stroke="#9333EA" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <rect x="292" y="830" width="110" height="16" fill="#ffffff" rx="2"/>
+  <text x="347" y="842" fill="#9333EA" font-size="10" font-weight="bold" text-anchor="middle">valida y transiciona</text>
+  <text x="270" y="865" fill="#9333EA" font-size="10" font-weight="bold">1</text>
+  <text x="260" y="818" fill="#9333EA" font-size="10" font-weight="bold">0..*</text>
 
   <!-- Facade asienta Bitacora -->
-  <path d="M 310 935 L 310 990" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="320" y="965" fill="#DC2626" font-size="9" font-weight="bold">asienta auditoria (1)</text>
+  <path d="M 320 1025 L 320 1093" fill="none" stroke="#DC2626" stroke-width="1.6" marker-end="url(#arrow_red)"/>
+  <rect x="328" y="1050" width="96" height="16" fill="#ffffff" rx="2"/>
+  <text x="376" y="1062" fill="#DC2626" font-size="10" font-weight="bold" text-anchor="middle">asienta auditoría</text>
+  <text x="305" y="1042" fill="#DC2626" font-size="10" font-weight="bold">1</text>
+  <text x="296" y="1084" fill="#DC2626" font-size="10" font-weight="bold">0..*</text>
 
-  <!-- Cupon auditado en Bitacora -->
-  <path d="M 180 650 L 140 650 L 140 1060 L 180 1060" fill="none" stroke="#4B5563" stroke-width="1.5"/>
-  <text x="145" y="860" fill="#4B5563" font-size="9" font-weight="bold" transform="rotate(-90, 145, 860)">auditoria inmutable</text>
+  <!-- Cupon <-> Bitacora (Corredor exterior x=65, 100% libre de CanjeCuponFacade) -->
+  <path d="M 140 698 L 65 698 L 65 1177 L 160 1177" fill="none" stroke="#4B5563" stroke-width="1.6"/>
+  <rect x="40" y="882" width="50" height="110" fill="#ffffff" rx="2"/>
+  <text x="58" y="937" fill="#4B5563" font-size="10" font-weight="bold" text-anchor="middle" transform="rotate(-90, 58, 937)">auditoría inmutable</text>
+  <text x="120" y="688" fill="#4B5563" font-size="10" font-weight="bold">1</text>
+  <text x="128" y="1167" fill="#4B5563" font-size="10" font-weight="bold">0..1</text>
 
 </svg>

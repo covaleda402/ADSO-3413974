@@ -1,8 +1,8 @@
-# Especificación de Patrones de Diseño GoF Aplicados (A3)
+﻿# Especificación de Patrones de Diseño GoF Aplicados (A3)
 ## Proyecto Formativo: Nuvora — Plataforma Transaccional Gastronómica
 **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
 **Centro:** Centro de la Industria, la Empresa y los Servicios (CIES) — Regional Huila  
-**Aprendiz Autor:** Jose Esneider Covaleda Hortua (`covaleda402`)  
+**Aprendiz Autor:** `covaleda402`  
 **Fase:** 02 - Planeación | **Competencia:** 220501095 | **RAP:** 593103 (Criterio C3)  
 **Ruta:** `02-training-project/01-phase/02-planning/06-architecture/04-evidence-learning/G2-P1-covaleda/`  
 **Normativa:** `Rubricas_G2.md` (Sección 2.1 y Sección 2.2 · Nivel 100)
@@ -39,33 +39,33 @@ El patrón **Strategy** desacopla la familia de algoritmos de cálculo de descue
 classDiagram
     class IEstrategiaDescuento {
         <<interface>>
-        +calcularDescuento(montoBase: number, parametrosPromo: object): number
+        +calcularDescuento(montoBase: number, params: object): number
         +obtenerDetalleCalculo(): string
     }
     class DescuentoPorcentual {
         -porcentaje: number
         -topeMaximoDescuento: number
-        +calcularDescuento(montoBase: number, parametrosPromo: object): number
+        +calcularDescuento(montoBase: number, params: object): number
         +obtenerDetalleCalculo(): string
     }
     class DescuentoMontoFijo {
         -montoFijoCOP: number
         -montoMinimoCompra: number
-        +calcularDescuento(montoBase: number, parametrosPromo: object): number
+        +calcularDescuento(montoBase: number, params: object): number
         +obtenerDetalleCalculo(): string
     }
     class DescuentoComboVolumen {
-        -cantidadRequerida: number
-        -factorDescuentoAdicional: number
-        +calcularDescuento(montoBase: number, parametrosPromo: object): number
+        -cantidadMinimaItems: number
+        -factorDescuentoCombo: number
+        +calcularDescuento(montoBase: number, params: object): number
         +obtenerDetalleCalculo(): string
     }
     class Promocion {
         -idPromocion: string
         -tituloOferta: string
         -estrategiaDescuento: IEstrategiaDescuento
-        +setEstrategia(estrategia: IEstrategiaDescuento): void
-        +liquidarDescuento(montoCompra: number): number
+        +setEstrategia(e: IEstrategiaDescuento): void
+        +liquidarDescuento(monto: number): number
     }
 
     IEstrategiaDescuento <|.. DescuentoPorcentual : implementa
@@ -102,7 +102,7 @@ El proceso de canje de un cupón en la terminal de punto de venta en caja (`CU-0
 Si la capa de presentación (el controlador web de la caja `TerminalPOSController`) interactuara directamente con los 5 servicios y repositorios especializados, se generaría un **acoplamiento inmanejable** (*Spaghetti Architecture*). Cualquier refactorización interna en la base de datos o en el protocolo de notificación obligaría a reescribir la lógica de la interfaz de usuario en caja.
 
 ### 3.2 Por Qué se Elige este Patrón
-El patrón **Facade** proporciona una interfaz unificada, simple y de alto nivel que oculta toda la complejidad del subsistema transaccional. La clase `CanjeCuponFacade` actúa como único punto de entrada para los clientes de caja, orquestando las dependencias internas y exponiendo un único método de negocio limpio: `procesarCanjeEnCaja(comandoCanje)`.
+El patrón **Facade** proporciona una interfaz unificada, simple y de alto nivel que oculta toda la complejidad del subsistema transaccional. La clase `CanjeCuponFacade` actúa como único punto de entrada para los clientes de caja, orquestando las dependencias internas y exponiendo dos métodos de negocio limpios: `procesarCanjeEnCaja(tQR, idLoc, idCaj)` y `procesarContingenciaManual(cod8, idLoc, idCaj)`.
 
 ### 3.3 Clases que lo Implementan en el Diagrama
 
@@ -113,14 +113,14 @@ classDiagram
         +postCanjearQR(req: Request, res: Response): Promise
     }
     class CanjeCuponFacade {
-        -validadorToken: ValidadorCriptograficoService
+        -validadorCripto: ValidadorTokenService
         -motorReglas: MotorReglasVigenciaService
         -transaccionService: TransaccionCanjeService
         -bitacoraService: BitacoraAuditoriaService
-        -notificadorService: NotificadorEventoService
-        +procesarCanjeEnCaja(comando: ComandoCanjeDTO): ResultadoCanjeDTO
+        +procesarCanjeEnCaja(tQR: string, idLoc: string, idCaj: string): ResultadoCanje
+        +procesarContingenciaManual(cod8: string, idLoc: string, idCaj: string): ResultadoCanje
     }
-    class ValidadorCriptograficoService {
+    class ValidadorTokenService {
         +verificarFirmaHMAC(tokenQR: string): DatosTokenPayload
     }
     class MotorReglasVigenciaService {
@@ -132,26 +132,21 @@ classDiagram
     class BitacoraAuditoriaService {
         +registrarEventoInmutable(logDTO: AuditoriaEntryDTO): void
     }
-    class NotificadorEventoService {
-        +despacharNotificacionPush(usuarioId: string, mensaje: string): void
-    }
 
     TerminalPOSController --> CanjeCuponFacade : solicita canje
-    CanjeCuponFacade --> ValidadorCriptograficoService : 1. verifica firma
+    CanjeCuponFacade --> ValidadorTokenService : 1. verifica firma
     CanjeCuponFacade --> MotorReglasVigenciaService : 2. valida horario
     CanjeCuponFacade --> TransaccionCanjeService : 3. ejecuta tx ACID
     CanjeCuponFacade --> BitacoraAuditoriaService : 4. asienta log
-    CanjeCuponFacade --> NotificadorEventoService : 5. notifica cliente
 ```
 
 * **Cliente de la Fachada:** `TerminalPOSController` (recibe la petición HTTP del escáner en caja y consume la fachada).
 * **Fachada:** `CanjeCuponFacade` (orquesta el ciclo completo, maneja transacciones y rollbacks).
 * **Subsistemas Ocultos:**
-  1. `ValidadorCriptograficoService`: Desencripta y valida la firma digital del token QR.
+  1. `ValidadorTokenService`: Desencripta y valida la firma digital del token QR.
   2. `MotorReglasVigenciaService`: Verifica expiración temporal y compatibilidad de franja horaria.
-  3. `TransaccionCanjeService`: Gestiona la conexión JDBC/PostgreSQL y el bloqueo de fila.
-  4. `BitacoraAuditoriaService`: Persiste el registro inmutable de auditoría para trazabilidad.
-  5. `NotificadorEventoService`: Envía notificaciones WebSocket / Push al cliente.
+  3. `TransaccionCanjeService`: Gestiona la conexión y el bloqueo pesimista de fila (`SELECT ... FOR UPDATE`).
+  4. `BitacoraAuditoriaService`: Persiste el registro inmutable `BitacoraCanje` con su sello hash criptográfico para trazabilidad.
 
 ### 3.4 Qué Mejora en Mantenibilidad y Calidad de Software
 1. **Bajo Acoplamiento (*Loose Coupling*):** La interfaz de caja solo conoce un método de la fachada; desconoce por completo la tecnología de base de datos o las librerías criptográficas utilizadas tras bambalinas.
@@ -166,6 +161,7 @@ classDiagram
 |---|---|---|
 | **Tipo de Patrón GoF** | Comportamiento | Estructural |
 | **Problema que Resuelve** | Multiplicidad de algoritmos de descuento que cambian según la campaña comercial. | Alta complejidad y acoplamiento en la orquestación del canje transaccional en punto de venta. |
-| **Elemento Clave de Diseño** | Interfaz polimórfica `IEstrategiaDescuento` con 3 clases concretas intercambiables. | Clase unificada `CanjeCuponFacade` que encapsula 5 subsistemas de validación y persistencia. |
+| **Elemento Clave de Diseño** | Interfaz polimórfica `IEstrategiaDescuento` con 3 clases concretas intercambiables. | Clase unificada `CanjeCuponFacade` que encapsula 4 subsistemas de validación y persistencia. |
 | **Principio SOLID Reforzado** | **Open/Closed Principle (OCP)** e **Interface Segregation (ISP)**. | **Single Responsibility (SRP)** y **Dependency Inversion (DIP)**. |
 | **Impacto Directo en Calidad** | Adición de nuevas promociones sin riesgo de romper código en producción. | Transacciones atómicas seguras sin acoplar la terminal física de caja con la base de datos. |
+

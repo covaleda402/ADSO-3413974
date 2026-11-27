@@ -1,138 +1,182 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 900" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 960" width="100%" height="100%" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
   <defs>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
     </filter>
-    <marker id="comp_arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB" />
+    <marker id="comp_arrow_blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#2563EB" />
+    </marker>
+    <marker id="comp_arrow_purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#7E22CE" />
+    </marker>
+    <marker id="comp_arrow_green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#0F766E" />
+    </marker>
+    <marker id="comp_arrow_red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#DC2626" />
     </marker>
   </defs>
 
   <!-- Title Banner -->
-  <rect x="50" y="20" width="1250" height="46" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
-  <text x="675" y="42" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle">NUVORA — VISTA DE COMPONENTES DEL SOFTWARE (UML COMPONENT DIAGRAM)</text>
-  <text x="675" y="58" fill="#DBEAFE" font-size="11" text-anchor="middle">Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C5) · Autor: Jose Esneider Covaleda (covaleda402) · Interfaces Provistas y Requeridas</text>
+  <rect x="40" y="20" width="1420" height="48" rx="6" fill="#1E3A8A" filter="url(#shadow)"/>
+  <text x="750" y="42" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle">NUVORA — VISTA DE COMPONENTES DEL SOFTWARE (UML COMPONENT DIAGRAM)</text>
+  <text x="750" y="59" fill="#DBEAFE" font-size="11" text-anchor="middle">Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C5) · Autor: covaleda402 · Interfaces Provistas y Requeridas</text>
 
   <!-- Box 1: Clientes Web -->
-  <g transform="translate(50, 90)" filter="url(#shadow)">
-    <rect width="1250" height="110" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
+  <g transform="translate(40, 85)" filter="url(#shadow)">
+    <rect width="1420" height="105" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
     <text x="20" y="20" fill="#475569" font-size="11" font-weight="bold">CLIENTES WEB (CAPA DE PRESENTACIÓN)</text>
-    
-    <g transform="translate(60, 32)">
-      <rect width="280" height="60" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-      <text x="140" y="24" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="140" y="42" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">PWA Visitante Mobile</text>
+
+    <g transform="translate(80, 34)">
+      <rect width="280" height="56" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <text x="140" y="22" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="140" y="41" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">PWA Visitante Mobile</text>
     </g>
-    <g transform="translate(485, 32)">
-      <rect width="280" height="60" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-      <text x="140" y="24" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="140" y="42" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Terminal Web POS Caja</text>
+    <g transform="translate(570, 34)">
+      <rect width="280" height="56" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <text x="140" y="22" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="140" y="41" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Terminal Web POS Caja</text>
     </g>
-    <g transform="translate(910, 32)">
-      <rect width="280" height="60" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
-      <text x="140" y="24" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="140" y="42" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Portal Web Administrador</text>
+    <g transform="translate(1060, 34)">
+      <rect width="280" height="56" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <text x="140" y="22" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="140" y="41" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">Portal Web Administrador</text>
     </g>
   </g>
 
+  <!-- Conexiones Clientes -> Backend -->
+  <path d="M 260 175 L 260 238" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#comp_arrow_blue)"/>
+  <rect x="270" y="205" width="120" height="16" fill="#ffffff" rx="2"/>
+  <text x="330" y="217" fill="#2563EB" font-size="10" font-weight="bold" text-anchor="middle">HTTPS REST / JSON</text>
+
+  <path d="M 750 175 L 750 238" fill="none" stroke="#7E22CE" stroke-width="2" marker-end="url(#comp_arrow_purple)"/>
+  <rect x="760" y="205" width="110" height="16" fill="#ffffff" rx="2"/>
+  <text x="815" y="217" fill="#7E22CE" font-size="10" font-weight="bold" text-anchor="middle">HTTPS REST (POS)</text>
+
+  <path d="M 1240 175 L 1240 238" fill="none" stroke="#15803D" stroke-width="2" marker-end="url(#comp_arrow_green)"/>
+  <rect x="1250" y="205" width="120" height="16" fill="#ffffff" rx="2"/>
+  <text x="1310" y="217" fill="#15803D" font-size="10" font-weight="bold" text-anchor="middle">HTTPS REST (RBAC)</text>
+
   <!-- Box 2: Backend Modular -->
-  <g transform="translate(50, 230)" filter="url(#shadow)">
-    <rect width="1250" height="460" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
-    <text x="20" y="20" fill="#475569" font-size="11" font-weight="bold">BACKEND MODULAR (NESTJS ENGINE)</text>
+  <g transform="translate(40, 240)" filter="url(#shadow)">
+    <rect width="1420" height="460" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
+    <text x="20" y="22" fill="#475569" font-size="11" font-weight="bold">BACKEND MODULAR (NESTJS ENGINE)</text>
 
     <!-- Componente 1: Auth -->
-    <g transform="translate(50, 40)">
-      <rect width="320" height="110" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-      <text x="160" y="20" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="160" y="36" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">ComponenteAutenticacion</text>
-      <line x1="0" y1="44" x2="320" y2="44" stroke="#1D4ED8" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> IAuthService, ITokenVerifier</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> IUsuarioRepository, IHashingService</text>
-      <text x="12" y="94" fill="#1D4ED8" font-size="10"><b>Atiende:</b> RF-01, RF-02, RF-03, RNF-02</text>
+    <g transform="translate(50, 48)">
+      <rect width="340" height="120" rx="5" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="170" y="20" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">ComponenteAutenticacion</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> IAuthService, ITokenVerifier</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> IUsuarioRepo, IHashingService</text>
+      <text x="12" y="102" fill="#1D4ED8" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-01, RF-02, RF-03, RNF-02</text>
     </g>
 
     <!-- Componente 2: Catalogo -->
-    <g transform="translate(460, 40)">
-      <rect width="330" height="110" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-      <text x="165" y="20" fill="#0F766E" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="165" y="36" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">ComponenteCatalogo</text>
-      <line x1="0" y1="44" x2="330" y2="44" stroke="#0F766E" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> ICatalogoService, IBuscadorPresupuesto</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> IComercioRepo, ICacheProvider</text>
-      <text x="12" y="94" fill="#0F766E" font-size="10"><b>Atiende:</b> RF-04, RF-05, RF-07, RNF-01</text>
+    <g transform="translate(540, 48)">
+      <rect width="340" height="120" rx="5" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+      <text x="170" y="20" fill="#0F766E" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#115E59" font-size="12" font-weight="bold" text-anchor="middle">ComponenteCatalogo</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#0F766E" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> ICatalogoService, IBuscadorPresupuesto</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> IComercioRepo, IPromocionService, ICache</text>
+      <text x="12" y="102" fill="#0F766E" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-04 a RF-08, RNF-01</text>
     </g>
 
     <!-- Componente 3: Promociones -->
-    <g transform="translate(880, 40)">
-      <rect width="320" height="110" rx="4" fill="#F0FDF4" stroke="#15803D" stroke-width="2"/>
-      <text x="160" y="20" fill="#15803D" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="160" y="36" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">ComponentePromociones</text>
-      <line x1="0" y1="44" x2="320" y2="44" stroke="#15803D" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> IPromocionService, IFranjaValidator</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> IEstrategiaDescuento, ICacheProvider</text>
-      <text x="12" y="94" fill="#15803D" font-size="10"><b>Atiende:</b> RF-09, RF-10, RF-11, RF-12</text>
+    <g transform="translate(1030, 48)">
+      <rect width="340" height="120" rx="5" fill="#F0FDF4" stroke="#15803D" stroke-width="2"/>
+      <text x="170" y="20" fill="#15803D" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#14532D" font-size="12" font-weight="bold" text-anchor="middle">ComponentePromociones</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#15803D" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> IPromocionService, IFranjaValidator</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> IEstrategiaDescuento, ICacheProvider</text>
+      <text x="12" y="102" fill="#15803D" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-09, RF-10, RF-11, RF-12</text>
     </g>
 
     <!-- Componente 4: Cupones -->
-    <g transform="translate(140, 230)">
-      <rect width="320" height="110" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-      <text x="160" y="20" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="160" y="36" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">ComponenteCupones</text>
-      <line x1="0" y1="44" x2="320" y2="44" stroke="#1D4ED8" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> ICuponService, ICuponLifecycle</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> IPromocionService, IAuthService</text>
-      <text x="12" y="94" fill="#1D4ED8" font-size="10"><b>Atiende:</b> RF-13, RF-14, RF-15, RNF-02</text>
+    <g transform="translate(50, 290)">
+      <rect width="340" height="120" rx="5" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+      <text x="170" y="20" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">ComponenteCupones</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#1D4ED8" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> ICuponService, ICuponLifecycle</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> IPromocionService, IAuthService</text>
+      <text x="12" y="102" fill="#1D4ED8" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-13, RF-14, RF-15, RNF-03</text>
     </g>
 
     <!-- Componente 5: POS Canje -->
-    <g transform="translate(510, 230)">
-      <rect width="330" height="110" rx="4" fill="#FAF5FF" stroke="#7E22CE" stroke-width="2"/>
-      <text x="165" y="20" fill="#7E22CE" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="165" y="36" fill="#581C87" font-size="12" font-weight="bold" text-anchor="middle">ComponentePOSCanje (Facade)</text>
-      <line x1="0" y1="44" x2="330" y2="44" stroke="#7E22CE" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> IPOSCanjeService, IContingencia</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> ICuponService, IAuditoriaService</text>
-      <text x="12" y="94" fill="#7E22CE" font-size="10"><b>Atiende:</b> RF-16, RF-17, RNF-01, RNF-03</text>
+    <g transform="translate(540, 290)">
+      <rect width="340" height="120" rx="5" fill="#FAF5FF" stroke="#7E22CE" stroke-width="2"/>
+      <text x="170" y="20" fill="#7E22CE" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#581C87" font-size="12" font-weight="bold" text-anchor="middle">ComponentePOSCanje (Facade)</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#7E22CE" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> IPOSCanjeService, IContingenciaScanner</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> ICuponService, IAuditoriaService</text>
+      <text x="12" y="102" fill="#7E22CE" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-16, RF-17, RF-18, RNF-01, RNF-04</text>
     </g>
 
     <!-- Componente 6: Auditoria -->
-    <g transform="translate(880, 230)">
-      <rect width="320" height="110" rx="4" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
-      <text x="160" y="20" fill="#B91C1C" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
-      <text x="160" y="36" fill="#7F1D1D" font-size="12" font-weight="bold" text-anchor="middle">ComponenteAuditoria</text>
-      <line x1="0" y1="44" x2="320" y2="44" stroke="#B91C1C" stroke-width="1"/>
-      <text x="12" y="62" fill="#1F2937" font-size="10"><b>Provee:</b> IAuditoriaService, IAnaliticaReport</text>
-      <text x="12" y="78" fill="#1F2937" font-size="10"><b>Requiere:</b> IBitacoraRepository</text>
-      <text x="12" y="94" fill="#B91C1C" font-size="10"><b>Atiende:</b> RF-18, RF-19, RF-20, RNF-02</text>
+    <g transform="translate(1030, 290)">
+      <rect width="340" height="120" rx="5" fill="#FEF2F2" stroke="#B91C1C" stroke-width="2"/>
+      <text x="170" y="20" fill="#B91C1C" font-size="10" text-anchor="middle">&lt;&lt;component&gt;&gt;</text>
+      <text x="170" y="36" fill="#7F1D1D" font-size="12" font-weight="bold" text-anchor="middle">ComponenteAuditoria</text>
+      <line x1="0" y1="45" x2="340" y2="45" stroke="#B91C1C" stroke-width="1"/>
+      <text x="12" y="65" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Provee:</tspan> IAuditoriaService, IAnaliticaReportService</text>
+      <text x="12" y="83" fill="#1F2937" font-size="10.5"><tspan font-weight="bold">Requiere:</tspan> IBitacoraRepository</text>
+      <text x="12" y="102" fill="#B91C1C" font-size="10.5"><tspan font-weight="bold">Atiende:</tspan> RF-19, RF-20, RNF-02</text>
     </g>
 
-    <!-- Dependencias internas -->
-    <path d="M 510 285 L 460 285" fill="none" stroke="#7E22CE" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#comp_arrow)"/>
-    <text x="485" y="278" fill="#7E22CE" font-size="9" text-anchor="middle">ICuponService</text>
+    <!-- Dependencias internas en espacios de 150px y 122px -->
+    <path d="M 540 350 L 392 350" fill="none" stroke="#7E22CE" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#comp_arrow_purple)"/>
+    <rect x="424" y="330" width="84" height="16" fill="#F8FAFC" rx="2"/>
+    <text x="466" y="342" fill="#7E22CE" font-size="10" font-weight="bold" text-anchor="middle">ICuponService</text>
 
-    <path d="M 840 285 L 880 285" fill="none" stroke="#7E22CE" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#comp_arrow)"/>
-    <text x="860" y="278" fill="#7E22CE" font-size="9" text-anchor="middle">IAuditoria</text>
+    <path d="M 880 350 L 1028 350" fill="none" stroke="#7E22CE" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#comp_arrow_purple)"/>
+    <rect x="907" y="330" width="96" height="16" fill="#F8FAFC" rx="2"/>
+    <text x="955" y="342" fill="#7E22CE" font-size="10" font-weight="bold" text-anchor="middle">IAuditoriaService</text>
 
-    <path d="M 300 230 L 300 190 L 1040 190 L 1040 150" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#comp_arrow)"/>
-    <text x="670" y="184" fill="#1D4ED8" font-size="9" text-anchor="middle">requiere IPromocionService</text>
+    <path d="M 880 108 L 1028 108" fill="none" stroke="#0F766E" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#comp_arrow_green)"/>
+    <rect x="904" y="88" width="102" height="16" fill="#F8FAFC" rx="2"/>
+    <text x="955" y="100" fill="#0F766E" font-size="10" font-weight="bold" text-anchor="middle">IPromocionService</text>
+
+    <path d="M 220 290 L 220 170" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#comp_arrow_blue)"/>
+    <rect x="228" y="218" width="76" height="16" fill="#F8FAFC" rx="2"/>
+    <text x="266" y="230" fill="#1D4ED8" font-size="10" font-weight="bold" text-anchor="middle">IAuthService</text>
+
+    <path d="M 349 290 L 349 228 L 1200 228 L 1200 170" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#comp_arrow_blue)"/>
+    <rect x="688" y="218" width="154" height="18" fill="#F8FAFC" rx="2"/>
+    <text x="765" y="231" fill="#1D4ED8" font-size="10" font-weight="bold" text-anchor="middle">requiere IPromocionService</text>
   </g>
 
-  <!-- Box 3: Infraestructura -->
-  <g transform="translate(50, 720)" filter="url(#shadow)">
-    <rect width="1250" height="140" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
-    <text x="20" y="20" fill="#475569" font-size="11" font-weight="bold">INFRAESTRUCTURA Y ALMACENAMIENTO DE DATOS</text>
+  <!-- Conexiones Backend -> Infraestructura -->
+  <path d="M 460 700 L 460 753" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#comp_arrow_blue)"/>
+  <rect x="470" y="718" width="174" height="16" fill="#ffffff" rx="2"/>
+  <text x="557" y="730" fill="#2563EB" font-size="10" font-weight="bold" text-anchor="middle">Repositorios SQL / ACID (TCP 5432)</text>
 
-    <g transform="translate(250, 36)">
-      <rect width="320" height="80" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-      <text x="160" y="28" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">PostgreSQL 15+ Enterprise Motor</text>
-      <text x="160" y="48" fill="#4B5563" font-size="10" text-anchor="middle">Transacciones ACID con Row-Locking</text>
-      <text x="160" y="64" fill="#2563EB" font-size="9" font-weight="bold" text-anchor="middle">SELECT FOR UPDATE (RNF-03)</text>
+  <path d="M 1040 700 L 1040 753" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#comp_arrow_red)"/>
+  <rect x="1050" y="718" width="136" height="16" fill="#ffffff" rx="2"/>
+  <text x="1118" y="730" fill="#DC2626" font-size="10" font-weight="bold" text-anchor="middle">ICacheProvider (TCP 6379)</text>
+
+  <!-- Box 3: Infraestructura -->
+  <g transform="translate(40, 755)" filter="url(#shadow)">
+    <rect width="1420" height="145" rx="6" fill="#F8FAFC" stroke="#64748B" stroke-width="1.5"/>
+    <text x="20" y="22" fill="#475569" font-size="11" font-weight="bold">INFRAESTRUCTURA Y ALMACENAMIENTO DE DATOS</text>
+
+    <g transform="translate(250, 42)">
+      <rect width="340" height="82" rx="5" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+      <text x="170" y="20" fill="#1E40AF" font-size="10" text-anchor="middle">&lt;&lt;database&gt;&gt;</text>
+      <text x="170" y="38" fill="#1E3A8A" font-size="12" font-weight="bold" text-anchor="middle">PostgreSQL 15+ Enterprise Motor</text>
+      <text x="170" y="56" fill="#4B5563" font-size="10" text-anchor="middle">Transacciones ACID con Row-Locking</text>
+      <text x="170" y="72" fill="#2563EB" font-size="9.5" font-weight="bold" text-anchor="middle">SELECT FOR UPDATE (RNF-04)</text>
     </g>
-    <g transform="translate(680, 36)">
-      <rect width="320" height="80" rx="4" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
-      <text x="160" y="28" fill="#991B1B" font-size="12" font-weight="bold" text-anchor="middle">Redis 7.0 In-Memory Engine</text>
-      <text x="160" y="48" fill="#4B5563" font-size="10" text-anchor="middle">Caché de Catálogo y Franjas Rápidas</text>
-      <text x="160" y="64" fill="#DC2626" font-size="9" font-weight="bold" text-anchor="middle">Latencia &lt; 5 ms (RNF-01)</text>
+    <g transform="translate(830, 42)">
+      <rect width="340" height="82" rx="5" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+      <text x="170" y="20" fill="#991B1B" font-size="10" text-anchor="middle">&lt;&lt;cache&gt;&gt;</text>
+      <text x="170" y="38" fill="#991B1B" font-size="12" font-weight="bold" text-anchor="middle">Redis 7.0 In-Memory Engine</text>
+      <text x="170" y="56" fill="#4B5563" font-size="10" text-anchor="middle">Caché de Catálogo y Franjas Rápidas</text>
+      <text x="170" y="72" fill="#DC2626" font-size="9.5" font-weight="bold" text-anchor="middle">Latencia &lt; 5 ms (RNF-01)</text>
     </g>
   </g>
 

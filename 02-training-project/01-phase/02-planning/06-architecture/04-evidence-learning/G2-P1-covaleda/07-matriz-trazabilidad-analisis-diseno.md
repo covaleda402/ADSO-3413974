@@ -1,60 +1,70 @@
-# Matriz de Trazabilidad Análisis → Diseño (A7)
+﻿# Matriz de Trazabilidad Análisis → Diseño (A7)
 ## Proyecto Formativo: Nuvora — Plataforma Transaccional Gastronómica
 **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
 **Centro:** Centro de la Industria, la Empresa y los Servicios (CIES) — Regional Huila  
-**Aprendiz Autor:** Jose Esneider Covaleda Hortua (`covaleda402`)  
+**Aprendiz Autor:** `covaleda402`  
 **Fase:** 02 - Planeación | **Competencia:** 220501095 | **RAP:** 593103 (Criterio C7)  
 **Ruta:** `02-training-project/01-phase/02-planning/06-architecture/04-evidence-learning/G2-P1-covaleda/`  
-**Normativa:** `Rubricas_G2.md` (Sección 2.1 y Sección 2.2 · Nivel 100)
+**Normativa:** `Rubricas_G2.md` (Sección 2.1 y Sección 2.2 · Nivel 100) y `Plantillas_G2.md`
 
 ---
 
-## 1. Convenciones y Metodología de Trazabilidad Bidireccional
+## 1. Metodología de Trazabilidad Bidireccional (100 % Cobertura)
 
-Para garantizar la cobertura integral del software y evitar clases o artefactos huérfanos, la presente matriz implementa **trazabilidad bidireccional estricta**:
-1. **Trazabilidad Hacia Adelante (*Forward Traceability*):** Cada uno de los 20 Requisitos Funcionales (RF-01 al RF-20) y los Requisitos No Funcionales del SRS de Nuvora se mapea a sus correspondientes clases de diseño, tablas del modelo relacional, componentes ejecutables y decisiones arquitectónicas.
-2. **Trazabilidad Hacia Atrás (*Backward Traceability*):** Cada clase del Diagrama de Clases (`02-diagrama-clases.drawio`) y cada tabla del Modelo de Datos responde a al menos un requisito de negocio del cliente.
+Para asegurar el cumplimiento integral de los requisitos del análisis (`SRS_MercaGo_SanPedroPlaza.md` v2.0 y `G1-P2-covaleda/07-informe-analisis-trazabilidad.md`), se verifica la trazabilidad en ambos sentidos:
+1. **Hacia adelante (Requisito $\rightarrow$ Diseño):** Los **20 Requisitos Funcionales (`RF-01` a `RF-20`)** y los RNF críticos del SRS quedan cubiertos por clases de [`02-diagrama-clases.drawio`](./02-diagrama-clases.drawio), tablas del modelo lógico relacional (`G2-P2-covaleda/02-modelo-logico-relacional.drawio`), componentes de [`05-vista-componentes.drawio`](./05-vista-componentes.drawio) y decisiones arquitectónicas.
+2. **Hacia atrás (Artefacto $\rightarrow$ Requisito):** Ninguno de los **15 clasificadores** del diagrama de clases queda sin requisito asignado (**cero clases huérfanas**).
 
-**Tasa de Cobertura Alcanzada:** **100 % (20 / 20 Requisitos Funcionales trazados formalmente)**.
+**Tasa de Cobertura Verificada:** **100 % (20 / 20 Requisitos Funcionales · 15 / 15 Clasificadores UML trazados)**.
 
 ---
 
-## 2. Matriz de Trazabilidad Análisis → Diseño
+## 2. Matriz de Trazabilidad Completa Análisis → Diseño
 
-| ID Requisito | Denominación del Requisito Funcional | Clase(s) del Diagrama de Clases | Tabla(s) del Modelo Relacional | Componente de Software | Decisión Arquitectónica / Patrón GoF |
+| ID Requisito | Denominación Oficial (SRS v2.0) | Clase(s) en `02-diagrama-clases` | Tabla(s) del Modelo Relacional (3FN) | Componente en `05-vista-componentes` | Decisión Arquitectónica / Patrón GoF |
 |:---:|---|---|---|---|---|
-| **RF-01** | Autenticación y control de acceso por roles | `Usuario`, `Visitante`, `Locatario`, `AuthService` | `usuario`, `rol_usuario` | `ComponenteAutenticacion` | JWT Bearer Token con expiración efímera y RoleGuard RBAC |
-| **RF-02** | Recuperación segura de credenciales | `AuthService`, `TokenRecuperacion` | `usuario`, `token_recuperacion` | `ComponenteAutenticacion` | Hash bcrypt (costo 12) + expiración de token a 15 min |
-| **RF-03** | Gestión de perfil y preferencias culinarias | `Visitante`, `PreferenciaGastronomica` | `usuario`, `preferencia_visitante` | `ComponenteAutenticacion` | Almacenamiento desacoplado de preferencias en tabla 1:N |
-| **RF-04** | Directorio y categorización de locales comerciales | `Comercio`, `CategoriaComercio` | `local_comercial`, `categoria_comercio` | `ComponenteCatalogo` | Caché en Redis para respuesta sub-segundo en horas pico |
-| **RF-05** | Consulta detallada de información y horarios de local | `Comercio`, `HorarioAtencion` | `local_comercial`, `franja_horaria` | `ComponenteCatalogo` | Caché local con invalidación por evento de actualización |
-| **RF-06** | Catálogo interactivo de platos y combos | `MenuProducto`, `Comercio` | `producto`, `local_comercial` | `ComponenteCatalogo` | Agregación UML: Los productos pertenecen a un local |
-| **RF-07** | Motor de búsqueda y filtrado por presupuesto (`COP`) | `CalculadorPresupuesto`, `MenuProducto` | `producto`, `promocion` | `ComponenteCatalogo` | Algoritmo determinístico de combinatoria de menú |
-| **RF-08** | Clasificación por alérgenos y tipos de comida | `MenuProducto`, `CategoriaMenu` | `producto`, `categoria_producto` | `ComponenteCatalogo` | Índices B-Tree en PostgreSQL sobre categoría de plato |
-| **RF-09** | Publicación y parametrización de promociones | `Promocion`, `IEstrategiaDescuento` | `promocion`, `local_comercial` | `ComponentePromociones` | **Patrón Strategy:** Liquidación desacoplada de descuentos |
-| **RF-10** | Restricción por franjas horarias y días válidos | `Promocion`, `FranjaHoraria` | `promocion`, `franja_horaria` | `ComponentePromociones` | Entidad débil con clave primaria compuesta en MER |
-| **RF-11** | Gestión de stock y cupo de promociones | `Promocion`, `ControlStockService` | `promocion` | `ComponentePromociones` | Decremento atómico en BD evitando inventarios negativos |
-| **RF-12** | Pausa o desactivación manual de promociones | `Promocion`, `Comercio` | `promocion` | `ComponentePromociones` | Estado de ciclo de vida: `Activa`, `Pausada`, `Agotada` |
-| **RF-13** | Emisión de cupón con token QR dinámico | `Cupon`, `GeneradorTokenQRService` | `cupon`, `promocion` | `ComponenteCupones` | Firma digital HMAC-SHA256 con reloj regresivo de 2h |
-| **RF-14** | Restricción de límite diario de cupones por usuario | `Cupon`, `ReglaLimiteDiarioService` | `cupon` | `ComponenteCupones` | Regla RN-01: Máximo 3 cupones activos o 1 por local/día |
-| **RF-15** | Billetera digital y vista de cupones activos | `Visitante`, `Cupon` | `cupon`, `usuario` | `ComponenteCupones` | Sincronización PWA con contador regresivo en JavaScript |
-| **RF-16** | Validación y lectura de cupones en terminal POS | `CanjeCuponFacade`, `ValidadorPOSService` | `cupon`, `local_comercial` | `ComponentePOSCanje` | **Patrón Facade:** Orquestación unificada en punto de venta |
-| **RF-17** | Bloqueo de concurrencia y prevención de doble canje | `TransaccionCanjeService`, `CanjeCuponFacade` | `cupon`, `bitacora_canje` | `ComponentePOSCanje` | Bloqueo pesimista `SELECT ... FOR UPDATE` (ACID) |
-| **RF-18** | Bitácora inmutable de auditoría de redenciones | `BitacoraCanje`, `AuditoriaService` | `bitacora_canje` | `ComponenteAuditoria` | Inserción inmutable con hash transaccional y sello de tiempo |
-| **RF-19** | Registro de contingencia manual por código corto | `TerminalPOSController`, `CanjeCuponFacade` | `cupon`, `bitacora_canje` | `ComponentePOSCanje` | Soporte de digitación alfanumérica de 8 caracteres |
-| **RF-20** | Métricas comerciales y analítica de conversión | `AnaliticaService`, `ReporteComercial` | `bitacora_canje`, `promocion` | `ComponenteAuditoria` | Vistas SQL materializadas para cálculo de efectividad |
+| **RF-01** | Registro de visitantes | `Usuario`, `Visitante` | `usuario` | `ComponenteAutenticacion` | Dispersión `bcrypt` (cost 12) + consentimiento Ley 1581/2012 |
+| **RF-02** | Inicio de sesión y manejo de tokens | `Usuario`, `Visitante`, `Locatario` | `usuario` | `ComponenteAutenticacion` | JWT firmado con expiración controlada y `RoleGuard` RBAC |
+| **RF-03** | Recuperación básica de contraseña | `Usuario` | `usuario` | `ComponenteAutenticacion` | Token temporal efímero por correo + tráfico TLS 1.3 |
+| **RF-04** | Gestión de perfil de local | `Locatario`, `Comercio` | `usuario`, `local_comercial`, `categoria_comercio` | `ComponenteCatalogo` | Edición controlada por rol `Locatario` con caché invalidable |
+| **RF-05** | Catálogo general de locales y plazoleta | `Comercio` | `local_comercial`, `categoria_comercio` | `ComponenteCatalogo` | Acceso público sin login (RN-06) + caché Redis `< 5 ms` |
+| **RF-06** | Ficha detallada de local y menú digital | `Comercio`, `MenuProducto` | `local_comercial`, `producto` | `ComponenteCatalogo` | Composición UML (`Comercio` ◆── `MenuProducto`) |
+| **RF-07** | Algoritmo de búsqueda y filtro por presupuesto (`$COP`) | `MenuProducto`, `Promocion`, `IEstrategiaDescuento` | `producto`, `promocion` | `ComponenteCatalogo` | Consulta indexada + cálculo de precio final por estrategia |
+| **RF-08** | Búsqueda por texto libre | `Comercio`, `MenuProducto` | `local_comercial`, `producto` | `ComponenteCatalogo` | Búsqueda filtrada sobre índice de nombre y categoría |
+| **RF-09** | Creación de promociones | `Locatario`, `Promocion`, `IEstrategiaDescuento`, `DescuentoPorcentual`, `DescuentoMontoFijo`, `DescuentoComboVolumen` | `promocion` | `ComponentePromociones` | **Patrón Strategy:** Desacopla algoritmos de cálculo monetario |
+| **RF-10** | Parametrización de franjas horarias | `Promocion`, `FranjaHoraria` | `promocion`, `franja_horaria` | `ComponentePromociones` | Composición UML (`Promocion` ◆── `FranjaHoraria`) + reloj servidor |
+| **RF-11** | Control de estados de promoción | `Locatario`, `Promocion` | `promocion` | `ComponentePromociones` | Máquina de estados (`ACTIVA`, `PAUSADA`, `AGOTADA`, `VENCIDA`) |
+| **RF-12** | Límite de cupos por promoción | `Promocion` | `promocion` | `ComponentePromociones` | Validación atómica `stock_disponible > 0` antes de emitir |
+| **RF-13** | Generación criptográfica de cupón | `Visitante`, `Promocion`, `Cupon` | `cupon`, `promocion` | `ComponenteCupones` | Código único + token HMAC-SHA256 + límite diario RN-01 |
+| **RF-14** | Renderizado de código QR dinámico | `Cupon` | `cupon` | `ComponenteCupones` | Payload firmado + ventana estricta de 2 horas (RN-02) |
+| **RF-15** | Billetera de cupones del visitante | `Visitante`, `Cupon` | `cupon`, `usuario` | `ComponenteCupones` | Vista filtrable (`Activos`, `Redimidos`, `Vencidos`) con reloj regresivo |
+| **RF-16** | Interfaz operativa de caja (POS y contingencia) | `Locatario`, `CanjeCuponFacade`, `Cupon` | `cupon`, `local_comercial` | `ComponentePOSCanje` | **Patrón Facade:** Punto único para escáner QR y código manual 8 car |
+| **RF-17** | Validación transaccional inmediata | `CanjeCuponFacade`, `Cupon`, `Promocion`, `FranjaHoraria` | `cupon`, `promocion`, `franja_horaria` | `ComponentePOSCanje` | Transacción ACID con bloqueo `SELECT ... FOR UPDATE` (RN-04, RN-07) |
+| **RF-18** | Respuesta visual de redención y marcado | `CanjeCuponFacade`, `Cupon`, `BitacoraCanje` | `cupon`, `bitacora_canje` | `ComponentePOSCanje` | Commit/Rollback atómico con evento WebSocket WSS y estado explícito |
+| **RF-19** | Dashboard de métricas para el locatario | `Comercio`, `ReporteComercial` | `promocion`, `cupon`, `bitacora_canje` | `ComponenteAuditoria` | Clase dedicada `ReporteComercial` (alta cohesión sin mezclar en `Locatario`) |
+| **RF-20** | Bitácora inmutable de auditoría | `CanjeCuponFacade`, `BitacoraCanje` | `bitacora_canje` | `ComponenteAuditoria` | Registro inmutable con sello hash criptográfico e IP origen |
+| **RNF-01..04** | Rendimiento $\le 1.5$ s, seguridad bcrypt/TLS/HMAC y ACID | `CanjeCuponFacade`, `Cupon`, `BitacoraCanje` | Todas (`usuario`, `cupon`, `bitacora_canje`) | `ComponentePOSCanje`, `ComponenteAutenticacion` | Redis caché `< 5 ms`, bcrypt cost 12, TLS 1.3 y Row-Locking ACID |
 
 ---
 
-## 3. Verificación de No Existencia de Clases Huérfanas
+## 3. Verificación Hacia Atrás: Cero Clases Huérfanas
 
-Se certifica que cada clase presente en el Diagrama de Clases (`02-diagrama-clases.drawio`):
-* `Usuario`, `Visitante`, `Locatario`: Atienden RF-01, RF-02, RF-03.
-* `Comercio`, `MenuProducto`: Atienden RF-04, RF-05, RF-06, RF-08.
-* `Promocion`, `FranjaHoraria`: Atienden RF-09, RF-10, RF-11, RF-12.
-* `IEstrategiaDescuento`, `DescuentoPorcentual`, `DescuentoMontoFijo`, `DescuentoComboVolumen`: Atienden RF-09, RF-16.
-* `Cupon`: Atiende RF-13, RF-14, RF-15, RF-17.
-* `CanjeCuponFacade`: Atiende RF-16, RF-17, RF-19.
-* `BitacoraCanje`: Atiende RF-18, RF-20.
+Se verifica individualmente que cada uno de los **15 clasificadores** representados en [`02-diagrama-clases.drawio`](./02-diagrama-clases.drawio) y [`02-diagrama-clases.svg`](./02-diagrama-clases.svg) responde a requisitos formales del SRS:
 
-**Resultado:** Cero (0) clases huérfanas. Todas las clases están vinculadas de forma demostrable a los requisitos de la solución.
+1. `Usuario` (`«abstract»`): **RF-01, RF-02, RF-03**
+2. `Visitante`: **RF-01, RF-02, RF-13, RF-15**
+3. `Locatario`: **RF-02, RF-04, RF-09, RF-11, RF-16**
+4. `Comercio`: **RF-04, RF-05, RF-06, RF-08, RF-19**
+5. `MenuProducto`: **RF-06, RF-07, RF-08**
+6. `ReporteComercial`: **RF-19** (separa responsabilidad analítica/reportes según Regla 5 de `Rubricas_G2.md`)
+7. `Promocion`: **RF-07, RF-09, RF-10, RF-11, RF-12, RF-13, RF-17**
+8. `FranjaHoraria`: **RF-10, RF-17**
+9. `Cupon`: **RF-13, RF-14, RF-15, RF-16, RF-17, RF-18**
+10. `IEstrategiaDescuento` (`«interface»` - Strategy): **RF-07, RF-09**
+11. `DescuentoPorcentual`: **RF-07, RF-09**
+12. `DescuentoMontoFijo`: **RF-07, RF-09**
+13. `DescuentoComboVolumen`: **RF-07, RF-09**
+14. `CanjeCuponFacade` (`«facade»` - Facade): **RF-16, RF-17, RF-18, RF-20**
+15. `BitacoraCanje`: **RF-18, RF-20**
+
+**Resultado de Auditoría:** **0 clases huérfanas** y **0 requisitos funcionales descubiertos (20 / 20 = 100 %)**.

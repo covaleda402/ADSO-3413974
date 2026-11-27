@@ -1,89 +1,95 @@
-﻿<mxfile host="app.diagrams.net" modified="2026-11-26T04:20:00.000Z" agent="Antigravity SENA Quality Auditor" version="24.7.5">
+<mxfile host="app.diagrams.net" agent="Antigravity SENA Quality Auditor">
   <diagram id="vista_componentes_nuvora" name="Vista de Componentes Nuvora">
-    <mxGraphModel dx="1422" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="950" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="2350" dy="1072" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="960" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- Header -->
-        <mxCell id="hdr_comp" value="NUVORA — VISTA DE COMPONENTES DEL SOFTWARE (UML COMPONENT DIAGRAM)&#xa;Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C5) · Autor: Jose Esneider Covaleda (covaleda402) · Interfaces Provistas y Requeridas" style="text;html=1;strokeColor=#1E3A8A;fillColor=#DBEAFE;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="20" width="1150" height="40" as="geometry" />
+        <mxCell id="hdr_comp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1E3A8A;fillColor=#1E3A8A;fontColor=#FFFFFF;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontFamily=Segoe UI;" value="NUVORA — VISTA DE COMPONENTES DEL SOFTWARE (UML COMPONENT DIAGRAM)&#xa;Guía 2 · Producto 1 (G2-P1) · RAP 593103 (Criterio C5) · Autor: covaleda402 · Interfaces Provistas y Requeridas" vertex="1">
+          <mxGeometry height="48" width="1420" x="40" y="20" as="geometry" />
         </mxCell>
-
-        <!-- Subgraph Clientes Web -->
-        <mxCell id="box_cli" value="CLIENTES WEB (FRONTEND)" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="90" width="1250" height="110" as="geometry" />
+        <mxCell id="box_cli" parent="1" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#475569;fontSize=11;fontStyle=1;rounded=1;fontFamily=Segoe UI;" value="CLIENTES WEB (CAPA DE PRESENTACIÓN)" vertex="1">
+          <mxGeometry height="105" width="1420" x="40" y="85" as="geometry" />
         </mxCell>
-        <mxCell id="cmp_pwa" value="«component»&lt;br&gt;&lt;b&gt;PWA Visitante Mobile&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="box_cli">
-          <mxGeometry x="60" y="35" width="220" height="60" as="geometry" />
+        <mxCell id="cmp_pwa" parent="box_cli" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;PWA Visitante Mobile&lt;/b&gt;" vertex="1">
+          <mxGeometry height="56" width="280" x="80" y="34" as="geometry" />
         </mxCell>
-        <mxCell id="cmp_pos_ui" value="«component»&lt;br&gt;&lt;b&gt;Terminal Web POS Caja&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="box_cli">
-          <mxGeometry x="520" y="35" width="230" height="60" as="geometry" />
+        <mxCell id="cmp_pos_ui" parent="box_cli" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;Terminal Web POS Caja&lt;/b&gt;" vertex="1">
+          <mxGeometry height="56" width="280" x="570" y="34" as="geometry" />
         </mxCell>
-        <mxCell id="cmp_admin_ui" value="«component»&lt;br&gt;&lt;b&gt;Portal Web Administrador&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="box_cli">
-          <mxGeometry x="960" y="35" width="230" height="60" as="geometry" />
+        <mxCell id="cmp_admin_ui" parent="box_cli" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;" value="&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;Portal Web Administrador&lt;/b&gt;" vertex="1">
+          <mxGeometry height="56" width="280" x="1060" y="34" as="geometry" />
         </mxCell>
-
-        <!-- Subgraph Backend Modular -->
-        <mxCell id="box_back" value="BACKEND MODULAR (NESTJS ENGINE)" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="240" width="1250" height="460" as="geometry" />
+        <mxCell id="box_back" parent="1" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#475569;fontSize=11;fontStyle=1;rounded=1;fontFamily=Segoe UI;" value="BACKEND MODULAR (NESTJS ENGINE)" vertex="1">
+          <mxGeometry height="460" width="1420" x="40" y="240" as="geometry" />
         </mxCell>
-
-        <!-- Componente 1: Auth -->
-        <mxCell id="cmp_auth" value="«component»&lt;br&gt;&lt;b&gt;ComponenteAutenticacion&lt;/b&gt;&lt;hr&gt;Provee: IAuthService&lt;br&gt;Requiere: IUsuarioRepo&lt;br&gt;Atiende: RF-01, RF-02, RF-03" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#EFF6FF;strokeColor=#1D4ED8;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="50" y="40" width="240" height="110" as="geometry" />
+        <mxCell id="cmp_auth" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#EFF6FF;strokeColor=#1D4ED8;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponenteAutenticacion&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #1D4ED8;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; IAuthService, ITokenVerifier&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; IUsuarioRepo, IHashingService&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-01, RF-02, RF-03, RNF-02" vertex="1">
+          <mxGeometry height="120" width="340" x="50" y="48" as="geometry" />
         </mxCell>
-
-        <!-- Componente 2: Catalogo -->
-        <mxCell id="cmp_cat" value="«component»&lt;br&gt;&lt;b&gt;ComponenteCatalogo&lt;/b&gt;&lt;hr&gt;Provee: ICatalogoService&lt;br&gt;Requiere: IComercioRepo, ICache&lt;br&gt;Atiende: RF-04, RF-05, RF-07" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#F0FDFA;strokeColor=#0F766E;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="350" y="40" width="250" height="110" as="geometry" />
+        <mxCell id="cmp_cat" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#F0FDFA;strokeColor=#0F766E;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponenteCatalogo&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #0F766E;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; ICatalogoService, IBuscadorPresupuesto&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; IComercioRepo, IPromocionService, ICache&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-04 a RF-08, RNF-01" vertex="1">
+          <mxGeometry height="120" width="340" x="540" y="48" as="geometry" />
         </mxCell>
-
-        <!-- Componente 3: Promociones -->
-        <mxCell id="cmp_promo" value="«component»&lt;br&gt;&lt;b&gt;ComponentePromociones&lt;/b&gt;&lt;hr&gt;Provee: IPromocionService&lt;br&gt;Requiere: IEstrategiaDescuento&lt;br&gt;Atiende: RF-09, RF-10, RF-11" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#F0FDF4;strokeColor=#15803D;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="660" y="40" width="260" height="110" as="geometry" />
+        <mxCell id="cmp_promo" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#F0FDF4;strokeColor=#15803D;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponentePromociones&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #15803D;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; IPromocionService, IFranjaValidator&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; IEstrategiaDescuento, ICacheProvider&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-09, RF-10, RF-11, RF-12" vertex="1">
+          <mxGeometry height="120" width="340" x="1030" y="48" as="geometry" />
         </mxCell>
-
-        <!-- Componente 4: Cupones -->
-        <mxCell id="cmp_cupon" value="«component»&lt;br&gt;&lt;b&gt;ComponenteCupones&lt;/b&gt;&lt;hr&gt;Provee: ICuponService&lt;br&gt;Requiere: IPromocionService, IAuth&lt;br&gt;Atiende: RF-13, RF-14, RF-15" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#EFF6FF;strokeColor=#1D4ED8;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="200" y="220" width="270" height="110" as="geometry" />
+        <mxCell id="cmp_cupon" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#EFF6FF;strokeColor=#1D4ED8;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponenteCupones&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #1D4ED8;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; ICuponService, ICuponLifecycle&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; IPromocionService, IAuthService&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-13, RF-14, RF-15, RNF-03" vertex="1">
+          <mxGeometry height="120" width="340" x="50" y="290" as="geometry" />
         </mxCell>
-
-        <!-- Componente 5: POS Canje -->
-        <mxCell id="cmp_pos" value="«component»&lt;br&gt;&lt;b&gt;ComponentePOSCanje&lt;/b&gt;&lt;hr&gt;Provee: IPOSCanjeService (Facade)&lt;br&gt;Requiere: ICuponService, IAudit&lt;br&gt;Atiende: RF-16, RF-17, RF-19" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#FAF5FF;strokeColor=#7E22CE;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="540" y="220" width="280" height="110" as="geometry" />
+        <mxCell id="cmp_pos" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#FAF5FF;strokeColor=#7E22CE;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponentePOSCanje (Facade)&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #7E22CE;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; IPOSCanjeService, IContingenciaScanner&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; ICuponService, IAuditoriaService&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-16, RF-17, RF-18, RNF-01, RNF-04" vertex="1">
+          <mxGeometry height="120" width="340" x="540" y="290" as="geometry" />
         </mxCell>
-
-        <!-- Componente 6: Auditoria -->
-        <mxCell id="cmp_audit" value="«component»&lt;br&gt;&lt;b&gt;ComponenteAuditoria&lt;/b&gt;&lt;hr&gt;Provee: IAuditoriaService, IMetrics&lt;br&gt;Requiere: IBitacoraRepository&lt;br&gt;Atiende: RF-18, RF-20" style="html=1;dropTarget=0;whiteSpace=wrap;fillColor=#FEF2F2;strokeColor=#B91C1C;fontSize=11;" vertex="1" parent="box_back">
-          <mxGeometry x="890" y="220" width="260" height="110" as="geometry" />
+        <mxCell id="cmp_audit" parent="box_back" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;fillColor=#FEF2F2;strokeColor=#B91C1C;strokeWidth=1.8;fontSize=10.5;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;component&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;ComponenteAuditoria&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;border-top:1px solid #B91C1C;margin:4px 0px;&quot;/&gt;&lt;b&gt;Provee:&lt;/b&gt; IAuditoriaService, IAnaliticaReportService&lt;br/&gt;&lt;b&gt;Requiere:&lt;/b&gt; IBitacoraRepository&lt;br/&gt;&lt;b&gt;Atiende:&lt;/b&gt; RF-19, RF-20, RNF-02" vertex="1">
+          <mxGeometry height="120" width="340" x="1030" y="290" as="geometry" />
         </mxCell>
-
-        <!-- Subgraph Infraestructura -->
-        <mxCell id="box_infra" value="INFRAESTRUCTURA Y DATOS" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="740" width="1250" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="cmp_db" value="«database»&lt;br&gt;&lt;b&gt;PostgreSQL 15+ ACID&lt;/b&gt;&lt;br&gt;Transacciones &amp; Row-Locking" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="box_infra">
-          <mxGeometry x="250" y="40" width="240" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="cmp_redis" value="«cache»&lt;br&gt;&lt;b&gt;Redis 7.0 In-Memory&lt;/b&gt;&lt;br&gt;Catálogo &amp; Franjas Rápidas" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="box_infra">
-          <mxGeometry x="750" y="40" width="240" height="80" as="geometry" />
-        </mxCell>
-
-        <!-- Dependencias entre Componentes -->
-        <mxCell id="e_pos_cupon" value="requiere ICuponService" style="endArrow=open;dashed=1;html=1;strokeColor=#7E22CE;strokeWidth=1.5;fontSize=10;" edge="1" parent="box_back" source="cmp_pos" target="cmp_cupon">
+        <mxCell id="e_pos_cupon" edge="1" parent="box_back" source="cmp_pos" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#7E22CE;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="cmp_cupon" value="ICuponService">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_pos_audit" value="requiere IAuditoria" style="endArrow=open;dashed=1;html=1;strokeColor=#7E22CE;strokeWidth=1.5;fontSize=10;" edge="1" parent="box_back" source="cmp_pos" target="cmp_audit">
+        <mxCell id="e_pos_audit" edge="1" parent="box_back" source="cmp_pos" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#7E22CE;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="cmp_audit" value="IAuditoriaService">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_cupon_promo" value="requiere IPromocion" style="endArrow=open;dashed=1;html=1;strokeColor=#1D4ED8;strokeWidth=1.5;fontSize=10;" edge="1" parent="box_back" source="cmp_cupon" target="cmp_promo">
+        <mxCell id="e_cat_promo" edge="1" parent="box_back" source="cmp_cat" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#0F766E;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="cmp_promo" value="IPromocionService">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_cat_promo" value="requiere IPromocion" style="endArrow=open;dashed=1;html=1;strokeColor=#0F766E;strokeWidth=1.5;fontSize=10;" edge="1" parent="box_back" source="cmp_cat" target="cmp_promo">
+        <mxCell id="e_cupon_auth" edge="1" parent="box_back" source="cmp_cupon" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#1D4ED8;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="cmp_auth" value="IAuthService">
+          <mxGeometry relative="1" x="-0.0164" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_cupon_promo" edge="1" parent="box_back" source="cmp_cupon" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#1D4ED8;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.88;exitY=0;entryX=0.5;entryY=1;" target="cmp_promo" value="requiere IPromocionService">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="349" y="228" />
+              <mxPoint x="1200" y="228" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_infra" parent="1" style="swimlane;html=1;startSize=26;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#475569;fontSize=11;fontStyle=1;rounded=1;fontFamily=Segoe UI;" value="INFRAESTRUCTURA Y ALMACENAMIENTO DE DATOS" vertex="1">
+          <mxGeometry height="145" width="1420" x="40" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="cmp_db" parent="box_infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontSize=11;fontFamily=Segoe UI;" value="&amp;lt;&amp;lt;database&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;PostgreSQL 15+ Enterprise Motor&lt;/b&gt;&lt;br/&gt;Transacciones ACID con Row-Locking&lt;br/&gt;&lt;font color=&quot;#2563EB&quot;&gt;&lt;b&gt;SELECT FOR UPDATE (RNF-04)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82" width="340" x="250" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cmp_redis" parent="box_infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=2;fontSize=11;fontFamily=Segoe UI;" value="&amp;lt;&amp;lt;cache&amp;gt;&amp;gt;&lt;br/&gt;&lt;b&gt;Redis 7.0 In-Memory Engine&lt;/b&gt;&lt;br/&gt;Caché de Catálogo y Franjas Rápidas&lt;br/&gt;&lt;font color=&quot;#DC2626&quot;&gt;&lt;b&gt;Latencia &amp;lt; 5 ms (RNF-01)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="82" width="340" x="830" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pwa_back" edge="1" parent="1" source="cmp_pwa" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;strokeColor=#2563EB;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.155;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;" target="box_back" value="HTTPS REST / JSON">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
+        <mxCell id="e_pos_back" edge="1" parent="1" source="cmp_pos_ui" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;strokeColor=#7E22CE;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="box_back" value="HTTPS REST (POS)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_admin_back" edge="1" parent="1" source="cmp_admin_ui" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;strokeColor=#15803D;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.845;entryY=0.003;entryDx=0;entryDy=0;entryPerimeter=0;" target="box_back" value="HTTPS REST (RBAC)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_back_db" edge="1" parent="1" source="box_back" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;dashed=1;html=1;strokeColor=#2563EB;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.3;exitY=1;entryX=0.299;entryY=0.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="box_infra" value="Repositorios SQL / ACID (TCP 5432)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="466" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_back_redis" edge="1" parent="1" source="box_back" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;dashed=1;html=1;strokeColor=#DC2626;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.7;exitY=1;entryX=0.699;entryY=0.012;entryDx=0;entryDy=0;entryPerimeter=0;" target="box_infra" value="ICacheProvider (TCP 6379)">
+          <mxGeometry relative="1" x="-0.14" as="geometry">
+            <mxPoint x="1034" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
