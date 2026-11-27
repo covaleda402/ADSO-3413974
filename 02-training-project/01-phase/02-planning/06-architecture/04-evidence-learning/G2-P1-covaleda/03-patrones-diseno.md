@@ -148,6 +148,8 @@ classDiagram
   3. `TransaccionCanjeService`: Gestiona la conexión y el bloqueo pesimista de fila (`SELECT ... FOR UPDATE`).
   4. `BitacoraAuditoriaService`: Persiste el registro inmutable `BitacoraCanje` con su sello hash criptográfico para trazabilidad.
 
+> **Nota de coherencia entre vistas (`A2` y `A5`):** En el diagrama de clases ([`02-diagrama-clases.drawio`](./02-diagrama-clases.drawio)), `CanjeCuponFacade` se asocia directamente con las entidades de dominio `Cupon` y `BitacoraCanje`; los 4 servicios auxiliares anteriores corresponden al detalle operativo interno encapsulado dentro de `ComponentePOSCanje` en la vista de componentes ([`05-vista-componentes.md`](./05-vista-componentes.md)).
+
 ### 3.4 Qué Mejora en Mantenibilidad y Calidad de Software
 1. **Bajo Acoplamiento (*Loose Coupling*):** La interfaz de caja solo conoce un método de la fachada; desconoce por completo la tecnología de base de datos o las librerías criptográficas utilizadas tras bambalinas.
 2. **Facilidad de Pruebas de Integración:** La fachada se puede mockear fácilmente en pruebas de integración de la interfaz de caja, o probarse de forma aislada para certificar que el rollback transaccional se ejecute si la firma o el horario fallan.

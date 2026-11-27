@@ -64,7 +64,7 @@ El Centro Comercial San Pedro Plaza en Neiva (Huila) cuenta con una plazoleta ga
 ### 3.1 Actores del Sistema
 1. **Visitante / Consumidor:** Consulta el catálogo público, filtra por presupuesto en COP, emite cupones QR con vigencia de 2 horas y los presenta en caja.
 2. **Locatario (Administrador de Local):** Administra los datos del establecimiento, menús, promociones y franjas horarias relámpago; consulta reportes de conversión.
-3. **Cajero / Validador en Punto de Venta:** Opera la terminal web POS para escanear QR o digitar códigos manuales de contingencia y aplicar descuentos válidos.
+3. **Cajero / Validador en Punto de Venta:** Opera la terminal web POS para escanear QR o digitar códigos manuales de contingencia y aplicar descuentos válidos *(en diseño de clases y RBAC de base de datos se autentica bajo el rol `LOCATARIO`)*.
 4. **Administrador de Plataforma (Centro Comercial):** Habilita locales comerciales, categorías y audita métricas globales e integridad de la bitácora.
 
 ### 3.2 Restricciones del Caso
