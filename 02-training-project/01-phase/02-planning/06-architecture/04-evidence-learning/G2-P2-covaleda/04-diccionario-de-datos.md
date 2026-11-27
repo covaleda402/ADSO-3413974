@@ -1,8 +1,8 @@
-# Diccionario de Datos del Modelo Relacional (B4)
+﻿# Diccionario de Datos del Modelo Relacional (B4)
 ## Proyecto Formativo: Nuvora — Plataforma Transaccional Gastronómica
 **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
 **Centro:** Centro de la Industria, la Empresa y los Servicios (CIES) — Regional Huila  
-**Aprendiz Autor:** Jose Esneider Covaleda Hortua (`covaleda402`)  
+**Aprendiz Autor:** `covaleda402`  
 **Fase:** 02 - Planeación | **Competencia:** 220501095 | **RAP:** 593101 (Criterio C4)  
 **Ruta:** `02-training-project/01-phase/02-planning/06-architecture/04-evidence-learning/G2-P2-covaleda/`  
 **Normativa:** `Rubricas_G2.md` (Sección 3.1 y Sección 3.2 · Nivel 100)
@@ -12,23 +12,23 @@
 ## 1. Estándar de Nombrado y Convenciones Declaradas
 
 Para asegurar la uniformidad técnica y la mantenibilidad del esquema de base de datos, se declaran los siguientes estándares de nomenclatura:
-1. **Nombres de Tablas:** Sustantivos en minúsculas, en singular, separados por guión bajo (`snake_case`). Ejemplo: `usuario`, `local_comercial`, `promocion`.
-2. **Nombres de Columnas:** En minúsculas y formato `snake_case`. Ejemplo: `nombre_completo`, `fecha_hora_emision`.
-3. **Claves Primarias:** Formato `id_<nombre_tabla>` o el nombre del identificador principal. Ejemplo: `id_usuario`, `id_local`, `id_promocion`.
-4. **Claves Foráneas:** Prefijo `id_` seguido de la entidad y rol referenciado. Ejemplo: `id_usuario_visitante`, `id_usuario_cajero`, `id_promocion`.
-5. **Tipos de Datos y Dominios:** Tipados bajo estándar **ANSI SQL para motor PostgreSQL 15+**.
+1. **Nombres de Tablas:** Sustantivos en minúsculas, en singular, separados por guión bajo (`snake_case`). Ejemplo: `usuario`, `preferencia_visitante`, `local_comercial`, `promocion_producto`.
+2. **Nombres de Columnas:** En minúsculas y formato `snake_case`. Ejemplo: `nombre_completo`, `horario_atencion_semanal`, `fecha_hora_emision`.
+3. **Claves Primarias:** Formato `id_<nombre_tabla>` en entidades independientes o clave primaria compuesta en tablas puente/débiles (`preferencia_visitante`, `promocion_producto`, `franja_horaria`).
+4. **Claves Foráneas:** Prefijo `id_` seguido de la entidad y rol referenciado. Ejemplo: `id_usuario_visitante`, `id_usuario_cajero`, `id_promocion`, `id_producto`.
+5. **Tipos de Datos y Dominios:** Tipados bajo estándar **ANSI SQL para motor PostgreSQL 15+**. Total consolidado: **10 tablas y 64 columnas**.
 
 ---
 
 ## 2. Diccionario Detallado por Tablas (100 % de Tablas y Columnas)
 
-### Tabla 1: `usuario`
-Almacena las credenciales de acceso, datos biográficos y rol de todos los actores que interactúan con el sistema Nuvora.
+### Tabla 1: `usuario` (8 columnas)
+Almacena las credenciales de acceso, datos de contacto y rol de todos los actores que interactúan con el sistema Nuvora.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
 |---|---|:---:|---|---|
 | `id_usuario` | BIGSERIAL | 8 bytes | `PK, NOT NULL` | Identificador autoincremental único del usuario. |
-| `nombre_completo` | VARCHAR | 150 | `NOT NULL` | Nombres y apellidos reales del usuario (solo caracteres alfabéticos y espacios). |
+| `nombre_completo` | VARCHAR | 150 | `NOT NULL` | Nombres y apellidos del usuario (caracteres alfabéticos y espacios). |
 | `correo_electronico` | VARCHAR | 150 | `NOT NULL, UNIQUE` | Dirección de correo válida (formato RFC 5322); se usa para autenticación y notificaciones. |
 | `telefono_contacto` | VARCHAR | 20 | `NOT NULL` | Número telefónico con código de país (ej. `+573101234567`). |
 | `tipo_rol` | VARCHAR | 20 | `NOT NULL, CHECK (tipo_rol IN ('VISITANTE', 'LOCATARIO', 'ADMINISTRADOR'))` | Rol de seguridad para control de acceso (RBAC). |
@@ -38,20 +38,30 @@ Almacena las credenciales de acceso, datos biográficos y rol de todos los actor
 
 ---
 
-### Tabla 2: `categoria_comercio`
+### Tabla 2: `preferencia_visitante` (2 columnas — Atributo Multivaluado 1FN)
+Normaliza en Primera Forma Normal (1FN) el atributo multivaluado `preferencias_gastronomicas [*]` de cada visitante.
+
+| Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
+|---|---|:---:|---|---|
+| `id_usuario` | BIGINT | 8 bytes | `PK, FK, NOT NULL, REFERENCES usuario(id_usuario) ON DELETE CASCADE` | Identificador del visitante propietario de la preferencia gastronómica. |
+| `categoria_preferida` | VARCHAR | 50 | `PK, NOT NULL, CHECK (LENGTH(TRIM(categoria_preferida)) >= 3)` | Etiqueta atómica de preferencia culinaria (ej. `'Parrilla'`, `'Postres'`, `'Comida Rápida'`). |
+
+---
+
+### Tabla 3: `categoria_comercio` (5 columnas — Normalizada 3FN)
 Normaliza las categorías gastronómicas de los locales comerciales de la plazoleta y sus parámetros administrativos.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
 |---|---|:---:|---|---|
 | `id_categoria` | SERIAL | 4 bytes | `PK, NOT NULL` | Identificador autoincremental de la categoría comercial. |
-| `nombre_categoria` | VARCHAR | 50 | `NOT NULL, UNIQUE` | Denominación culinaria (ej. 'Comida Rápida', 'Parrilla', 'Café y Heladería', 'Comida Típica'). |
+| `nombre_categoria` | VARCHAR | 50 | `NOT NULL, UNIQUE` | Denominación culinaria (ej. `'Comida Rápida'`, `'Parrilla'`, `'Café y Heladería'`, `'Comida Típica'`). |
 | `descripcion` | TEXT | Variable | `NULL` | Descripción del concepto gastronómico de la categoría. |
-| `porcentaje_retencion_cc` | NUMERIC | (5,2) | `NOT NULL, CHECK (porcentaje_retencion_cc >= 0 AND porcentaje_retencion_cc <= 100)` | Porcentaje de comisión administrativa del centro comercial sobre ventas con descuento. |
+| `porcentaje_retencion_cc` | NUMERIC | (5,2) | `NOT NULL, CHECK (porcentaje_retencion_cc >= 0.00 AND porcentaje_retencion_cc <= 100.00)` | Porcentaje de comisión administrativa del centro comercial sobre ventas con descuento. |
 | `administrador_categoria` | VARCHAR | 100 | `NOT NULL` | Funcionario comercial responsable de auditar la categoría. |
 
 ---
 
-### Tabla 3: `local_comercial`
+### Tabla 4: `local_comercial` (7 columnas)
 Representa los establecimientos comerciales de la plazoleta de comidas del Centro Comercial San Pedro Plaza.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
@@ -66,31 +76,31 @@ Representa los establecimientos comerciales de la plazoleta de comidas del Centr
 
 ---
 
-### Tabla 4: `producto`
+### Tabla 5: `producto` (7 columnas)
 Catálogo de platos, combos y bebidas ofrecidos por cada comercio con sus precios base.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
 |---|---|:---:|---|---|
 | `id_producto` | BIGSERIAL | 8 bytes | `PK, NOT NULL` | Identificador único del ítem en la carta gastronómica. |
 | `id_local` | INT | 4 bytes | `FK, NOT NULL, REFERENCES local_comercial(id_local) ON DELETE RESTRICT` | Establecimiento al que pertenece el producto. |
-| `nombre_item` | VARCHAR | 120 | `NOT NULL` | Denominación del plato (ej. 'Hamburguesa Especial de la Casa'). |
+| `nombre_item` | VARCHAR | 120 | `NOT NULL` | Denominación del plato (ej. `'Hamburguesa Especial de la Casa'`). |
 | `descripcion_corta` | VARCHAR | 255 | `NULL` | Ingredientes y detalles para visualización en el catálogo móvil. |
-| `precio_base_cop` | NUMERIC | (12,2) | `NOT NULL, CHECK (precio_base_cop > 0)` | Precio comercial ordinario en pesos colombianos (`COP`). |
+| `precio_base_cop` | NUMERIC | (12,2) | `NOT NULL, CHECK (precio_base_cop > 0.00)` | Precio comercial ordinario en pesos colombianos (`COP`). |
 | `categoria_menu` | VARCHAR | 40 | `NOT NULL, CHECK (categoria_menu IN ('PLATO_FUERTE', 'COMBO', 'ENTRADA', 'BEBIDA', 'POSTRE'))` | Clasificación para el motor de filtrado por presupuesto. |
 | `disponible_en_carta` | BOOLEAN | 1 byte | `NOT NULL, DEFAULT TRUE` | Disponibilidad física para preparación inmediata en cocina. |
 
 ---
 
-### Tabla 5: `promocion`
+### Tabla 6: `promocion` (10 columnas)
 Campañas de descuento parametrizadas por los locatarios para dinamizar franjas horarias valle.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
 |---|---|:---:|---|---|
 | `id_promocion` | BIGSERIAL | 8 bytes | `PK, NOT NULL` | Identificador autoincremental de la campaña promocional. |
 | `id_local` | INT | 4 bytes | `FK, NOT NULL, REFERENCES local_comercial(id_local) ON DELETE RESTRICT` | Establecimiento comercial que patrocina y asume el descuento. |
-| `titulo_oferta` | VARCHAR | 150 | `NOT NULL` | Título atractivo visible en el catálogo (ej. 'Almuerzo Ejecutivo 25% OFF'). |
+| `titulo_oferta` | VARCHAR | 150 | `NOT NULL` | Título atractivo visible en el catálogo (ej. `'Almuerzo Ejecutivo 25% OFF'`). |
 | `descripcion_terminos` | TEXT | Variable | `NOT NULL` | Términos y condiciones legales de redención y restricciones. |
-| `porcentaje_descuento` | NUMERIC | (5,2) | `NOT NULL, CHECK (porcentaje_descuento > 0 AND porcentaje_descuento <= 90)` | Porcentaje de descuento aplicado sobre el precio base. |
+| `porcentaje_descuento` | NUMERIC | (5,2) | `NOT NULL, CHECK (porcentaje_descuento > 0.00 AND porcentaje_descuento <= 90.00)` | Porcentaje de descuento aplicado sobre el precio base. |
 | `stock_total_asignado` | INT | 4 bytes | `NOT NULL, CHECK (stock_total_asignado > 0)` | Cantidad máxima de cupones que la campaña puede emitir. |
 | `stock_disponible` | INT | 4 bytes | `NOT NULL, CHECK (stock_disponible >= 0 AND stock_disponible <= stock_total_asignado)` | Cantidad remanente de cupones disponibles para emisión inmediata. |
 | `fecha_inicio` | TIMESTAMPTZ | 8 bytes | `NOT NULL` | Fecha y hora de apertura de la campaña. |
@@ -99,7 +109,17 @@ Campañas de descuento parametrizadas por los locatarios para dinamizar franjas 
 
 ---
 
-### Tabla 6: `franja_horaria` (Entidad Débil)
+### Tabla 7: `promocion_producto` (2 columnas — Puente $N:M$)
+Resuelve la asociación muchos a muchos entre campañas promocionales y productos específicos del menú elegibles para descuento.
+
+| Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
+|---|---|:---:|---|---|
+| `id_promocion` | BIGINT | 8 bytes | `PK, FK, NOT NULL, REFERENCES promocion(id_promocion) ON DELETE CASCADE` | Campaña promocional que otorga el descuento sobre el plato. |
+| `id_producto` | BIGINT | 8 bytes | `PK, FK, NOT NULL, REFERENCES producto(id_producto) ON DELETE RESTRICT` | Producto del menú incluido dentro de la campaña promocional. |
+
+---
+
+### Tabla 8: `franja_horaria` (6 columnas — Entidad Débil)
 Modela las ventanas horarias específicas (horas valle) en las cuales una promoción es válida para su redención.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
@@ -113,7 +133,7 @@ Modela las ventanas horarias específicas (horas valle) en las cuales una promoc
 
 ---
 
-### Tabla 7: `cupon` (Entidad Asociativa $N:M$)
+### Tabla 9: `cupon` (8 columnas — Entidad Asociativa $N:M$)
 Representa la instancia única de un cupón digital generado por un visitante para una promoción específica.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
@@ -129,7 +149,7 @@ Representa la instancia única de un cupón digital generado por un visitante pa
 
 ---
 
-### Tabla 8: `bitacora_canje`
+### Tabla 10: `bitacora_canje` (9 columnas)
 Asienta de forma inmutable cada transacción de redención ejecutada en una terminal de caja POS para efectos de auditoría y facturación.
 
 | Columna | Tipo de Dato | Tamaño | Restricciones | Dominio / Regla de Negocio |
@@ -139,7 +159,7 @@ Asienta de forma inmutable cada transacción de redención ejecutada en una term
 | `id_usuario_cajero` | BIGINT | 8 bytes | `FK, NOT NULL, REFERENCES usuario(id_usuario) ON DELETE RESTRICT` | Empleado del local que operó la terminal POS y autorizó el descuento. |
 | `id_local` | INT | 4 bytes | `FK, NOT NULL, REFERENCES local_comercial(id_local) ON DELETE RESTRICT` | Local donde se hizo efectiva la compra física. |
 | `fecha_hora_canje` | TIMESTAMPTZ | 8 bytes | `NOT NULL, DEFAULT CURRENT_TIMESTAMP` | Sello de tiempo oficial del commit transaccional en base de datos. |
-| `monto_descuento_aplicado` | NUMERIC | (12,2) | `NOT NULL, CHECK (monto_descuento_aplicado > 0)` | Valor monetario en pesos (`COP`) descontado efectivamente de la factura. |
+| `monto_descuento_aplicado` | NUMERIC | (12,2) | `NOT NULL, CHECK (monto_descuento_aplicado > 0.00)` | Valor monetario en pesos (`COP`) descontado efectivamente de la factura. |
 | `numero_factura_pos` | VARCHAR | 50 | `NOT NULL` | Consecutivo de la tirilla de compra física emitida por la registradora del comercio. |
 | `ip_origen_terminal` | VARCHAR | 45 | `NOT NULL` | Dirección IPv4 o IPv6 de la terminal o dispositivo que ejecutó la solicitud HTTP. |
 | `firma_hash_transaccion` | VARCHAR | 255 | `NOT NULL` | Hash criptográfico inmutable que sella la transacción para auditoría legal. |
@@ -148,6 +168,18 @@ Asienta de forma inmutable cada transacción de redención ejecutada en una term
 
 ## 3. Matriz de Coincidencia 100 % entre Modelo, Diccionario y Script SQL
 
-Se certifica que:
-1. El 100 % de las 8 tablas declaradas en el modelo relacional existen en este diccionario y en el script `05-script-creacion-tablas.sql`.
-2. Todos los nombres de columnas, tipos ANSI SQL, longitudes, restricciones de integridad referencial (`PK`, `FK`), unicidad (`UNIQUE`) y dominios (`CHECK`) coinciden de forma exacta sin discrepancias.
+| Tabla | Columnas | FK | CHECK | UNIQUE |
+|---|:---:|:---:|:---:|:---:|
+| `usuario` | 8 | 0 | 2 | 1 |
+| `preferencia_visitante` | 2 | 1 | 1 | 0 |
+| `categoria_comercio` | 5 | 0 | 1 | 1 |
+| `local_comercial` | 7 | 2 | 0 | 1 |
+| `producto` | 7 | 1 | 2 | 0 |
+| `promocion` | 10 | 1 | 4 | 0 |
+| `promocion_producto` | 2 | 2 | 0 | 0 |
+| `franja_horaria` | 6 | 1 | 3 | 0 |
+| `cupon` | 8 | 2 | 2 | 1 |
+| `bitacora_canje` | 9 | 3 | 1 | 1 |
+| **TOTAL** | **64** | **13** | **16** | **5** |
+
+Se certifica que el 100 % de las **10 tablas** y **64 columnas** declaradas en [`02-modelo-logico-relacional.svg`](./02-modelo-logico-relacional.svg) coinciden exactamente en nombre, tipo ANSI SQL, tamaño y restricciones con este diccionario y con [`05-script-creacion-tablas.sql`](./05-script-creacion-tablas.sql).

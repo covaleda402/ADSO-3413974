@@ -1,8 +1,8 @@
-# Modelo Conceptual de Datos (Artefacto B1)
+﻿# Modelo Conceptual de Datos (Artefacto B1)
 ## Proyecto Formativo: Nuvora — Plataforma Transaccional Gastronómica
 **Programa:** Análisis y Desarrollo de Software (ADSO) · Ficha 3413974  
 **Centro:** Centro de la Industria, la Empresa y los Servicios (CIES) — Regional Huila  
-**Aprendiz Autor:** Jose Esneider Covaleda Hortua (`covaleda402`)  
+**Aprendiz Autor:** `covaleda402`  
 **Fase:** 02 - Planeación | **Competencia:** 220501095 | **RAP:** 593101 (Criterio C1)  
 **Ruta:** `02-training-project/01-phase/02-planning/06-architecture/04-evidence-learning/G2-P2-covaleda/`  
 **Normativa:** `Rubricas_G2.md` (Sección 3.1 y Sección 3.2 · Criterio 1 · Nivel 100)
@@ -38,14 +38,14 @@ El modelo define ocho (8) conceptos de negocio puros, superando el mínimo de se
 
 | # | Entidad Conceptual | Identificador de Negocio | Atributos Propios de Dominio | Requisito Trazable |
 |:---:|---|---|---|:---:|
-| **1** | **`Usuario`** | `id_usuario` | `nombre_completo`, `correo_electronico`, `telefono_contacto`, `fecha_registro`, `estado_cuenta` | RF-01, RF-02, RF-04 |
-| **2** | **`Comercio`** | `id_local` | `razon_social`, `numero_local`, `descripcion_negocio`, `horario_atencion`, `estado_operativo` | RF-05, RF-06 |
-| **3** | **`CategoriaComercio`** | `id_categoria` | `nombre_categoria`, `descripcion`, `icono_representativo` | RF-05, RF-08 |
-| **4** | **`MenuProducto`** | `id_producto` | `nombre_producto`, `descripcion_corta`, `precio_base`, `categoria_menu`, `disponible_en_carta` | RF-07, RF-08 |
-| **5** | **`Promocion`** | `id_promocion` | `titulo_oferta`, `porcentaje_descuento`, `stock_asignado`, `stock_disponible`, `fecha_inicio`, `fecha_fin`, `estado_campana` | RF-09, RF-10, RF-11 |
-| **6** | **`FranjaHoraria`** | `id_franja` | `dia_semana`, `hora_inicio`, `hora_fin`, `aplica_festivos`, `cupo_maximo_franja` | RF-12, RF-13 |
-| **7** | **`Cupon`** | `id_cupon` | `codigo_alfanumerico`, `token_dinamico`, `fecha_hora_emision`, `fecha_hora_expiracion`, `estado_canje` | RF-14, RF-15, RF-16 |
-| **8** | **`BitacoraCanje`** | `id_canje` | `fecha_hora_canje`, `monto_descuento_efectivo`, `terminal_pos_utilizada`, `ip_origen`, `estado_auditoria` | RF-17, RF-18, RF-20 |
+| **1** | **`Usuario`** | `id_usuario` | `nombre_completo`, `correo_electronico`, `telefono_contacto`, `tipo_rol`, `preferencias_gastronomicas [*]`, `estado_cuenta` | RF-01, RF-02, RF-03, RF-04 |
+| **2** | **`Comercio`** | `id_local` | `razon_social`, `numero_local`, `horario_atencion_semanal`, `estado_operativo` | RF-04, RF-05, RF-06 |
+| **3** | **`CategoriaComercio`** | `id_categoria` | `nombre_categoria`, `descripcion`, `porcentaje_retencion_cc`, `administrador_categoria` | RF-05, RF-08 |
+| **4** | **`MenuProducto`** | `id_producto` | `nombre_item`, `descripcion_corta`, `precio_base_cop`, `categoria_menu`, `disponible_en_carta` | RF-06, RF-07, RF-08 |
+| **5** | **`Promocion`** | `id_promocion` | `titulo_oferta`, `descripcion_terminos`, `porcentaje_descuento`, `stock_asignado`, `stock_disponible`, `fecha_inicio`, `fecha_fin`, `estado_campana` | RF-09, RF-11, RF-12 |
+| **6** | **`FranjaHoraria`** | `dia_semana, hora_inicio` | `hora_fin`, `aplica_festivos`, `cupo_maximo_franja` | RF-10 |
+| **7** | **`Cupon`** | `id_cupon` | `codigo_alfanumerico`, `token_dinamico`, `fecha_hora_emision`, `fecha_hora_expiracion`, `estado_canje` | RF-13, RF-14, RF-15, RF-17 |
+| **8** | **`BitacoraCanje`** | `id_canje` | `fecha_hora_canje`, `monto_descuento_efectivo`, `terminal_pos_utilizada`, `ip_origen`, `estado_auditoria` | RF-18, RF-19, RF-20 |
 
 ---
 
@@ -74,3 +74,4 @@ Cada asociación entre entidades está tipificada con su verbo orientativo y car
 1. **Ausencia Estricta de Claves Foráneas Físicas:** En este nivel conceptual no existen campos de enlace técnico (`id_local_fk`, etc.); las asociaciones se declaran mediante semántica pura y líneas de cardinalidad explícita.
 2. **Ausencia de Métodos Operativos:** El modelo describe qué datos existen y sus invariantes semánticas, no algoritmos de cálculo de descuentos ni controladores HTTP.
 3. **Claridad Ortogonal:** Ninguna relación conceptual cruza cajas ni genera ambigüedad semántica en la lectura del dominio de Nuvora.
+

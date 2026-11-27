@@ -1,121 +1,121 @@
-﻿<mxfile host="app.diagrams.net" agent="Antigravity G2 Engine">
+<mxfile host="app.diagrams.net" agent="Antigravity G2 Engine">
   <diagram id="NuvoraLogicoB2" name="Modelo Logico Relacional - Nuvora B2">
-    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1586" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1660" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="title_banner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#1e293b;strokeWidth=1.5;align=left;spacingLeft=20;verticalAlign=middle;" value="" vertex="1">
-          <mxGeometry x="40" y="20" width="1380" height="60" as="geometry" />
+          <mxGeometry height="64" width="1580" x="40" y="18" as="geometry" />
         </mxCell>
-        <mxCell id="title_text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#ffffff;fontFamily=Segoe UI;" value="NUVORA · MODELO LÓGICO RELACIONAL EN 3FN (NOTACIÓN PATA DE GALLO / CROW'S FOOT)" vertex="1">
-          <mxGeometry x="60" y="27" width="950" height="24" as="geometry" />
+        <mxCell id="title_text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#ffffff;fontFamily=Segoe UI;" value="NUVORA · MODELO LÓGICO RELACIONAL EN 3FN (NOTACIÓN PATA DE GALLO / CROW&#39;S FOOT)" vertex="1">
+          <mxGeometry height="24" width="1200" x="60" y="25" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle_text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#94a3b8;fontFamily=Segoe UI;" value="Centro Comercial San Pedro Plaza · 8 Tablas Relacionales ANSI SQL (PostgreSQL 15+) · Rúbrica G2-P2 Criterio 2 · Autor: covaleda402" vertex="1">
-          <mxGeometry x="60" y="50" width="950" height="18" as="geometry" />
+        <mxCell id="subtitle_text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#94a3b8;fontFamily=Segoe UI;" value="Centro Comercial San Pedro Plaza · 10 Tablas Relacionales / 64 Columnas ANSI SQL (PostgreSQL 15+) · Rúbrica G2-P2 Criterio 2 · Autor: covaleda402" vertex="1">
+          <mxGeometry height="18" width="1420" x="60" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="tab_usuario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#0f172a;strokeColor=#0f172a;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;fontColor=#ffffff;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#ffffff;&quot;&gt;USUARIO&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #334155;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_usuario: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #475569;margin:4px 0px;&quot;/&gt;nombre_completo: VARCHAR(150)&lt;br/&gt;correo: VARCHAR(150) [UNIQUE]&lt;br/&gt;telefono: VARCHAR(20)&lt;br/&gt;tipo_rol: ENUM('VISITANTE','LOCATARIO','ADMIN')&lt;br/&gt;hash_password: VARCHAR(255)&lt;br/&gt;fecha_registro: TIMESTAMPTZ&lt;br/&gt;estado_cuenta: VARCHAR(20)" vertex="1">
-          <mxGeometry x="50" y="120" width="280" height="210" as="geometry" />
+        <mxCell id="tab_usuario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#eff6ff;strokeColor=#1e3a8a;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#1e293b;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#1e3a8a;&quot;&gt;usuario&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #1e3a8a;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_usuario: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #94a3b8;margin:4px 0px;&quot;/&gt;nombre_completo: VARCHAR(150) [NN]&lt;br/&gt;correo_electronico: VARCHAR(150) [NN, UQ]&lt;br/&gt;telefono_contacto: VARCHAR(20) [NN]&lt;br/&gt;tipo_rol: VARCHAR(20) [NN, CHK]&lt;br/&gt;hash_password: VARCHAR(255) [NN]&lt;br/&gt;fecha_registro: TIMESTAMPTZ [NN]&lt;br/&gt;estado_cuenta: VARCHAR(20) [NN, CHK]" vertex="1">
+          <mxGeometry height="215" width="295" x="105" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="tab_categoria" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfeff;strokeColor=#0891b2;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0e7490;&quot;&gt;CATEGORIA_COMERCIO&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0891b2;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_categoria: SERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;nombre_categoria: VARCHAR(50) [UNIQUE]&lt;br/&gt;descripcion: VARCHAR(255)&lt;br/&gt;icono_representativo: VARCHAR(100)" vertex="1">
-          <mxGeometry x="400" y="120" width="260" height="150" as="geometry" />
+        <mxCell id="tab_preferencia" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f8fafc;strokeColor=#475569;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0f172a;&quot;&gt;preferencia_visitante (1FN)&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #475569;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK, FK] id_usuario: BIGINT&lt;/b&gt;&lt;br/&gt;&lt;b&gt;[PK] categoria_preferida: VARCHAR(50) [CHK]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="95" width="290" x="510" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="tab_local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0284c7;&quot;&gt;LOCAL_COMERCIAL&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0284c7;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_local: SERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;FK id_categoria: INT [NOT NULL]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;FK id_usuario_responsable: BIGINT [NOT NULL]&lt;/i&gt;&lt;br/&gt;numero_local: VARCHAR(10) [UNIQUE]&lt;br/&gt;razon_social: VARCHAR(150)&lt;br/&gt;descripcion: TEXT&lt;br/&gt;telefono_contacto: VARCHAR(20)&lt;br/&gt;estado_operativo: VARCHAR(20)" vertex="1">
-          <mxGeometry x="740" y="120" width="290" height="230" as="geometry" />
+        <mxCell id="tab_categoria" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfeff;strokeColor=#0891b2;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0e7490;&quot;&gt;categoria_comercio (3FN)&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0891b2;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_categoria: SERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;nombre_categoria: VARCHAR(50) [NN, UQ]&lt;br/&gt;descripcion: TEXT&lt;br/&gt;porcentaje_retencion_cc: NUMERIC(5,2) [CHK]&lt;br/&gt;administrador_categoria: VARCHAR(100) [NN]" vertex="1">
+          <mxGeometry height="150" width="290" x="412.5" y="245" as="geometry" />
         </mxCell>
-        <mxCell id="rel_cat_loc" edge="1" parent="1" source="tab_categoria" target="tab_local" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0891b2;labelBackgroundColor=#ffffff;labelPadding=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="clasifica">
+        <mxCell id="tab_local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0369a1;&quot;&gt;local_comercial&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0284c7;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_local: SERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;[FK] id_usuario_responsable: BIGINT [NN]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;[FK] id_categoria: INT [NN]&lt;/i&gt;&lt;br/&gt;numero_local: VARCHAR(10) [NN, UQ]&lt;br/&gt;razon_social: VARCHAR(150) [NN]&lt;br/&gt;horario_atencion_semanal: VARCHAR(80) [NN]&lt;br/&gt;estado_operativo: BOOLEAN [NN]" vertex="1">
+          <mxGeometry height="205" width="315" x="810" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_producto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0369a1;&quot;&gt;producto&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0284c7;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_producto: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;[FK] id_local: INT [NN]&lt;/i&gt;&lt;br/&gt;nombre_item: VARCHAR(120) [NN]&lt;br/&gt;descripcion_corta: VARCHAR(255)&lt;br/&gt;precio_base_cop: NUMERIC(12,2) [NN, CHK]&lt;br/&gt;categoria_menu: VARCHAR(40) [NN, CHK]&lt;br/&gt;disponible_en_carta: BOOLEAN [NN]" vertex="1">
+          <mxGeometry height="205" width="315" x="1235" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_promocion" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfdf5;strokeColor=#16a34a;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#15803d;&quot;&gt;promocion&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #16a34a;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_promocion: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;[FK] id_local: INT [NN]&lt;/i&gt;&lt;br/&gt;titulo_oferta: VARCHAR(150) [NN]&lt;br/&gt;descripcion_terminos: TEXT [NN]&lt;br/&gt;porcentaje_descuento: NUMERIC(5,2) [CHK]&lt;br/&gt;stock_total_asignado: INT [NN, CHK]&lt;br/&gt;stock_disponible: INT [NN, CHK]&lt;br/&gt;fecha_inicio: TIMESTAMPTZ [NN]&lt;br/&gt;fecha_fin: TIMESTAMPTZ [NN, CHK]&lt;br/&gt;estado_campana: VARCHAR(20) [NN, CHK]" vertex="1">
+          <mxGeometry height="260" width="315" x="550" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_promocion_producto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#15803d;&quot;&gt;&amp;lt;&amp;lt;bridge N:M&amp;gt;&amp;gt; promocion_producto&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #16a34a;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK, FK] id_promocion: BIGINT&lt;/b&gt;&lt;br/&gt;&lt;b&gt;[PK, FK] id_producto: BIGINT&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="280" x="965" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_franja" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#b45309;&quot;&gt;&amp;lt;&amp;lt;weak&amp;gt;&amp;gt; franja_horaria&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #d97706;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK, FK] id_promocion: BIGINT&lt;br/&gt;[PK] dia_semana: SMALLINT [CHK 1..7]&lt;br/&gt;[PK] hora_inicio: TIME&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;hora_fin: TIME [NN, CHK]&lt;br/&gt;aplica_festivos: BOOLEAN [NN]&lt;br/&gt;cupo_maximo_franja: INT [NN, CHK]" vertex="1">
+          <mxGeometry height="175" width="295" x="1020" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_cupon" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfdf5;strokeColor=#16a34a;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#15803d;&quot;&gt;&amp;lt;&amp;lt;associative N:M&amp;gt;&amp;gt; cupon&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #16a34a;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_cupon: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;[FK] id_usuario_visitante: BIGINT [NN]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;[FK] id_promocion: BIGINT [NN]&lt;/i&gt;&lt;br/&gt;codigo_alfanumerico: VARCHAR(8) [NN, UQ]&lt;br/&gt;token_dinamico_hash: VARCHAR(255) [NN]&lt;br/&gt;estado_canje: VARCHAR(20) [NN, CHK]&lt;br/&gt;fecha_hora_emision: TIMESTAMPTZ [NN]&lt;br/&gt;fecha_hora_expiracion: TIMESTAMPTZ [NN, CHK]" vertex="1">
+          <mxGeometry height="225" width="305" x="100" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_bitacora" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontSize=11;fontFamily=Segoe UI;fontColor=#0f172a;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#e11d48;&quot;&gt;bitacora_canje&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #e11d48;margin:4px 0px;&quot;/&gt;&lt;b&gt;[PK] id_canje: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;[FK] id_cupon: BIGINT [NN, UQ 1:1]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;[FK] id_usuario_cajero: BIGINT [NN]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;[FK] id_local: INT [NN]&lt;/i&gt;&lt;br/&gt;fecha_hora_canje: TIMESTAMPTZ [NN]&lt;br/&gt;monto_descuento_aplicado: NUMERIC(12,2) [CHK]&lt;br/&gt;numero_factura_pos: VARCHAR(50) [NN]&lt;br/&gt;ip_origen_terminal: VARCHAR(45) [NN]&lt;br/&gt;firma_hash_transaccion: VARCHAR(255) [NN]" vertex="1">
+          <mxGeometry height="245" width="320" x="92.5" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="note_tech" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=10;spacingBottom=10;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;fontColor=#1e293b;" value="&lt;b style=&quot;font-size:12px;color:#0f172a;&quot;&gt;Convenciones Técnicas del Modelo Lógico Relacional en 3FN (Rúbrica G2-P2 · Criterio 2):&lt;/b&gt;&lt;hr style=&quot;border-top:1px solid #cbd5e1;margin:5px 0px;&quot;/&gt;• &lt;b&gt;Notación Pata de Gallo (Crow&#39;s Foot):&lt;/b&gt; Estándar ANSI SQL para PostgreSQL 15+ — &lt;b&gt;10 tablas / 64 columnas / 13 claves foráneas / 16 CHECKs / 5 UNIQUEs&lt;/b&gt;.&lt;br/&gt;• &lt;b&gt;Resolución N:M:&lt;/b&gt; &lt;code&gt;cupon&lt;/code&gt; (Usuario ↔ Promoción con código, token, fechas y estado) y &lt;code&gt;promocion_producto&lt;/code&gt; (Promoción ↔ Producto).&lt;br/&gt;• &lt;b&gt;Atributo Multivaluado (1FN):&lt;/b&gt; &lt;code&gt;preferencia_visitante&lt;/code&gt; extrae &lt;code&gt;preferencias_gastronomicas [*]&lt;/code&gt; con PK compuesta &lt;code&gt;(id_usuario, categoria_preferida)&lt;/code&gt;.&lt;br/&gt;• &lt;b&gt;Normalización 3FN:&lt;/b&gt; &lt;code&gt;categoria_comercio&lt;/code&gt; elimina dependencias transitivas financieras de los locales; &lt;code&gt;bitacora_canje&lt;/code&gt; aisla el cobro 1:1 con &lt;code&gt;id_cupon UNIQUE&lt;/code&gt;.&lt;br/&gt;• &lt;b&gt;Entidad Débil:&lt;/b&gt; &lt;code&gt;franja_horaria&lt;/code&gt; depende en identidad y existencia de &lt;code&gt;promocion&lt;/code&gt; (&lt;code&gt;ON DELETE CASCADE&lt;/code&gt;).&lt;br/&gt;• &lt;b&gt;Acciones Referenciales:&lt;/b&gt; &lt;code&gt;ON DELETE RESTRICT&lt;/code&gt; en catálogos y bitácoras; &lt;code&gt;ON DELETE CASCADE&lt;/code&gt; en preferencias, franjas y vínculo de oferta." vertex="1">
+          <mxGeometry height="225" width="1085" x="465" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_usr_pref" edge="1" parent="1" source="tab_usuario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#475569;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=1;exitY=0.22;entryX=0;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_preferencia" value="parametrizan">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lbl_cat_loc_1" connectable="0" parent="rel_cat_loc" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#0e7490;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_cat_loc_n" connectable="0" parent="rel_cat_loc" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#0e7490;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="tab_producto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#0284c7;&quot;&gt;PRODUCTO&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #0284c7;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_producto: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;FK id_local: INT [NOT NULL]&lt;/i&gt;&lt;br/&gt;nombre: VARCHAR(120)&lt;br/&gt;descripcion: TEXT&lt;br/&gt;precio_base: NUMERIC(12,2) [CHECK &gt; 0]&lt;br/&gt;categoria_menu: VARCHAR(50)&lt;br/&gt;disponible: BOOLEAN" vertex="1">
-          <mxGeometry x="1120" y="120" width="280" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_loc_prod" edge="1" parent="1" source="tab_local" target="tab_producto" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0284c7;labelBackgroundColor=#ffffff;labelPadding=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="ofrece en carta">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_loc_prod_1" connectable="0" parent="rel_loc_prod" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_loc_prod_n" connectable="0" parent="rel_loc_prod" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1..*" vertex="1">
-          <mxGeometry relative="1" x="0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="tab_promocion" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#059669;&quot;&gt;PROMOCION&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #059669;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_promocion: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;FK id_local: INT [NOT NULL]&lt;/i&gt;&lt;br/&gt;titulo_oferta: VARCHAR(150)&lt;br/&gt;porcentaje_descuento: NUMERIC(5,2)&lt;br/&gt;stock_total: INT [CHECK &gt;= 0]&lt;br/&gt;stock_disponible: INT [CHECK &gt;= 0]&lt;br/&gt;fecha_inicio: TIMESTAMPTZ&lt;br/&gt;fecha_fin: TIMESTAMPTZ&lt;br/&gt;estado_campana: VARCHAR(20)" vertex="1">
-          <mxGeometry x="540" y="440" width="280" height="240" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_loc_promo" edge="1" parent="1" source="tab_local" target="tab_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="publica">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_loc_promo_1" connectable="0" parent="rel_loc_promo" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_loc_promo_n" connectable="0" parent="rel_loc_promo" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.7" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="tab_franja" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#b45309;&quot;&gt;&amp;lt;&amp;lt;weak&amp;gt;&amp;gt; FRANJA_HORARIA&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #d97706;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK, FK id_promocion: BIGINT&lt;br/&gt;PK dia_semana: SMALLINT [1..7]&lt;br/&gt;PK hora_inicio: TIME&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;hora_fin: TIME [CHECK &gt; hora_inicio]&lt;br/&gt;aplica_festivos: BOOLEAN&lt;br/&gt;cupo_maximo_franja: INT&lt;br/&gt;&lt;i style=&quot;font-size:10px;color:#78350f;&quot;&gt;Dependencia ID de PROMOCION&lt;/i&gt;" vertex="1">
-          <mxGeometry x="930" y="440" width="290" height="210" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_pro_fra" edge="1" parent="1" source="tab_promocion" target="tab_franja" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#d97706;labelBackgroundColor=#ffffff;labelPadding=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="restringida por">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_pro_fra_1" connectable="0" parent="rel_pro_fra" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#b45309;fontFamily=Segoe UI;fontStyle=1" value="1 (Id)" vertex="1">
-          <mxGeometry relative="1" x="-0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_pro_fra_n" connectable="0" parent="rel_pro_fra" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#b45309;fontFamily=Segoe UI;fontStyle=1" value="1..*" vertex="1">
-          <mxGeometry relative="1" x="0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="tab_cupon" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#ecfdf5;strokeColor=#059669;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#059669;&quot;&gt;&amp;lt;&amp;lt;associative&amp;gt;&amp;gt; CUPON&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #059669;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_cupon: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;FK id_usuario_visitante: BIGINT&lt;/i&gt;&lt;br/&gt;&lt;i&gt;FK id_promocion: BIGINT&lt;/i&gt;&lt;br/&gt;codigo_alfanumerico: VARCHAR(8) [UQ]&lt;br/&gt;token_dinamico_hash: VARCHAR(255)&lt;br/&gt;estado_canje: ENUM('ACTIVO','CANJEADO','EXPIRADO')&lt;br/&gt;fecha_generacion: TIMESTAMPTZ&lt;br/&gt;fecha_expiracion: TIMESTAMPTZ&lt;br/&gt;&lt;i style=&quot;font-size:10px;color:#065f46;&quot;&gt;Resuelve N:M Usuario a Promoción&lt;/i&gt;" vertex="1">
-          <mxGeometry x="50" y="440" width="280" height="240" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_usr_cup" edge="1" parent="1" source="tab_usuario" target="tab_cupon" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="solicita / adquiere">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_usr_cup_1" connectable="0" parent="rel_usr_cup" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_usr_cup_n" connectable="0" parent="rel_usr_cup" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.7" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_pro_cup" edge="1" parent="1" source="tab_promocion" target="tab_cupon" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#059669;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="emite instancias">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_pro_cup_1" connectable="0" parent="rel_pro_cup" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#059669;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_pro_cup_n" connectable="0" parent="rel_pro_cup" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#059669;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.8" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="tab_bitacora" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=8;spacingBottom=8;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.5;fontSize=11;fontFamily=Segoe UI;" value="&lt;p style=&quot;margin:0px;text-align:center;font-weight:bold;font-size:12px;color:#e11d48;&quot;&gt;BITACORA_CANJE&lt;/p&gt;&lt;hr style=&quot;border-top:1.5px solid #e11d48;margin:4px 0px;&quot;/&gt;&lt;b&gt;PK id_canje: BIGSERIAL&lt;/b&gt;&lt;hr style=&quot;border-top:1px dashed #cbd5e1;margin:4px 0px;&quot;/&gt;&lt;i&gt;FK id_cupon: BIGINT [UNIQUE / 1 a 1]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;FK id_usuario_cajero: BIGINT [NOT NULL]&lt;/i&gt;&lt;br/&gt;&lt;i&gt;FK id_local: INT [NOT NULL]&lt;/i&gt;&lt;br/&gt;fecha_hora_canje: TIMESTAMPTZ&lt;br/&gt;monto_descuento_aplicado: NUMERIC(10,2)&lt;br/&gt;numero_factura_pos: VARCHAR(50)&lt;br/&gt;ip_origen: VARCHAR(45)&lt;br/&gt;firma_hash_transaccion: VARCHAR(255)" vertex="1">
-          <mxGeometry x="50" y="750" width="300" height="240" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_cup_bit" edge="1" parent="1" source="tab_cupon" target="tab_bitacora" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;labelBackgroundColor=#ffffff;labelPadding=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="se registra en">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_cup_bit_1" connectable="0" parent="rel_cup_bit" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_cup_bit_01" connectable="0" parent="rel_cup_bit" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#475569;fontFamily=Segoe UI;fontStyle=1" value="0..1 [UNIQUE]" vertex="1">
-          <mxGeometry relative="1" x="0.7" y="10" as="geometry" />
-        </mxCell>
-        <mxCell id="rel_usr_bit" edge="1" parent="1" source="tab_usuario" target="tab_bitacora" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#e11d48;dashed=1;labelBackgroundColor=#ffffff;labelPadding=4;fontColor=#e11d48;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Segoe UI;" value="valida y firma (Cajero)">
+        <mxCell id="rel_usr_loc" edge="1" parent="1" source="tab_usuario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0284c7;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.5;exitY=0;entryX=0.22;entryY=0;fontFamily=Segoe UI;fontSize=10;" target="tab_local" value="responsable de">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="20" y="225" />
-              <mxPoint x="20" y="870" />
+              <mxPoint x="253" y="104" />
+              <mxPoint x="879" y="104" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_usr_bit_1" connectable="0" parent="rel_usr_bit" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontColor=#e11d48;fontFamily=Segoe UI;fontStyle=1" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.85" y="10" as="geometry" />
+        <mxCell id="rel_cat_loc" edge="1" parent="1" source="tab_categoria" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0891b2;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=1;exitY=0.5;entryX=0;entryY=0.7;fontFamily=Segoe UI;fontSize=10;" target="tab_local" value="clasifica">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="778" y="320" />
+              <mxPoint x="778" y="274" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="lbl_usr_bit_n" connectable="0" parent="rel_usr_bit" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontColor=#e11d48;fontFamily=Segoe UI;fontStyle=1" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.85" y="10" as="geometry" />
+        <mxCell id="rel_loc_prod" edge="1" parent="1" source="tab_local" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0284c7;startArrow=ERmandOne;endArrow=ERoneToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_producto" value="ofrece en carta">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="note_tech" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=10;spacingBottom=10;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontSize=10;fontFamily=Segoe UI;fontColor=#1e293b;" value="&lt;b style=&quot;font-size:11px;&quot;&gt;Convenciones Técnicas del Modelo Lógico Relacional en 3FN (SENA Rúbrica G2 - C2):&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;• &lt;b&gt;Notación Declarada:&lt;/b&gt; Pata de Gallo (Crow's Foot) extendida con tipos de datos ANSI SQL para PostgreSQL 15+.&lt;br/&gt;• &lt;b&gt;8 Tablas Normalizadas en 3FN:&lt;/b&gt; Extracción de CATEGORIA_COMERCIO para dependencias transitivas.&lt;br/&gt;• &lt;b&gt;Resolución N:M:&lt;/b&gt; Entidad asociativa CUPON con atributos propios (código, fechas, estado).&lt;br/&gt;• &lt;b&gt;Entidad Débil:&lt;/b&gt; FRANJA_HORARIA depende en ID y existencia de PROMOCION (PK compuesta).&lt;br/&gt;• &lt;b&gt;Integridad Transaccional:&lt;/b&gt; BITACORA_CANJE garantiza auditoría estricta e irrepudiabilidad.&lt;br/&gt;• &lt;b&gt;Acciones Referenciales:&lt;/b&gt; ON DELETE RESTRICT en catálogos y transacciones; ON DELETE CASCADE en franjas débiles." vertex="1">
-          <mxGeometry x="400" y="750" width="820" height="240" as="geometry" />
+        <mxCell id="rel_loc_promo" edge="1" parent="1" source="tab_local" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#16a34a;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.22;exitY=1;entryX=0.5;entryY=0;fontFamily=Segoe UI;fontSize=10;entryDx=0;entryDy=0;" target="tab_promocion" value="publica">
+          <mxGeometry relative="1" x="0.0281" as="geometry">
+            <Array as="points">
+              <mxPoint x="879.3" y="410" />
+              <mxPoint x="707.5" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_pro_pp" edge="1" parent="1" source="tab_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#16a34a;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=1;exitY=0.2;entryX=0;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_promocion_producto" value="incluye">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_prod_pp" edge="1" parent="1" source="tab_producto" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#0284c7;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.5;exitY=1;entryX=1;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_promocion_producto" value="aplica en">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1393" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_pro_fra" edge="1" parent="1" source="tab_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#d97706;startArrow=ERmandOne;endArrow=ERoneToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=1;exitY=0.72;entryX=0;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_franja" value="restringida por">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_usr_cup" edge="1" parent="1" source="tab_usuario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#334155;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontFamily=Segoe UI;fontSize=10;" target="tab_cupon" value="solicita / adquiere">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_pro_cup" edge="1" parent="1" source="tab_promocion" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#16a34a;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0;exitY=0.45;entryX=1;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_cupon" value="emite instancias">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_cup_bit" edge="1" parent="1" source="tab_cupon" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#e11d48;startArrow=ERmandOne;endArrow=ERzeroToOne;labelBackgroundColor=#ffffff;labelPadding=4;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontFamily=Segoe UI;fontSize=10;" target="tab_bitacora" value="se registra [1:1]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_usr_bit" edge="1" parent="1" source="tab_usuario" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.5;strokeColor=#e11d48;dashed=1;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;fontColor=#e11d48;exitX=0;exitY=0.5;entryX=0;entryY=0.5;fontFamily=Segoe UI;fontSize=10;" target="tab_bitacora" value="valida y firma&lt;br/&gt;(Cajero)">
+          <mxGeometry relative="1" x="0.38" as="geometry">
+            <Array as="points">
+              <mxPoint x="48" y="238" />
+              <mxPoint x="48" y="898" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_loc_bit" edge="1" parent="1" source="tab_local" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1.4;strokeColor=#64748b;dashed=1;startArrow=ERmandOne;endArrow=ERzeroToMany;labelBackgroundColor=#ffffff;labelPadding=4;fontColor=#475569;exitX=0.82;exitY=0;entryX=0.53;entryY=1.007;fontFamily=Segoe UI;fontSize=10;entryDx=0;entryDy=0;entryPerimeter=0;" target="tab_bitacora" value="registra cobro en local">
+          <mxGeometry relative="1" x="-0.4019" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1068.3" y="96" />
+              <mxPoint x="1595" y="96" />
+              <mxPoint x="1595" y="1060" />
+              <mxPoint x="262.1" y="1060" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
