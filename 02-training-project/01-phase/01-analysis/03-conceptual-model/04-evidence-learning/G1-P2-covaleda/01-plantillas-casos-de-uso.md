@@ -24,12 +24,16 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | Campo | Especificación Formal del Caso de Uso |
 | :--- | :--- |
 | **Identificador y Nombre** | **CU03: Generar cupón digital de descuento** |
+| **Requisitos que atiende** | `RF-13`, `RF-14`, `RF-15` (`RNF-03`) |
 | **Actor Principal** | **Visitante / Consumidor** |
 | **Actores Secundarios** | Servicio de Identidad de Nuvora / Repositorio Central del Negocio |
 | **Objetivo de Negocio** | Permitir al visitante obtener un cupón promocional único para redimir en un local de la plazoleta de comidas de San Pedro Plaza, garantizando el límite de 1 cupón diario por promoción (Regla RN-01). |
 | **Tipo de Caso de Uso** | Crítico / Transaccional de Cara al Consumidor |
 | **Relaciones Asociadas** | `«include»` a **CU04 (Autenticar usuario en la plataforma)** |
 | **Precondiciones** | 1. El visitante accede a la aplicación de Nuvora desde su dispositivo móvil.<br>2. La promoción solicitada se encuentra publicada en estado `Activa`.<br>3. Existen cupos disponibles para la promoción en la fecha actual (`cupos disponibles > 0`). |
+| **Disparador** | El visitante presiona el botón *"Obtener Cupón de Descuento"* sobre una oferta activa del catálogo. |
+| **Reglas de negocio** | `RN-01` (máximo 1 cupón por promoción cada 24 h), `RN-02` (vigencia estricta de 2 horas desde la emisión), `RN-05` (validación contra hora oficial del servidor). |
+| **Pantalla del prototipo** | [`M-01 Catálogo por Presupuesto` y `M-02 Billetera Digital`](./05-prototipos-mockups.md) |
 
 ### Flujo Principal de Eventos (Camino Feliz):
 1. **Selección de la Oferta:** El visitante visualiza el catálogo de promociones de San Pedro Plaza y pulsa sobre una oferta de su interés.
@@ -67,12 +71,16 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | Campo | Especificación Formal del Caso de Uso |
 | :--- | :--- |
 | **Identificador y Nombre** | **CU05: Gestionar promociones del local** |
+| **Requisitos que atiende** | `RF-09`, `RF-10`, `RF-11`, `RF-12` |
 | **Actor Principal** | **Locatario / Administrador de Tienda** |
 | **Actores Secundarios** | Repositorio de Ofertas y Catálogo de Nuvora |
 | **Objetivo de Negocio** | Permitir al comerciante dar de alta, modificar, pausar y parametrizar ofertas con cupos limitados y franjas relámpago para dinamizar el consumo en horarios de baja afluencia. |
 | **Tipo de Caso de Uso** | Administrativo / Comercial de Gestión |
 | **Relaciones Asociadas** | `«extend»` desde **CU06 (Parametrizar franjas horarias relámpago)** |
 | **Precondiciones** | 1. El locatario ha iniciado sesión con credenciales válidas y rol `Locatario`.<br>2. El establecimiento comercial se encuentra en estado `Activo` en el directorio de San Pedro Plaza.<br>3. El locatario tiene registrado al menos un producto en su menú. |
+| **Disparador** | El locatario selecciona *"Crear Nueva Promoción"* desde su panel de administración del local. |
+| **Reglas de negocio** | `RN-03` (respeto de cupones ya emitidos si la oferta cambia de estado), `RN-05` (franjas relámpago dentro del horario del centro comercial 10:00 a. m.–9:00 p. m.). |
+| **Pantalla del prototipo** | Flujo administrativo del panel comercial (`CU05` / `CU06`) vinculado en [`05-prototipos-mockups.md`](./05-prototipos-mockups.md) |
 
 ### Flujo Principal de Eventos (Camino Feliz):
 1. **Acceso al Módulo:** El locatario ingresa a su panel administrativo y selecciona *"Crear Nueva Promoción"*.
@@ -109,12 +117,16 @@ Cada plantilla incorpora: precondiciones formales, flujo principal numerado de 8
 | Campo | Especificación Formal del Caso de Uso |
 | :--- | :--- |
 | **Identificador y Nombre** | **CU07: Canjear cupón de descuento en caja** |
+| **Requisitos que atiende** | `RF-16`, `RF-17`, `RF-18`, `RF-20` (`RNF-01`, `RNF-04`) |
 | **Actor Principal** | **Cajero / Validador en Punto de Venta** |
 | **Actores Secundarios** | Cliente / Consumidor (Portador) · Servicio Central de Validación Nuvora |
 | **Objetivo de Negocio** | Validar la autenticidad, vigencia, pertenencia al local y unicidad de uso de un cupón presentado en el mostrador, aplicando el descuento en menos de 1.5 segundos e impidiendo el doble canje (Reglas RN-04 y RN-07). |
 | **Tipo de Caso de Uso** | Crítico / Operativo de Redención Inmediata |
 | **Relaciones Asociadas** | `«include»` a **CU08 (Verificar código QR criptográfico)**<br>`«extend»` desde **CU09 (Digitar código de cupón manualmente)** |
 | **Precondiciones** | 1. El cajero ha iniciado sesión en la estación de validación de su establecimiento comercial.<br>2. La estación de caja dispone de cámara funcional o teclado numérico habilitado.<br>3. El cliente presenta en su dispositivo móvil el código QR o el código de respaldo generado en Nuvora. |
+| **Disparador** | El cajero selecciona *"Escanear Cupón"* en la terminal de punto de venta al momento del cobro. |
+| **Reglas de negocio** | `RN-02` (vigencia máxima de 2 horas), `RN-04` (unicidad e imposibilidad de doble canje), `RN-05` (reloj oficial del servidor), `RN-07` (coincidencia estricta con el local del cajero). |
+| **Pantalla del prototipo** | [`M-03 Terminal de Validación POS en Caja`](./05-prototipos-mockups.md) |
 
 ### Flujo Principal de Eventos (Camino Feliz):
 1. **Activación de Lectura:** El cajero selecciona *"Escanear Cupón"* en la pantalla de punto de venta.

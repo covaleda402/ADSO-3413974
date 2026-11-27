@@ -153,7 +153,7 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 |  ESTACIÓN DE CANJE Y LECTURA                                                    |
 |                                                                                 |
 |  [ ÁREA DE LECTURA DE CÁMARA / ESCÁNER ÓPTICO ]                                |
-|  +----------------------------------------+  Entrada Manual (Alterno 1a):       |
+|  +----------------------------------------+  Entrada Manual (FA-01 / CU09):    |
 |  |      /--------------------------\      |  [ NUV-8K42              ] [BUSCAR] |
 |  |      |   ESCANEANDO CÓDIGO QR   |      |                                     |
 |  |      |    [===== LÁSER =====]   |      |  Estado Lector: CONECTADO (ÓPTICO)  |
@@ -180,7 +180,7 @@ Cada pantalla atiende directamente a los casos de uso modelados en las plantilla
 +---------------------------------------------------------------------------------+
 ```
 
-### 4.2 Maqueta Visual (Alerta de Excepción 6a - Intento de Re-Canje o Fraude)
+### 4.2 Maqueta Visual (Alerta de Excepción EX-01 - Intento de Re-Canje o Fraude)
 
 ```text
 +---------------------------------------------------------------------------------+
