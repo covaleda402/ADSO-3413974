@@ -78,7 +78,7 @@ Construí desde cero los dos patrones de diseño GoF (`Strategy` y `Facade`), la
 | Día | Qué avancé (hash y mensaje real del commit) |
 |---|---|
 | **Día 1: Jueves 26 de noviembre de 2026** | [`67abf3c`](https://github.com/covaleda402/ADSO-3413974/commit/67abf3c) — `feat(g2-p1): entrega base artefactos de diseno de software nuvora (clases, patrones, vistas 4+1, trazabilidad)` |
-| **Día 2: Viernes 27 de noviembre de 2026** *(Entrega de cierre)* | Corrección estructural y visual de diagramas Draw.io y SVG (clases, arquitectura y componentes), edición manual de nodos en despliegue, refactor de cohesión (`ReporteComercial`), declaración transparente de SRS en equipo, guías del instructor y alineación 1:1 de requisitos RF-01 a RF-20. |
+| **Día 2: Viernes 27 de noviembre de 2026** *(Entrega de cierre)* | [`8b50c58`](https://github.com/covaleda402/ADSO-3413974/commit/8b50c58) / [`463b96c`](https://github.com/covaleda402/ADSO-3413974/commit/463b96c) — Entrega final A1–A7, refactor de cohesión (`ReporteComercial`), declaración transparente del SRS/rol `LOCATARIO`, más pulido final en flechas de despliegue y etiquetas `.drawio`/`.svg`. |
 
 ---
 
@@ -122,4 +122,4 @@ Construí desde cero los dos patrones de diseño GoF (`Strategy` y `Facade`), la
 
 Declaro que los artefactos de esta carpeta son de mi autoría individual, que el origen colaborativo del SRS base del equipo y lo que reutilicé del análisis o de otras fuentes está indicado con exactitud en las secciones 2 y 3, que me basé en las guías, plantillas y rúbricas oficiales del instructor sin entregar material del instructor ni de otros aprendices como propio, y que estoy preparado para sustentar y explicar cada clase, patrón y decisión arquitectónica en la verificación oral ante el instructor.
 
-Usuario de GitHub: `covaleda402`  Fecha: 26 de noviembre de 2026
+Usuario de GitHub: `covaleda402`  Fecha: 27 de noviembre de 2026

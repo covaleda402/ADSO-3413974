@@ -104,24 +104,36 @@
 
         <!-- Locatario administra Comercio -->
         <mxCell id="e_loc_com" value="administra" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;strokeColor=#4B5563;strokeWidth=1.5;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.49;" edge="1" parent="1" source="cls_locatario" target="cls_comercio">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_loc_com_1" connectable="0" parent="e_loc_com" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#4B5563;" value="1..*" vertex="1">
-          <mxGeometry relative="1" x="-0.75" y="-10" as="geometry" />
+        <mxCell id="m_loc_com_1" connectable="0" parent="e_loc_com" style="edgeLabel;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#4B5563;labelBackgroundColor=#ffffff;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="-0.78" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_loc_com_2" connectable="0" parent="e_loc_com" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#4B5563;" value="1" vertex="1">
-          <mxGeometry relative="1" x="0.75" y="-10" as="geometry" />
+        <mxCell id="m_loc_com_2" connectable="0" parent="e_loc_com" style="edgeLabel;html=1;align=right;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#4B5563;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.78" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
 
         <!-- Composicion Comercio -> MenuProducto -->
         <mxCell id="e_com_prod" value="ofrece en carta" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startSize=14;startFill=1;endArrow=none;html=1;strokeColor=#0D9488;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="cls_comercio" target="cls_producto">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_com_prod_1" connectable="0" parent="e_com_prod" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#0D9488;" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.75" y="-10" as="geometry" />
+        <mxCell id="m_com_prod_1" connectable="0" parent="e_com_prod" style="edgeLabel;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#0D9488;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.72" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_com_prod_2" connectable="0" parent="e_com_prod" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#0D9488;" value="1..*" vertex="1">
-          <mxGeometry relative="1" x="0.75" y="-10" as="geometry" />
+        <mxCell id="m_com_prod_2" connectable="0" parent="e_com_prod" style="edgeLabel;html=1;align=right;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#0D9488;labelBackgroundColor=#ffffff;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.78" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
 
         <!-- Comercio publica Promocion -->
@@ -153,13 +165,19 @@
 
         <!-- Composicion Promocion -> FranjaHoraria -->
         <mxCell id="e_promo_franja" value="restringida por" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startSize=14;startFill=1;endArrow=none;html=1;strokeColor=#16A34A;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.4;entryX=0;entryY=0.5;" edge="1" parent="1" source="cls_promocion" target="cls_franja">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_pf_1" connectable="0" parent="e_promo_franja" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#16A34A;" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.75" y="-10" as="geometry" />
+        <mxCell id="m_pf_1" connectable="0" parent="e_promo_franja" style="edgeLabel;html=1;align=left;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#16A34A;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.72" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_pf_2" connectable="0" parent="e_promo_franja" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#16A34A;" value="1..*" vertex="1">
-          <mxGeometry relative="1" x="0.75" y="-10" as="geometry" />
+        <mxCell id="m_pf_2" connectable="0" parent="e_promo_franja" style="edgeLabel;html=1;align=right;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#16A34A;labelBackgroundColor=#ffffff;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.78" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
         </mxCell>
 
         <!-- Visitante adquiere Cupon -->
@@ -186,13 +204,15 @@
 
         <!-- Promocion -> IEstrategiaDescuento (Agregacion) -->
         <mxCell id="e_promo_estrategia" value="aplica estrategia" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startSize=14;startFill=0;endArrow=none;html=1;strokeColor=#D97706;strokeWidth=1.8;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.48;entryY=0;" edge="1" parent="1" source="cls_promocion" target="cls_iestrategia">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="58" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="m_pe_1" connectable="0" parent="e_promo_estrategia" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#D97706;" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.7" y="-10" as="geometry" />
+          <mxGeometry relative="1" x="-0.75" y="-10" as="geometry" />
         </mxCell>
         <mxCell id="m_pe_2" connectable="0" parent="e_promo_estrategia" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#D97706;" value="1" vertex="1">
-          <mxGeometry relative="1" x="0.7" y="-10" as="geometry" />
+          <mxGeometry relative="1" x="0.75" y="-10" as="geometry" />
         </mxCell>
 
         <!-- Implementaciones de IEstrategiaDescuento -->
@@ -225,13 +245,15 @@
 
         <!-- Facade -> Cupon (valida y transiciona) -->
         <mxCell id="e_fac_cupon" value="valida y transiciona" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;strokeColor=#9333EA;strokeWidth=1.6;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0.35;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="cls_facade" target="cls_cupon">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="64" as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="m_fc_1" connectable="0" parent="e_fac_cupon" style="edgeLabel;html=1;align=left;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#9333EA;" value="1" vertex="1">
-          <mxGeometry relative="1" x="-0.7" y="10" as="geometry" />
+        <mxCell id="m_fc_1" connectable="0" parent="e_fac_cupon" style="edgeLabel;html=1;align=right;verticalAlign=bottom;fontSize=10;fontStyle=1;fontColor=#9333EA;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.75" y="-10" as="geometry" />
         </mxCell>
-        <mxCell id="m_fc_2" connectable="0" parent="e_fac_cupon" style="edgeLabel;html=1;align=left;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#9333EA;" value="0..*" vertex="1">
-          <mxGeometry relative="1" x="0.7" y="10" as="geometry" />
+        <mxCell id="m_fc_2" connectable="0" parent="e_fac_cupon" style="edgeLabel;html=1;align=right;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#9333EA;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.75" y="-10" as="geometry" />
         </mxCell>
 
         <!-- Facade -> BitacoraCanje -->
