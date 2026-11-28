@@ -64,7 +64,7 @@ Ruta oficial en el repositorio:
 - [x] Entiendo que el sábado 28 de noviembre de 2026 el instructor me hará **3 preguntas orales** sobre mis productos (una del producto 1, una del producto 2 y una tercera a su elección) y que, si respondo bien menos de 2, el producto sobre el que fallé queda con tope de 50.
 
 **Firma (usuario de GitHub y fecha):**  
-`covaleda402` · 26 de noviembre de 2026
+`covaleda402` · 27 de noviembre de 2026
 
 ---
 
