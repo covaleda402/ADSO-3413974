@@ -89,7 +89,7 @@ Todos los artefactos requeridos por `Rubricas_G1.md` (Sección 5.1) se encuentra
 - [x] Entiendo que el sábado 28 de noviembre de 2026 el instructor me hará **3 preguntas orales** sobre mis productos (una del producto 1, una del producto 2 y una tercera a su elección) y que, si respondo bien menos de 2, el producto sobre el que fallé queda con tope de 50.
 
 **Firma:** `covaleda402`  
-**Fecha:** 26 de noviembre de 2026  
+**Fecha:** 27 de noviembre de 2026  
 
 ---
 
@@ -105,7 +105,8 @@ Todos los artefactos requeridos por `Rubricas_G1.md` (Sección 5.1) se encuentra
 
 - [x] **Commits en al menos 2 días distintos:**
   - **Día 1 (Miércoles 25 de noviembre de 2026):** Creación y entrega base de la suite completa de modelos de análisis, actividades, dominio, MER, mockups y verificación ([commit `a422177`](https://github.com/covaleda402/ADSO-3413974/commit/a422177)).
-  - **Día 2 (Jueves 26 de noviembre de 2026):** Corrección de sintaxis XML en MER, enrutamiento perimetral sin cruces en modelo de dominio, sanitización de privacidad y auditoría final ([`a8fe94a`](https://github.com/covaleda402/ADSO-3413974/commit/a8fe94a), [`5bf28da`](https://github.com/covaleda402/ADSO-3413974/commit/5bf28da), [`75c2f37`](https://github.com/covaleda402/ADSO-3413974/commit/75c2f37)).
+  - **Día 2 (Jueves 26 de noviembre de 2026):** Corrección de sintaxis XML en MER, enrutamiento perimetral sin cruces en modelo de dominio, sanitización de privacidad y auditoría final ([`a8fe94a`](https://github.com/covaleda402/ADSO-3413974/commit/a8fe94a), [`5bf28da`](https://github.com/covaleda402/ADSO-3413974/commit/5bf28da), [`75c2f37`](https://github.com/covaleda402/ADSO-3413974/commit/75c2f37), [`c87fc7a`](https://github.com/covaleda402/ADSO-3413974/commit/c87fc7a)).
+  - **Día 3 (Viernes 27 de noviembre de 2026):** Completitud de filas Anexo A en plantillas ([`3837717`](https://github.com/covaleda402/ADSO-3413974/commit/3837717)) y pulido visual final en `.drawio`/lista de chequeo.
 - [x] **No subí el marco documental del instructor ni plantillas sin diligenciar:** Todos los campos han sido rigurosamente completados con la información real de Nuvora.
 - [x] **Push y comprobación en GitHub:** Verificado y publicado en la rama `main` del repositorio público en GitHub.
 

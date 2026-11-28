@@ -73,8 +73,8 @@
         <mxCell id="s_inserta_auditoria" parent="lane_servidor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=1.5;fontSize=10;" value="Asienta registro inmutable en bitácora de auditoría" vertex="1">
           <mxGeometry height="45" width="180" x="35" y="670" as="geometry" />
         </mxCell>
-        <mxCell id="s_nota_concurrencia" parent="lane_servidor" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;fillColor=#fffbeb;strokeColor=#d97706;fontSize=9;" value="*Nota Técnica de Concurrencia: La ejecución es atómica y secuencial para evitar condiciones de carrera (cero bifurcaciones concurrentes)." vertex="1">
-          <mxGeometry height="60" width="200" x="35" y="850" as="geometry" />
+        <mxCell id="s_nota_concurrencia" parent="lane_servidor" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-4;spacingLeft=6;spacingRight=16;fillColor=#fffbeb;strokeColor=#d97706;fontSize=9;" value="*Nota Técnica de Concurrencia: La ejecución es atómica y secuencial para evitar condiciones de carrera (cero bifurcaciones concurrentes)." vertex="1">
+          <mxGeometry height="68" width="220" x="15" y="846" as="geometry" />
         </mxCell>
         <mxCell id="flow_c1" edge="1" parent="pool_cu07" source="c_inicio" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#475569;" target="c_activa_escaneo">
           <mxGeometry relative="1" as="geometry" />
