@@ -15,8 +15,8 @@
   <path d="M 198 112 L 198 96 L 940 96 L 940 135" fill="none" stroke="#475569" stroke-width="1.5"/>
   <rect x="505" y="86" width="128" height="18" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
   <text x="569" y="99" text-anchor="middle" fill="#334155" font-size="10" font-weight="bold">administra / opera</text>
-  <text x="208" y="106" fill="#475569" font-size="10" font-weight="bold">1..*</text>
-  <text x="948" y="128" fill="#475569" font-size="10" font-weight="bold">1..1</text>
+  <text x="208" y="106" fill="#475569" font-size="10" font-weight="bold">1..1</text>
+  <text x="948" y="128" fill="#475569" font-size="10" font-weight="bold">0..*</text>
 
   <!-- Categoria clasifica Comercio -->
   <line x1="690" y1="202" x2="815" y2="202" stroke="#0891b2" stroke-width="1.5"/>

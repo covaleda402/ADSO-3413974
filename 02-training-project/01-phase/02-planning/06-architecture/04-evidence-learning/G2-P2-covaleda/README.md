@@ -78,7 +78,7 @@ Elaboré la demostración matemática 0FN $\rightarrow$ 3FN con dependencias fun
 | Día | Qué avancé (hash y mensaje real del commit) |
 |---|---|
 | **Día 1: Jueves 26 de noviembre de 2026** | [`607ca00`](https://github.com/covaleda402/ADSO-3413974/commit/607ca00) — `feat(g2-p2): entrega base modelo conceptual, relacional, normalizacion 3fn, diccionario y script sql nuvora` |
-| **Día 2: Viernes 27 de noviembre de 2026** *(Entrega de cierre)* | Unificación 1:1 a **10 tablas y 64 columnas** entre diagrama Crow's Foot, diccionario, normalización y SQL; incorporación de `preferencia_visitante` (1FN) y `promocion_producto` ($N:M$); rediseño vectorial de `01-modelo-conceptual-datos.svg` y `02-modelo-logico-relacional.svg`; ejecución verificada en motor SQL; actualización de seguridad RBAC, lista de chequeo P1/P2 y declaración de equipo/guías. |
+| **Día 2: Viernes 27 de noviembre de 2026** *(Entrega de cierre)* | [`e009a03`](https://github.com/covaleda402/ADSO-3413974/commit/e009a03) / [`98edd99`](https://github.com/covaleda402/ADSO-3413974/commit/98edd99) — Unificación 1:1 a **10 tablas y 64 columnas**, ejecución SQL verificada, Ley 1581, lista de chequeo P1/P2 y alineación final B1↔B2 (`Usuario 1..1` $\rightarrow$ `0..* Comercio`). |
 
 ---
 
@@ -115,4 +115,4 @@ Elaboré la demostración matemática 0FN $\rightarrow$ 3FN con dependencias fun
 Declaro que los artefactos de esta carpeta son de mi autoría, que lo que reutilicé del análisis previo del equipo o de guías oficiales está indicado en las secciones 2 y 3, que no entregué como propio material del instructor ni de otros aprendices, y que puedo explicar y sustentar cada artefacto en la verificación oral y en la prueba presencial de desempeño.
 
 **Usuario de GitHub:** `covaleda402`  
-**Fecha de Elaboración:** 26 de noviembre de 2026
+**Fecha de Elaboración:** 27 de noviembre de 2026

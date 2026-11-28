@@ -48,12 +48,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="m_uc_1" connectable="0" parent="c_usr_com" style="edgeLabel;html=1;fontSize=10;fontStyle=1;fontColor=#475569;" value="1..*" vertex="1">
+        <mxCell id="m_uc_1" connectable="0" parent="c_usr_com" style="edgeLabel;html=1;fontSize=10;fontStyle=1;fontColor=#475569;" value="1..1" vertex="1">
           <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
             <mxPoint y="-24" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="m_uc_2" connectable="0" parent="c_usr_com" style="edgeLabel;html=1;fontSize=10;fontStyle=1;fontColor=#475569;" value="1..1" vertex="1">
+        <mxCell id="m_uc_2" connectable="0" parent="c_usr_com" style="edgeLabel;html=1;fontSize=10;fontStyle=1;fontColor=#475569;" value="0..*" vertex="1">
           <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
             <mxPoint x="-6" y="-3" as="offset" />
           </mxGeometry>
